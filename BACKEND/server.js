@@ -32,16 +32,6 @@ connection.once("open" , () => {
     console.log("Mongodb connection success");
 })
 
-const incomingfinanceRouter = require("./routes/incomingfinances.js");
-//http://Localhost:8070/incomingfinance
-
-app.use("/incomingfinance",incomingfinanceRouter);
-
-const expenseRouter = require("./routes/expenses.js");
-// http://Localhost:8070/expense
-
-app.use("/expense",expenseRouter);
-
 app.listen(PORT, () => {
     console.log(`server is up and running on porT: ${PORT}`);
 
