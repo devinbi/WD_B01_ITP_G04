@@ -32,6 +32,15 @@ connection.once("open" , () => {
     console.log("Mongodb connection success");
 })
 
+const transportRouter = require("./routes/Transports.js");
+app.use("/Transport",transportRouter);
+
+const vehicleRouter = require("./routes/vehicles.js");
+app.use("/Vehicle",vehicleRouter);
+
+const maintenanceRouter = require("./routes/Maintenances.js");
+app.use("/Maintenance",maintenanceRouter);
+
 app.listen(PORT, () => {
     console.log(`server is up and running on porT: ${PORT}`);
 
