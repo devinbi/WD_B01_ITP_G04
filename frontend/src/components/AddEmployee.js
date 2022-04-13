@@ -51,7 +51,7 @@ export  default function AddEmployee(){
     return(
      <div>
     <form onSubmit={sendData}>
-     <label  for="employeeId">Employeereresdsdsdrererereedsdsd Id</label>
+     <label  for="employeeId">Employee Iddddddd</label>
      <input id="employeeId" className="input-text js-input" type="text"  required
        onChange={(e)=>{
 
