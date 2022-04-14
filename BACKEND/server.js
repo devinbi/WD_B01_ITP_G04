@@ -32,6 +32,15 @@ connection.once("open" , () => {
     console.log("Mongodb connection success");
 })
 
+//connecting to backand and frontend for employee
+const employeeRouter = require("./routes/employee.js");
+app.use("/employee",employeeRouter);
+
+//connecting to backand and frontend for salary
+const salaryRouter = require("./routes/salary.js");
+app.use("/salary",salaryRouter);
+
+
 app.listen(PORT, () => {
     console.log(`server is up and running on porT: ${PORT}`);
 
