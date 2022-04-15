@@ -4,8 +4,8 @@ import axios from 'axios';
 
 export  default function Addexpense(){
 
-  
-  const [expensetype, setType] = useState("");
+  const [expenseid, setExpenseid] = useState("");
+  const [expensetype, setExpensetype] = useState("");
   const [date, setDate] = useState("");
   const [totalamount, setTotalamount] = useState("");
   const [description, setDescription] = useState("");
@@ -15,6 +15,7 @@ export  default function Addexpense(){
       e.preventDefault();
     
       const newExpense = {
+        expenseid,
         expensetype,
         date,
         totalamount,
@@ -23,7 +24,7 @@ export  default function Addexpense(){
       }
       
   console.log(newExpense)
-      axios.post("http://localhost:8060/expense/add",newExpense).then(()=>{
+      axios.post("http://localhost:8070/expense/add",newExpense).then(()=>{
           alert("Success");
          
       
@@ -36,125 +37,49 @@ export  default function Addexpense(){
     return(
      <div>
     <form onSubmit={sendData}>
-     <label  for="employeeId">Employe Id</label>
-     <input id="employeeId" className="input-text js-input" type="text"  required
+     <label  for="expenseid">Expense Id:</label>
+     <input id="expenseid" className="input-text js-input" type="text"  required
        onChange={(e)=>{
 
-    setId(e.target.value);
+    setExpenseid(e.target.value);
       }
       }
-     / ><br/>
-     <label  for="name">Employee Name</label>
-     <input id="name" className="input-text js-input" type="text" required
+      /><br/>
+     <label  for="totalamount">Total Amount:</label>
+     <input id="totalamount" className="input-text js-input" type="text" required
        onChange={(e)=>{
 
-      setName(e.target.value);
+      setTotalamount(e.target.value);
       }
       }
      /><br/>
-     <label for="address">Address :</label>
-     <textarea id="address" name="address" rows="4" cols="50" 
+     <label for="description">Description:</label>
+     <textarea id="description" name="address" rows="4" cols="50" 
             onChange={(e)=>{
 
-      setAddress(e.target.value);
-      }
-      }></textarea>
-     <br/>
-     <label for="birthday">Date of Birth :</label>
-     <input type="date" id="birthday" name="birthday"
-              onChange={(e)=>{
-
-      setBdate(e.target.value);
-      }
-      }
-     />
-     <br/>
-     <lable for="gender">Gender  :</lable>
-     <input type="radio" name="gender" value="male" id="gender"
-     onChange={(e)=>{
-
-setGender(e.target.value);
-}
-}/> Male
-     <input type="radio" name="gender" value="female" id ="gender"
-        onChange={(e)=>{
-
-setGender(e.target.value);
-}
-}
-     /> Female
-     <br/>
-     <label  for="email">Email :</label>
-     <input id="email" className="input-text js-input" type="email" required
-        onChange={(e)=>{
-
-setEmail(e.target.value);
-}
+      setDescription(e.target.value);
+}     
 }
      /><br/>
-     <label  for="phone">Phone :</label>
-     <input id="phone" className="input-text js-input" type="text" required
+     <label for="expensetype">Expense Type:</label>
+      <select name="expensetype" id="expensetype"
        onChange={(e)=>{
 
-setPhone(e.target.value);
-}
-}
-     /><br/>
-     <label  for="nic">Nic :</label>
-     <input id="nic" className="input-text js-input" type="text" required
-       onChange={(e)=>{
-
-setNic(e.target.value);
-}
-}
-     /><br/>
-     <label  for="equalification">Education Qualification :</label>
-     <input id="equalification" className="input-text js-input" type="text" required
-       onChange={(e)=>{
-
-setEquality(e.target.value);
-}
-}
-     /><br/>
-     <label  for="wexperience">Working Experience :</label>
-     <input id="experience" className="input-text js-input" type="text" required
-        onChange={(e)=>{
-
-          setWexperence(e.target.value);
-}
-}
-     /><br/>
-     <label for="Department">Department :</label>
-      <select name="Department" id="Department"
-       onChange={(e)=>{
-
-        setDepartment(e.target.value);
+        setExpensetype(e.target.value);
 }
 }>
-        <option value="it">It</option>
-        <option value="Production">Production</option>
-        <option value="HR">HR</option>
-        <option value="Account">Account</option>
+        <option value="supplier">Supplier Cost:</option>
+        <option value="maintenance">Maintenance Cost</option>
+        <option value="salary">Salary Cost</option>
+        
       </select>
-      <br/>
-     <label for="Designationrs">Designation</label>
-      <select name="Designation" id="Designation"  
-       onChange={(e)=>{
 
-setDesignation(e.target.value);
-}
-}>
-        <option value="driver">Driver</option>
-        <option value="Officer">Officer</option>
-        <option value="worker">Worker</option>
-       
-      </select>
       <br/>
-    <label for="jdate">Date joined :</label>
-     <input type="date" id="jdate" name="jdate"
+    <label for="date">Date:</label>
+     <input type="date" id="date" name="date"
         onChange={(e)=>{
 
-setJdate(e.target.value);
+setDate(e.target.value);
 }
 }
      />
