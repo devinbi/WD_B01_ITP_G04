@@ -25,7 +25,7 @@ export  default function AddIncome(){
       }
       
   console.log(newIncome)
-      axios.post("http://localhost:8090/incomingfinance/add",newIncome).then(()=>{
+      axios.post("http://localhost:8070/incomingfinance/add",newIncome).then(()=>{
           alert("Success");
          
       
