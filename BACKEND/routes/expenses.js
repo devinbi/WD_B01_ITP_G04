@@ -1,7 +1,7 @@
 const router = require("express").Router();
 let expense = require("../models/expense");
 
-// http://Localhost:8070/expense/add
+ http://Localhost:8070/expense/add
 router.route("/add").post((req,res)=>{
     const expenseid=req.body.expenseid;
     const expensetype=req.body.expensetype;

@@ -19,7 +19,7 @@ export  default function Addexpense(){
         expensetype,
         date,
         totalamount,
-        description,
+        description
         
       }
       
@@ -51,14 +51,14 @@ export  default function Addexpense(){
 
       setTotalamount(e.target.value);
       }
-      }
-     /><br/>
-     <label for="description">Description:</label>
-     <textarea id="description" name="address" rows="4" cols="50" 
-            onChange={(e)=>{
+    }
+    /><br/>
+   <label  for="description">Description:</label>
+   <input id="description" className="input-text js-input" type="text" required
+     onChange={(e)=>{
 
-      setDescription(e.target.value);
-}     
+    setDescription(e.target.value);
+    }    
 }
      /><br/>
      <label for="expensetype">Expense Type:</label>

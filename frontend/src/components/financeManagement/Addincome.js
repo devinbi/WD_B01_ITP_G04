@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import axios from 'axios';
 
 
-export  default function AddIncome(){
+   export default function AddIncome(){
 
   const [orderid, setOrderid] = useState("");
   const [ordertype, setOrdertype] = useState("");
@@ -11,15 +11,15 @@ export  default function AddIncome(){
   const [totalamount, setTotalamount] = useState("");
  
 
-  function sendData(e){
-      e.preventDefault();
+  function sendData(r){
+      r.preventDefault();
     
       const newIncome = {
         orderid,
         ordertype,
         numberofunits,
         unitprice,
-        totalamount,
+        totalamount
         
 
       }
@@ -27,9 +27,7 @@ export  default function AddIncome(){
   console.log(newIncome)
       axios.post("http://localhost:8070/incomingfinance/add",newIncome).then(()=>{
           alert("Success");
-         
-      
-
+    
       }).catch((err)=>{
           alert(err);
       })
@@ -40,41 +38,41 @@ export  default function AddIncome(){
     <form onSubmit={sendData}>
      <label  for="orderid">Order Id:</label>
      <input id="orderid" className="input-text js-input" type="text"  required
-       onChange={(e)=>{
+       onChange={(r)=>{
 
-    setOrderid(e.target.value);
+    setOrderid(r.target.value);
       }
       }
       /><br/>
      <label  for="ordertype">Order Type:</label>
      <input id="ordertype" className="input-text js-input" type="text" required
-       onChange={(e)=>{
+       onChange={(r)=>{
 
-      setOrdertype(e.target.value);
+      setOrdertype(r.target.value);
       }
       }
      /><br/>
      <label for="numberofunits">Number of units:</label>
      <textarea id="numberofunits" name="address" rows="4" cols="50" 
-            onChange={(e)=>{
+            onChange={(r)=>{
 
-      setNumberofunits(e.target.value);
+      setNumberofunits(r.target.value);
 }     
 }
 /><br/>
 <label  for="unitprice">Unit Price:</label>
 <input id="unitprice" className="input-text js-input" type="text" required
- onChange={(e)=>{
+ onChange={(r)=>{
 
-setUnitprice(e.target.value);
+setUnitprice(r.target.value);
 }
 }
      /><br/>
      <label  for="totalamount">Total Amount:</label>
      <input id="totalamount" className="input-text js-input" type="text" required
-      onChange={(e)=>{
+      onChange={(r)=>{
 
- setTotalamount(e.target.value);
+ setTotalamount(r.target.value);
 }
 }
      />

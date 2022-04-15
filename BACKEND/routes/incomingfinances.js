@@ -10,7 +10,7 @@ router.route("/add").post((req,res)=>{
     const unitprice=Number(req.body.unitprice);
     const totalamount=Number(req.body.totalamount);
 
-    const newincomefinance = new incomingfinance({
+    const newincomingfinance = new incomingfinance({
 
          
          orderid,
@@ -20,7 +20,7 @@ router.route("/add").post((req,res)=>{
          totalamount
 
     })
-    newincomefinance.save(),then(()=>{
+    newincomingfinance.save().then(()=>{
         res.json("incomingfinance added")
     }).catch((err)=>{
         console.log(err);
