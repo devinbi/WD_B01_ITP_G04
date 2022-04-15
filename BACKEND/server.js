@@ -32,6 +32,13 @@ connection.once("open" , () => {
     console.log("Mongodb connection success");
 })
 
+const RawMaterialRouter = require("./routes/RawMaterials.js");
+app.use("/RawMaterial",RawMaterialRouter);
+
+
+const ManufacturedItemRouter = require("./routes/ManufacturedItems.js");
+app.use("/ManufacturedItem",ManufacturedItemRouter);
+
 app.listen(PORT, () => {
     console.log(`server is up and running on porT: ${PORT}`);
 
