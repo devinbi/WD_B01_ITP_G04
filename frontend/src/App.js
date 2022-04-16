@@ -6,11 +6,8 @@ import AddEmployee from './components/employeeManagement/AddEmployee';
 
 function App() {
   return (
-
-    <div className = 'App'>
-    
+    <div className = 'App'> 
       <AddEmployee/>
-
     </div>
   );
 }

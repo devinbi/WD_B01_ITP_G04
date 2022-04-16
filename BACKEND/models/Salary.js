@@ -4,7 +4,9 @@ const Schema = mongoose.Schema;
 const salSchema = new Schema({
     employeeId:{
         type : String,
-        required : true
+        required : true,
+        unique : true,
+        minlength : 3
 
     },
     labourHr:{
