@@ -7,7 +7,6 @@ const app = express();
 require("dotenv").config();
 
 
-
 const PORT = process.env.PORT || 8070;
 
 app.use(cors());
@@ -25,7 +24,6 @@ mongoose.connect(URL, {
 });
     
 
-
 const connection = mongoose.connection;
 connection.once("open" , () => {
     console.log("Mongodb connection success");
@@ -42,5 +40,4 @@ app.use("/salary",salaryRouter);
 
 app.listen(PORT, () => {
     console.log(`server is up and running on porT: ${PORT}`);
-
 })
