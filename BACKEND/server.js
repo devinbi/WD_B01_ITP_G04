@@ -32,6 +32,14 @@ connection.once("open" , () => {
     console.log("Mongodb connection success");
 })
 
+
+const customerRouter = require("./routes/customers.js");
+app.use("/customer",customerRouter);
+
+
+const orderRouter = require("./routes/orders.js");
+app.use("/order", orderRouter);
+
 app.listen(PORT, () => {
     console.log(`server is up and running on porT: ${PORT}`);
 
