@@ -1,9 +1,11 @@
 const router =require("express").Router();
 const { request } = require("express");
-let Transport = require("../MODELS/Transport");
+let Transport = require("../models/Transport");
 
 //http://localhost:8070/Transport/add
 router.route("/add").post((req,res)=>{
+    console.log("equest",req.body)
+    const Transport_ID=req.body.Transport_ID;
     const Vehicle_Registration_No = req.body.Vehicle_Registration_No;
     const Date = req.body.Date;
     const Driver_Name = req.body.Driver_Name;
@@ -12,6 +14,7 @@ router.route("/add").post((req,res)=>{
 
     
     const newTransport = new Transport({
+        Transport_ID,
         Vehicle_Registration_No,
         Date,
         Driver_Name,
@@ -42,8 +45,9 @@ router.route("/update/:id").put(async(req,res)=>{
     let transeId=req.params.id;
  //  console.log("transport ID",transeId)
     //destructure
-    const{Vehicle_Registration_No,Date,Driver_Name,Description,Delivery_Status}=req.body;
+    const{Transport_ID,Vehicle_Registration_No,Date,Driver_Name,Description,Delivery_Status}=req.body;
     const updateTransport ={
+        Transport_ID,
         Vehicle_Registration_No,
         Date,
         Driver_Name,
