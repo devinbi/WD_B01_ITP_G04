@@ -36,8 +36,11 @@ export default function Viewexpenses(props){
 
                     data={expense}
                     options={{
-                        sorting: true
-                     
+                
+                        sorting: true,
+                        search:false,
+                        paging :false,
+                        filtering : true
                         
 
                     }}

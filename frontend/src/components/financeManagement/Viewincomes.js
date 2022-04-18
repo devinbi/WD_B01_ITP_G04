@@ -36,8 +36,10 @@ export default function Viewincomes(props){
 
                     data={income}
                     options={{
-                        sorting: true
-                     
+                        sorting: true,
+                        search:false,
+                        paging :false,
+                        filtering : true
                         
 
                     }}

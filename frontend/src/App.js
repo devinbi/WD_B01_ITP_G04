@@ -4,17 +4,19 @@ import Viewexpenses from './components/financeManagement/Viewexpenses';
 import React from 'react';
 import './App.css';
 import Viewincomes from './components/financeManagement/Viewincomes';
+import Updateexpense from './components/financeManagement/Updateexpense.js';
 
 
 function App() {
   return (
     <div className='App'>
-  
-       <Addexpense/> 
+      <Viewincomes/>
+     {/* <Addexpense/> 
        <Addincome/> 
       <Viewexpenses/>
-      <Viewincomes/>
-      <Viewexpenses/>
+      
+  <Viewexpenses/>
+  <Updateexpense/>*/}
       
       
     </div>
