@@ -4,6 +4,7 @@ let Vehicle = require("../MODELS/Vehicle");
 
 //http://localhost:8070/Vehicle/add
 router.route("/add").post((req,res)=>{
+    const Vehicle_ID=req.body.Vehicle_ID;
     const Vehicle_Registration_No = req.body.Vehicle_Registration_No;
     const Date = req.body.Date;
     const Vehicle_Type = req.body.Vehicle_Type;
@@ -12,6 +13,7 @@ router.route("/add").post((req,res)=>{
 
     
     const newVehicle = new Vehicle({
+        Vehicle_ID,
         Vehicle_Registration_No,
         Date,
         Vehicle_Type,
@@ -42,8 +44,9 @@ router.route("/update/:id").put(async(req,res)=>{
     let vehiID=req.params.id;
  //  console.log("transport ID",transeId)
     //destructure
-    const{Vehicle_Registration_No,Date,Vehicle_Type,Vehicle_Brand,Mileage}=req.body;
+    const{Vehicle_ID,Vehicle_Registration_No,Date,Vehicle_Type,Vehicle_Brand,Mileage}=req.body;
     const updateVehicle ={
+        Vehicle_ID,
         Vehicle_Registration_No,
         Date,
         Vehicle_Type,
