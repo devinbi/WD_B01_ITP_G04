@@ -12,7 +12,7 @@ const transportSchema = new Schema({
     },
 
     Date :{
-        type: Date,
+        type: String,
         required: true
     },
     Driver_Name:{

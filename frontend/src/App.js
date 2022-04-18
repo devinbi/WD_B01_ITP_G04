@@ -2,8 +2,8 @@
 import React from 'react';
 import './App.css';
 import AddTransport from './components/transportManagement/AddTransport';
-import AddStudent from './components/transportManagement/AddStudent';
-import { BrowserRouter as Router, Route , Routes} from 'react-router-dom';
+import AllTransport from './components/transportManagement/AllTransport';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 
 function App() {
@@ -12,9 +12,8 @@ function App() {
   return (
     <Router>
     <div>
-      <Routes>
-        <Route exact path="/add"  element={<AddTransport/>}/>
-      </Routes>
+        <Route  path="/add" exact component={AddTransport}/>
+        <Route path= "/view" exact component={AllTransport}/>
      
       {/* <Transport/>  */}
     </div>

@@ -24,6 +24,14 @@ export default function AddTransport(){
             console.log("new Transpot",newTransport);
         axios.post("http://localhost:8070/Transport/add",newTransport).then(()=>{
         alert("Transport Added")
+        // setTid("");
+        // setVid("");
+        // setDate("");
+        // setName("");
+        // setDescription("");
+        // setStatus("");
+        window.location.reload();
+
     }).catch((err)=>{
         alert(err)
     })
@@ -76,7 +84,8 @@ export default function AddTransport(){
                     <select id="status" class="form-control" onChange={(e)=>{
                         setStatus(e.target.value);
                     }}>
-                        <option value="pending" selected>Pending</option>
+                        <option  selected>choose..</option>
+                        <option value="pending">Pending</option>
                         <option value="completed">Completed</option>
                     </select>
                 </div>
