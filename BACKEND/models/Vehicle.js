@@ -13,7 +13,7 @@ const vehicleSchema = new Schema({
     },
 
     Date :{
-        type: Date,
+        type: String,
         required: true
     },
     Vehicle_Type:{
