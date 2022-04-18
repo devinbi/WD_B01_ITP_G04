@@ -6,8 +6,7 @@ router.route("/add").post((req,res)=>{
     console.log("requess", req.body);
 
     //const{itemName,itemQuantity,unitPrice,totalCost,adminId} = req.body;
-     const itemName = req.body.name;
-
+    const itemName = req.body.name;
     const itemQuantity =req.body.quantity;
     const unitPrice = req.body.price;
     const totalCost = req.body.cost;
@@ -28,7 +27,7 @@ router.route("/add").post((req,res)=>{
         totalCost,
         adminId
     })
-    console.log("new itemmmmmmmmmmmmmmmmmmmm", newItem);
+    
     // Add
     newItem.save().then(()=>{
         res.json("Item Added")
@@ -40,6 +39,8 @@ router.route("/add").post((req,res)=>{
 
 //Get all
 router.route("/").get((req,res)=>{
+
+    console.log("Fetch Data");
 
     Item.find().then((item)=>{
         res.json(item)
