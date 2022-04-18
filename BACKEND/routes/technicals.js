@@ -3,14 +3,13 @@ let technical = require("../models/technical");
 
 // add details
 router.route("/add").post((req,res)=>{
-    const deviceCode = req.body.DeviceCode;
-    const modelNo = req.body.ModelNo;
-    const machineName = req.body.MachineName;
+    const deviceCode = req.body.deviceCode;
+    const modelNo = req.body.modelNo;
+    const machineName = req.body.machineName;
     const price= req.body.price;
-    const department= req.body.Department;
-    const condition = req.body.Condition;
-    const ETAID = req.body.ETAID; 
-    const maintainanceID = req.body.MaintainanceID;
+    const department= req.body.department;
+    const condition = req.body.condition;
+   
     
 
     const newTechnical= new technical({
@@ -20,12 +19,13 @@ router.route("/add").post((req,res)=>{
         machineName,
         price,
         department,
-        condition,
-        ETAID,
-        maintainanceID
+        condition
+        
     })
+    console.log("data",req.body);
 
     newTechnical.save().then(()=>{
+
           res.json("details Added!!!")
 
     }).catch((err)=>{
@@ -56,9 +56,8 @@ router.route("/update/:id").put(async(req,res)=>{
         MachineName,
         price,
         Department,
-        Condition,
-        ETAID,
-        MaintainanceID
+        Condition
+      
     }
 
     const update = await technical.findByIdAndUpdate(techID,updateTechnical).then(()=>{

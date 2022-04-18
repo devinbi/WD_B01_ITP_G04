@@ -9,8 +9,7 @@ router.route("/add").post((req,res)=>{
     const category = req.body.category;
     const condition= req.body.condition;
     const cost = req.body.cost;
-    const EID = req.body.EID;
-    const ETAID = req.body.ETAID;
+   
    
 
     const newEmaintainance= new emaintainance({
@@ -20,9 +19,7 @@ router.route("/add").post((req,res)=>{
         date,
         category,
         condition,
-        cost,
-        EID,
-        ETAID
+        cost
     })
 
     newEmaintainance.save().then(()=>{
@@ -56,9 +53,7 @@ router.route("/update/:id").put(async(req,res)=>{
         date,
         category,
         condition,
-        cost,
-        EID,
-        ETAID
+        cost
     }
 
     const update = await emaintainance.findByIdAndUpdate(maintainCode ,updateEmaintainance).then(()=>{

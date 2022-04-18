@@ -32,17 +32,8 @@ const emaintainanceSchema = new Schema({
     cost:{
         type : String,
         required: true
-    } ,
-    EID:{
-        type : String,
-        required: true
-        
-    },
-    ETAID:{
-        type : String,
-        required: true
-        
-    }
+    } 
+  
 })
 
 const emaintainance = mongoose.model("equipmentMaintainance",emaintainanceSchema);

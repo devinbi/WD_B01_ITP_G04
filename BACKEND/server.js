@@ -31,6 +31,14 @@ const connection = mongoose.connection;
 connection.once("open" , () => {
     console.log("Mongodb connection success");
 })
+const dressmakingRouter= require("./routes/dressmakings.js");
+app.use("/dressmaking", dressmakingRouter);
+
+const technicalRouter= require("./routes/technicals.js");
+app.use("/technical", technicalRouter);
+
+const emaintainanceRouter= require("./routes/emaintainances.js");
+app.use("/emaintainance", emaintainanceRouter);
 
 app.listen(PORT, () => {
     console.log(`server is up and running on porT: ${PORT}`);

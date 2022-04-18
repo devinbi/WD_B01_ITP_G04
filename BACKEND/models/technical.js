@@ -31,16 +31,9 @@ const technicalSchema = new Schema({
     condition:{
         type : String,
         required: true
-    },
-
-    ETAID:{
-        type : String,
-        required: true
-    } ,
-    maintainanceID:{
-        type : String
-        
     }
+
+   
 })
 
 const technical = mongoose.model("technicalDevices",technicalSchema);

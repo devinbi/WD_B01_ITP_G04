@@ -3,13 +3,13 @@ let dressmaking = require("../models/dressmaking");
 
 // add details
 router.route("/add").post((req,res)=>{
+    console.log("new",req.body.category)
     const machineCode = req.body.machineCode;
     const machineName = req.body.machineName;
     const category = req.body.category;
     const price= req.body.price;
     const condition= req.body.condition;
-    const ETAID = req.body.ETAID;
-    const maintainanceID = req.body.maintainanceID;
+   
 
     const newDressmaking= new dressmaking({
 
@@ -17,9 +17,8 @@ router.route("/add").post((req,res)=>{
         machineName,
         category,
         price,
-        condition,
-        ETAID,
-        maintainanceID
+        condition
+       
     })
 
     newDressmaking.save().then(()=>{
@@ -45,7 +44,7 @@ router.route("/").get((req,res)=>{
 //update details
 router.route("/update/:id").put(async(req,res)=>{
     let machineId =req.params.id;
-    const{machineCode,machineName,category,price,condition,ETAID,maintainanceID}=req.body;
+    const{machineCode,machineName,category,price,condition}=req.body;
 
     const updateDressmaking ={
         machineCode,
@@ -53,8 +52,7 @@ router.route("/update/:id").put(async(req,res)=>{
         category,
         price,
         condition,
-        ETAID,
-        maintainanceID
+       
     }
 
     const update = await dressmaking.findByIdAndUpdate(machineId,updateDressmaking).then(()=>{

@@ -27,16 +27,9 @@ const dressmakingSchema = new Schema({
     condition:{
         type : String,
         required: true
-    },
-
-    ETAID:{
-        type : String,
-        required: true
-    } ,
-    maintainanceID:{
-        type : String
-        
     }
+
+   
 })
 
 const dressmaking = mongoose.model("dressmakingTools",dressmakingSchema);
