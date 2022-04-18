@@ -59,13 +59,25 @@ export default function AddVehicle(){
                     }}/>
                 </div>
 
-                 <div class="form-group">
+                <div class="form-group">
+                    <label for="inputState">Vehicle Type :</label>
+                    <select id="type" class="form-control" onChange={(e)=>{
+                        setType(e.target.value);
+                    }}>
+                        <option  selected>choose..</option>
+                        <option value="Van">Van</option>
+                        <option value="Bus">Bus</option>
+                        <option value="Lorry">Lorry</option>
+                    </select>
+                </div>
+
+                 {/* <div class="form-group">
                     <label for="type">Vehicle Type :</label>
                     <input type="text" class="form-control" id="type"
                     onChange={(e)=>{
                         setType(e.target.value);
                     }} />
-                </div>
+                </div> */}
 
                 <div class="form-group">
                     <label for="brand">Vehicle Brand :</label>
@@ -76,7 +88,7 @@ export default function AddVehicle(){
                 </div>
 
                 <div class="form-group">
-                    <label for="milage"> Milage :</label>
+                    <label for="milage">Milage :</label>
                     <input type="text" class="form-control" id="milage" 
                     onChange={(e)=>{
                         setMilage(e.target.value);
