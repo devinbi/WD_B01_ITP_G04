@@ -1,7 +1,7 @@
 const router = require("express").Router();
 let Order = require("../models/order");
 
-router.route("/add").post((req,res)=>{
+router.route("/addO").post((req,res)=>{
     const TypeOfOrder = req.body.TypeOfOrder;
     const UnitPrice = Number(req.body.UnitPrice);
     const NoOfUnit = Number(req.body.NoOfUnit);
@@ -32,7 +32,7 @@ router.route("/add").post((req,res)=>{
 
 //http://localhost:8070/customer
 
-router.route("/").get((req,res)=>{
+router.route("/view").get((req,res)=>{
 
     Order.find().then((orders)=>{
         res.json(orders)

@@ -9,7 +9,7 @@ router.route("/add").post((req,res)=>{
     const Country = req.body.Country;
     const NIC= req.body.NIC;
     
-
+    
     const newCustomer = new Customer({
         CustomerName,
         ContactNumber,
@@ -18,6 +18,7 @@ router.route("/add").post((req,res)=>{
         Country,
         NIC
     })
+    console.log("new",newCustomer);
 
     newCustomer.save().then(()=>{
         res.json("Customer Added")
