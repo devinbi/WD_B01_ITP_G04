@@ -92,7 +92,7 @@ export  default function AddEmployee(){
 setGender(e.target.value);
 }
 }/> Male
-     <input type="radio" name="gender" value="female" id ="gender"
+     <input type="radio" name="gender" value="female" id="gender"
         onChange={(e)=>{
 
 setGender(e.target.value);
