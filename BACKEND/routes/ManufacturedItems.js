@@ -25,7 +25,7 @@ router.route("/add").post((req,res)=>{
 
 
 //data retrieve 
-router.route("/").get((req,res)=>{
+router.route("/fetch").get((req,res)=>{
     ManufacturedItem.find()
     .then((ManufacturedItems)=>{
         res.json(ManufacturedItems)

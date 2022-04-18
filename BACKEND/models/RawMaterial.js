@@ -9,7 +9,7 @@ const RawMaterialSchema = new Schema({
     },
 
     Quantity : {
-        type : Number,
+        type : String,
         require : true 
     },
 

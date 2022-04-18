@@ -3,9 +3,9 @@ let RawMaterial = require("../models/RawMaterial");
 
 
 //insert
-router.route("/add").post((req,res)=>{
+router.route("/adding").post((req,res)=>{
     const ItemName = req.body.ItemName;
-    const Quantity = Number(req.body.Quantity);
+    const Quantity = req.body.Quantity;
     const ItemType = req.body.ItemType;
 
     const newRawMaterial = new RawMaterial({ 
