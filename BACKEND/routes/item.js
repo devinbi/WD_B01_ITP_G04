@@ -3,12 +3,21 @@ const { request } = require("express");
 let Item = require("../models/Item");
 
 router.route("/add").post((req,res)=>{
+    console.log("requess", req.body);
 
-    const itemName = req.body.itemName;
-    const itemQuantity =Number(req.body.itemQuantity);
-    const unitPrice = Number(req.body.unitPrice);
-    const totalCost = Number(req.body.totalCost);
-    const adminId = req.body.adminId;
+    //const{itemName,itemQuantity,unitPrice,totalCost,adminId} = req.body;
+     const itemName = req.body.name;
+
+    const itemQuantity =req.body.quantity;
+    const unitPrice = req.body.price;
+    const totalCost = req.body.cost;
+
+
+
+    // const itemQuantity =Number(req.body.itemQuantity);
+    // const unitPrice = Number(req.body.unitPrice);
+    // const totalCost = Number(req.body.totalCost);
+     const adminId = req.body.adminid;
 
     const newItem = new Item({
 
@@ -18,7 +27,7 @@ router.route("/add").post((req,res)=>{
         totalCost,
         adminId
     })
-    
+    console.log("new itemmmmmmmmmmmmmmmmmmmm", newItem);
     // Add
     newItem.save().then(()=>{
         res.json("Item Added")

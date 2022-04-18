@@ -1,14 +1,22 @@
-
 import React from 'react';
-import './App.css';
+import Header from './components/supplierManagement/Header';
+import AddItem from "./components/supplierManagement/AddItem";
+
+import {BrowserRouter as Router, Route} from "react-router-dom";
+
 
 
 function App() {
   return (
-    <div className='App'>
-      
-      <h1> Hellow</h1>
-    </div>
+    <Router>
+      <div className='App'>
+        <Header/>
+
+        <Route path="/add" component={ AddItem } />
+        
+      </div>
+    </Router>
+    
   );
 }
 
