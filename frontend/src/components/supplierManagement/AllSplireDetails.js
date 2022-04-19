@@ -5,8 +5,7 @@ import MaterialTable from 'material-table';
 import { Modal } from "react-bootstrap";
 import UpdateSupplier from "./UpdateSupplier";
 
-///////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////
+
 export default function AllSupplireDetails(props){
 
     const [supplier, setSupplier] = useState([]);
@@ -15,7 +14,8 @@ export default function AllSupplireDetails(props){
     const [StateUpdate, setStateUpdate] = useState(false)
     const [SupplierUpdate, setSupplierUpdate] = useState()
 
-    
+    const [StateDelete, setStateDelete] = useState(false)
+    const [SupplierDelete, setSupplierDelete] = useState()
     //
     
     useEffect(()=>{
@@ -33,7 +33,18 @@ export default function AllSupplireDetails(props){
     },[])
 
     //
-    
+    function onDelete() {
+        axios.delete( "http://localhost:8070/supplier/delete/"+ SupplierDelete)
+            .then((res) => {
+                console.log(res)
+                alert('Supplier detailS deleted')
+                window.location.reload(true)//reload page
+
+            }).catch(() => {
+                alert('error while deleting Supplier Details')
+            })
+
+    }
     //
     
     return(
@@ -69,7 +80,13 @@ export default function AllSupplireDetails(props){
                                 setStateUpdate(true); //setStatetrue
                             }
                         },
-                        
+                        {
+                            icon: () => <button class="btn btn-sm btn-outline-danger">Delete</button>,
+                            onClick: (event, rowData) => {
+                                setSupplierDelete(rowData._id) //setidto delete
+                                setStateDelete(true);   //setstatetrue
+                            }
+                        },
                         
                     ]}
               />      
@@ -80,7 +97,14 @@ export default function AllSupplireDetails(props){
                     </Modal.Body>
                 </Modal>
                 
-                
+                {/* delete modal */}
+                <Modal show={StateDelete}>
+                    <Modal.Body>
+                        <p>You Want to delete this Item details ?</p>
+                        <button type="button" class="btn btn-outline-danger mr-3 pl-3" onClick={onDelete}>Delete</button>
+                        <button type="button" class="btn btn-outline-secondary pl-3" onClick={() => setStateDelete(false)}>Cancel</button>
+                    </Modal.Body>
+                </Modal>
 
         
         </div>
