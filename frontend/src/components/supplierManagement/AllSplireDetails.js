@@ -2,9 +2,21 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import MaterialTable from 'material-table';
 
+import { Modal } from "react-bootstrap";
+import UpdateSupplier from "./UpdateSupplier";
 
-export default function AllSplireDetails(){
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+export default function AllSupplireDetails(props){
+
     const [supplier, setSupplier] = useState([]);
+
+    //
+    const [StateUpdate, setStateUpdate] = useState(false)
+    const [SupplierUpdate, setSupplierUpdate] = useState()
+
+    
+    //
     
     useEffect(()=>{
         
@@ -19,11 +31,15 @@ export default function AllSplireDetails(){
             })
         
     },[])
+
+    //
+    
+    //
     
     return(
         <div class="container-fluid">
         <MaterialTable  style={{background:"#E3ECFF"}}
-                    title="All Items Details "
+                    title="All Supplier Details "
 
                     columns={[
                         
@@ -38,11 +54,35 @@ export default function AllSplireDetails(){
 
                     data={supplier}
                     options={{
-                        sorting: true
+                        sorting: true,
+                        search:false,
+                        filtering : true,
+                        actionsColumnIndex: -1
                      
                     }}
+                    //
+                    actions={[
+                        {
+                            icon: () => <button class="btn btn-sm btn-outline-warning">Update</button>,
+                            onClick: (event, rowData) => {
+                                setSupplierUpdate(rowData); //setTransportDetailswithID
+                                setStateUpdate(true); //setStatetrue
+                            }
+                        },
+                        
+                        
+                    ]}
+              />      
+                    {/* update modal */}
+                    <Modal show={StateUpdate}>
+                    <Modal.Body>
+                        <UpdateSupplier data={SupplierUpdate} cl={() => setStateUpdate(false)} />
+                    </Modal.Body>
+                </Modal>
+                
+                
 
-        />
+        
         </div>
     )
 }

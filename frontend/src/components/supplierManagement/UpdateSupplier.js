@@ -1,22 +1,24 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-const Host = "http://localhost:8070/item";
-export default function UpdateItem({ data, cl }){
+const Host = "http://localhost:8070/supplier";
+export default function UpdateSupplier({ data, cl }){
    
-    const [itemName, setName] = useState("");
-    const [itemQuantity, setQuantity] = useState("");
-    const [unitPrice, setPrice] = useState("");
-    const [totalCost, setCost] = useState("");
-    const [adminId, setId] = useState("");
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [nic, setNic] = useState("");
+    const [address, setAddress] = useState("");
+    const [adminId, setAdminId] = useState("");
     
-   
+    
     useEffect(()=>{
         
-        setName(data.itemName)
-        setQuantity(data.itemQuantity)
-        setPrice(data.unitPrice)
-        setCost(data.totalCost)
-        setId(data.adminId)
+        setName(data.name)
+        setEmail(data.email)
+        setPhoneNumber(data.phoneNumber)
+        setNic(data.nic)
+        setAddress(data.address)
+        setAdminId(data.adminId)
     
     },[])
   
@@ -24,20 +26,20 @@ export default function UpdateItem({ data, cl }){
     
     e.preventDefault();
           
-        const updateItems = {
-            itemName,
-            itemQuantity,
-            unitPrice,
-            totalCost,
-            adminId
-            
+        const updateSupplier = {
+          name,
+          email,
+          phoneNumber,
+          nic,
+          address,
+          adminId
           }
           
 
     axios
-      .put(`${Host}/update/${data._id}`,updateItems)
+      .put(`${Host}/update/${data._id}`,updateSupplier)
       .then((response) => {
-        alert("Item Details updated Successfully !");
+        alert("Supplier Details updated Successfully !");
         window.location.reload(true);
       })
       .catch((err) => {
@@ -52,69 +54,84 @@ return (
       <div className="container">
         <form onSubmit={sendData}>
           <div className="mb-3">
-            <label for="itemName" className="form-label">
+            <label for="name" className="form-label">
               Item Name :
             </label>
             <input
               type="text"
               className="form-control"
-              name="itemName"
+              name="name"
               onChange={(e)=>{
                 setName(e.target.value);
             }}
-              value={itemName}
+              value={name}
               disabled
             />
           </div>
 
           <div className="mb-3">
-            <label for="itemQuantity" className="form-label">
+            <label for="email" className="form-label">
               Item Quantity
             </label>
             <input
               type="text"
               className="form-control"
-              name="itemQuantity"
+              name="email"
               onChange={(e)=>{
-                setQuantity(e.target.value);
+                setEmail(e.target.value);
             }}
-              value={itemQuantity}
+              value={email}
             ></input>
           </div>
 
           
 
           <div className="mb-3">
-            <label for="unitPrice" className="form-label">
+            <label for="phoneNumber" className="form-label">
               Unit Price
             </label>
             <input
               type="text"
               className="form-control"
-              name="unitPrice"
+              name="phoneNumber"
               onChange={(e)=>{
-                setPrice(e.target.value);
+                setPhoneNumber(e.target.value);
             }}
-              value={unitPrice}
+              value={phoneNumber}
             ></input>
           </div>
          
           <div className="mb-3">
-            <label for="totalCost" className="form-label">
+            <label for="nic" className="form-label">
               Total Cost
             </label>
             <input
               type="text"
               className="form-control"
-              name="totalCost"
+              name="nic"
               onChange={(e)=>{
-                setCost(e.target.value);
+                setNic(e.target.value);
             }}
-              value={totalCost}
+              value={nic}
             ></input>
           </div>
 
           
+          <div className="mb-3">
+            <label for="address" className="form-label">
+              Admin ID
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              name="address"
+              onChange={(e)=>{
+                setAddress(e.target.value);
+            }}
+              value={address}
+            ></input>
+          </div>
+
           <div className="mb-3">
             <label for="adminId" className="form-label">
               Admin ID
@@ -124,7 +141,7 @@ return (
               className="form-control"
               name="adminId"
               onChange={(e)=>{
-                setId(e.target.value);
+                setAdminId(e.target.value);
             }}
               value={adminId}
             ></input>

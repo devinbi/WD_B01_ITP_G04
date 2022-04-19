@@ -65,7 +65,6 @@ export default function AllItemDetails(props){
                     options={{
                         sorting: true,
                         search:false,
-                        
                         filtering : true,
                         actionsColumnIndex: -1
                      
