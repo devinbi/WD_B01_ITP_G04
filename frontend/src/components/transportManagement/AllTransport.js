@@ -39,15 +39,19 @@ export default function AllTransport(){
     }
 
   return(
+    <div>
     <div class ="component-body">
          <div className="container-fluid ">
+             <br></br>
+             <br></br>
+             <br></br>
              <MaterialTable  style={{background:"#E3ECFF"}}
                     title="All Transport Details "
 
                     columns={[
                         { title: "Transport Id", field: "Transport_ID", type: "string" },
                         { title: "Vehicle Registration No", field: "Vehicle_Registration_No", type: "string" },
-                        { title: "Date", field: "Date", type: "string" },
+                        { title: "Date", field: "Date", type: "date" },
                         { title: " Driver Name", field: "Driver_Name", type: "string" },
                         { title: "Description", field: "Description", type: "string" },
                         { title: "Delivery Status", field: "Delivery_Status", type: "string" },
@@ -57,6 +61,9 @@ export default function AllTransport(){
                     data={transportData}
                     options={{
                         sorting: true,
+                        search:false,
+                        paging :false,
+                        filtering : true,
                         actionsColumnIndex: -1,
                      
                     }}
@@ -103,6 +110,7 @@ export default function AllTransport(){
 
 
 
+         </div>
          </div>
   );
 
