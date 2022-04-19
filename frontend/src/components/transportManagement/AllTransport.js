@@ -1,10 +1,15 @@
 import React,{useState,useEffect} from "react";
 import axios from "axios";
 import MaterialTable from 'material-table';
-// import { Modal } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
+import UpdateTransport from "./UpdateTransport";
+
 
 export default function AllTransport(){
     const[transportData,setTData]=useState([]);
+
+    const [StateUpdate, setStateUpdate] = useState(false)
+    const [TransportUpdate, setTransportUpdate] = useState()
 
     useEffect(()=>{
         axios.get("http://localhost:8070/Transport").then((res)=>{
@@ -15,7 +20,8 @@ export default function AllTransport(){
         })
     },[])
   return(
-         <div className="ml-3 mr-3">
+    <div class ="component-body">
+         <div className="container-fluid ">
              <MaterialTable  style={{background:"#E3ECFF"}}
                     title="All Transport Details "
 
@@ -31,11 +37,36 @@ export default function AllTransport(){
 
                     data={transportData}
                     options={{
-                        sorting: true
+                        sorting: true,
+                        actionsColumnIndex: -1,
                      
                     }}
+                    actions={[
+                        {
+                            icon: () => <button class="btn btn-sm btn-outline-warning">Update</button>,
+                            onClick: (event, rowData) => {
+                                setTransportUpdate(rowData); //setTransportDetailswithID
+                                setStateUpdate(true); //setStatetrue
+                            }
+                        },
+                        
+                    ]}
+                    />
+                  
+         </div>
 
-        />
+           {/* update modal */}
+           <Modal show={StateUpdate} size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+>
+                    <Modal.Body>
+                        <UpdateTransport data={TransportUpdate} cl={() => setStateUpdate(false)} />
+                    </Modal.Body>
+                </Modal>
+
+
+
          </div>
   );
 
