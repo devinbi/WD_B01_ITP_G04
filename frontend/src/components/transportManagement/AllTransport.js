@@ -4,12 +4,16 @@ import MaterialTable from 'material-table';
 import { Modal } from "react-bootstrap";
 import UpdateTransport from "./UpdateTransport";
 
+const HOST = "http://localhost:8070/Transport"
 
 export default function AllTransport(){
     const[transportData,setTData]=useState([]);
 
     const [StateUpdate, setStateUpdate] = useState(false)
     const [TransportUpdate, setTransportUpdate] = useState()
+
+    const [StateDelete, setStateDelete] = useState(false)
+    const [TransportDelete, setTransportDelete] = useState()
 
     useEffect(()=>{
         axios.get("http://localhost:8070/Transport").then((res)=>{
@@ -19,6 +23,21 @@ export default function AllTransport(){
             alert(err.msg);
         })
     },[])
+
+     //delete trasport function
+     function onDelete() {
+        axios.delete(HOST + "/delete/" + TransportDelete)
+            .then((res) => {
+                console.log(res)
+                alert('Transport detail deleted')
+                window.location.reload(true)//reload page
+
+            }).catch(() => {
+                alert('error while deleting Transport Detail')
+            })
+
+    }
+
   return(
     <div class ="component-body">
          <div className="container-fluid ">
@@ -49,11 +68,18 @@ export default function AllTransport(){
                                 setStateUpdate(true); //setStatetrue
                             }
                         },
-                        
+                        {
+                            icon: () => <button class="btn btn-sm btn-outline-danger">Delete</button>,
+                            onClick: (event, rowData) => {
+                                setTransportDelete(rowData._id) //setidto delete
+                                setStateDelete(true);   //setstatetrue
+                            }
+                        },
                     ]}
                     />
                   
          </div>
+
 
            {/* update modal */}
            <Modal show={StateUpdate} size="lg"
@@ -64,6 +90,16 @@ export default function AllTransport(){
                         <UpdateTransport data={TransportUpdate} cl={() => setStateUpdate(false)} />
                     </Modal.Body>
                 </Modal>
+
+                 {/* delete modal */}
+                 <Modal show={StateDelete}>
+                    <Modal.Body>
+                        <p>You Want to delete this Transpot details ?</p>
+                        <button type="button" class="btn btn-outline-danger mr-3 pl-3" onClick={onDelete}>Delete</button>
+                        <button type="button" class="btn btn-outline-secondary pl-3" onClick={() => setStateDelete(false)}>Cancel</button>
+                    </Modal.Body>
+                </Modal>
+                
 
 
 
