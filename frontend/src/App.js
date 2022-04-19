@@ -5,18 +5,20 @@ import React from 'react';
 import './App.css';
 import Viewincomes from './components/financeManagement/Viewincomes';
 import Updateexpense from './components/financeManagement/Updateexpense.js';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
+
 
 
 function App() {
   return (
     <div className='App'>
-      <Viewincomes/>
-     {/* <Addexpense/> 
-       <Addincome/> 
-      <Viewexpenses/>
+     <Viewincomes/>
+      <Addexpense/> 
+      <Addincome/>
+     
       
-  <Viewexpenses/>
-  <Updateexpense/>*/}
+     <Viewexpenses/>
+     <Updateexpense/>
       
       
     </div>

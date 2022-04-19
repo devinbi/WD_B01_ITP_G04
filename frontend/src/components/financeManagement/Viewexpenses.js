@@ -2,9 +2,15 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import MaterialTable from 'material-table';
 import { Modal } from "react-bootstrap";
+import Updateexpense from "./Updateexpense";
 
 export default function Viewexpenses(props){
     const [expense, setExpense] = useState([]);
+    const [StateUpdate, setStateUpdate] = useState(false)
+    const [expenseUpdate, setExpenseUpdate] = useState()
+
+    const [StateDelete, setStateDelete] = useState(false)
+    const [expenseDelete, setExpenseDelete] = useState()
     
     useEffect(()=>{
         
@@ -19,8 +25,25 @@ export default function Viewexpenses(props){
             })
         
     },[])
+
+
+    function onDelete() {
+        axios.delete( "http://localhost:8070/expense/delete/"+ expenseDelete)
+            .then((res) => {
+                console.log(res)
+                alert('expense detail deleted')
+                window.location.reload(true)//reload page
+    
+            }).catch(() => {
+                alert('error while deleting expense Detail')
+            })
+    
+    }
     
     return(
+
+        <div>
+
         <div class="container-fluid">
         <MaterialTable  style={{background:"#E3ECFF"}}
                     title="All Expense Details "
@@ -40,12 +63,49 @@ export default function Viewexpenses(props){
                         sorting: true,
                         search:false,
                         paging :false,
-                        filtering : true
+                        filtering : true,
+                        actionsColumnIndex:-1
                         
 
                     }}
 
+                    actions={[
+                        {
+                            icon: () => <button class="btn btn-sm btn-outline-warning">Update</button>,
+                            onClick: (event, rowData) => {
+                                setExpenseUpdate(rowData); //setTransportDetailswithID
+                                setStateUpdate(true); //setStatetrue
+                            }
+                        },
+                        {
+                            icon: () => <button class="btn btn-sm btn-outline-danger">Delete</button>,
+                            onClick: (event, rowData) => {
+                                setExpenseDelete(rowData._id) //setidto delete
+                                setStateDelete(true);   //setstatetrue
+                            }
+                        },
+                        
+                    ]}
+                    
+
         />
+         {/* update modal */}
+         <Modal show={StateUpdate}>
+                    <Modal.Body>
+                        <Updateexpense data={expenseUpdate} cl={() => setStateUpdate(false)} />
+                    </Modal.Body>
+                </Modal>
+                
+                {/* delete modal */}
+                <Modal show={StateDelete}>
+                    <Modal.Body>
+                        <p>You Want to delete this Expense details ?</p>
+                        <button type="button" class="btn btn-outline-danger mr-3 pl-3" onClick={onDelete}>Delete</button>
+                        <button type="button" class="btn btn-outline-secondary pl-3" onClick={() => setStateDelete(false)}>Cancel</button>
+                    </Modal.Body>
+                </Modal>
         </div>
+        </div>
+     
     )
 }
