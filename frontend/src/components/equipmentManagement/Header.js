@@ -17,10 +17,16 @@ function Header(){
   <li class="nav-item">
     <a href="/addEmaintainance" className="nav-link">addM</a>
   </li>
-
-<li>
-<a href="#" className="nav-link">view</a>
+  <li class="nav-item">
+    <a href="/AllDressmakings" className="nav-link">ViewD</a>
   </li>
+  <li class="nav-item">
+    <a href="/AllTechnicals" className="nav-link">ViewT</a>
+  </li>
+  <li class="nav-item">
+    <a href="/AllEmaintainance" className="nav-link">ViewM</a>
+  </li>
+
 </ul>
     )
 }
