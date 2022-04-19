@@ -3,6 +3,7 @@ import axios from "axios";
 
 export default function AddOrders(){
 
+  const [OrderId, setOrderId] = useState("");
   const [TypeOfOrder, setType] = useState("");
   const [UnitPrice, setPrice] = useState("");
   const [NoOfUnit, setUnits] = useState("");
@@ -17,6 +18,7 @@ export default function AddOrders(){
     e.preventDefault();
     
     const newOrder = {
+        OrderId,
         TypeOfOrder,
         UnitPrice,
         NoOfUnit,
@@ -40,7 +42,20 @@ export default function AddOrders(){
      <div className="container">
         <form onSubmit = {sendData}>
 
+
+
             <div class="form-group">
+              
+            <div class="mb-3">
+                <label for="OrderId" class="form-label">Order ID</label>
+                <input type="text" class="form-control" id="OrderId" placeholder="Enter Order ID" 
+                onChange={(e)=> {
+                  setOrderId(e.target.value);
+                }}
+                
+                />
+              </div>
+
               <div class="mb-3">
                 <label for="typeOfOrder" class="form-label">Type of Order</label>
                 <input type="text" class="form-control" id="TypeOfOrder" placeholder="Enter Order Type" 
@@ -106,7 +121,7 @@ export default function AddOrders(){
                 <label for="OrderDeliveryDate" class="form-label">Order Delivery Date</label>
                 <input type="date" class="form-control" id="OrderDeliveryDate" placeholder="Enter Order Delivery Date"
                 onChange={(e)=> {
-                    setOrderDeliveryDate(e.target.value);
+                  OrderDeliveryDate(e.target.value);
                 }}
                 />
               </div>

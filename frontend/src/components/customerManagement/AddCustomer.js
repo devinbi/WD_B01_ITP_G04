@@ -3,6 +3,7 @@ import axios from "axios";
 
 export default function AddCustomer(){
 
+  const [CustomerId, setId] = useState("");
   const [CustomerName, setName] = useState("");
   const [ContactNumber, setNumber] = useState("");
   const [Email, setEmail] = useState("");
@@ -14,6 +15,7 @@ export default function AddCustomer(){
     e.preventDefault();
     
     const newCustomer = {
+      CustomerId,
       CustomerName,
       ContactNumber,
       Email,
@@ -36,6 +38,16 @@ export default function AddCustomer(){
 
      <div className="container">
         <form onSubmit = {sendData}>
+
+        <div class="mb-3">
+      CustomerId,
+                <label for="CustomerId" class="form-label">Customer ID</label>
+                <input type="text" class="form-control" id="CustomerId" placeholder="Enter Customer ID Number"
+                onChange={(e)=> {
+                  setId(e.target.value);
+                }}
+                />
+              </div>
 
             <div class="form-group">
               <div class="mb-3">
