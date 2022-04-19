@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import MaterialTable from 'material-table';
-
+//a
 
 export default function AllTechnicals(props){
     const [alltechnical, setTechnical] = useState([]);
