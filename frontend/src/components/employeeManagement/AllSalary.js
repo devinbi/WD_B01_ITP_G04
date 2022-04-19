@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import MaterialTable from 'material-table';
 import { Modal } from "react-bootstrap";
-// import UpdateSalary from "./UpdateSalary";
+import UpdateSalary from "./UpdateSalary";
 
 export default function AllSalary(props){
 
@@ -76,13 +76,13 @@ export default function AllSalary(props){
 
                     }}
                     actions={[
-                        // {
-                        //     icon: () => <button class="btn btn-sm btn-outline-warning">Update</button>,
-                        //     onClick: (event, rowData) => {
-                        //         setSalaryUpdate(rowData); //setTransportDetailswithID
-                        //         setStateUpdate(true); //setStatetrue
-                        //     }
-                        // },
+                        {
+                            icon: () => <button class="btn btn-sm btn-outline-warning">Update</button>,
+                            onClick: (event, rowData) => {
+                                setSalaryUpdate(rowData); //setTransportDetailswithID
+                                setStateUpdate(true); //setStatetrue
+                            }
+                        },
                         {
                             icon: () => <button class="btn btn-sm btn-outline-danger">Delete</button>,
                             onClick: (event, rowData) => {
@@ -93,13 +93,13 @@ export default function AllSalary(props){
                         
                     ]}
               />      
-                    {/* update modal
+                    {/* update modal */}
                     <Modal show={StateUpdate}>
                     <Modal.Body>
                         <UpdateSalary data={SalaryUpdate} cl={() => setStateUpdate(false)} />
                     </Modal.Body>
                 </Modal>
-                 */}
+                
                 {/* delete modal */}
                 <Modal show={StateDelete}>
                     <Modal.Body>
