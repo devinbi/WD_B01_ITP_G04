@@ -20,7 +20,7 @@ export  default function Headers(){
         <a class="nav-link" href="/addA">View</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="nav-link " href="/addS">Add Salary</a>
       </li>
     </ul>
   </div>
