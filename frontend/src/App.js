@@ -7,6 +7,9 @@ import { BrowserRouter as Router, Route} from "react-router-dom";
 import AllDressmakings from './components/equipmentManagement/AllDressmakings';
 import AllTechnicals from './components/equipmentManagement/AllTechnicals';
 import AllEmaintainance from './components/equipmentManagement/AllEmaintainance';
+import UpdateDressmaking from './components/equipmentManagement/UpdateDressmaking';
+import UpdateTechnical from './components/equipmentManagement/UpdateTechnical';
+import UpdateEmaintainance from './components/equipmentManagement/UpdateEmaintainance';
 
 function App() {
   return ( 
@@ -20,6 +23,9 @@ function App() {
             <Route path='/AllDressmakings' exact component = {AllDressmakings} />
             <Route path='/AllTechnicals' exact component = {AllTechnicals} />
             <Route path='/AllEmaintainance' exact component = {AllEmaintainance} />
+            <Route path='/UpdateDressmaking' exact component = {UpdateDressmaking} />
+            <Route path='/UpdateTechnical' exact component = {UpdateTechnical} />
+            <Route path='/UpdateEmaintainance' exact component = {UpdateEmaintainance} />
         </div>
     </Router>
     
