@@ -8,7 +8,7 @@ export default function AllEmployee(props){
     useEffect(()=>{
         
         
-            axios.get('http://localhost:8060/employee/')
+            axios.get('http://localhost:8070/employee/')
             .then((res) =>{
                 console.log(res.data);
                 setEmp(res.data);

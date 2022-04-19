@@ -23,7 +23,7 @@ export default function AddSalary(){
         }
         
      
-          axios.post("http://localhost:8060/salary/add",newSalary).then(()=>{
+          axios.post("http://localhost:8070/salary/add",newSalary).then(()=>{
               alert("Success");
               window.location.reload();
               }).catch((err)=>{
