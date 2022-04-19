@@ -16,7 +16,11 @@ function Header() {
                     <a class="nav-link" href="/view">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="/add">Add Item</a>
+                    <a class="nav-link" href="/addI">Add Item</a>
+                    </li>
+
+                    <li class="nav-item">
+                    <a class="nav-link" href="/addS">Add Supplier</a>
                     </li>
 
                     <li class="nav-item">
