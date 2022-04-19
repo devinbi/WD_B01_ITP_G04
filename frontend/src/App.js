@@ -5,6 +5,7 @@ import React from 'react';
 import './App.css';
 import Viewincomes from './components/financeManagement/Viewincomes';
 import Updateexpense from './components/financeManagement/Updateexpense.js';
+import Updateincome from './components/financeManagement/Updateincome.js';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 
@@ -12,13 +13,14 @@ import { BrowserRouter as Router, Route} from 'react-router-dom';
 function App() {
   return (
     <div className='App'>
-     <Viewincomes/>
-      <Addexpense/> 
-      <Addincome/>
+   {/*  <Updateincome/>
      
-      
-     <Viewexpenses/>
-     <Updateexpense/>
+     {/*<Addexpense/> */}
+     {/* <Addincome/>*/}
+      <Viewincomes/>
+     
+    {/* <Viewexpenses/>*/}
+ {/* <Updateexpense/>*/}
       
       
     </div>
