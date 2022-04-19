@@ -1,9 +1,10 @@
 const router =require("express").Router();
 const { request } = require("express");
-let Maintenance = require("../MODELS/Maintenance");
+let Maintenance = require("../models/Maintenance");
 
 //http://localhost:8070/Maintenance/add
 router.route("/add").post((req,res)=>{
+    const Maintenance_ID = req.body.Maintenance_ID;
     const Vehicle_Registration_No = req.body.Vehicle_Registration_No;
     const Date = req.body.Date;
     const Description = req.body.Description;
@@ -11,6 +12,7 @@ router.route("/add").post((req,res)=>{
 
     
     const newMaintenance = new Maintenance({
+        Maintenance_ID,
         Vehicle_Registration_No,
         Date,
         Description,

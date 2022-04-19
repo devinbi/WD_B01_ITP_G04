@@ -60,7 +60,6 @@ export default function AllVehicles(){
                     options={{
                         sorting: true,
                         search:false,
-                        paging :false,
                         filtering : true,
                         actionsColumnIndex: -1
                      

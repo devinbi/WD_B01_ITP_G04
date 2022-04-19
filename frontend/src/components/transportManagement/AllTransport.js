@@ -62,7 +62,6 @@ export default function AllTransport(){
                     options={{
                         sorting: true,
                         search:false,
-                        paging :false,
                         filtering : true,
                         actionsColumnIndex: -1,
                      

@@ -92,7 +92,7 @@ export default function AddTransport(){
                
 
                 
-            <button type="submit" class="btn btn-primary">ADD</button>
+            <button type="submit" class="btn btn-info btn-lg">ADD</button>
             </form>
             
         </div>

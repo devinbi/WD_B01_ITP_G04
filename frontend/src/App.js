@@ -7,8 +7,8 @@ import AddVehicle from './components/transportManagement/AddVehicle';
 import AllVehicles from './components/transportManagement/AllVehicles';
 import UpdateTransport from './components/transportManagement/UpdateTransport';
 import UpdateVehicles from './components/transportManagement/UpdateVehicles';
+import AddMaintenance from './components/transportManagement/AddMaintenance';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
-
 
 function App() {
 
@@ -22,8 +22,8 @@ function App() {
         <Route path= "/vview" exact component={AllVehicles}/>
         <Route path= "/update" exact component={UpdateTransport}/>
         <Route path= "/vupdate" exact component={UpdateVehicles}/>
-     
-      {/* <Transport/>  */}
+        <Route path= "/madd" exact component={AddMaintenance}/>
+    
     </div>
     </Router>
   );
