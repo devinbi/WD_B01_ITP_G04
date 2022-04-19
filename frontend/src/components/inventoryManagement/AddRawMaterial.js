@@ -3,6 +3,7 @@ import axios from 'axios';
 
 export default function AddRawMaterial(){
 
+    const [ItemId, setItemId] = useState("");
     const [ItemName, setItemName] = useState("");
     const [Quantity, setQuantity] = useState("");
     const [ItemType, setItemType] = useState("");
@@ -11,6 +12,7 @@ export default function AddRawMaterial(){
     e.preventDefault();  
     
     const newRawMaterial ={
+        ItemId,
         ItemName,
         Quantity,
         ItemType
@@ -28,6 +30,16 @@ export default function AddRawMaterial(){
 
         <div className='container'>
         <form onSubmit={sendData}>
+
+            <div className="form-group">
+                <label for="ItemId" className="form-label">Item Id</label>
+                <input type="text" className="form-control" id="ItemId" placeholder="Enter Item Id" 
+                onChange={(e)=>{
+
+                    setItemId(e.target.value);
+
+                }}/>
+            </div>
 
             <div className="form-group">
                 <label for="ItemName" className="form-label">Item Name</label>

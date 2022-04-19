@@ -3,6 +3,13 @@ const Schema = mongoose.Schema;
 
 const RawMaterialSchema = new Schema({
 
+    ItemId : {
+        type : String,
+        required : true,
+        unique: true,
+        minlength: 3
+    },
+
     ItemName : {
         type : String,
         required : true 

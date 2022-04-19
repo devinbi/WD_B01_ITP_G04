@@ -3,16 +3,21 @@ let ManufacturedItem = require("../models//ManufacturedItem");
 
 //insert
 router.route("/add").post((req,res)=>{
+    const ItemId = req.body.ItemId;
     const ItemName = req.body.ItemName;
     const Quantity = Number(req.body.Quantity);
     const Material = req.body.Material;
-    const Description =req.body.Description;
+    const Colour =req.body.Colour;
+    const Size =req.body.Size;
+
 
     const newManufacturedItem = new ManufacturedItem({
+        ItemId,
         ItemName,
         Quantity,
         Material,
-        Description
+        Colour,
+        Size
     })
  
     newManufacturedItem.save()
@@ -38,13 +43,17 @@ router.route("/fetch").get((req,res)=>{
 //update 
 router.route("/update/:id").put(async(req,res)=>{
     let itemId = req.params.id; 
-    const{ItemName,Quantity,Material,Description} = req.body;
+    const{ItemId,ItemName,Quantity,Material,Colour,Size} = req.body;
 
     const updateManufacturedItem = {
+
+        ItemId,
         ItemName,
         Quantity,
         Material,
-        Description
+        Colour,
+        Size
+
     }   
 
     const update = await ManufacturedItem.findByIdAndUpdate(itemId,updateManufacturedItem)

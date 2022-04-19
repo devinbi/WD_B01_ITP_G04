@@ -4,11 +4,13 @@ let RawMaterial = require("../models/RawMaterial");
 
 //insert
 router.route("/adding").post((req,res)=>{
+    const ItemId = req.body.ItemId;
     const ItemName = req.body.ItemName;
     const Quantity = req.body.Quantity;
     const ItemType = req.body.ItemType;
 
     const newRawMaterial = new RawMaterial({ 
+        ItemId,
         ItemName,
         Quantity,
         ItemType

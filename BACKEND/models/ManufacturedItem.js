@@ -2,6 +2,12 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ManufacturedItemSchema = new Schema({
+    ItemId:{
+        type: String,
+        required: true,
+        unique: true,
+        minlength: 3
+    },
     ItemName:{
         type: String,
         required: true
@@ -17,7 +23,12 @@ const ManufacturedItemSchema = new Schema({
         required: true
     },
 
-    Description:{
+    Colour:{
+        type:String,
+        required: true
+    },
+
+    Size:{
         type:String,
         required: true
     }
