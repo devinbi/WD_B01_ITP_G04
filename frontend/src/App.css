@@ -28,19 +28,6 @@
   color: #61dafb;
 }
 
-/* .area {
-  float: left;
-  background: #e2e2e2;
-  width: 100%;
-  height: 100%;
-} */
-
-/* component-body {
-  margin-top: 120px;
-  padding-left: 100px;
-  padding-right: 50px;
-} */
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -50,11 +37,8 @@
   }
 }
 
-/* <style> */
-body {
-  margin: 0;
-  font-family: "Lato", sans-serif;
-}
+
+
 
 .sidebar {
   margin: 0;
@@ -74,12 +58,12 @@ body {
 }
  
 .sidebar a.active {
-  background-color: #3706b4;
+  background-color: #04AA6D;
   color: white;
 }
 
 .sidebar a:hover:not(.active) {
-  background-color: rgba(40, 27, 182, 0.674);
+  background-color: #555;
   color: white;
 }
 
@@ -105,5 +89,338 @@ div.content {
     float: none;
   }
 }
-/* </style> */
+/* <!--new added --> */
+
+.fa-2x {
+  font-size: 2em;
+}
+.fa {
+  position: relative;
+  display: table-cell;
+  width: 60px;
+  height: 36px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 20px;
+  align-items: center;
+
+}
+#fa {
+  position: relative;
+  display: table-cell;
+  width: 60px;
+  height: 36px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 20px;
+}
+#fa-2x {
+  font-size: 2em;
+}
+
+.main-menu:hover,
+nav.main-menu.expanded {
+  width: 250px;
+  overflow: visible;
+}
+
+.main-menu {
+  background: #212121;
+  border-right: 1px solid #e5e5e5;
+  position: fixed;
+  top: 96px;
+  bottom: 0;
+  height: 86.5%;
+  left: 0;
+  width: 50px;
+  overflow: hidden;
+  -webkit-transition: width 0.05s linear;
+  transition: width 0.05s linear;
+  /* -webkit-transform: translateZ(0) scale(1, 1); */
+  z-index: 1000;
+}
+
+.main-menu > ul {
+  margin: 7px 0;
+}
+
+.main-menu li {
+  position: relative;
+  display: block;
+  width: 250px;
+}
+
+.main-menu li > a {
+  position: relative;
+  display: table;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: rgb(255, 255, 255);
+  font-family: arial;
+  font-size: 16px;
+  text-decoration: none;
+  /* -webkit-transform: translateZ(0) scale(1, 1); */
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+
+.main-menu .nav-icon {
+  position: relative;
+  display: table-cell;
+  width: 50px;
+  height: 36px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 18px;
+}
+
+.main-menu .nav-text {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  width: 190px;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.main-menu > ul.logout {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.no-touch .scrollable.hover {
+  overflow-y: hidden;
+}
+
+.no-touch .scrollable.hover:hover {
+  overflow-y: auto;
+  overflow: visible;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+nav {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+nav ul,
+nav li {
+  outline: 0;
+  margin: 0;
+  padding: 0;
+}
+.main-menu li:hover > a,
+nav.main-menu li.active > a,
+.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,
+.dashboard-page nav.dashboard-menu ul li.active a {
+  color: #fff;
+  background-color: #3e82be;
+}
+.area {
+  float: left;
+  background: #e2e2e2;
+  width: 100%;
+  height: 100%;
+}
+@font-face {
+  font-family: "Titillium Web";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Titillium WebLight"), local("TitilliumWeb-Light"),
+   
+}
+
+/*header css part*/
+
+.main-menubox {
+  display: none;
+}
+
+.main-menu:hover .main-menubox {
+  display: block;
+}
+
+li.nav-item {
+  padding: 10px 20px;
+}
+
+/*component body styles*/
+.component-body {
+  margin-top: 120px;
+  padding-left: 100px;
+  padding-right: 50px;
+}
+
+table {
+  width: 100%;
+  margin: 20px auto;
+  table-layout: auto;
+}
+
+.fixed {
+  table-layout: fixed;
+}
+
+table,
+td,
+th {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+}
+
+/* QR Reader Window */
+.qrReader {
+  margin-top: 25px;
+  padding-left: 510px;
+}
+.qr-txt {
+  margin-top: 130px;
+}
+
+/*view ledger css
+done by
+IT 19965550*/ 
+
+#height {
+  margin-top: 120px;
+}
+
+
+/* Production Css */
+
+.productiontable {
+  margin-top: 125px;
+  margin-left: 80px;
+  max-width: 93%;
+  table-layout: auto;
+  border-collapse: collapse;
+  padding: 10px;
+  text-align: center;
+}
+
+.DailyIncomeTable{
+  margin-top: 125px;
+  margin-left: 70px;
+  max-width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+  padding: 10px;
+  text-align: center;
+}
+
+
+
+
+.productform {
+  margin-top: 125px;
+  margin-left: 30%;
+  padding: 50px;
+  width: 700px;
+  border-collapse: collapse;
+  background-color:#e0e0e0;
+  border-width: 2px;
+  border-radius: 15px;
+  border-style: inset; 
+  box-shadow: 10px -8px 6px #007bff!important; 
+  overflow: visible;
+}
+
+.form_content {
+  margin-left: 50px;
+  width: 500px;
+  border-collapse: collapse;
+  align-items: center;
+  color: black;
+}
+ 
+.topic {
+  margin-left: 15%;
+}
+
+/* Dashboard CSS */
+
+.dbutton {
+  background-color: #0945e7;
+  margin-top: 80px;
+  padding-top: 20px;
+  margin-right: 25px;
+  width: 80%;
+  height: 100px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  transition-duration: 0.4s;
+  font-size: 100px;
+  font-weight:800;
+  vertical-align: middle;
+
+
+}
+
+.dbutton:hover {
+  background-color: #0c83f3;
+  color: white;
+}
+
+.dicon {
+  vertical-align: middle;
+  text-align:center
+}
+
+.fb {
+  position: relative;
+  display: table-cell;
+  width: 60px;
+  height: 36px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 35px;
+  align-items: center;
+  padding-left: 110px;
+
+}
+
+#ledger{
+  text-align: center;
+}
+
+.bgImg {
+  /* background-image: url(./components/bc-image.jpg); */
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: left;
+  margin-top: 95px;
+  float: left;
+}
+
+.login {
+  margin-left: 1020px;
+  padding-top: 150px;
+  padding-left: 50px;
+  width: 500px;
+  height: 635px;
+  float: right;
+  background-color: #E3ECFF;
+  
+}
+
+.login-topic {
+  color: black;
+  font-size: 50px;
+  padding-left: 150px;
+}
 

@@ -39,6 +39,97 @@ export default function AllVehicles(){
     }
 
   return(
+      <div>
+   <div class="component-body">
+        
+        <div class="area">
+                <nav class="main-menu bg-primary">
+                    <ul>
+                        <li>
+                            <a href="/AllT">
+                                <i class="fa fa-home "></i>
+                                <span class="nav-text">Dashboard</span>
+                                <i class="fa fa-angle-right "></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/add">
+                                <i class="fa fa-plus-circle"></i>
+                                <span class="nav-text">Add Vehicle</span>
+                                <i class="fa fa-angle-right "></i>
+                            </a>
+                        </li>
+                        <li class="has-subnav">
+                            <a href="/view">
+                             <i class="fa fa-truck " ></i>
+                                <span class="nav-text">Vehicle List</span>
+                                <i class="fa fa-angle-right "></i>
+                            </a>
+                        </li>
+                       
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/vadd">
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                <span class="nav-text">Add Transort Detials</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <li class="has-subnav">
+                            <a href="/vview">
+                            <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                                <span class="nav-text">View Transport Details</span>
+                                <i class="fa fa-angle-right "></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/madd">
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+
+                                <span class="nav-text">Add Maintenance Details</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <li class="has-subnav">
+                            <a href="/mview">
+                                <i class="fa fa-wrench "></i>
+                                <span class="nav-text">View Maintenance</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/viewD">
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                                <span class="nav-text">Driver Details</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/rview">
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                                <span class="nav-text">Transport Reports</span>
+                                <i class="fa fa-angle-right "></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="logout">
+                        <li>
+                            <a href="/">
+                                <i class="fa fa-power-off "></i>
+                                <span class="nav-text">Logout</span>
+                                <i class="fa fa-angle-right "></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            </div>
+            <div>
          <div className="component-body">
              <div className="container-fluid ">
              <br/>
@@ -101,6 +192,8 @@ export default function AllVehicles(){
                         <button type="button" class="btn btn-outline-secondary pl-3" onClick={() => setStateDelete(false)}>Cancel</button>
                     </Modal.Body>
                 </Modal>
+         </div>
+         </div>
          </div>
   );
 
