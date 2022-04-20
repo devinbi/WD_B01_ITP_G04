@@ -61,7 +61,7 @@ export default function UpdateEmployee({ data, cl }){
     axios
       .put(`http://localhost:8070/employee/update/${data._id}`, updateEmployee)
       .then((response) => {
-        alert("Employee Details updated Successfully !");
+        alert("Salary Details updated Successfully !");
         window.location.reload(true);
       })
       .catch((err) => {

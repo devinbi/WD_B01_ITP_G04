@@ -14,11 +14,16 @@ function App() {
  
     <BrowserRouter>
         
-            <Headers/>
-            <Route path="/add" exact component={AddEmployee} />
-            <Route path="/allE" exact component={AllEmployee} />
-            <Route path="/addS" exact component={AddSalary} />
-            <Route path="/allS" exact component={AllSalary} />
+    <TopHeader/>
+            <Route path="/report" exact component={Report} />
+            <Route path="/viewS" exact component={ViewSalary} />
+            <Route path="/viewE" exact component={ViewEmployee} />
+            <Route path="/adde" exact component ={AddEmployee} />
+            <Route path="/adds" exact component ={AddSalary} />
+            <Route path="/alle" exact component ={AllEmployee} />
+            <Route path="/alls" exact component ={AllSalary} />
+            <Route path="/updateS" exact component ={UpdateSalary} />
+            <Route path="/updateE" exact component ={UpdateEmployee} />
              
         
       </BrowserRouter>

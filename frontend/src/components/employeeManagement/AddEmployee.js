@@ -1,8 +1,6 @@
 import React,{useState} from 'react';
 import axios from 'axios';
 
-
-
 export  default function AddEmployee(){
 
   const [employeeId, setId] = useState("");
@@ -38,146 +36,224 @@ export  default function AddEmployee(){
         jDate
       }
       
-  console.log(newEmployee)
-      axios.post("http://localhost:8070/employee/add",newEmployee).then(()=>{
-          alert("Success");
-         
-      
-
-      }).catch((err)=>{
-          alert(err);
-      })
+      console.log(newEmployee)
+        axios.post("http://localhost:8070/employee/add",newEmployee).then(()=>{
+            alert("Success");
+            window.location.reload();
+            }).catch((err)=>{
+                alert(err);
+            })
    
-  }
-    return(
-     <div>
-    <form onSubmit={sendData}>
-     <label  for="employeeId">Employee Id</label>
-     <input id="employeeId" className="input-text js-input" type="text"  required
-       onChange={(e)=>{
+        } 
+        
+          return(
+          <div>
+           <div class="component-body">
+        
+        <div class="area">
+                <nav class="main-menu bg-primary" >
+                    <ul>
+                    <li class="has-subnav">
+                            <a href="#">
+                            <i class="fa fa-house"></i>
+                                <span class="nav-text">Dash Board</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/viewE">
+                                <i class="fa fa-users"></i>
+                                <span class="nav-text">View Employee List</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                            </li>
+                        <li class="has-subnav">
+                            <a href="/adde">
+                            <i class="fa fa-user-plus"></i>
+                                <span class="nav-text">Add Employee</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        
+                        <li class="has-subnav">
+                            <a href="/viewS">
+                            <i class="fa fa-wallet"></i>
+                                <span class="nav-text">View Salary Details</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <li class="has-subnav">
+                            <a href="/adds">
+                            <i class="fa fa-hand-holding-dollar"></i>
+                                <span class="nav-text">Add Salary Detials</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/alle">
+                            <i class="fa fa-users-gear"></i>
+                                <span class="nav-text">Manage Employee</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/alls">
+                            <i class="fa fa-scale-balanced"></i>
+                                <span class="nav-text">Salary Maintains</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/report">
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                                <span class="nav-text">Reports</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
 
-    setId(e.target.value);
-      }
-      }
-     / ><br/>
-     <label  for="name">Employee Name</label>
-     <input id="name" className="input-text js-input" type="text" required
-       onChange={(e)=>{
+                </nav>
+            </div>
+            </div>
+            
+            <div className="container">
+                    <form onSubmit={sendData}>
+                    <div class="form-group" >
+                            <label for="employeeId">Employee Id :</label>
+                            <input type="text" class="form-control" id="employeeId"  placeholder="Enter "
+                            onChange={(e)=>{
+                                setId(e.target.value);
+                            }}/>
+                        
+                        </div>
+                        <div className="form-group">
+                            <label for="name">Name :</label>
+                            <input type="text" class="form-control" id="name"  placeholder="Enter" onChange={(e)=>{
+                                setName(e.target.value);
+                            }}/>
+                        
+                        </div>
 
-      setName(e.target.value);
-      }
-      }
-     /><br/>
-     <label for="address">Address :</label>
-     <textarea id="address" name="address" rows="4" cols="50" 
-            onChange={(e)=>{
+                        <div className="form-group">
+                            <label for="address">Address :</label>
+                            <textarea type="text" class="form-control" id="address" onChange={(e)=>{
+                                setAddress(e.target.value);
+                            }}>
+                            </textarea>
+                        </div>
 
-      setAddress(e.target.value);
-      }
-      }></textarea>
-     <br/>
-     <label for="birthday">Date of Birth :</label>
-     <input type="date" id="birthday" name="birthday"
-              onChange={(e)=>{
 
-      setBdate(e.target.value);
-      }
-      }
-     />
-     <br/>
-     <lable for="gender">Gender  :</lable>
-     <input type="radio" name="gender" value="male" id="gender"
-     onChange={(e)=>{
+                        <div class="form-group">
+                            <label for="birthday">Birthday :</label>
+                            <input type="date" class="form-control" id="birthday" 
+                            onChange={(e)=>{
+                              setBdate(e.target.value);
+                            }}/>
+                        </div>
 
-setGender(e.target.value);
-}
-}/> Male
-     <input type="radio" name="gender" value="female" id="gender"
-        onChange={(e)=>{
+                        <div className="form-group">
+                            <label for="gender">Gender :</label>
+                            <input type="radio"  id="gender" name="Male" value="Male" onChange={(e)=>{
+                                setGender(e.target.value);
+                            }}/> Male
+                            <input type="radio"  id="gender" name="Female" value="Female" onChange={(e)=>{
+                                setGender(e.target.value);
+                            }}/>Female
+                        </div>
 
-setGender(e.target.value);
-}
-}
-     /> Female
-     <br/>
-     <label  for="email">Email :</label>
-     <input id="email" className="input-text js-input" type="email" required
-        onChange={(e)=>{
+                        <div class="form-group">
+                            <label for="email">Email :</label>
+                            <input type="email" class="form-control" id="email" 
+                            onChange={(e)=>{
+                              setEmail(e.target.value);
+                            }}/>
+                        </div>
 
-setEmail(e.target.value);
-}
-}
-     /><br/>
-     <label  for="phone">Phone :</label>
-     <input id="phone" className="input-text js-input" type="text" required
-       onChange={(e)=>{
+                        <div class="form-group">
+                            <label for="phone">Phone :</label>
+                            <input type="text" class="form-control"  pattern="[0-9]{10}"
+                            title="Invalid Tel-number"
+                             id="phone" 
+                            onChange={(e)=>{
+                              setPhone(e.target.value);
+                            }}/>
+                        </div>
 
-setPhone(e.target.value);
-}
-}
-     /><br/>
-     <label  for="nic">Nic :</label>
-     <input id="nic" className="input-text js-input" type="text" required
-       onChange={(e)=>{
+                        <div class="form-group">
+                            <label for="nic">Nic :</label>
+                            <input type="text" class="form-control" id="nic" pattern="[0-9]{9}[V]{1}" 
+                            onChange={(e)=>{
+                              setNic(e.target.value);
+                            }}/>
+                        </div>
 
-setNic(e.target.value);
-}
-}
-     /><br/>
-     <label  for="equalification">Education Qualification :</label>
-     <input id="equalification" className="input-text js-input" type="text" required
-       onChange={(e)=>{
+                        <div class="form-group">
+                            <label for="equalification">Equalification :</label>
+                            <input type="text" class="form-control" id="equalification" 
+                            onChange={(e)=>{
+                              setEquality(e.target.value);
+                            }}/>
+                        </div>
 
-setEquality(e.target.value);
-}
-}
-     /><br/>
-     <label  for="wexperience">Working Experience :</label>
-     <input id="experience" className="input-text js-input" type="text" required
-        onChange={(e)=>{
+                        <div class="form-group">
+                            <label for="wexperience">Working Expirence :</label>
+                            <input type="text" class="form-control" id="wexperience" 
+                            onChange={(e)=>{
+                              setWexperence(e.target.value);
+                            }}/>
+                        </div>
+                        <div class="form-group">
+                            <label for="Department">Department :</label>
+                            <select name="Department" id="Department"  class="form-control"
+                                    onChange={(e)=>{
+                        
+                                      setDepartment(e.target.value);
+                                }
+                                }>    <option>choose</option>
+                                      <option value="it">It</option>
+                                      <option value="Production">Production</option>
+                                      <option value="HR">HR</option>
+                                      <option value="Account">Account</option>
+              
+                            </select>
+                           
+                        </div>
+                        <div class="form-group">
+                            <label for="Designation">Designation :</label>
+                            <select name="Designation" id="Designation"  class="form-control"
+                                    onChange={(e)=>{
+                        
+                                setDesignation(e.target.value);
+                                }
+                                }>
+                                        <option value="driver">Driver</option>
+                                        <option value="Officer">Officer</option>
+                                        <option value="worker">Worker</option>
+              
+                            </select>
+                           
+                        </div>
+                        <div class="form-group">
+                            <label for="jdate">Joined Date :</label>
+                            <input type="date" class="form-control" id="jdate" 
+                            onChange={(e)=>{
+                              setJdate(e.target.value);
+                            }}/>
+                        </div>
+                       
 
-          setWexperence(e.target.value);
-}
-}
-     /><br/>
-     <label for="Department">Department :</label>
-      <select name="Department" id="Department"
-       onChange={(e)=>{
-
-        setDepartment(e.target.value);
-}
-}>
-        <option value="it">It</option>
-        <option value="Production">Production</option>
-        <option value="HR">HR</option>
-        <option value="Account">Account</option>
-      </select>
-      <br/>
-     <label for="Designationrs">Designation</label>
-      <select name="Designation" id="Designation"  
-       onChange={(e)=>{
-
-setDesignation(e.target.value);
-}
-}>
-        <option value="driver">Driver</option>
-        <option value="Officer">Officer</option>
-        <option value="worker">Worker</option>
-       
-      </select>
-      <br/>
-    <label for="jdate">Date joined :</label>
-     <input type="date" id="jdate" name="jdate"
-        onChange={(e)=>{
-
-setJdate(e.target.value);
-}
-}
-     />
-     <br/>
-     <input type="submit"/>
-     </form>
-     </div>
-    )
+            
+                    <button type="submit" class="btn btn-info btn-lg">ADD</button>
+                    </form>
+                    
+                </div>
+ 
+          </div>
+          )
 }
 

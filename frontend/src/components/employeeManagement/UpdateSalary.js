@@ -19,6 +19,7 @@ export default function UpdateSalary({ data, cl }){
     setLeave(data.leave)
     setDesignation(data.designation)
     setSalary(data.salary)
+    
     },[])
   
   function sendData(e){
@@ -36,7 +37,7 @@ export default function UpdateSalary({ data, cl }){
           
 
     axios
-      .put(`http://localhost:8060/salary/update/${data._id}`,updateSalaries)
+      .put(`http://localhost:8070/salary/update/${data._id}`,updateSalaries)
       .then((response) => {
         alert("Salary Details updated Successfully !");
         window.location.reload(true);
