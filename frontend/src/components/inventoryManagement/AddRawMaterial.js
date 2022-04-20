@@ -95,8 +95,8 @@ export default function AddRawMaterial(){
                         <hr></hr>
 
                         <li class="has-subnav">
-                            <a href="/#">
-                                <i class="fa fa-users" aria-hidden="true"></i>
+                            <a href="/view">
+                                <i class="fa fa-download" aria-hidden="true"></i>
                                 <span class="nav-text">Inventory Report</span>
                                 <i class="fa fa-angle-right"></i>
                             </a>
@@ -124,7 +124,9 @@ export default function AddRawMaterial(){
 
             <div className="form-group">
                 <label for="ItemId" className="form-label">Item Id</label>
-                <input type="text" className="form-control" id="ItemId" placeholder="Enter Item Id" 
+                <input type="text" className="form-control" id="ItemId" placeholder="RXXXX"
+				pattern="[R][0-9]{4}"
+ 
                 onChange={(e)=>{
 
                     setItemId(e.target.value);

@@ -57,6 +57,8 @@ return (
                 type="text"
                 className="form-control"
                 name="ItemId"
+                placeholder="RXXXX"
+							  pattern="[R][0-9]{4}"
                 onChange={(e)=>{
                 setItemId(e.target.value);
             }}

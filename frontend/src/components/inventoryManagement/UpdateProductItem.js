@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 const Host = "http://localhost:8070/ManufacturedItem";
@@ -63,6 +62,8 @@ return (
                 type="text"
                 className="form-control"
                 name="ItemId"
+                placeholder="PXXXX"
+							  pattern="[P][0-9]{4}"
                 onChange={(e)=>{
                 setItemId(e.target.value);
             }}
