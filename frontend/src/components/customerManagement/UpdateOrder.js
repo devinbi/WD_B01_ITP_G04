@@ -120,7 +120,7 @@ return (
             ></input>
           </div>
 
-          <label for="orderStatus">Designation</label>
+          <label for="orderStatus">Order Status</label>
               <select name="orderStatus" id="orderStatus"  
               onChange={(e)=>{
                 setStatus(e.target.value);
@@ -173,7 +173,7 @@ return (
               className="form-control"
               name="OrderDeliveryDate"
               onChange={(e)=>{
-                OrderDeliveryDate(e.target.value);
+                setOrderDeliveryDate(e.target.value);
             }}
               value={OrderDeliveryDate}
             ></input>

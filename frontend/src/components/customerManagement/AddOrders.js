@@ -119,7 +119,7 @@ export default function AddOrders(){
             <div class="mb-3">
                 <label for="OrderId" class="form-label">Order ID</label>
                 <input type="text" class="form-control" id="OrderId" placeholder="Enter Order ID"
-                pattern="[c]{1}[0-9]{4}"
+                pattern="[o]{1}[0-9]{4}"
                  onChange={(e)=> {
                   setOrderId(e.target.value);
                 }}
