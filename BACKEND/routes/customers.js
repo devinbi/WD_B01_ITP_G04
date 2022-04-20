@@ -2,6 +2,7 @@ const router = require("express").Router();
 let Customer = require("../models/customer");
 
 router.route("/add").post((req,res)=>{
+    const CustomerId = req.body.CustomerId;
     const CustomerName = req.body.CustomerName;
     const ContactNumber = Number(req.body.ContactNumber);
     const Email = req.body.Email;
@@ -11,6 +12,7 @@ router.route("/add").post((req,res)=>{
     
     
     const newCustomer = new Customer({
+        CustomerId,
         CustomerName,
         ContactNumber,
         Email,
@@ -43,9 +45,10 @@ router.route("/").get((req,res)=>{
 
 router.route("/update/:id").put(async(req,res) => {
     let userId = req.params.id;
-    const {CustomerName, ContactNumber, Email, Address, Country, NIC } =req.body;
+    const {CustomerId,CustomerName, ContactNumber, Email, Address, Country, NIC } =req.body;
 
     const updateCustomer ={
+        CustomerId,
         CustomerName,
         ContactNumber,
         Email,

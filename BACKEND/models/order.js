@@ -3,6 +3,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const orderSchema = new Schema({
+    OrderId : {
+        type: String,
+        required : true
+    },
+
     TypeOfOrder : {
         type: String,
         required : true

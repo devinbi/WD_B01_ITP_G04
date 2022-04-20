@@ -36,13 +36,85 @@ export default function AddCustomer(){
 
     return(
 
+      <div>
+         <div class="component-body">
+        
+        <div class="area">
+                <nav class="main-menu bg-primary">
+                    <ul>
+                        <li>
+                            <a href="/AllT">
+                                <i class="fa fa-home fa-2x"></i>
+                                <span class="nav-text">Dashboard</span>
+                                <i class="fa fa-angle-right fa-2x"></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/add">
+                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                <span class="nav-text">Add Customer Details </span>
+                                <i class="fa fa-angle-right fa-2x"></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/">
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                                <span class="nav-text">View Customer List</span>
+                                <i class="fa fa-angle-right fa-2x"></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/addO">
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                <span class="nav-text"> Add Order Details</span>
+                                <i class="fa fa-angle-right fa-2x"></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/view">
+                            <i class="fa fa-cart-flatbed"></i>
+                                <span class="nav-text"> View Order Details</span>
+                                <i class="fa fa-angle-right fa-2x"></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        
+                        <li class="has-subnav">
+                            <a href="/Report">
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                                <span class="nav-text">Order Report</span>
+                                <i class="fa fa-angle-right fa-2x"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr></hr>
+                    <ul class="logout">
+                        <li>
+                            <a href="/">
+                                <i class="fa fa-power-off fa-2x"></i>
+                                <span class="nav-text">Logout</span>
+                                <i class="fa fa-angle-right fa-2x"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            </div>
+        
+
      <div className="container">
+       <center><h3>ADD CUSTOMER DETAILS</h3></center>
         <form onSubmit = {sendData}>
 
         <div class="mb-3">
-      CustomerId,
+      
                 <label for="CustomerId" class="form-label">Customer ID</label>
                 <input type="text" class="form-control" id="CustomerId" placeholder="Enter Customer ID Number"
+                pattern="[c]{1}[0-9]{4}"
                 onChange={(e)=> {
                   setId(e.target.value);
                 }}
@@ -63,7 +135,8 @@ export default function AddCustomer(){
               <div class="mb-3">
                 <label for="countactNumber" class="form-label">Contact Number</label>
                 <input type="number" class="form-control" id="contactNumber" placeholder="Enter Customer Contact Number"
-                onChange={(e)=> {
+                pattern="[0-9]{10}"
+                  onChange={(e)=> {
                   setNumber(e.target.value);
                 }}
                 />
@@ -99,7 +172,8 @@ export default function AddCustomer(){
               <div class="mb-3">
                 <label for="nic" class="form-label">NIC Number</label>
                 <input type="text" class="form-control" id="nic" placeholder="Enter Customer NIC Number"
-                onChange={(e)=> {
+                pattern="[0-9]{9}[V]{1}"
+                  onChange={(e)=> {
                   setNic(e.target.value);
                 }}
                 />
@@ -109,6 +183,7 @@ export default function AddCustomer(){
               </div>
            </form>
 
+        </div>
         </div>
     )
 

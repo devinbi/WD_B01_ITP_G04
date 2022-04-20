@@ -2,6 +2,8 @@ const router = require("express").Router();
 let Order = require("../models/order");
 
 router.route("/addO").post((req,res)=>{
+
+    const OrderId = req.body.OrderId;
     const TypeOfOrder = req.body.TypeOfOrder;
     const UnitPrice = Number(req.body.UnitPrice);
     const NoOfUnit = Number(req.body.NoOfUnit);
@@ -12,6 +14,7 @@ router.route("/addO").post((req,res)=>{
     
 
     const newOrder = new Order({
+        OrderId,
         TypeOfOrder,
         UnitPrice,
         NoOfUnit,
@@ -45,9 +48,10 @@ router.route("/view").get((req,res)=>{
 
 router.route("/update/:id").put(async(req,res) => {
     let orderId = req.params.id;
-    const {TypeOfOrder, UnitPrice, NoOfUnit, OrderStatus, OrderDescription, DateOfReceipt, OrderDeliveryDate } = req.body;
+    const {OrderId,TypeOfOrder, UnitPrice, NoOfUnit, OrderStatus, OrderDescription, DateOfReceipt, OrderDeliveryDate } = req.body;
 
     const updateOrder ={
+        OrderId,
         TypeOfOrder,
         UnitPrice,
         NoOfUnit,
