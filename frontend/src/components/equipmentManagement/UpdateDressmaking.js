@@ -48,6 +48,10 @@ export default function UpdateDressmaking({ data, cl }){
   };
 
 return (
+
+
+
+
     <div class="area">
       <div className="container">
         <form onSubmit={sendData}>
@@ -146,6 +150,7 @@ return (
         </form>
       </div>
     </div>
+    
   );
 
 

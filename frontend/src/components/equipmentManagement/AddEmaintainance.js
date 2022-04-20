@@ -36,12 +36,96 @@ export default function AddEmaintainance(){
   }
 
     return(
+
+      <div>
+          <div class="component-body">
+        
+        <div class="area">
+                <nav class="main-menu bg-primary">
+                    <ul>
+                        <li>
+                            <a href="/AllT">
+                                <i class="fa fa-home"></i>
+                                <span class="nav-text">Dashboard</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/addDressmaking">
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                <span class="nav-text">Add Dressmaking</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <li class="has-subnav">
+                            <a href="/AllDressmakings">
+                            <i class="fa fa-file" aria-hidden="true"></i>
+                                <span class="nav-text">View Dressmaking</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/addTechnical">
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                <span class="nav-text">Add Technical</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <li class="has-subnav">
+                            <a href="/AllTechnicals">
+                            <i class="fa fa-file" aria-hidden="true"></i>
+                                <span class="nav-text">View Technical</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/addEmaintainance">
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                <span class="nav-text">Add Maintenance</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+
+                        <li class="has-subnav">
+                            <a href="/AllEmaintainance">
+                               <i class="fa fa-file" aria-hidden="true"></i>
+                                <span class="nav-text">View Maintainance </span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/Report">
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                                <span class="nav-text">Equipment Maintainance Report</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                       
+                    </ul>
+
+                    <ul class="logout">
+                        <li>
+                            <a href="/">
+                                <i class="fa fa-power-off"></i>
+                                <span class="nav-text">Logout</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            </div>
         <div className="container">
         <form onSubmit={sendData}>
 
         <div class="form-group">
           <label for="MaintainanceID">Maintainance ID</label>
-          <input type="text" class="form-control" id="MaintainanceID" onChange={(e)=>{
+          <input type="text" class="form-control" id="MaintainanceID" pattern="[M][0-9]{4}" onChange={(e)=>{
 
                   setmaintainID(e.target.value);
 
@@ -50,7 +134,7 @@ export default function AddEmaintainance(){
 
         <div class="form-group">
           <label for="MachineCode">Device/Machine Code</label>
-          <input type="text" class="form-control" id="MachineCode" onChange={(e)=>{
+          <input type="text" class="form-control" id="MachineCode" pattern="[D,T][0-9]{4}" onChange={(e)=>{
 
              setmachineCode(e.target.value);
 
@@ -108,6 +192,7 @@ export default function AddEmaintainance(){
         <button type="submit" class="btn btn-primary">Submit</button>
        
       </form>
+      </div>
       </div>
     )
 

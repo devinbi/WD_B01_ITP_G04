@@ -1,5 +1,4 @@
-import React from 'react';
-import Header from './components/equipmentManagement/Header';
+import './App.css';
 import AddDressmaking from './components/equipmentManagement/AddDressmaking';
 import AddTechnical from './components/equipmentManagement/AddTechnical';
 import AddEmaintainance from './components/equipmentManagement/AddEmaintainance';
@@ -10,13 +9,15 @@ import AllEmaintainance from './components/equipmentManagement/AllEmaintainance'
 import UpdateDressmaking from './components/equipmentManagement/UpdateDressmaking';
 import UpdateTechnical from './components/equipmentManagement/UpdateTechnical';
 import UpdateEmaintainance from './components/equipmentManagement/UpdateEmaintainance';
+import Report from './components/equipmentManagement/Report';
+import Topheader from './components/equipmentManagement/Topheader';
 
 function App() {
   return ( 
     <div className='container'>
       <Router>
         <div>
-           <Header/>
+            <Topheader></Topheader>
             <Route path='/addDressmaking' exact component = {AddDressmaking} />
             <Route path='/addTechnical' exact component = {AddTechnical} />
             <Route path='/addEmaintainance' exact component = {AddEmaintainance} />
@@ -26,6 +27,7 @@ function App() {
             <Route path='/UpdateDressmaking' exact component = {UpdateDressmaking} />
             <Route path='/UpdateTechnical' exact component = {UpdateTechnical} />
             <Route path='/UpdateEmaintainance' exact component = {UpdateEmaintainance} />
+            <Route path='/Report' exact component = {Report} />
         </div>
     </Router>
     
