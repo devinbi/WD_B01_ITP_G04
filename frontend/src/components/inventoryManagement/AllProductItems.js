@@ -5,7 +5,6 @@ import UpdateProductItem from "./UpdateProductItem";
 import { Modal } from "react-bootstrap";
 
 
-
 export default function AllProductItems(props){
 
     const [ProductItems, setProductItem] = useState([]);
@@ -30,8 +29,6 @@ export default function AllProductItems(props){
             })
         
     },[])
-    
-
 
     function onDelete() {
         axios.delete( "http://localhost:8070/ManufacturedItem/delete/"+ ProductItemDelete)
@@ -41,7 +38,7 @@ export default function AllProductItems(props){
                 window.location.reload(true)//reload page
 
             }).catch(() => {
-                alert('error while deleting Transport Detail')
+                alert('error while deleting manufactured item details')
             })
 
     }
@@ -50,7 +47,99 @@ export default function AllProductItems(props){
     return(
 
         <div>
+        <div class="component-body">
+        
+        <div class="area">
+                <nav class="main-menu bg-primary">
+                    <ul>
+                        <li>
+                            <a href="/#">
+                                <i class="fa fa-home"></i>
+                                <span class="nav-text">Dashboard</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
 
+                        <hr></hr>
+
+                        <li class="has-subnav">
+                            <a href="/adding">
+                                <i class="fa fa-plus-circle"></i>
+                                <span class="nav-text">Add Raw Materials</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+
+                        <hr></hr>
+
+                        <li class="has-subnav">
+                            <a href="/">
+                            <i class="fa fa-cubes fa-2x" aria-hidden="true"></i>
+                                <span class="nav-text">Manage Raw Materials</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+
+                        <hr></hr>
+
+                        <li class="has-subnav">
+                            <a href="/add">
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                <span class="nav-text">Add Product Item</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+
+                        <hr></hr>
+
+                        <li class="has-subnav">
+                            <a href="/fetch">
+                            <i class="fa fa-shirt"></i>
+                                <span class="nav-text">Manage Product Items</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        
+                        <hr></hr>
+
+                        <li class="has-subnav">
+                            <a href="/#">
+                            <i class="fa fa-box-open"></i>
+                                <span class="nav-text">Out of Stock</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+
+                        <hr></hr>
+
+                        <li class="has-subnav">
+                            <a href="/#">
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                                <span class="nav-text">Inventory Report</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+
+                        <hr></hr>
+                        
+                    </ul>
+
+                    <ul class="logout">
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-power-off"></i>
+                                <span class="nav-text">Logout</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            </div>
+
+        <div>
+
+            <div class="container">
             <div class="container-fluid">
             <MaterialTable  style={{background:"#E3ECFF"}}
                         title="All Product Item Details"
@@ -114,6 +203,8 @@ export default function AllProductItems(props){
                 </Modal>
 
             </div>
+        </div>
+        </div>
         </div>
     )
 }

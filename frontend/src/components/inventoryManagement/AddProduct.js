@@ -33,6 +33,100 @@ export default function AddProduct(){
         })
     }
     return(
+
+        <div>
+        <div class="component-body">
+        
+        <div class="area">
+                <nav class="main-menu bg-primary">
+                    <ul>
+                        <li>
+                            <a href="/#">
+                                <i class="fa fa-home"></i>
+                                <span class="nav-text">Dashboard</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+
+                        <hr></hr>
+
+                        <li class="has-subnav">
+                            <a href="/adding">
+                                <i class="fa fa-plus-circle"></i>
+                                <span class="nav-text">Add Raw Materials</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+
+                        <hr></hr>
+
+                        <li class="has-subnav">
+                            <a href="/">
+                            <i class="fa fa-cubes fa-2x" aria-hidden="true"></i>
+                                <span class="nav-text">Manage Raw Materials</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+
+                        <hr></hr>
+
+                        <li class="has-subnav">
+                            <a href="/add">
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                <span class="nav-text">Add Product Item</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+
+                        <hr></hr>
+
+                        <li class="has-subnav">
+                            <a href="/fetch">
+                            <i class="fa fa-shirt"></i>
+                                <span class="nav-text">Manage Product Items</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        
+                        <hr></hr>
+
+                        <li class="has-subnav">
+                            <a href="/#">
+                            <i class="fa fa-box-open"></i>
+                                <span class="nav-text">Out of Stock</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+
+                        <hr></hr>
+
+                        <li class="has-subnav">
+                            <a href="/#">
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                                <span class="nav-text">Inventory Report</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+
+                        <hr></hr>
+                        
+                    </ul>
+
+                    <ul class="logout">
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-power-off"></i>
+                                <span class="nav-text">Logout</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            </div>
+           
+
+        
         <div className='container'>
             <form onSubmit={sendData}>
 
@@ -94,7 +188,7 @@ export default function AddProduct(){
                     setSize(e.target.value);
 
                 }}>
-                    <option selected>Select Item Type</option>
+                    <option selected>Select Size</option>
                     <option value="S">Small</option>
                     <option value="L">Large</option>
                     <option value="XL">XL</option>
@@ -106,8 +200,11 @@ export default function AddProduct(){
                 </select>
             </div>
             
+                <br></br>
                 <button type="submit" className="btn btn-primary">Add</button>
                 </form>
         </div>
+        </div>
     )
+
 }
