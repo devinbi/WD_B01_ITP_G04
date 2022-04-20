@@ -5,6 +5,12 @@ import AllEmployee from './components/employeeManagement/AllEmployee';
 import AddSalary from './components/employeeManagement/AddSalary';
 import Headers from "./components/employeeManagement/Headers";
 import AllSalary from './components/employeeManagement/AllSalary';
+import UpdateEmployee from './components/employeeManagement/UpdateEmployee';
+import UpdateSalary from './components/employeeManagement/UpdateSalary';
+import ViewEmployee from './components/employeeManagement/ViewEmployee';
+import ViewSalary from './components/employeeManagement/ViewSalary';
+import Report from './components/employeeManagement/Report';
+import TopHeader from './components/employeeManagement/topHeader';
 import {BrowserRouter, Route} from "react-router-dom";
 
 
