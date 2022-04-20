@@ -33,7 +33,7 @@ export default function AllSalary(props){
         axios.delete( "http://localhost:8070/salary/delete/"+ SalaryDelete)
             .then((res) => {
                 console.log(res)
-                alert('Transport detail deleted')
+                alert('Salary detail deleted')
                 window.location.reload(true)//reload page
 
             }).catch(() => {

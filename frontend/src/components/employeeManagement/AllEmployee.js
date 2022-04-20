@@ -9,7 +9,7 @@ export default function AllEmployee(props){
 
 
     const [StateUpdate, setStateUpdate] = useState(false)
-    const [SalaryEmployee, setEmployeeUpdate] = useState()
+    const [EmployeeUpdate, setEmployeeUpdate] = useState()
 
     const [StateDelete, setStateDelete] = useState(false)
     const [EmployeeDelete, setEmployeeDelete] = useState()
@@ -17,7 +17,7 @@ export default function AllEmployee(props){
     useEffect(()=>{
         
         
-            axios.get('http://localhost:8060/employee/')
+            axios.get('http://localhost:8070/employee/')
             .then((res) =>{
                 console.log(res.data);
                 setEmp(res.data);
@@ -29,10 +29,10 @@ export default function AllEmployee(props){
     },[])
 
     function onDelete() {
-        axios.delete("http://localhost:8060/employee/delete/"+ EmployeeDelete)
+        axios.delete("http://localhost:8070/employee/delete/"+ EmployeeDelete)
             .then((res) => {
                 console.log(res)
-                alert('Transport detail deleted')
+                alert('Employee detail deleted')
                 window.location.reload(true)//reload page
 
             }).catch(() => {
@@ -92,7 +92,7 @@ export default function AllEmployee(props){
                     {/* update modal */}
                     <Modal show={StateUpdate}>
                     <Modal.Body>
-                        <UpdateEmployee data={SalaryEmployee} cl={() => setStateUpdate(false)} />
+                        <UpdateEmployee data={EmployeeUpdate} cl={() => setStateUpdate(false)} />
                     </Modal.Body>
                 </Modal>
                 
