@@ -45,6 +45,77 @@ export default function Viewincomes(props){
     return(
 
         <div>
+        <div class="component-body">
+          
+        <div class="area">
+                <nav class="main-menu bg-primary">
+                    <ul>
+                        <li>
+                            <a href="/AllT">
+                                <i class="fa fa-home "></i>
+                                <span class="nav-text">Dashboard</span>
+                                <i class="fa fa-angle-right fa-2x"></i>
+                            </a>
+                        </li>
+                        
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/addi">
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                <span class="nav-text">Add Income </span>
+                                <i class="fa fa-angle-right fa-2x"></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/adde">
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                <span class="nav-text">Add Expense</span>
+                                <i class="fa fa-angle-right fa-2x"></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/viewi">
+                            <i class="fa fa-usd" aria-hidden="true"></i>
+                                <span class="nav-text">View Income</span>
+                                <i class="fa fa-angle-right fa-2x"></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/viewe">
+                            <i class="fa fa-line-chart" aria-hidden="true"></i>
+                                <span class="nav-text">View Expense</span>
+                                <i class="fa fa-angle-right fa-2x"></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/rep">
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                                <span class="nav-text">Generate Report</span>
+                                <i class="fa fa-angle-right fa-2x"></i>
+                            </a>
+                        </li>
+                    </ul>
+  
+                    <ul class="logout">
+                        <li>
+                            <a href="/">
+                                <i class="fa fa-power-off "></i>
+                                <span class="nav-text">Logout</span>
+                                <i class="fa fa-angle-right fa-2x"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            </div>
+       
+     
+
+        <div class="container">
         <div class="container-fluid">
         <MaterialTable  style={{background:"#E3ECFF"}}
                     title="All Income Details "
@@ -62,8 +133,9 @@ export default function Viewincomes(props){
                     options={{
                         sorting: true,
                         search:false,
-                        paging :false,
-                        filtering : true
+                        
+                        filtering : true,
+                        actionsColumnIndex:-1
                         
 
                     }}
@@ -103,6 +175,7 @@ export default function Viewincomes(props){
                         <button type="button" class="btn btn-outline-secondary pl-3" onClick={() => setStateDelete(false)}>Cancel</button>
                     </Modal.Body>
                 </Modal>
+        </div>
         </div>
         </div>
         

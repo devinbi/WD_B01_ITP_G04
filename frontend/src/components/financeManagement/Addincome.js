@@ -27,6 +27,7 @@ import axios from 'axios';
   console.log(newIncome)
       axios.post("http://localhost:8070/incomingfinance/add",newIncome).then(()=>{
           alert("Success");
+          window.location.reload()
     
       }).catch((err)=>{
           alert(err);
@@ -34,52 +35,124 @@ import axios from 'axios';
    
   }
     return(
+
+      <div>
+      <div class="component-body">
+        
+      <div class="area">
+              <nav class="main-menu bg-primary">
+                  <ul>
+                      <li>
+                          <a href="/AllT">
+                              <i class="fa fa-home "></i>
+                              <span class="nav-text">Dashboard</span>
+                              <i class="fa fa-angle-right fa-2x"></i>
+                          </a>
+                      </li>
+                      
+                      <hr></hr>
+                      <li class="has-subnav">
+                          <a href="/addi">
+                          <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                              <span class="nav-text">Add Income </span>
+                              <i class="fa fa-angle-right fa-2x"></i>
+                          </a>
+                      </li>
+                      <hr></hr>
+                      <li class="has-subnav">
+                          <a href="/adde">
+                          <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                              <span class="nav-text">Add Expense</span>
+                              <i class="fa fa-angle-right fa-2x"></i>
+                          </a>
+                      </li>
+                      <hr></hr>
+                      <li class="has-subnav">
+                          <a href="/viewi">
+                          <i class="fa fa-usd" aria-hidden="true"></i>
+                              <span class="nav-text">View Income</span>
+                              <i class="fa fa-angle-right fa-2x"></i>
+                          </a>
+                      </li>
+                      <hr></hr>
+                      <li class="has-subnav">
+                          <a href="/viewe">
+                          <i class="fa fa-line-chart" aria-hidden="true"></i>
+                              <span class="nav-text">View Expense</span>
+                              <i class="fa fa-angle-right fa-2x"></i>
+                          </a>
+                      </li>
+                      <hr></hr>
+                      <li class="has-subnav">
+                          <a href="/rep">
+                          <i class="fa fa-download" aria-hidden="true"></i>
+                              <span class="nav-text">Generate Report</span>
+                              <i class="fa fa-angle-right fa-2x"></i>
+                          </a>
+                      </li>
+                  </ul>
+
+                  <ul class="logout">
+                      <li>
+                          <a href="/">
+                              <i class="fa fa-power-off "></i>
+                              <span class="nav-text">Logout</span>
+                              <i class="fa fa-angle-right fa-2x"></i>
+                          </a>
+                      </li>
+                  </ul>
+              </nav>
+          </div>
+          </div>
      <div>
-    <form onSubmit={sendData}>
-     <label  for="orderid">Order Id:</label>
-     <input id="orderid" className="input-text js-input" type="text"  required
-       onChange={(r)=>{
 
-    setOrderid(r.target.value);
-      }
-      }
-      /><br/>
-     <label  for="ordertype">Order Type:</label>
-     <input id="ordertype" className="input-text js-input" type="text" required
-       onChange={(r)=>{
+     <div className="container">
+                    <form onSubmit={sendData}>
+                    <div class="form-group">
+                            <label for="orderid">Order ID :</label>
+                            <input type="text" class="form-control" id="orderid"  placeholder="Enter "
+                            onChange={(e)=>{
+                                setOrderid(e.target.value);
+                            }}/>
+                        
+                        </div>
+                        <div className="form-group">
+                            <label for="ordertype">Order Type:</label>
+                            <input type="text" class="form-control" id="ordertype"  placeholder="Enter" onChange={(e)=>{
+                                setOrdertype(e.target.value);
+                            }}/>
+                        
+                        </div>
 
-      setOrdertype(r.target.value);
-      }
-      }
-     /><br/>
-     <label for="numberofunits">Number of units:</label>
-     <textarea id="numberofunits" name="address" rows="4" cols="50" 
-            onChange={(r)=>{
+                        <div className="form-group">
+                            <label for="numberofunits">Number of units</label>
+                            <input type="text" class="form-control" id="numberofunits" onChange={(e)=>{
+                                setNumberofunits(e.target.value);
+                            }}/>
+                        </div>
 
-      setNumberofunits(r.target.value);
-}     
-}
-/><br/>
-<label  for="unitprice">Unit Price:</label>
-<input id="unitprice" className="input-text js-input" type="text" required
- onChange={(r)=>{
-
-setUnitprice(r.target.value);
-}
-}
-     /><br/>
-     <label  for="totalamount">Total Amount:</label>
-     <input id="totalamount" className="input-text js-input" type="text" required
-      onChange={(r)=>{
-
- setTotalamount(r.target.value);
-}
-}
-     />
-     <br/>
-     <input type="submit"/>
-     </form>
-     </div>
+                        <div class="form-group">
+                            <label for="unitprice">Unit Price :</label>
+                            <input type="text" class="form-control" id="unitprice" 
+                            onChange={(e)=>{
+                                setUnitprice(e.target.value);
+                            }}/>
+                        </div>
+                        <div class="form-group">
+                            <label for="totalamount">Total Amount:</label>
+                            <input type="text" class="form-control" id="totalamount" 
+                            onChange={(e)=>{
+                                setTotalamount(e.target.value);
+                            }}/>
+                        </div>
+            
+                    <button type="submit" class="btn btn-info btn-lg">Submit</button>
+                    </form>
+                </div>
+                </div>
+                </div>
     )
-}
+                        }
+  
+  
 
