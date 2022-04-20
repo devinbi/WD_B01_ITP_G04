@@ -132,7 +132,8 @@ export default function AddMaintenance(){
                     <form onSubmit={sendData}>
                     <div class="form-group">
                             <label for="tid">Maintenance ID :</label>
-                            <input type="text" class="form-control" id="vid"  placeholder="Enter "
+                            <input type="text" class="form-control" id="vid" placeholder="M-XXXX"
+							pattern="[M][0-9]{4}"
                             onChange={(e)=>{
                                 setMid(e.target.value);
                             }}/>
@@ -140,7 +141,9 @@ export default function AddMaintenance(){
                         </div>
                         <div className="form-group">
                             <label for="vid">Vehicle Registration No :</label>
-                            <input type="text" class="form-control" id="vid"  placeholder="Enter" onChange={(e)=>{
+                            <input type="text" class="form-control" id="vid"  placeholder="CL-XXXX or CLA-XXXX"
+							pattern="[A-Z0-9]{2,3}[-][0-9]{4}"
+							title="Vehicle registraion number should be CL-XXXX / CLA-XXXX" onChange={(e)=>{
                                 setVid(e.target.value);
                             }}/>
                         

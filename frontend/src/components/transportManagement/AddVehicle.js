@@ -129,7 +129,9 @@ export default function AddVehicle(){
             <form onSubmit={sendData}>
                <div class="form-group">
                     <label for="vid">Vehicle ID :</label>
-                    <input type="text" class="form-control" id="vid"  placeholder="Enter "
+                    <input type="text" class="form-control" id="vid"  placeholder="VXXXX"
+							pattern="[V][0-9]{4}"
+							title="Vehicle ID should be VXXXX"
                     onChange={(e)=>{
                         setVid(e.target.value);
                     }}/>
@@ -137,7 +139,9 @@ export default function AddVehicle(){
                 </div>
                 <div className="form-group">
                     <label for="vrid">Vehicle Registration No :</label>
-                    <input type="text" class="form-control" id="vrid"  placeholder="Enter" onChange={(e)=>{
+                    <input type="text" class="form-control" id="vrid"  placeholder="CL-XXXX or CLA-XXXX"
+							pattern="[A-Z0-9]{2,3}[-][0-9]{4}"
+							title="Vehicle registraion number should be CL-XXXX / CLA-XXXX" onChange={(e)=>{
                         setVrid(e.target.value);
                     }}/>
                    

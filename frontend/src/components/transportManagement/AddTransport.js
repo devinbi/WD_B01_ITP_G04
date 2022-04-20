@@ -134,7 +134,8 @@ export default function AddTransport(){
             <form onSubmit={sendData}>
                <div class="form-group">
                     <label for="tid">Transport ID :</label>
-                    <input type="text" class="form-control" id="vid"  placeholder="Enter "
+                    <input type="text" class="form-control" id="vid" placeholder="T-XXXX"
+							pattern="[T][0-9]{4}" title="Transport ID should be T-XXXX"
                     onChange={(e)=>{
                         setTid(e.target.value);
                     }}/>
@@ -142,7 +143,9 @@ export default function AddTransport(){
                 </div>
                 <div className="form-group">
                     <label for="vid">Vehicle Registration No :</label>
-                    <input type="text" class="form-control" id="vid"  placeholder="Enter" onChange={(e)=>{
+                    <input type="text" class="form-control" id="vid"  placeholder="CL-XXXX or CLA-XXXX"
+							pattern="[A-Z0-9]{2,3}[-][0-9]{4}"
+							title="Vehicle registraion number should be CL-XXXX / CLA-XXXX" onChange={(e)=>{
                         setVid(e.target.value);
                     }}/>
                    
