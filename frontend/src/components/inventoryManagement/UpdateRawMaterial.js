@@ -50,15 +50,14 @@ return (
 
 
           <div className="mb-3">
-            <label for="ItemId" className="form-label">
-                Item Id :
-            </label>
+            <label for="ItemId" className="form-label">Item Id</label>
             <input
                 type="text"
                 className="form-control"
                 name="ItemId"
                 placeholder="RXXXX"
 							  pattern="[R][0-9]{4}"
+                required
                 onChange={(e)=>{
                 setItemId(e.target.value);
             }}
@@ -69,13 +68,12 @@ return (
 
 
           <div className="mb-3">
-            <label for="ItemName" className="form-label">
-                Item Name:
-            </label>
+            <label for="ItemName" className="form-label">Item Name</label>
             <input
                 type="text"
                 className="form-control"
                 name="ItemName"
+                required
                 onChange={(e)=>{
                 setItemName(e.target.value);
             }}
@@ -85,13 +83,12 @@ return (
 
 
           <div className="mb-3">
-            <label for="Quantity" className="form-label">
-                Quantity
-            </label>
+            <label for="Quantity" className="form-label">Quantity</label>
             <input
                 type="text"
                 className="form-control"
                 name="Quantity"
+                required
                 onChange={(e)=>{
                 setQuantity(e.target.value);
             }}
@@ -102,8 +99,10 @@ return (
 
           <div className="mb-3">
           <label for="ItemType">Item Type</label>
-
-          <select name="ItemType" id="ItemType"  
+          <select 
+            name="ItemType"
+            id="ItemType"
+            required  
             onChange={(e)=>{
 
             setItemType(e.target.value);
@@ -112,7 +111,7 @@ return (
 
             value={ItemType} > 
 
-                <option selected>Select Item Type</option>
+                <option selected disabled value="">Select Item Type</option>
                 <option value="Fabric">Fabric</option>
                 <option value="Trims">Trims</option>
                 <option value="Accessories">Accessories</option>

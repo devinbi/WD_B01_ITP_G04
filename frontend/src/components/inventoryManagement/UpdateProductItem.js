@@ -55,15 +55,14 @@ return (
 
 
           <div className="mb-3">
-            <label for="ItemId" className="form-label">
-                Item Id :
-            </label>
+            <label for="ItemId" className="form-label">Item Id</label>
             <input
                 type="text"
                 className="form-control"
                 name="ItemId"
                 placeholder="PXXXX"
 							  pattern="[P][0-9]{4}"
+                required
                 onChange={(e)=>{
                 setItemId(e.target.value);
             }}
@@ -74,13 +73,12 @@ return (
 
 
           <div className="mb-3">
-            <label for="ItemName" className="form-label">
-                Item Name:
-            </label>
+            <label for="ItemName" className="form-label">Item Name</label>
             <input
                 type="text"
                 className="form-control"
                 name="ItemName"
+                required
                 onChange={(e)=>{
                 setItemName(e.target.value);
             }}
@@ -90,13 +88,12 @@ return (
 
 
           <div className="mb-3">
-            <label for="Quantity" className="form-label">
-                Quantity
-            </label>
+            <label for="Quantity" className="form-label">Quantity</label>
             <input
                 type="number"
                 className="form-control"
                 name="Quantity"
+                required
                 onChange={(e)=>{
                 setQuantity(e.target.value);
             }}
@@ -106,13 +103,12 @@ return (
          
 
           <div className="mb-3">
-            <label for="Material" className="form-label">
-                Material
-            </label>
+            <label for="Material" className="form-label">Material</label>
             <input
                 type="text"
                 className="form-control"
                 name="Material"
+                required
                 onChange={(e)=>{
                 setMaterial(e.target.value);
             }}
@@ -121,13 +117,12 @@ return (
           </div>
 
           <div className="mb-3">
-            <label for="Colour" className="form-label">
-                Colour
-            </label>
+            <label for="Colour" className="form-label">Colour</label>
             <input
                 type="text"
                 className="form-control"
                 name="Colour"
+                required
                 onChange={(e)=>{
                 setColour(e.target.value);
             }}
@@ -139,8 +134,10 @@ return (
 
           <div className="mb-3">
           <label for="Size">Size</label>
-
-          <select name="Size" id="Size"  
+          <select 
+            name="Size"
+            id="Size"
+            required  
             onChange={(e)=>{
 
             setSize(e.target.value);
@@ -149,7 +146,7 @@ return (
 
             value={Size} > 
 
-                <option selected>Select Size</option>
+                <option selected disabled value="">Select Size</option>
                 <option value="S">Small</option>
                 <option value="L">Large</option>
                 <option value="XL">XL</option>

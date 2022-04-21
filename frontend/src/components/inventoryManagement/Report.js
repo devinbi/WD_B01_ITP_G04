@@ -41,154 +41,153 @@ export default  function Report(){
     return(
        
         <div>
-        <div class="component-body">
-        
-        <div class="area">
-                <nav class="main-menu bg-primary">
-                    <ul>
-                        <li>
-                            <a href="/#">
-                                <i class="fa fa-home"></i>
-                                <span class="nav-text">Dashboard</span>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
+            <div class="component-body"> 
+                <div class="area">
+                    <nav class="main-menu bg-primary">
+                        <ul>
+                            <li>
+                                <a href="/#">
+                                    <i class="fa fa-home"></i>
+                                    <span class="nav-text">Dashboard</span>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </li>
 
-                        <hr></hr>
+                            <hr></hr>
 
-                        <li class="has-subnav">
-                            <a href="/adding">
-                                <i class="fa fa-plus-circle"></i>
-                                <span class="nav-text">Add Raw Materials</span>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
+                            <li class="has-subnav">
+                                <a href="/adding">
+                                    <i class="fa fa-plus-circle"></i>
+                                    <span class="nav-text">Add Raw Materials</span>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </li>
 
-                        <hr></hr>
+                            <hr></hr>
 
-                        <li class="has-subnav">
-                            <a href="/">
-                            <i class="fa fa-cubes fa-2x" aria-hidden="true"></i>
-                                <span class="nav-text">Manage Raw Materials</span>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
+                            <li class="has-subnav">
+                                <a href="/">
+                                <i class="fa fa-cubes fa-2x" aria-hidden="true"></i>
+                                    <span class="nav-text">Manage Raw Materials</span>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </li>
 
-                        <hr></hr>
+                            <hr></hr>
 
-                        <li class="has-subnav">
-                            <a href="/add">
-                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                <span class="nav-text">Add Product Item</span>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
+                            <li class="has-subnav">
+                                <a href="/add">
+                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                    <span class="nav-text">Add Product Item</span>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </li>
 
-                        <hr></hr>
+                            <hr></hr>
 
-                        <li class="has-subnav">
-                            <a href="/fetch">
-                            <i class="fa fa-shirt"></i>
-                                <span class="nav-text">Manage Product Items</span>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                        
-                        <hr></hr>
+                            <li class="has-subnav">
+                                <a href="/fetch">
+                                <i class="fa fa-shirt"></i>
+                                    <span class="nav-text">Manage Product Items</span>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </li>
+                            
+                            <hr></hr>
 
-                        <li class="has-subnav">
-                            <a href="/#">
-                            <i class="fa fa-box-open"></i>
-                                <span class="nav-text">Out of Stock</span>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
+                            <li class="has-subnav">
+                                <a href="/#">
+                                <i class="fa fa-box-open"></i>
+                                    <span class="nav-text">Out of Stock</span>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </li>
 
-                        <hr></hr>
+                            <hr></hr>
 
-                        <li class="has-subnav">
-                            <a href="/view">
-                                <i class="fa fa-download" aria-hidden="true"></i>
-                                <span class="nav-text">Inventory Report</span>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
+                            <li class="has-subnav">
+                                <a href="/view">
+                                    <i class="fa fa-download" aria-hidden="true"></i>
+                                    <span class="nav-text">Inventory Report</span>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </li>
 
-                        <hr></hr>
-                        
-                    </ul>
+                            <hr></hr>
+                            
+                        </ul>
 
-                    <ul class="logout">
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-power-off"></i>
-                                <span class="nav-text">Logout</span>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+                        <ul class="logout">
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-power-off"></i>
+                                    <span class="nav-text">Logout</span>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
 
             <div>
-            <div className="container">
-            <div className="container-fluid">
+                <div className="container">
+                    <div className="container-fluid">
+                        <MaterialTable 
+                            style={{background:"#E3ECFF"}}
+                            title="Raw Material Details Report"
 
-                <MaterialTable style={{background:"#E3ECFF"}}
-                    title="Raw Material Details Report"
+                            columns={[
+                                { title: "Item Id", field: "ItemId", type: "string" },
+                                { title: "Item Name", field: "ItemName", type: "string" },
+                                { title: "Quantity", field: "Quantity", type: "string" },
+                                { title: "Item Type", field: "ItemType", type: "string" },
 
-                    columns={[
-                        { title: "Item Id", field: "ItemId", type: "string" },
-                        { title: "Item Name", field: "ItemName", type: "string" },
-                        { title: "Quantity", field: "Quantity", type: "string" },
-                        { title: "Item Type", field: "ItemType", type: "string" },
+                            ]}
 
-                    ]}
+                            data={RawMaterial}
+                            options={{
+                                sorting: true,
+                                actionsColumnIndex: -1,
+                                exportButton: {
+                                    csv: true,
+                                    pdf: true,
+                                }
 
-                    data={RawMaterial}
-                    options={{
-                        sorting: true,
-                        actionsColumnIndex: -1,
-                        exportButton: {
-                            csv: true,
-                            pdf: true,
-                         }
+                            }}
+            
+                         />
+                    </div>
 
-                    }}
-      
-                 />
+
+                    <div className="container-fluid">
+                        <MaterialTable 
+                            style={{background:"#E3ECFF"}}
+                            title=" Product Item Details Report"
+                            columns={[
+                                { title: "Item Id", field: "ItemId", type: "string" },
+                                { title: "Item Name", field: "ItemName", type: "string" },
+                                { title: "Quantity", field: "Quantity", type: "number" },
+                                { title: "Material", field: "Material", type: "string" },
+                                { title: "Colour", field: "Colour", type: "string" },
+                                { title: "Size", field: "Size", type: "string" }
+                            ]}
+
+                            data={ManufacturedItem}
+                            options={{
+                                sorting: true,
+                                actionsColumnIndex: -1,
+                                exportButton: {
+                                    csv: true,
+                                    pdf: true,
+                                }
+
+                            }}
+                        />
+                    </div>
+
                 </div>
-
-
-            <div className="container-fluid">
-                <MaterialTable style={{background:"#E3ECFF"}}
-                    title=" Product Item Details Report"
-
-                    columns={[
-                        { title: "Item Id", field: "ItemId", type: "string" },
-                        { title: "Item Name", field: "ItemName", type: "string" },
-                        { title: "Quantity", field: "Quantity", type: "number" },
-                        { title: "Material", field: "Material", type: "string" },
-                        { title: "Colour", field: "Colour", type: "string" },
-                        { title: "Size", field: "Size", type: "string" }
-                    ]}
-
-                    data={ManufacturedItem}
-                    options={{
-                        sorting: true,
-                        actionsColumnIndex: -1,
-                        exportButton: {
-                            csv: true,
-                            pdf: true,
-                         }
-
-                    }}
-                />
             </div>
-
-        </div>
-        </div>
         </div>
 
     )
