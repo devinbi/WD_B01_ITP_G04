@@ -49,14 +49,14 @@ export default function AddVehicle(){
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
-                            <a href="/add">
+                            <a href="/vadd">
                                 <i class="fa fa-plus-circle"></i>
                                 <span class="nav-text">Add Vehicle</span>
                                 <i class="fa fa-angle-right "></i>
                             </a>
                         </li>
                         <li class="has-subnav">
-                            <a href="/view">
+                            <a href="/vview">
                              <i class="fa fa-truck " ></i>
                                 <span class="nav-text">Vehicle List</span>
                                 <i class="fa fa-angle-right "></i>
@@ -65,14 +65,14 @@ export default function AddVehicle(){
                        
                         <hr></hr>
                         <li class="has-subnav">
-                            <a href="/vadd">
+                            <a href="/add">
                             <i class="fa fa-plus-circle" aria-hidden="true"></i>
                                 <span class="nav-text">Add Transort Detials</span>
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
                         <li class="has-subnav">
-                            <a href="/vview">
+                            <a href="/view">
                             <i class="fa fa-file-text-o" aria-hidden="true"></i>
                                 <span class="nav-text">View Transport Details</span>
                                 <i class="fa fa-angle-right "></i>
@@ -134,7 +134,9 @@ export default function AddVehicle(){
 							title="Vehicle ID should be VXXXX"
                     onChange={(e)=>{
                         setVid(e.target.value);
-                    }}/>
+                    }}
+                    required
+                    />
                    
                 </div>
                 <div className="form-group">
@@ -143,7 +145,9 @@ export default function AddVehicle(){
 							pattern="[A-Z0-9]{2,3}[-][0-9]{4}"
 							title="Vehicle registraion number should be CL-XXXX / CLA-XXXX" onChange={(e)=>{
                         setVrid(e.target.value);
-                    }}/>
+                    }}
+                    required
+                    />
                    
                 </div>
 
@@ -151,14 +155,18 @@ export default function AddVehicle(){
                     <label for="date">Date :</label>
                     <input type="date" class="form-control" id="date" onChange={(e)=>{
                         setDate(e.target.value);
-                    }}/>
+                    }}
+                    required
+                    />
                 </div>
 
                 <div class="form-group">
                     <label for="inputState">Vehicle Type :</label>
                     <select id="type" class="form-control" onChange={(e)=>{
                         setType(e.target.value);
-                    }}>
+                    }}
+                    required
+                    >
                         <option  selected>choose..</option>
                         <option value="Van">Van</option>
                         <option value="Bus">Bus</option>
@@ -179,7 +187,9 @@ export default function AddVehicle(){
                     <input type="text" class="form-control" id="brand" 
                     onChange={(e)=>{
                         setBrand(e.target.value);
-                    }}/>
+                    }}
+                    required
+                    />
                 </div>
 
                 <div class="form-group">

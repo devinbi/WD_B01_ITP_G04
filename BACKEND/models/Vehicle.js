@@ -3,13 +3,15 @@ const Schema =mongoose.Schema;
 const vehicleSchema = new Schema({
     Vehicle_ID :{
         type : String,
-        required : true
+        required : true,
+        unique : true
     },
 
 
     Vehicle_Registration_No :{
         type : String,
-        required : true
+        required : true,
+        unique : true
     },
 
     Date :{

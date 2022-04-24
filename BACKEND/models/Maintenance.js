@@ -4,7 +4,8 @@ const maintenanceSchema = new Schema({
 
     Maintenance_ID :{
         type : String,
-        required : true
+        required : true,
+        unique : true
     },
 
     Vehicle_Registration_No :{

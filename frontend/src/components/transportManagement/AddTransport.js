@@ -54,14 +54,14 @@ export default function AddTransport(){
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
-                            <a href="/add">
+                            <a href="/vadd">
                                 <i class="fa fa-plus-circle"></i>
                                 <span class="nav-text">Add Vehicle</span>
                                 <i class="fa fa-angle-right "></i>
                             </a>
                         </li>
                         <li class="has-subnav">
-                            <a href="/view">
+                            <a href="/vview">
                              <i class="fa fa-truck " ></i>
                                 <span class="nav-text">Vehicle List</span>
                                 <i class="fa fa-angle-right "></i>
@@ -70,14 +70,14 @@ export default function AddTransport(){
                        
                         <hr></hr>
                         <li class="has-subnav">
-                            <a href="/vadd">
+                            <a href="/add">
                             <i class="fa fa-plus-circle" aria-hidden="true"></i>
                                 <span class="nav-text">Add Transort Detials</span>
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
                         <li class="has-subnav">
-                            <a href="/vview">
+                            <a href="/view">
                             <i class="fa fa-file-text-o" aria-hidden="true"></i>
                                 <span class="nav-text">View Transport Details</span>
                                 <i class="fa fa-angle-right "></i>
@@ -134,11 +134,13 @@ export default function AddTransport(){
             <form onSubmit={sendData}>
                <div class="form-group">
                     <label for="tid">Transport ID :</label>
-                    <input type="text" class="form-control" id="vid" placeholder="T-XXXX"
-							pattern="[T][0-9]{4}" title="Transport ID should be T-XXXX"
+                    <input type="text" class="form-control" id="vid" placeholder="TXXXX"
+							pattern="[T][0-9]{4}" title="Transport ID should be TXXXX"
                     onChange={(e)=>{
                         setTid(e.target.value);
-                    }}/>
+                    }}
+                    required
+                    />
                    
                 </div>
                 <div className="form-group">
@@ -147,7 +149,9 @@ export default function AddTransport(){
 							pattern="[A-Z0-9]{2,3}[-][0-9]{4}"
 							title="Vehicle registraion number should be CL-XXXX / CLA-XXXX" onChange={(e)=>{
                         setVid(e.target.value);
-                    }}/>
+                    }}
+                    required
+                    />
                    
                 </div>
 
@@ -155,7 +159,9 @@ export default function AddTransport(){
                     <label for="date">Date :</label>
                     <input type="date" class="form-control" id="date" onChange={(e)=>{
                         setDate(e.target.value);
-                    }}/>
+                    }}
+                    required
+                    />
                 </div>
 
                  <div class="form-group">
@@ -163,7 +169,9 @@ export default function AddTransport(){
                     <input type="text" class="form-control" id="name"
                     onChange={(e)=>{
                         setName(e.target.value);
-                    }} />
+                    }}
+                    required
+                    />
                 </div>
 
                 <div class="form-group">
@@ -171,13 +179,17 @@ export default function AddTransport(){
                     <input type="text" class="form-control" id="description" 
                     onChange={(e)=>{
                         setDescription(e.target.value);
-                    }}/>
+                    }}
+                    required
+                    />
                 </div>
                 <div class="form-group">
                     <label for="inputState">Status :</label>
                     <select id="status" class="form-control" onChange={(e)=>{
                         setStatus(e.target.value);
-                    }}>
+                    }}
+                    required
+                    >
                         <option  selected>choose..</option>
                         <option value="pending">Pending</option>
                         <option value="completed">Completed</option>

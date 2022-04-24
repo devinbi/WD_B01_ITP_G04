@@ -1,6 +1,6 @@
 const router =require("express").Router();
 const { request } = require("express");
-let Vehicle = require("../MODELS/Vehicle");
+let Vehicle = require("../models/Vehicle");
 
 //http://localhost:8070/Vehicle/add
 router.route("/add").post((req,res)=>{
@@ -40,7 +40,7 @@ router.route("/").get((req,res)=>{
 
 http://localhost:8070/Vehicle/update/
 router.route("/update/:id").put(async(req,res)=>{
-   // console.log("requestttttt", req.body);
+    console.log("Vehicle request", req.body.Vehicle_ID);
     let vehiID=req.params.id;
  //  console.log("transport ID",transeId)
     //destructure

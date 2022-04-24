@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const HOST = "http://localhost:8070/Transport";
+const HOST = "http://localhost:8070/Vehicle";
 
 export default function UpdateVehicles({ data, cl }) {
 
@@ -92,6 +92,7 @@ export default function UpdateVehicles({ data, cl }) {
             }}
               // onChange={handleChange}
               value={Vehicle_Registration_No}
+              required
             />
           </div>
 
@@ -110,6 +111,7 @@ export default function UpdateVehicles({ data, cl }) {
             }}
               // onChange={handleChange}
               value={Date}
+              required
             ></input>
           </div>
           <div className="mb-3">
@@ -126,10 +128,11 @@ export default function UpdateVehicles({ data, cl }) {
             }}
               // onChange={handleChange}
               value={Vehicle_Type}
+              required
             ></input>
           </div>
           <div className="mb-3">
-            <label for="Vehicle Brand" className="form-label">
+            <label for="Vehicle_Brand" className="form-label">
             Vehicle Brand :
             </label>
             <input
@@ -142,6 +145,7 @@ export default function UpdateVehicles({ data, cl }) {
             }}
               // onChange={handleChange}
               value={Vehicle_Brand}
+              required
             ></input>
           </div>
           <div className="mb-3">
@@ -154,10 +158,11 @@ export default function UpdateVehicles({ data, cl }) {
               name="Mileage"
               placeholder="Mileage"
               onChange={(e)=>{
-                setBrand(e.target.value);
+                setMilage(e.target.value);
             }}
               // onChange={handleChange}
               value={Mileage}
+              required
             ></input>
           </div>
           

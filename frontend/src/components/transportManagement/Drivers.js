@@ -1,45 +1,39 @@
-import React,{useState,useEffect} from "react";
-import axios from "axios";
-import MaterialTable from 'material-table';
-import { Modal } from "react-bootstrap";
-
-const HOST = "http://localhost:8070/Maintenance"
-
-export default function AllMaintenance(){
-    const[vehicleData,setVData]=useState([]);
+import React, { useState, useEffect } from "react"
+import axios from 'axios'
+import MaterialTable from 'material-table'
+import { Modal } from "react-bootstrap"
 
 
-    const [StateDelete, setStateDelete] = useState(false)
-    const [MaintenanceDelete, setMaintenanceDelete] = useState()
 
-    useEffect(()=>{
-        axios.get("http://localhost:8070/Maintenance").then((res)=>{
-            console.log(res.data);
-            setVData(res.data);
-        }).catch((err)=>{
-            alert(err.msg);
-        })
-    },[])
+const HOST = "http://localhost:8070/Drivers"
 
-      //delete trasport function
-      function onDelete() {
-        axios.delete(HOST + "/delete/" + MaintenanceDelete)
+export default function Drivers() {
+
+    const [Drivers, setDrivers] = useState([]);
+    console.log(Drivers,"<<<<<<<<<<<<<<<<<<<");
+
+
+    useEffect(() => {
+
+        axios.get(HOST + "/viewD")
             .then((res) => {
-                console.log(res)
-                alert('Maintenanace detail deleted')
-                window.location.reload(true)//reload page
-
+                setDrivers(res.data.Drivers);
+                console.log(Drivers,"<<<<<<<<<<<<<<<<<<<");
+                console.log('Data has been received');
             }).catch(() => {
-                alert('error while deleting Maintenance Detail')
+                alert('Error while fetching data')
             })
 
-    }
+    }, []);
 
-  return(
-      <div>
-           <div class="component-body">
-        
-        <div class="area">
+    
+
+
+
+    return (
+        // <>
+            <div class ="component-body">
+           <div class="area">
                 <nav class="main-menu bg-primary">
                     <ul>
                         <li>
@@ -109,7 +103,7 @@ export default function AllMaintenance(){
                             <a href="/rview">
                             <i class="fa fa-download" aria-hidden="true"></i>
                                 <span class="nav-text">Transport Reports</span>
-                                <i class="fa fa-angle-right "></i>
+                                <i class="fa fa-angle-right fa-2x"></i>
                             </a>
                         </li>
                     </ul>
@@ -117,66 +111,50 @@ export default function AllMaintenance(){
                     <ul class="logout">
                         <li>
                             <a href="/">
-                                <i class="fa fa-power-off "></i>
+                                <i class="fa fa-power-off fa-2x"></i>
                                 <span class="nav-text">Logout</span>
-                                <i class="fa fa-angle-right "></i>
+                                <i class="fa fa-angle-right fa-2x"></i>
                             </a>
                         </li>
                     </ul>
                 </nav>
             </div>
-            </div>
-            <div>
-                
-         <div className="component-body">
-             <div className="container-fluid ">
-             <br/>
-             <br/>
-             <MaterialTable  style={{background:"#E3ECFF"}}
-                    title="All Vehicle Details "
+           
+            {/* driver details tabe  */}
+            <div className="container-fluid mt-3">
+                <MaterialTable  style={{background:"#E3ECFF"}}
+                    title=" Driver  Details"
+                    
 
                     columns={[
-                        { title: "Maintenance Id", field: "Maintenance_ID", type: "string" },
-                        { title: "Vehicle Registration No", field: "Vehicle_Registration_No", type: "string" },
-                        { title: "Date", field: "Date", type: "date" },
-                        { title: "Description", field: "Description", type: "string" },
-                        { title: "maintenance Cost ", field: "maintenance_Cost", type: "string" },
-                        
-
+                        { title: "Name", field: "name", type: "string" },
+                        { title: "NIC", field: "nic", type: "string" },
+                        { title: "MobileNumber", field: "phone", type: "string" },
+                        { title: "Address", field: "address", type: "string" },
+                        { title: "Department", field: "department", type: "string" },
+                        { title: "Email", field: "email", type: "string" },
                     ]}
 
-                    data={vehicleData}
+                    data={Drivers}
                     options={{
                         sorting: true,
-                        search:false,
-                        filtering : true,
-                        actionsColumnIndex: -1
-                     
+                        actionsColumnIndex: -1,
+
                     }}
-                    actions={[
-                        {
-                            icon: () => <button class="btn btn-sm btn-outline-danger">Delete</button>,
-                            onClick: (event, rowData) => {
-                                setMaintenanceDelete(rowData._id) //setidto delete
-                                setStateDelete(true);   //setstatetrue
-                            }
-                        },
-                    ]}
 
-        />
-         </div>
+                    
+                />
 
-                 {/* delete modal */}
-                 <Modal show={StateDelete}>
-                    <Modal.Body>
-                        <p>You Want to delete this Transpot details ?</p>
-                        <button type="button" class="btn btn-outline-danger mr-3 pl-3" onClick={onDelete}>Delete</button>
-                        <button type="button" class="btn btn-outline-secondary pl-3" onClick={() => setStateDelete(false)}>Cancel</button>
-                    </Modal.Body>
-                </Modal>
-         </div>
-         </div>
-         </div>
-  );
+               
+
+            </div>
+
+            <div className="container-fluid"><a href="/addT" class="btn-sm btn-primary btn-lg active float-right " role="button" aria-pressed="true"> + Add New Transport Details </a></div>
+        
+
+        {/* </> */}
+
+        </div>
+    )
 
 }

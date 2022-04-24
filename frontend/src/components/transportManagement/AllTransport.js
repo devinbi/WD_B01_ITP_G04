@@ -54,14 +54,14 @@ export default function AllTransport(){
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
-                            <a href="/add">
+                            <a href="/vadd">
                                 <i class="fa fa-plus-circle"></i>
                                 <span class="nav-text">Add Vehicle</span>
                                 <i class="fa fa-angle-right "></i>
                             </a>
                         </li>
                         <li class="has-subnav">
-                            <a href="/view">
+                            <a href="/vview">
                              <i class="fa fa-truck " ></i>
                                 <span class="nav-text">Vehicle List</span>
                                 <i class="fa fa-angle-right "></i>
@@ -70,14 +70,14 @@ export default function AllTransport(){
                        
                         <hr></hr>
                         <li class="has-subnav">
-                            <a href="/vadd">
+                            <a href="/add">
                             <i class="fa fa-plus-circle" aria-hidden="true"></i>
                                 <span class="nav-text">Add Transort Detials</span>
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
                         <li class="has-subnav">
-                            <a href="/vview">
+                            <a href="/view">
                             <i class="fa fa-file-text-o" aria-hidden="true"></i>
                                 <span class="nav-text">View Transport Details</span>
                                 <i class="fa fa-angle-right "></i>

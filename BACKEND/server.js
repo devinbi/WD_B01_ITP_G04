@@ -41,6 +41,9 @@ app.use("/Vehicle",vehicleRouter);
 const maintenanceRouter = require("./routes/Maintenances.js");
 app.use("/Maintenance",maintenanceRouter);
 
+const driverRouter = require("./routes/Drivers.js");
+app.use("/Drivers",driverRouter);
+
 app.listen(PORT, () => {
     console.log(`server is up and running on porT: ${PORT}`);
 

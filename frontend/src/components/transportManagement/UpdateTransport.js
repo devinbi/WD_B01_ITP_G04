@@ -92,6 +92,7 @@ export default function UpdateTransport({ data, cl }) {
             }}
               // onChange={handleChange}
               value={Vehicle_Registration_No}
+              required
             />
           </div>
 
@@ -110,6 +111,7 @@ export default function UpdateTransport({ data, cl }) {
             }}
               // onChange={handleChange}
               value={Date}
+              required
             ></input>
           </div>
           <div className="mb-3">
@@ -126,6 +128,7 @@ export default function UpdateTransport({ data, cl }) {
             }}
               // onChange={handleChange}
               value={Driver_Name}
+              required
             ></input>
           </div>
           <div className="mb-3">
@@ -142,6 +145,7 @@ export default function UpdateTransport({ data, cl }) {
             }}
               // onChange={handleChange}
               value={Description}
+              required
             ></input>
           </div>
           
@@ -152,6 +156,7 @@ export default function UpdateTransport({ data, cl }) {
               onChange={(e)=>{
                 setStatus(e.target.value);
             }} value={Delivery_Status}
+            required
             >
                 <option>Choose</option>
                 <option value="Pending">Pending</option>
