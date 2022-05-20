@@ -1,46 +1,74 @@
-import React,{useState,useEffect} from "react";
+import React,{useEffect,useState} from "react";
 import axios from "axios";
 import MaterialTable from 'material-table';
-import { Modal } from "react-bootstrap";
-import UpdateTransport from "./UpdateTransport";
+import { Modal,Form,Button } from "react-bootstrap";
+import OrderToTransportModal from "./modal/OrderToTransportModal";
 
-const HOST = "http://localhost:8070/Transport"
 
-export default function AllTransport(){
-    const[transportData,setTData]=useState([]);
 
-    const [StateUpdate, setStateUpdate] = useState(false)
-    const [TransportUpdate, setTransportUpdate] = useState()
+const addTransportByOrder = () => {
 
-    const [StateDelete, setStateDelete] = useState(false)
-    const [TransportDelete, setTransportDelete] = useState()
+    const HOST = "http://localhost:8070/OrderDes/"
 
-    useEffect(()=>{
-        axios.get("http://localhost:8070/Transport").then((res)=>{
-            console.log(res.data);
-            setTData(res.data);
-        }).catch((err)=>{
-            alert(err.msg);
-        })
-    },[])
+    const [addOToTransport,setaddOToTransport]=useState()
 
-     //delete trasport function
-     function onDelete() {
-        axios.delete(HOST + "/delete/" + TransportDelete)
+    const [descriptionSet,setdescriptionSet]=useState("")
+
+
+    const [ODes, setOdes] = useState([]);
+    console.log(ODes,"<<<<<<<<<<<<<<<<<<<");
+    console.log("updatedata>>",addOToTransport)
+
+    const [show, setShow] = useState(false);
+
+    // const setDescriptionDetails=(value)=>{
+    //     console.log("value>>",value)
+    //     let des = value.OrderDescription;
+    //     let qty = value.NoOfUnit;
+        
+    //     const descriptionData = "This order is :"+{des}+"no of units"+{qty};
+    //     setdescriptionSet(descriptionData);
+    //     console.log("dtaaaa>>>",descriptionData)
+    // }
+
+    
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+
+    const [Transport_ID,setTid] = useState("");
+    const [Vehicle_Registration_No,setVid] = useState("");
+    const [Date,setDate] = useState("");
+    const [Driver_Name,setName] = useState("");
+    const [Description,setDescription] = useState("");
+    const [Delivery_Status,setStatus] = useState("");
+    // console.log("description",description)
+   
+
+
+    useEffect(() => {
+       // setDescriptionDetails();
+
+        axios.get(HOST + "/viewO")
             .then((res) => {
-                console.log(res)
-                alert('Transport detail deleted')
-                window.location.reload(true)//reload page
 
+                console.log('first>>', res)
+                setOdes(res.data);
+                
+                console.log('Data has been received');
             }).catch(() => {
-                alert('error while deleting Transport Detail')
+                alert('Error while fetching data')
             })
 
-    }
+    }, []);
 
-  return(
-    <div>
-         <div class="component-body">
+
+
+  return (
+    <div>addTransportByOrder
+
+<div class="component-body">
         
         <div class="area">
                 <nav class="main-menu bg-primary">
@@ -52,6 +80,7 @@ export default function AllTransport(){
                                 <i class="fa fa-angle-right "></i>
                             </a>
                         </li>
+                  
                         <hr></hr>
                         <li class="has-subnav">
                             <a href="/vadd">
@@ -137,79 +166,66 @@ export default function AllTransport(){
                 </nav>
             </div>
             </div>
-            <div>
-    <div class ="component-body">
-         <div className="container-fluid ">
-             <br></br>
-             <br></br>
-             <br></br>
-             <MaterialTable  style={{background:"#E3ECFF"}}
-                    title="All Transport Details "
+        
+    <div className="component-body">
+    <div className="container-fluid ">
+    <br/>
+        <br/>
+        <br/>
+                <MaterialTable  style={{background:"#E3ECFF"}}
+                    title=" Order  Details"
+                    
 
                     columns={[
-                        { title: "Transport Id", field: "Transport_ID", type: "string" },
-                        { title: "Vehicle Registration No", field: "Vehicle_Registration_No", type: "string" },
-                        { title: "Date", field: "Date", type: "date" },
-                        { title: " Driver Name", field: "Driver_Name", type: "string" },
-                        { title: "Description", field: "Description", type: "string" },
-                        { title: "Delivery Status", field: "Delivery_Status", type: "string" },
-
+                        { title: "Type of Order", field: "TypeOfOrder", type: "string" },
+                        { title: "Number Of Units", field: "NoOfUnit", type: "number" },
+                        { title: "Order Status", field: "OrderStatus", type: "string" },
+                        { title: "Order Description", field: "OrderDescription", type: "string" },
+                        
                     ]}
 
-                    data={transportData}
+                    data={ODes}
                     options={{
                         sorting: true,
-                        search:false,
-                        filtering : true,
                         actionsColumnIndex: -1,
-                     
+
                     }}
+
                     actions={[
                         {
-                            icon: () => <button class="btn btn-sm btn-outline-warning">Update</button>,
+                            icon: () => <button class="btn btn-sm  btn-outline-success" >ADD to Transport</button>,
                             onClick: (event, rowData) => {
-                                setTransportUpdate(rowData); //setTransportDetailswithID
-                                setStateUpdate(true); //setStatetrue
+                                // setDescriptionDetails(rowData);
+                                setaddOToTransport(rowData); //setTransportDetailswithID
+                                setShow(true);
+                                 //setStatetrue
                             }
                         },
-                        {
-                            icon: () => <button class="btn btn-sm btn-outline-danger">Delete</button>,
-                            onClick: (event, rowData) => {
-                                setTransportDelete(rowData._id) //setidto delete
-                                setStateDelete(true);   //setstatetrue
-                            }
-                        },
+
                     ]}
-                    />
-                  
-         </div>
+
+                    
+                />
+
+               
+
+            </div>
+            <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+       <OrderToTransportModal data={addOToTransport} cl={()=> setShow(false)}/>
+          
+          </Modal.Body>
+      </Modal>
+
+            </div>
+   
 
 
-           {/* update modal */}
-           <Modal show={StateUpdate} size="lg"
-                aria-labelledby="contained-modal-title-vcenter"
-                centered
->
-                    <Modal.Body>
-                        <UpdateTransport data={TransportUpdate} cl={() => setStateUpdate(false)} />
-                    </Modal.Body>
-                </Modal>
-
-                 {/* delete modal */}
-                 <Modal show={StateDelete}>
-                    <Modal.Body>
-                        <p>You Want to delete this Transpot details ?</p>
-                        <button type="button" class="btn btn-outline-danger mr-3 pl-3" onClick={onDelete}>Delete</button>
-                        <button type="button" class="btn btn-outline-secondary pl-3" onClick={() => setStateDelete(false)}>Cancel</button>
-                    </Modal.Body>
-                </Modal>
-                
-
-
-
-         </div>
-         </div>
-         </div>
-  );
-
+    </div>
+  )
 }
+
+export default addTransportByOrder

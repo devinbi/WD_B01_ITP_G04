@@ -9,7 +9,7 @@ const Employee = require("../models/Employee");
 router.route("/viewD").get(async(req,res)=>{
         const s = 'Driver'
         const regex = new RegExp(s, 'i') // i for case insensitive
-        Employee.find({Designation: {$regex: regex}})//find by designation = Driver
+        Employee.find({designation: {$regex: regex}})//find by designation = Driver
     .then((Drivers)=>{
         res.json({Drivers})
     }).catch(()=>{

@@ -12,6 +12,7 @@ import AllMaintenance from './components/transportManagement/AllMaintenance';
 import Report from './components/transportManagement/Report';
 import TopHeader from './components/TopHeader';
 import Drivers from './components/transportManagement/Drivers';
+import OrderDes from './components/transportManagement/addTransportByOrder'
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Route path= "/mview" exact component={AllMaintenance}/>
         <Route path= "/rview" exact component={Report}/>
         <Route path= "/viewD" exact component={Drivers}/>
+        <Route path= "/viewO" exact component={OrderDes}/>
     </div>
     </Router>
   );

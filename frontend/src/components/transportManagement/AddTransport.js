@@ -1,4 +1,5 @@
-import React,{useState} from "react";
+import React,{useEffect,useState} from "react";
+import MaterialTable from "material-table";
 import axios from "axios";
 
 
@@ -38,6 +39,9 @@ export default function AddTransport(){
       
     }
 
+
+    
+
     return(
         <div>
         <div class="component-body">
@@ -67,7 +71,15 @@ export default function AddTransport(){
                                 <i class="fa fa-angle-right "></i>
                             </a>
                         </li>
-                       
+                        <hr></hr>
+                        <li>
+                            <a href="/viewO">
+                            
+                                <i class="fa fa-truck-arrow-right "></i>
+                                <span class="nav-text">Order Details</span>
+                                <i class="fa fa-angle-right "></i>
+                            </a>
+                        </li>
                         <hr></hr>
                         <li class="has-subnav">
                             <a href="/add">
@@ -79,7 +91,7 @@ export default function AddTransport(){
                         <li class="has-subnav">
                             <a href="/view">
                             <i class="fa fa-file-text-o" aria-hidden="true"></i>
-                                <span class="nav-text">View Transport Details</span>
+                                <span class="nav-text">Transport Details</span>
                                 <i class="fa fa-angle-right "></i>
                             </a>
                         </li>
@@ -130,6 +142,13 @@ export default function AddTransport(){
             </div>
             </div>
             <div>
+
+            
+
+
+
+
+
         <div className="container">
             <form onSubmit={sendData}>
                <div class="form-group">
