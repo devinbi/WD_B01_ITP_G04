@@ -45,4 +45,14 @@ app.use("/expense",expenseRouter);
 app.listen(PORT, () => {
     console.log(`server is up and running on porT: ${PORT}`);
 
+
+const  salaryRouter = require("./routes/Salarys.js");
+app.use("/salary",salaryRouter);
+
+const  maintenanceRouter = require("./routes/Maintenances.js");
+app.use("/Maintenance",maintenanceRouter);
+
+const orderRouter = require("./routes/Orders.js");
+app.use("/Order", orderRouter);
+
 })

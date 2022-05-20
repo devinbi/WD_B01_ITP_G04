@@ -59,7 +59,7 @@ export default function Updateexpense({ data, cl }){
                 setExpenseid(e.target.value);
             }}
               value={expenseid}
-              disabled
+              /*disabled*/
             />
           </div>
 
@@ -85,7 +85,7 @@ export default function Updateexpense({ data, cl }){
               Date
             </label>
             <input
-              type="text"
+              type="date"
               className="form-control"
               name="date"
               onChange={(e)=>{

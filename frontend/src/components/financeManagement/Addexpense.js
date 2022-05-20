@@ -1,5 +1,7 @@
-import React,{useState} from 'react';
+import React,{useEffect,useState} from 'react';
 import axios from 'axios';
+import MaterialTable from 'material-table'
+
 
 
 export  default function Addexpense(){
@@ -9,8 +11,55 @@ export  default function Addexpense(){
   const [date, setDate] = useState("");
   const [totalamount, setTotalamount] = useState("");
   const [description, setDescription] = useState("");
- 
 
+  
+
+//salary details 
+   const HOST = "http://localhost:8070/salary"
+
+
+
+  const [Salarys, setSalarys] = useState([]);
+  console.log(Salarys,"");
+
+
+  useEffect(() => {
+
+      axios.get(HOST + "/viewD")
+          .then((res) => {
+            setSalarys(res.data.Salarys);
+              console.log(Salarys,"");
+              console.log('Data has been received');
+          }).catch(() => {
+              alert('Error while fetching data')
+          })
+
+   }, []);
+
+   //maintenance details
+
+ const host1 = "http://localhost:8070/Maintenance"
+
+  const [Maintenances, setMaintenances] = useState([]);
+  console.log(Maintenances,"");
+
+
+  useEffect(() => {
+
+      axios.get(host1 + "/")
+          .then((res) => {
+              console.log(res.data);
+            setMaintenances(res.data);
+              console.log(Maintenances,"");
+              console.log('mmmm Data has been received');
+          }).catch((err) => {
+              alert(err.msg)
+          })
+
+  }, []);
+  
+
+  
   function sendData(e){
       e.preventDefault();
     
@@ -105,12 +154,13 @@ export  default function Addexpense(){
             </div>
             </div>
        <div>
-
+       
        <div className="container">
+                  <title Add expense />
                     <form onSubmit={sendData}>
                     <div class="form-group">
                             <label for="expenseid">Expense ID :</label>
-                            <input type="text" class="form-control" id="expenseid" pattern="[E][0-9]{4}" placeholder="Enter"
+                            <input type="text" class="form-control" id="expenseid" pattern="[E][0-9]{4}" placeholder="Enter expense id"
                             onChange={(e)=>{
                                 setExpenseid(e.target.value);
                             }}/>
@@ -119,7 +169,7 @@ export  default function Addexpense(){
 
                         <div className="form-group">
                             <label for="description">Description</label>
-                            <input type="text" class="form-control" id="description" onChange={(e)=>{
+                            <input type="text" class="form-control" id="description" placeholder="Enter description" onChange={(e)=>{
                                 setDescription(e.target.value);
                             }}/>
                         </div>
@@ -151,12 +201,87 @@ export  default function Addexpense(){
                             }}/>
                         </div>
             
-                    <button type="submit" class="btn btn-info btn-lg">Submit</button>
+                    <button type="submit" class="btn btn-info btn-lg"  >Submit</button>
+
+                    
                     </form>
                 </div>
-                </div>
-                </div>
-    )
-                        }
+            </div>
+
+
+        {/* view slary table*/}
+
+   <div class="container">
+   <div className="container-fluid mt-3">
+   <MaterialTable  style={{background:"#E3ECFF"}}
+       title="All salary details"
+       
+
+       columns={[
+        { title: "Employee Id", field: "employeeId", type: "string" },
+        { title: "Labour Hours", field: "labourHr", type: "string" },
+        { title: "OT Hours", field: "otHr", type: "string" },
+        { title: "Leaves", field: "leave", type: "date" },
+        { title: "Designation", field: "designation", type: "string" },
+        { title: "Salary", field: "salary", type: "string" },
+         
+            ]}
+
+       data={Salarys}
+       options={{
+           sorting: true,
+           search:false,
+         filtering : true,
+           actionsColumnIndex: -1,
+           
+
+       }}
+
+       
+   />
+
   
-  
+
+</div>
+</div> 
+
+            {/* view maintenance table */}
+
+             <div class="container">
+             <div className="container-fluid mt-3">
+             <MaterialTable  style={{background:"#E3ECFF"}}
+                    title="All maintenance Details "
+
+                    columns={[
+                        { title: "Maintenance Id", field: "Maintenance_ID", type: "string" },
+                        { title: "Vehicle Registration No", field: "Vehicle_Registration_No", type: "string" },
+                        { title: "Date", field: "Date", type: "date" },
+                        { title: "Description", field: "Description", type: "string" },
+                        { title: "maintenance Cost ", field: "maintenance_Cost", type: "string" },
+                        
+
+                    ]}
+                    
+                    data={Maintenances}
+                    options={{
+                        sorting: true,
+                        search:false,
+                        filtering : true,
+                        actionsColumnIndex: -1
+                     
+                    }}
+                    
+
+        />
+         </div>
+
+
+
+
+</div>
+</div>
+
+
+
+)
+    }
