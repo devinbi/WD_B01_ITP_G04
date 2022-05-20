@@ -36,9 +36,14 @@ connection.once("open" , () => {
 const customerRouter = require("./routes/customers.js");
 app.use("/customer",customerRouter);
 
-
 const orderRouter = require("./routes/orders.js");
 app.use("/order", orderRouter);
+
+const deleteRouter = require("./routes/deletedCustomer.js");
+app.use("/dcustomer",deleteRouter);
+
+const inventotyRouter = require("./routes/inventory.js");
+app.use("/inventory",inventotyRouter);
 
 app.listen(PORT, () => {
     console.log(`server is up and running on porT: ${PORT}`);

@@ -1,30 +1,22 @@
 import React, {useState, useEffect} from 'react';
 import axios from "axios";
 import MaterialTable from "material-table";
-import { Modal } from "react-bootstrap";
-import UpdateCustomer from './UpdateCustomer.js';
 
 
 
 
-export default function AllCustomers(){
+
+export default function DeletedCustomer(){
 
 
     const[Customers, setCustomers] = useState([]);
 
 
-    const [StateUpdate, setStateUpdate] = useState(false)
-    const [CustomerUpdate, setCustomerUpdate] = useState()
-
-    const [StateDelete, setStateDelete] = useState(false)
-    const [CustomerDelete, setCustomerDelete] = useState()
-
-    const [DeletedCustomer, setDeletecustomer] = useState()
 
 
 useEffect(()=> {
     function getCustomers(){
-        axios.get("http://localhost:8070/customer/").then((res)=>{
+        axios.get("http://localhost:8070/dcustomer/").then((res)=>{
            
             setCustomers(res.data);
     }).catch((err)=> {
@@ -34,45 +26,7 @@ useEffect(()=> {
 getCustomers();
 },[])
 
-function onDelete() {
-   
-    const CustomerId = DeletedCustomer.CustomerId;
-    const CustomerName = DeletedCustomer.CustomerName;
-    const ContactNumber = DeletedCustomer.ContactNumber;
-    const Email = DeletedCustomer.Email;
-    const Address = DeletedCustomer.Address;
-    const Country = DeletedCustomer.Country;
-    const NIC = DeletedCustomer.NIC;
-   
-    const removeCustomer = {
-        CustomerId,
-        CustomerName,
-        ContactNumber,
-        Email,
-        Address,
-        Country,
-        NIC 
-      }
 
-
-
-    axios.post("http://localhost:8070/dcustomer/add",removeCustomer).then((response)=>{
-      console.log(response)
-      alert("Deleted Customer Added");
-      }).catch((err)=>{
-      alert(err)
-    })
-    axios.delete("http://localhost:8070/customer/delete/"+ CustomerDelete)
-        .then((res) => {
-            console.log(res)
-            alert('Customer detail deleted')
-            window.location.reload(true)//reload page
-
-        }).catch(() => {
-            alert('error while deleting Customer Detail')
-        })
-
-}
 
 return(
 
@@ -131,6 +85,7 @@ return(
                          </a>
                      </li>
                      <hr></hr>
+
                      <li class="has-subnav">
                          <a href="/deleted">
                              <i class="fa fa-plus-circle" aria-hidden="true"></i>
@@ -138,6 +93,8 @@ return(
                              <i class="fa fa-angle-right fa-2x"></i>
                          </a>
                      </li>
+                     <hr></hr>
+                     
                  </ul>
                  <hr></hr>
                  <ul class="logout">
@@ -180,41 +137,11 @@ return(
                     filtering : true,
                     actionsColumnIndex: -1
                   }}
-                  actions={[
-                    {
-                        icon: () => <button class="btn btn-sm btn-outline-warning">Update</button>,
-                        onClick: (event, rowData) => {
-                            setCustomerUpdate(rowData); //setCustomerDetailswithID
-                            setStateUpdate(true); //setStatetrue
-                        }
-                    },
-                    {
-                        icon: () => <button class="btn btn-sm btn-outline-danger">Delete</button>,
-                        onClick: (event, rowData) => {
-                            setDeletecustomer(rowData)
-                            setCustomerDelete(rowData._id) //setidto delete
-                            setStateDelete(true);   //setstatetrue
-                        }
-                    },
-                    
-                ]}
+                
 
     />
      {/* update modal */}
-     <Modal show={StateUpdate}>
-                    <Modal.Body>
-                        <UpdateCustomer data={CustomerUpdate} cl={() => setStateUpdate(false)} />
-                    </Modal.Body>
-                </Modal>
-                
-                {/* delete modal */}
-                <Modal show={StateDelete}>
-                    <Modal.Body>
-                        <p>You Want to delete this Customer details ?</p>
-                        <button type="button" class="btn btn-outline-danger mr-3 pl-3" onClick={onDelete}>Delete</button>
-                        <button type="button" class="btn btn-outline-secondary pl-3" onClick={() => setStateDelete(false)}>Cancel</button>
-                    </Modal.Body>
-                </Modal>
+    
 
        
         </div>

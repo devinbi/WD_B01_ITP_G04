@@ -9,12 +9,14 @@ import UpdateOrder from './components/customerManagement/UpdateOrder';
 import {BrowserRouter as Router,Route} from "react-router-dom"
 import TopHeader from './components/customerManagement/Topheader';
 import Report from './components/customerManagement/Report';
+import DeletedCustomer from './components/customerManagement/deletedCustomer';
 
 function App() {
   return (
     <Router>
     <div>
       <TopHeader></TopHeader>
+      <Route path="/deleted" exact component = {DeletedCustomer} />
       <Route path="/" exact component={AllCustomers} />
       <Route path="/view" exact component={AllOrders} />
       <Route path="/add" exact component ={AddCustomer}/>

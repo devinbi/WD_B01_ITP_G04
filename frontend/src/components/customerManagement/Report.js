@@ -123,8 +123,8 @@ export default  function Report(){
                         { title: "Customer Name", field: "CustomerName", type: "string" },
                         { title: "Contact Number", field: "ContactNumber", type: "number" },
                         { title: "Email", field: "Email", type: "string" },
-                        { title: "Address", field: "Address", type: "string" },
-                        { title: "Country", field: "Country", type: "string" },
+                        //{ title: "Address", field: "Address", type: "string" },
+                        //{ title: "Country", field: "Country", type: "string" },
                         { title: "NIC", field: "NIC", type: "string" },
                         
                         

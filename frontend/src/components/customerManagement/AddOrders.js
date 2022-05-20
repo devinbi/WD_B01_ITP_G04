@@ -1,5 +1,8 @@
-import React, {useState} from "react";
+import React, {useEffect,useState} from "react";
 import axios from "axios";
+import MaterialTable from 'material-table';
+
+
 
 export default function AddOrders(){
 
@@ -35,7 +38,24 @@ export default function AddOrders(){
       alert(err)
     })
 }
+    const [ProductItems, setProductItem] = useState([]);
 
+
+
+useEffect(()=>{
+        
+        
+    axios.get('http://localhost:8070/inventory/')
+    .then((res) =>{
+        console.log(res.data);
+        setProductItem(res.data);
+    }).catch((err)=>{
+        alert(err.msg);
+
+    })
+
+},[])
+  
 
     return(
 
@@ -163,8 +183,8 @@ export default function AddOrders(){
                 }}
                  >
                  <option selected>Choose...</option>
-                 <option>Active</option>
-                 <option>Process</option>
+                 <option value="active">Active</option>
+                 <option value="process">Process</option>
                 </select>
              </div>
 
@@ -192,7 +212,7 @@ export default function AddOrders(){
                 <label for="OrderDeliveryDate" class="form-label">Order Delivery Date</label>
                 <input type="date" class="form-control" id="OrderDeliveryDate" placeholder="Enter Order Delivery Date"
                 onChange={(e)=> {
-                  OrderDeliveryDate(e.target.value);
+                  setOrderDeliveryDate(e.target.value);
                 }}
                 />
               </div>
@@ -202,7 +222,44 @@ export default function AddOrders(){
            </form>
 
         </div>
-        </div>
+<br/><br/>
+        <div>
+                <div class="container">
+                    <div class="container-fluid">
+                        <MaterialTable  
+                            style={{background:"#E3ECFF"}}
+                            title="All Inventory Details "
+                            columns={[
+                                
+                                
+                                { title: "Item Name", field: "ItemName", type: "string" },
+                                { title: "Quantity", field: "Quantity", type: "number" },
+                                { title: "Material", field: "Material", type: "string" },
+                                { title: "Colour", field: "Colour", type: "string" },
+                                { title: "Size", field: "Size", type: "string" }
+
+                            ]}
+
+                            data={ProductItems}
+                            options={{
+
+                                sorting: true,
+                                search:false,
+                                filtering : true,
+                                actionsColumnIndex: -1
+
+                            }}
+                            />
+
+
+                          </div>
+                          </div>
+                          </div>
+                          </div>
+                            
+
+
+                
     )
 
 }
