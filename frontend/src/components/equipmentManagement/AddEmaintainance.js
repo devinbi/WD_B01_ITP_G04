@@ -121,6 +121,7 @@ export default function AddEmaintainance(){
             </div>
             </div>
         <div className="container">
+        <center><h3>ADD MAINTAINANCE DETAILS</h3></center>
         <form onSubmit={sendData}>
 
         <div class="form-group">
@@ -157,9 +158,9 @@ export default function AddEmaintainance(){
                setcategory(e.target.value);
 
            }}>
-            <option>Choose...</option>
-            <option>Dressmaking Tools</option>
-            <option>Technical Devices</option>
+             <option value="Choose" selected disabled >Choose...</option>
+            <option value="Dressmaking Tools">Dressmaking Tools</option>
+            <option value="Technical Devices">Technical Devices</option>
              </select>
         </div>
 
@@ -171,11 +172,9 @@ export default function AddEmaintainance(){
 
            }}>
             
-            <option>Choose...</option>
-            <option>New</option>
-            <option>Old</option>
-            <option>Have to repair</option>
-            <option>Have to replace</option>
+            <option value="Choose" selected disabled >Choose...</option>
+            <option value="Have to repair">Have to repair</option>
+            <option value="Have to replace">Have to replace</option>
             
           </select>
         </div>

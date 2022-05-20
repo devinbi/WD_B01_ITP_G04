@@ -118,6 +118,7 @@ export default function AddDressmaking(){
             </div>
             </div>
         <div className="container">
+        <center><h3>ADD DRESSMAKING DETAILS</h3></center>
         <form onSubmit={sendData}>
         <div class="form-group">
           <label for="MachineCode">Machine Code</label>
@@ -145,11 +146,11 @@ export default function AddDressmaking(){
             setCategory(e.target.value);
 
           }}>
-            <option>Choose...</option>
-            <option>Sewing Tools</option>
-            <option>Pressing Tools</option>
-            <option>Fabric Measuring Tools</option>
-            <option>Dress Cutting Tools</option>
+            <option value="Choose" selected disabled >Choose...</option>
+            <option value="Sewing Tools">Sewing Tools</option>
+            <option value="Pressing Tools">Pressing Tools</option>
+            <option value="Fabric Measuring Tools">Fabric Measuring Tools</option>
+            <option value="Dress Cutting Tools">Dress Cutting Tools</option>
              </select>
         </div>
 
@@ -169,11 +170,11 @@ export default function AddDressmaking(){
             setCondition(e.target.value);
 
           }}>
-            <option>Choose...</option>
-            <option>New</option>
-            <option>Old</option>
-            <option>Have to repair</option>
-            <option>Have to replace</option>
+            <option value="Choose" selected disabled >Choose...</option>
+            <option value="New">New</option>
+            <option value="Old">Old</option>
+            <option value="Have to repair">Have to repair</option>
+            <option value="Have to replace">Have to replace</option>
             
           </select>
        

@@ -122,6 +122,7 @@ export default function AddTechnical(){
         </div>
 
         <div className="container">
+        <center><h3>ADD TECHNICAL DETAILS</h3></center>
         <form onSubmit={sendData}>
         <div class="form-group">
           <label for="DeviceCode">Device Code</label>
@@ -166,12 +167,12 @@ export default function AddTechnical(){
           setdepartment(e.target.value);
 
           }}>
-            <option>Choose...</option>
-            <option>Industrial Engineering Department </option>
-            <option>EDP / IT department </option>
-            <option>Accounting Department</option>
-            <option>Human Resource and Administration</option>
-            <option>Shipping and documentation</option>
+           <option value="Choose" selected disabled >Choose...</option>
+            <option value="Industrial Engineering Department">Industrial Engineering Department </option>
+            <option value="EDP / IT department">EDP / IT department </option>
+            <option value="Accounting Department">Accounting Department</option>
+            <option value="Human Resource and Administration">Human Resource and Administration</option>
+            <option value="Shipping and documentation">Shipping and documentation</option>
              </select>
         </div>
 
@@ -183,11 +184,11 @@ export default function AddTechnical(){
            setcondition(e.target.value);
 
           }}>
-            <option>Choose...</option>
-            <option>New</option>
-            <option>Old</option>
-            <option>Have to repair</option>
-            <option>Have to replace</option>
+            <option value="Choose" selected disabled >Choose...</option>
+            <option value="New">New</option>
+            <option value="Old">Old</option>
+            <option value="Have to repair">Have to repair</option>
+            <option value="Have to replace">Have to replace</option>
             
           </select>
         </div>
