@@ -14,49 +14,49 @@ export  default function Addexpense(){
 
   
 
-//salary details 
-   const HOST = "http://localhost:8070/salary"
+// //salary details 
+//    const HOST = "http://localhost:8070/salary"
 
 
 
-  const [Salarys, setSalarys] = useState([]);
-  console.log(Salarys,"");
+//   const [Salarys, setSalarys] = useState([]);
+//   console.log(Salarys,"");
 
 
-  useEffect(() => {
+//   useEffect(() => {
 
-      axios.get(HOST + "/viewD")
-          .then((res) => {
-            setSalarys(res.data.Salarys);
-              console.log(Salarys,"");
-              console.log('Data has been received');
-          }).catch(() => {
-              alert('Error while fetching data')
-          })
+//       axios.get(HOST + "/viewD")
+//           .then((res) => {
+//             setSalarys(res.data.Salarys);
+//               console.log(Salarys,"");
+//               console.log('Data has been received');
+//           }).catch(() => {
+//               alert('Error while fetching data')
+//           })
 
-   }, []);
+//    }, []);
 
-   //maintenance details
+//    //maintenance details
 
- const host1 = "http://localhost:8070/Maintenance"
+//  const host1 = "http://localhost:8070/Maintenance"
 
-  const [Maintenances, setMaintenances] = useState([]);
-  console.log(Maintenances,"");
+//   const [Maintenances, setMaintenances] = useState([]);
+//   console.log(Maintenances,"");
 
 
-  useEffect(() => {
+//   useEffect(() => {
 
-      axios.get(host1 + "/")
-          .then((res) => {
-              console.log(res.data);
-            setMaintenances(res.data);
-              console.log(Maintenances,"");
-              console.log('mmmm Data has been received');
-          }).catch((err) => {
-              alert(err.msg)
-          })
+//       axios.get(host1 + "/")
+//           .then((res) => {
+//               console.log(res.data);
+//             setMaintenances(res.data);
+//               console.log(Maintenances,"");
+//               console.log('mmmm Data has been received');
+//           }).catch((err) => {
+//               alert(err.msg)
+//           })
 
-  }, []);
+//   }, []);
   
 
   
@@ -201,7 +201,7 @@ export  default function Addexpense(){
                             }}/>
                         </div>
             
-                    <button type="submit" class="btn btn-info btn-lg"  >Submit</button>
+                    <button type="submit" class="btn btn-info btn-lg" >Submit</button>
 
                     
                     </form>
@@ -227,7 +227,7 @@ export  default function Addexpense(){
          
             ]}
 
-       data={Salarys}
+      // data={Salarys}
        options={{
            sorting: true,
            search:false,
@@ -262,7 +262,7 @@ export  default function Addexpense(){
 
                     ]}
                     
-                    data={Maintenances}
+                   // data={Maintenances}
                     options={{
                         sorting: true,
                         search:false,
