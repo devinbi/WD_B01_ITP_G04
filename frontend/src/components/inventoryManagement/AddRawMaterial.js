@@ -1,5 +1,7 @@
-import React,{useState} from 'react'
+import React,{useState , useEffect} from 'react'
 import axios from 'axios';
+import MaterialTable from 'material-table';
+
 
 export default function AddRawMaterial(){
 
@@ -26,6 +28,22 @@ export default function AddRawMaterial(){
         alert(err)
     })
 }
+
+const [item, setItem] = useState([]);
+
+useEffect(()=>{
+        
+        
+    axios.get('http://localhost:8070/ViewSuppliedItem/')
+    .then((res) =>{
+        console.log(res.data);
+        setItem(res.data);
+    }).catch((err)=>{
+        alert(err.msg);
+
+    })
+
+},[])
     return(
 
         <div>
@@ -52,12 +70,12 @@ export default function AddRawMaterial(){
                             </a>
                         </li>
 
-                        <hr></hr>
+                        
 
                         <li class="has-subnav">
                             <a href="/">
                             <i class="fa fa-cubes fa-2x" aria-hidden="true"></i>
-                                <span class="nav-text">Manage Raw Materials</span>
+                                <span class="nav-text">All Raw Materials</span>
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
@@ -72,12 +90,12 @@ export default function AddRawMaterial(){
                             </a>
                         </li>
 
-                        <hr></hr>
+                        
 
                         <li class="has-subnav">
                             <a href="/fetch">
                             <i class="fa fa-shirt"></i>
-                                <span class="nav-text">Manage Product Items</span>
+                                <span class="nav-text">All Product Items</span>
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
@@ -85,7 +103,7 @@ export default function AddRawMaterial(){
                         <hr></hr>
 
                         <li class="has-subnav">
-                            <a href="/#">
+                            <a href="/Sout">
                             <i class="fa fa-box-open"></i>
                                 <span class="nav-text">Out of Stock</span>
                                 <i class="fa fa-angle-right"></i>
@@ -120,6 +138,7 @@ export default function AddRawMaterial(){
             </div>
 
         <div className='container'>
+            <center><h2>Add Raw-Material Details</h2></center>
             <form onSubmit={sendData}>
 
             <div className="form-group">
@@ -191,7 +210,39 @@ export default function AddRawMaterial(){
             <br></br>
             <button type="submit" className="btn btn-primary">Add</button>
             </form>
+
+             
+
     </div>
+
+    <br/><br/>
+
+    {/* <div className="container">
+         <div class="container-fluid">
+            <MaterialTable  
+                style={{background:"#E3ECFF"}}
+                title="Supplied Items Details"
+                columns={[
+                                        
+                    { title: "Item Name", field: "itemName", type: "string" },
+                    { title: "Quantity", field: "itemQuantity", type: "string" },
+
+                ]}
+
+                data={item}
+                options={{
+
+                    sorting: true,
+                    search:false,
+                    filtering : true,
+                    actionsColumnIndex: -1
+                                    
+                }}
+             />
+
+        </div>
+    </div> */}
+
     </div>
     )
 }

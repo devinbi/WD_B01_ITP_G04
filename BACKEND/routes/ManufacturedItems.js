@@ -40,6 +40,20 @@ router.route("/fetch").get((req,res)=>{
 })
 
 
+
+
+//out of stock data retrieving  
+router.route("/Sout").get(async(req,res)=>{
+    //select manufactured items where quantity is less than or equals to 50
+    ManufacturedItem.find({Quantity: {$lte:50}})
+    .then((ManufacturedItems)=>{
+        res.json(ManufacturedItems)
+    }).catch((err)=>{
+        console.log(err);
+    })
+})
+
+
 //update 
 router.route("/update/:id").put(async(req,res)=>{
     let itemId = req.params.id; 

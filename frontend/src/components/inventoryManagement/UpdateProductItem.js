@@ -55,7 +55,9 @@ return (
 
 
           <div className="mb-3">
-            <label for="ItemId" className="form-label">Item Id</label>
+            <label for="ItemId" className="form-label">
+              Item Id :
+            </label>
             <input
                 type="text"
                 className="form-control"
@@ -73,7 +75,9 @@ return (
 
 
           <div className="mb-3">
-            <label for="ItemName" className="form-label">Item Name</label>
+            <label for="ItemName" className="form-label">
+              Item Name :
+            </label>
             <input
                 type="text"
                 className="form-control"
@@ -88,7 +92,9 @@ return (
 
 
           <div className="mb-3">
-            <label for="Quantity" className="form-label">Quantity</label>
+            <label for="Quantity" className="form-label">
+              Quantity :
+            </label>
             <input
                 type="number"
                 className="form-control"
@@ -103,7 +109,9 @@ return (
          
 
           <div className="mb-3">
-            <label for="Material" className="form-label">Material</label>
+            <label for="Material" className="form-label">
+              Material :
+            </label>
             <input
                 type="text"
                 className="form-control"
@@ -117,7 +125,9 @@ return (
           </div>
 
           <div className="mb-3">
-            <label for="Colour" className="form-label">Colour</label>
+            <label for="Colour" className="form-label">
+              Colour :
+            </label>
             <input
                 type="text"
                 className="form-control"
@@ -133,7 +143,9 @@ return (
 
 
           <div className="mb-3">
-          <label for="Size">Size</label>
+          <label for="Size">
+            Size :
+          </label>
           <select 
             name="Size"
             id="Size"

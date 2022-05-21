@@ -38,6 +38,15 @@ app.use("/RawMaterial",RawMaterialRouter);
 const ManufacturedItemRouter = require("./routes/ManufacturedItems.js");
 app.use("/ManufacturedItem",ManufacturedItemRouter);
 
+
+const ViewSuppliedItemRouter = require("./routes/ViewSuppliedItems.js");
+app.use("/ViewSuppliedItem",ViewSuppliedItemRouter);
+
+
+const ViewOrderDetailsRouter = require("./routes/ViewOrderDetails.js");
+app.use("/ViewOrderDetails",ViewOrderDetailsRouter);
+
+
 app.listen(PORT, () => {
     console.log(`server is up and running on porT: ${PORT}`);
 

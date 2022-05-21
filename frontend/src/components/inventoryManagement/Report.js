@@ -63,12 +63,11 @@ export default  function Report(){
                                 </a>
                             </li>
 
-                            <hr></hr>
 
                             <li class="has-subnav">
                                 <a href="/">
                                 <i class="fa fa-cubes fa-2x" aria-hidden="true"></i>
-                                    <span class="nav-text">Manage Raw Materials</span>
+                                    <span class="nav-text">All Raw Materials</span>
                                     <i class="fa fa-angle-right"></i>
                                 </a>
                             </li>
@@ -83,12 +82,12 @@ export default  function Report(){
                                 </a>
                             </li>
 
-                            <hr></hr>
+                            
 
                             <li class="has-subnav">
                                 <a href="/fetch">
                                 <i class="fa fa-shirt"></i>
-                                    <span class="nav-text">Manage Product Items</span>
+                                    <span class="nav-text">All Product Items</span>
                                     <i class="fa fa-angle-right"></i>
                                 </a>
                             </li>
@@ -96,7 +95,7 @@ export default  function Report(){
                             <hr></hr>
 
                             <li class="has-subnav">
-                                <a href="/#">
+                                <a href="/Sout">
                                 <i class="fa fa-box-open"></i>
                                     <span class="nav-text">Out of Stock</span>
                                     <i class="fa fa-angle-right"></i>

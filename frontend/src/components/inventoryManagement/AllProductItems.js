@@ -44,6 +44,22 @@ export default function AllProductItems(props){
     }
     console.log(ProductItems.data);
 
+
+    const[Orders, setOrders] = useState([]);
+
+    useEffect(()=> {
+        function getOrders(){
+            axios.get("http://localhost:8070/ViewOrderDetails/").then((res)=>{
+               
+                setOrders(res.data);
+        }).catch((err)=> {
+            alert(err.message);
+        })
+    }
+    getOrders();
+    },[])
+
+
     return(
 
         <div>
@@ -70,12 +86,12 @@ export default function AllProductItems(props){
                                 </a>
                             </li>
 
-                            <hr></hr>
+                            
 
                             <li class="has-subnav">
                                 <a href="/">
                                 <i class="fa fa-cubes fa-2x" aria-hidden="true"></i>
-                                    <span class="nav-text">Manage Raw Materials</span>
+                                    <span class="nav-text">All Raw Materials</span>
                                     <i class="fa fa-angle-right"></i>
                                 </a>
                             </li>
@@ -90,12 +106,12 @@ export default function AllProductItems(props){
                                 </a>
                             </li>
 
-                            <hr></hr>
+                            
 
                             <li class="has-subnav">
                                 <a href="/fetch">
                                 <i class="fa fa-shirt"></i>
-                                    <span class="nav-text">Manage Product Items</span>
+                                    <span class="nav-text">All Product Items</span>
                                     <i class="fa fa-angle-right"></i>
                                 </a>
                             </li>
@@ -103,7 +119,7 @@ export default function AllProductItems(props){
                             <hr></hr>
 
                             <li class="has-subnav">
-                                <a href="/#">
+                                <a href="/Sout">
                                 <i class="fa fa-box-open"></i>
                                     <span class="nav-text">Out of Stock</span>
                                     <i class="fa fa-angle-right"></i>
@@ -113,7 +129,7 @@ export default function AllProductItems(props){
                             <hr></hr>
 
                             <li class="has-subnav">
-                                <a href="/#">
+                                <a href="/view">
                                     <i class="fa fa-users" aria-hidden="true"></i>
                                     <span class="nav-text">Inventory Report</span>
                                     <i class="fa fa-angle-right"></i>
@@ -169,7 +185,7 @@ export default function AllProductItems(props){
                                 {
                                     icon: () => <button class="btn btn-sm btn-outline-warning">Update</button>,
                                     onClick: (event, rowData) => {
-                                        setProductItemUpdate(rowData); //setTransportDetailswithID
+                                        setProductItemUpdate(rowData); //setProductDetailswithID
                                         setStateUpdate(true); //setStatetrue
                                     }
                                 },
@@ -204,6 +220,34 @@ export default function AllProductItems(props){
                     </div>
                 </div>
             </div>
+
+            {/* <div>
+                <div class="container">  
+                    <div class="container-fluid">
+                        <MaterialTable  style={{background:"#E3ECFF"}}
+                            title="Ordered Item Details "
+                            columns={[
+                                { title: "Item Name", field: "TypeOfOrder", type: "string" },
+                                { title: "Quantity", field: "NoOfUnit", type: "number" },
+                                //{ title: "Order Status", field: "OrderStatus", type: "string" },
+                                { title: "Description", field: "OrderDescription", type: "string" },                    
+
+                            ]}
+               
+                            data={Orders}
+                            options={{
+                                sorting: true,
+                                search:false,
+                                paging :false,
+                                filtering : true,
+                                actionsColumnIndex: -1
+                            }}
+
+                        />
+                    </div>
+                </div>
+            </div> */}
+
         </div>
     )
 }

@@ -36,6 +36,18 @@ router.route("/").get((req,res)=>{
 })
 
 
+//out of stock data retrieving  
+router.route("/Sout").get(async(req,res)=>{
+    //select raw materials where quantity is less than or equals to 50
+    RawMaterial.find({Quantity: {$lte:50}})
+    .then((RawMaterials)=>{
+        res.json(RawMaterials)
+    }).catch((err)=>{
+        console.log(err);
+    })
+})
+
+
 //update 
 router.route("/update/:id").put(async(req,res)=>{
     let itemId = req.params.id; 

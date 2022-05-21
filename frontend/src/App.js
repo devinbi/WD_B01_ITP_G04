@@ -7,7 +7,8 @@ import AllProductItems from './components/inventoryManagement/AllProductItems';
 import AllRawMaterials from './components/inventoryManagement/AllRawMaterials';
 import UpdateProductItem from './components/inventoryManagement/UpdateProductItem';
 import UpdateRawMaterial from './components/inventoryManagement/UpdateRawMaterial';
-import Report from './components/inventoryManagement/Report';
+import InventoryReport from './components/inventoryManagement/Report';
+import OutofStock from './components/inventoryManagement/OutofStock';
 import {BrowserRouter as Router,Route} from 'react-router-dom';
 
 
@@ -22,7 +23,8 @@ function App() {
         <Route path="/" exact component={AllRawMaterials}></Route>
         <Route path="/update" exact component={UpdateProductItem}></Route>
         <Route path="/update" exact component={UpdateRawMaterial}></Route>
-        <Route path="/view" exact component={Report}></Route>
+        <Route path="/Sout" exact component={OutofStock}></Route>
+        <Route path="/view" exact component={InventoryReport}></Route>
 
       </div>
     </Router>
