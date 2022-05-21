@@ -14,27 +14,27 @@ export  default function Addexpense(){
 
   
 
-// //salary details 
-//    const HOST = "http://localhost:8070/salary"
+ //salary details 
+   const HOST = "http://localhost:8070/salary"
 
 
 
-//   const [Salarys, setSalarys] = useState([]);
-//   console.log(Salarys,"");
+  const [Salarys, setSalarys] = useState([]);
+  console.log(Salarys,"");
 
 
-//   useEffect(() => {
+  useEffect(() => {
 
-//       axios.get(HOST + "/viewD")
-//           .then((res) => {
-//             setSalarys(res.data.Salarys);
-//               console.log(Salarys,"");
-//               console.log('Data has been received');
-//           }).catch(() => {
-//               alert('Error while fetching data')
-//           })
+      axios.get(HOST + "/")
+          .then((res) => {
+            setSalarys(res.data);
+              console.log(Salarys,"");
+              console.log('Data has been received');
+          }).catch(() => {
+              alert('Error while fetching data')
+          })
 
-//    }, []);
+   }, []);
 
 //    //maintenance details
 
@@ -109,7 +109,7 @@ export  default function Addexpense(){
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
-                            <a href="/adde">
+                            <a href="/addex">
                             <i class="fa fa-plus-circle" aria-hidden="true"></i>
                                 <span class="nav-text">Add Expense</span>
                                 <i class="fa fa-angle-right fa-2x"></i>
@@ -125,7 +125,7 @@ export  default function Addexpense(){
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
-                            <a href="/viewe">
+                            <a href="/viewex">
                             <i class="fa fa-line-chart" aria-hidden="true"></i>
                                 <span class="nav-text">View Expense</span>
                                 <i class="fa fa-angle-right fa-2x"></i>
@@ -218,7 +218,7 @@ export  default function Addexpense(){
        
 
        columns={[
-        { title: "Employee Id", field: "employeeId", type: "string" },
+        
         { title: "Labour Hours", field: "labourHr", type: "string" },
         { title: "OT Hours", field: "otHr", type: "string" },
         { title: "Leaves", field: "leave", type: "date" },
@@ -227,7 +227,7 @@ export  default function Addexpense(){
          
             ]}
 
-      // data={Salarys}
+       data={Salarys}
        options={{
            sorting: true,
            search:false,

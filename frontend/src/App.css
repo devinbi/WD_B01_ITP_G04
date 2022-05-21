@@ -1,5 +1,9 @@
+label{
+  width:fit-content;
+}
+
 .App {
-  text-align: left;
+  text-align:left;
 }
 
 .App-logo {
@@ -289,8 +293,6 @@ td {
   margin-top: 130px;
 }
 
-
-
 #height {
   margin-top: 120px;
 }
@@ -347,7 +349,7 @@ td {
   margin-left: 15%;
 }
 
-
+/* Dashboard CSS */
 
 .dbutton {
   background-color: #0945e7;
@@ -397,7 +399,7 @@ td {
 }
 
 .bgImg {
-  
+  /* background-image: url(./components/bc-image.jpg); */
   background-repeat: no-repeat;
   background-size: 70%;
   background-position: left;

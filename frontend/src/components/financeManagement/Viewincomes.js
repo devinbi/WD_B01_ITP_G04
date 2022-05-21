@@ -68,7 +68,7 @@ export default function Viewincomes(props){
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
-                            <a href="/adde">
+                            <a href="/addex">
                             <i class="fa fa-plus-circle" aria-hidden="true"></i>
                                 <span class="nav-text">Add Expense</span>
                                 <i class="fa fa-angle-right fa-2x"></i>
@@ -84,7 +84,7 @@ export default function Viewincomes(props){
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
-                            <a href="/viewe">
+                            <a href="/viewex">
                             <i class="fa fa-line-chart" aria-hidden="true"></i>
                                 <span class="nav-text">View Expense</span>
                                 <i class="fa fa-angle-right fa-2x"></i>
