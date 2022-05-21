@@ -15,6 +15,10 @@ export default function AddSalary(){
     function sendData(e){
         e.preventDefault();
       
+        let lHours = parseInt(labourHr);
+        let oHours = parseInt(otHr);
+        let leaves = parseInt(leave);
+        
         const newSalary = {
           employeeId,
           labourHr,

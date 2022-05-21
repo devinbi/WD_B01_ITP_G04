@@ -230,7 +230,7 @@ export  default function AddEmployee(){
                         
                                 setDesignation(e.target.value);
                                 }
-                                }>
+                                }>      <option>choose</option>
                                         <option value="driver">Driver</option>
                                         <option value="Officer">Officer</option>
                                         <option value="worker">Worker</option>

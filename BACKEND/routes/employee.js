@@ -23,7 +23,7 @@ router.route("/add").post(async(req,res)=>{
         jDate
     })
     newEmployee.save().then(()=>{
-        res.json("Student Added")
+        res.json("Employee Added")
     }).catch((err)=>{
         console.log(err);
     })

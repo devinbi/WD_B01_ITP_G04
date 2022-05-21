@@ -3,7 +3,6 @@ import './App.css';
 import AddEmployee from "./components/employeeManagement/AddEmployee";
 import AllEmployee from './components/employeeManagement/AllEmployee';
 import AddSalary from './components/employeeManagement/AddSalary';
-import Headers from "./components/employeeManagement/Headers";
 import AllSalary from './components/employeeManagement/AllSalary';
 import UpdateEmployee from './components/employeeManagement/UpdateEmployee';
 import UpdateSalary from './components/employeeManagement/UpdateSalary';

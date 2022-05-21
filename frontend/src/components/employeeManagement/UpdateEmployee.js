@@ -124,10 +124,11 @@ return (
          </div>
          
          <div className="mb-3">
-            <label for="dob" className="form-label">
+            <label for="birthday" className="form-label">
               Date Of Birth
             </label>
             <input
+            id="birthday"
               type="date"
               className="form-control"
               name="dob"
@@ -214,6 +215,21 @@ return (
             ></input>
           </div>   
 
+          <div className="mb-3">
+          <label for="department" className="form-label" >Department</label>
+              <select name="department" id="department" className="form-control" 
+              onChange={(e)=>{
+                setDepartment(e.target.value);
+            }}
+             value={department}
+        >       <option>Choose</option>
+                <option value="it">It</option>
+                <option value="Production">Production</option>
+                <option value="HR">HR</option>
+                <option value="Account">Account</option>
+
+              </select>
+              </div>
           
            
           <div className="mb-3">
@@ -231,20 +247,7 @@ return (
             ></input>
           </div> 
 
-          <div className="mb-3">
-          <label for="department" className="form-label" >Department</label>
-              <select name="department" id="department" className="form-control" 
-              onChange={(e)=>{
-                setDepartment(e.target.value);
-            }}
-             value={department}
-        >       <option>Choose</option>
-                <option value="Finance">Finance</option>
-                <option value="It">It</option>
-                <option value="Transport">Transport</option>
-
-              </select>
-              </div>
+       
 
 
               <div className="mb-3">
@@ -255,22 +258,23 @@ return (
             }}
              value={designation}
         >       <option>Choose</option>
-                <option value="Driver">Driver</option>
-                <option value="Worker">Worker</option>
-                <option value="Helper">Helper</option>
+                  <option value="driver">Driver</option>
+                   <option value="Officer">Officer</option>
+                  <option value="worker">Worker</option>
 
               </select>
               </div>
 
 
               <div className="mb-3">
-            <label for="jDate" className="form-label">
+            <label for="jdate" className="form-label">
               Joined Date
             </label>
             <input
+            id="jdate"
               type="date"
               className="form-control"
-              name="jDate"
+              name="jdate"
               onChange={(e)=>{
                 setJdate(e.target.value);
             }}
