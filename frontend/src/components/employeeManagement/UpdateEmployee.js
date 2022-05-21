@@ -128,14 +128,15 @@ return (
               Date Of Birth
             </label>
             <input
-            id="birthday"
+              id="birthday"
               type="date"
               className="form-control"
+              value={dob}
               name="dob"
               onChange={(e)=>{
                 setBdate(e.target.value);
             }}
-              value={dob}
+           
             ></input>
           </div>
 
@@ -267,22 +268,29 @@ return (
 
 
               <div className="mb-3">
-            <label for="jdate" className="form-label">
+            <label for="date" className="form-label">
               Joined Date
             </label>
             <input
-            id="jdate"
+            id="date"
               type="date"
               className="form-control"
-              name="jdate"
+              value={jDate}
+              name="jDate"
               onChange={(e)=>{
                 setJdate(e.target.value);
             }}
-              value={jDate}
+              
             ></input>
           </div>
 
-
+          {/* <div class="form-group">
+                            <label for="jdate">Joined Date :</label>
+                            <input type="date" class="form-control" id="jdate" 
+                            onChange={(e)=>{
+                              setJdate(e.target.value);
+                            }}/>
+                        </div> */}
 
           <button
             type="submit"

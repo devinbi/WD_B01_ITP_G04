@@ -17,9 +17,10 @@ function App() {
   return (
     <div className="App">
  
-    <BrowserRouter>
+    <BrowserRouter >
         
     <TopHeader/>
+
             <Route path="/report" exact component={Report} />
             <Route path="/viewS" exact component={ViewSalary} />
             <Route path="/viewE" exact component={ViewEmployee} />
