@@ -29,6 +29,16 @@ connection.once("open" , () => {
     console.log("Mongodb connection success");
 })
 
+//connecting to backand and frontend for incomingfinance
+const incomingfinanceRouter = require("./routes/incomingfinances.js");
+
+app.use("/incomingfinance",incomingfinanceRouter);
+
+//connecting to backand and frontend for expense
+const expenseRouter = require("./routes/expenses.js");
+
+app.use("/expense",expenseRouter);
+
 //connecting to backand and frontend for employee
 const employeeRouter = require("./routes/employee.js");
 app.use("/employee",employeeRouter);
