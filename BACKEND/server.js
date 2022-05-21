@@ -29,6 +29,20 @@ connection.once("open" , () => {
     console.log("Mongodb connection success");
 })
 
+const transportRouter = require("./routes/Transports.js");
+app.use("/Transport",transportRouter);
+
+const vehicleRouter = require("./routes/vehicles.js");
+app.use("/Vehicle",vehicleRouter);
+
+const maintenanceRouter = require("./routes/Maintenances.js");
+app.use("/Maintenance",maintenanceRouter);
+
+const driverRouter = require("./routes/Drivers.js");
+app.use("/Drivers",driverRouter);
+
+const orderDesRouter = require("./routes/orderDes.js");
+app.use("/OrderDes",orderDesRouter);
 //connecting to backand and frontend for incomingfinance
 const incomingfinanceRouter = require("./routes/incomingfinances.js");
 
