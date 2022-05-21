@@ -1,4 +1,3 @@
-
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -29,6 +28,20 @@ connection.once("open" , () => {
     console.log("Mongodb connection success");
 })
 
+const RawMaterialRouter = require("./routes/RawMaterials.js");
+app.use("/RawMaterial",RawMaterialRouter);
+
+
+const ManufacturedItemRouter = require("./routes/ManufacturedItems.js");
+app.use("/ManufacturedItem",ManufacturedItemRouter);
+
+
+const ViewSuppliedItemRouter = require("./routes/ViewSuppliedItems.js");
+app.use("/ViewSuppliedItem",ViewSuppliedItemRouter);
+
+
+const ViewOrderDetailsRouter = require("./routes/ViewOrderDetails.js");
+app.use("/ViewOrderDetails",ViewOrderDetailsRouter);
 const transportRouter = require("./routes/Transports.js");
 app.use("/Transport",transportRouter);
 
