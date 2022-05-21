@@ -131,7 +131,7 @@ export default function AddItem() {
 
                             <div className="form">
                                 <label for="itemQuantity">Item Quantity</label>
-                                <input pattern="[0-9]{10}" type="text" className="form-control" id="itemQuantity" placeholder="Enter Item Quantity"
+                                <input required type="text" className="form-control" id="itemQuantity" placeholder="Enter Item Quantity"
                                 onChange={(e)=>{
 
                                     setQuantity(e.target.value);
@@ -142,7 +142,7 @@ export default function AddItem() {
 
                             <div className="form">
                                 <label for="unitPrice">Unit Price</label>
-                                <input type="text" className="form-control" id="unitPrice" placeholder="Unit Price"
+                                <input required type="text" className="form-control" id="unitPrice" placeholder="Unit Price"
                                 onChange={(e)=>{
 
                                     setPrice(e.target.value);
@@ -153,7 +153,7 @@ export default function AddItem() {
 
                             <div className="form">
                                 <label for="totalCost">Total Cost</label>
-                                <input type="text" className="form-control" id="totalCost" placeholder="Total Cost"
+                                <input required type="text" className="form-control" id="totalCost" placeholder="Total Cost"
                                 onChange={(e)=>{
 
                                     setCost(e.target.value);
@@ -164,7 +164,7 @@ export default function AddItem() {
 
                             <div className="form">
                                 <label for="adminId">Admin ID</label>
-                                <input type="text" className="form-control" id="adminId" placeholder="Enter Admin ID"
+                                <input required type="text" className="form-control" id="adminId" placeholder="Enter Admin ID"
                                 onChange={(e)=>{
 
                                     setAdminId(e.target.value);
