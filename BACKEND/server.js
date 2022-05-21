@@ -27,6 +27,14 @@ const connection = mongoose.connection;
 connection.once("open" , () => {
     console.log("Mongodb connection success");
 })
+const dressmakingRouter= require("./routes/dressmakings.js");
+app.use("/dressmaking", dressmakingRouter);
+
+const technicalRouter= require("./routes/technicals.js");
+app.use("/technical", technicalRouter);
+
+const emaintainanceRouter= require("./routes/emaintainances.js");
+app.use("/emaintainance", emaintainanceRouter);
 
 const RawMaterialRouter = require("./routes/RawMaterials.js");
 app.use("/RawMaterial",RawMaterialRouter);
