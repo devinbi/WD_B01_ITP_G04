@@ -1,5 +1,9 @@
+label{
+  width:fit-content;
+}
+
 .App {
-  text-align: center;
+  text-align:left;
 }
 
 .App-logo {
@@ -288,9 +292,6 @@ td {
 .qr-txt {
   margin-top: 130px;
 }
-
-/* view ledger css */
-
 
 #height {
   margin-top: 120px;
