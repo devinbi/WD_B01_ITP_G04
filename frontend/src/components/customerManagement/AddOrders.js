@@ -1,6 +1,6 @@
-import React, {useEffect,useState} from "react";
+import React, {useState} from "react";
 import axios from "axios";
-import MaterialTable from 'material-table';
+
 
 
 
@@ -38,23 +38,7 @@ export default function AddOrders(){
       alert(err)
     })
 }
-    const [ProductItems, setProductItem] = useState([]);
-
-
-
-useEffect(()=>{
-        
-        
-    axios.get('http://localhost:8070/inventory/')
-    .then((res) =>{
-        console.log(res.data);
-        setProductItem(res.data);
-    }).catch((err)=>{
-        alert(err.msg);
-
-    })
-
-},[])
+    
   
 
     return(
@@ -222,39 +206,7 @@ useEffect(()=>{
            </form>
 
         </div>
-<br/><br/>
-        <div>
-                <div class="container">
-                    <div class="container-fluid">
-                        <MaterialTable  
-                            style={{background:"#E3ECFF"}}
-                            title="All Inventory Details "
-                            columns={[
-                                
-                                
-                                { title: "Item Name", field: "ItemName", type: "string" },
-                                { title: "Quantity", field: "Quantity", type: "number" },
-                                { title: "Material", field: "Material", type: "string" },
-                                { title: "Colour", field: "Colour", type: "string" },
-                                { title: "Size", field: "Size", type: "string" }
 
-                            ]}
-
-                            data={ProductItems}
-                            options={{
-
-                                sorting: true,
-                                search:false,
-                                filtering : true,
-                                actionsColumnIndex: -1
-
-                            }}
-                            />
-
-
-                          </div>
-                          </div>
-                          </div>
                           </div>
                             
 
