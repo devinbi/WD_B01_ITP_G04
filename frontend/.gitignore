@@ -5,7 +5,9 @@
 /.pnp
 .pnp.js
 
+# file
 /fontawesome-icons
+
 # testing
 /coverage
 
@@ -22,3 +24,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
