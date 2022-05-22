@@ -1,4 +1,16 @@
 import './App.css';
+//import Header from './components/Header';
+import AddCustomer from './components/customerManagement/AddCustomer';
+import AddOrders from './components/customerManagement/AddOrders';
+import AllCustomers from './components/customerManagement/AllCustomers';
+import AllOrders from './components/customerManagement/AllOrders';
+import UpdateCustomer from './components/customerManagement/UpdateCustomer.js';
+import UpdateOrder from './components/customerManagement/UpdateOrder';
+import {BrowserRouter as Router,Route} from "react-router-dom"
+import TopHeader from './components/customerManagement/Topheader';
+import Report from './components/customerManagement/Report';
+import DeletedCustomer from './components/customerManagement/deletedCustomer';
+
 import AddDressmaking from './components/equipmentManagement/AddDressmaking';
 import AddTechnical from './components/equipmentManagement/AddTechnical';
 import AddEmaintainance from './components/equipmentManagement/AddEmaintainance';
@@ -16,7 +28,7 @@ import Addexpense from './components/financeManagement/Addexpense.js';
 import Addincome from './components/financeManagement/Addincome';
 import Viewexpenses from './components/financeManagement/Viewexpenses';
 import React from 'react';
-import './App.css';
+
 import TopHeader from './components/Topheader';
 import AddProduct from './components/inventoryManagement/AddProduct';
 import AddRawMaterial from './components/inventoryManagement/AddRawMaterial';
@@ -65,8 +77,8 @@ function App() {
 
 
   return (
-  
-    
+ 
+
     <div className="App">
  
     <BrowserRouter >
@@ -109,7 +121,7 @@ function App() {
             <Route path= "/viewO" exact component={OrderDes}/>
             <Route path= "/dash" exact component={Dashboard}/>
 
-            <Route path="/add" exact component={AddProduct}></Route> 
+        <Route path="/add" exact component={AddProduct}></Route> 
         <Route path="/adding" exact component={AddRawMaterial}></Route>
         <Route path="/fetch" exact component={AllProductItems}></Route>
         <Route path="/" exact component={AllRawMaterials}></Route>
@@ -119,7 +131,7 @@ function App() {
         <Route path="/view" exact component={InventoryReport}></Route>
 
 
-        <Route path='/addDressmaking' exact component = {AddDressmaking} />
+            <Route path='/addDressmaking' exact component = {AddDressmaking} />
             <Route path='/addTechnical' exact component = {AddTechnical} />
             <Route path='/addEmaintainance' exact component = {AddEmaintainance} />
             <Route path='/AllDressmakings' exact component = {AllDressmakings} />
@@ -129,6 +141,15 @@ function App() {
             <Route path='/UpdateTechnical' exact component = {UpdateTechnical} />
             <Route path='/UpdateEmaintainance' exact component = {UpdateEmaintainance} />
             <Route path='/Report' exact component = {Report} />
+
+            <Route path="/deleted" exact component = {DeletedCustomer} />
+            <Route path="/" exact component={AllCustomers} />
+            <Route path="/view" exact component={AllOrders} />
+            <Route path="/add" exact component ={AddCustomer}/>
+            <Route path="/addO" exact component ={AddOrders}/>
+            <Route path="/updateO" exact component ={UpdateCustomer}/>
+            <Route path="/update" exact component ={UpdateOrder}/>
+            <Route path="/Report" exact component ={Report}/>
         
       </BrowserRouter>
       
