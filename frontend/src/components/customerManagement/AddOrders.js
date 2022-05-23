@@ -1,7 +1,6 @@
-import React, {useState} from "react";
+import React, {useEffect,useState} from "react";
 import axios from "axios";
-
-
+import MaterialTable from 'material-table';
 
 
 export default function AddOrders(){
@@ -14,7 +13,20 @@ export default function AddOrders(){
   const [OrderDescription, setDescription] = useState("");
   const [DateOfReceipt, setDateOfReceipt] = useState("");
   const [OrderDeliveryDate, setOrderDeliveryDate] = useState("");
-
+  const [ProductItems, setProductItem] = useState([]);
+  useEffect(()=>{
+          
+          
+      axios.get('http://localhost:8070/ManufacturedItem/fetch')
+      .then((res) =>{
+          console.log(res.data);
+          setProductItem(res.data);
+      }).catch((err)=>{
+          alert(err.msg);
+  
+      })
+  
+  },[])
   
 
   function sendData(e){
@@ -37,6 +49,7 @@ export default function AddOrders(){
       }).catch((err)=>{
       alert(err)
     })
+   
 }
     
   
@@ -44,6 +57,37 @@ export default function AddOrders(){
     return(
 
       <div>
+          <div class="container">
+                    <div class="container-fluid">
+                        <MaterialTable  
+                            style={{background:"#E3ECFF"}}
+                            title="All End Product Details "
+                            columns={[
+                                
+                                
+                                { title: "Item Name", field: "ItemName", type: "string" },
+                                { title: "Quantity", field: "Quantity", type: "number" },
+                                { title: "Material", field: "Material", type: "string" },
+                                { title: "Colour", field: "Colour", type: "string" },
+                                { title: "Size", field: "Size", type: "string" }
+
+                            ]}
+
+                            data={ProductItems}
+                            options={{
+
+                                sorting: true,
+                                search:false,
+                                filtering : true,
+                                actionsColumnIndex: -1
+
+                            }}
+                            />
+
+
+                          </div>
+                          </div>
+
       <div class="component-body">
      
      <div class="area">
@@ -58,7 +102,7 @@ export default function AddOrders(){
                      </li>
                      <hr></hr>
                      <li class="has-subnav">
-                         <a href="/add">
+                         <a href="/addCustomer">
                              <i class="fa fa-plus-circle" aria-hidden="true"></i>
                              <span class="nav-text">Add Customer Details </span>
                              <i class="fa fa-angle-right fa-2x"></i>
@@ -66,7 +110,7 @@ export default function AddOrders(){
                      </li>
                      <hr></hr>
                      <li class="has-subnav">
-                         <a href="/">
+                         <a href="/viewCus">
                              <i class="fa fa-users" aria-hidden="true"></i>
                              <span class="nav-text">View Customer List</span>
                              <i class="fa fa-angle-right fa-2x"></i>
@@ -74,7 +118,7 @@ export default function AddOrders(){
                      </li>
                      <hr></hr>
                      <li class="has-subnav">
-                         <a href="/addO">
+                         <a href="/addOrder">
                          <i class="fa fa-plus-circle" aria-hidden="true"></i>
                              <span class="nav-text"> Add Order Details</span>
                              <i class="fa fa-angle-right fa-2x"></i>
@@ -82,7 +126,7 @@ export default function AddOrders(){
                      </li>
                      <hr></hr>
                      <li class="has-subnav">
-                         <a href="/view">
+                         <a href="/viewOrder">
                          <i class="fa fa-cart-flatbed"></i>
                              <span class="nav-text"> View Order Details</span>
                              <i class="fa fa-angle-right fa-2x"></i>
@@ -91,7 +135,7 @@ export default function AddOrders(){
                      <hr></hr>
                      
                      <li class="has-subnav">
-                         <a href="/Report">
+                         <a href="/ReportOc">
                          <i class="fa fa-download" aria-hidden="true"></i>
                              <span class="nav-text">Order Report</span>
                              <i class="fa fa-angle-right fa-2x"></i>
