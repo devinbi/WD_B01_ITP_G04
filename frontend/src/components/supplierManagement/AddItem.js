@@ -59,14 +59,14 @@ export default function AddItem() {
                                     </li>
                                     <hr></hr>
                                     <li class="has-subnav">
-                                        <a href="/addI">
+                                        <a href="/addItem">
                                         <i class="fa fa-plus-circle" aria-hidden="true"></i>
                                             <span class="nav-text">Add Item Details</span>
                                             <i class="fa fa-angle-right fa-2x"></i>
                                         </a>
                                     </li>
                                     <li class="has-subnav">
-                                        <a href="/viewI">
+                                        <a href="/viewItem">
                                         <i class="fa fa-file-text" aria-hidden="true"></i>
                                             <span class="nav-text">View Item Details</span>
                                             <i class="fa fa-angle-right fa-2x"></i>
@@ -74,14 +74,14 @@ export default function AddItem() {
                                     </li>
                                     <hr></hr>
                                     <li class="has-subnav">
-                                        <a href="/addS">
+                                        <a href="/addSupplier">
                                         <i class="fa fa-user-plus" aria-hidden="true"></i>
                                             <span class="nav-text">Add Supplier Detials</span>
                                             <i class="fa fa-angle-right fa-2x"></i>
                                         </a>
                                     </li>
                                     <li class="has-subnav">
-                                        <a href="/viewS">
+                                        <a href="/viewSupplier">
                                         <i class="fa fa-users" aria-hidden="true"></i>
                                             <span class="nav-text">View Supplier Details</span>
                                             <i class="fa fa-angle-right fa-2x"></i>
@@ -89,7 +89,7 @@ export default function AddItem() {
                                     </li>
                                     <hr></hr>
                                     <li class="has-subnav">
-                                        <a href="/report">
+                                        <a href="/reportSupPlierManage">
                                         <i class="fa fa-download" aria-hidden="true"></i>
                                             <span class="nav-text">Generate Report</span>
                                             <i class="fa fa-angle-right fa-2x"></i>

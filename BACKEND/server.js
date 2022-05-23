@@ -49,12 +49,13 @@ const ManufacturedItemRouter = require("./routes/ManufacturedItems.js");
 app.use("/ManufacturedItem",ManufacturedItemRouter);
 
 
-const ViewSuppliedItemRouter = require("./routes/ViewSuppliedItems.js");
-app.use("/ViewSuppliedItem",ViewSuppliedItemRouter);
+// const ViewSuppliedItemRouter = require("./routes/ViewSuppliedItems.js");
+// app.use("/ViewSuppliedItem",ViewSuppliedItemRouter);
 
 
-const ViewOrderDetailsRouter = require("./routes/ViewOrderDetails.js");
-app.use("/ViewOrderDetails",ViewOrderDetailsRouter);
+// const ViewOrderDetailsRouter = require("./routes/ViewOrderDetails.js");
+// app.use("/ViewOrderDetails",ViewOrderDetailsRouter);
+
 const transportRouter = require("./routes/Transports.js");
 app.use("/Transport",transportRouter);
 
@@ -86,6 +87,18 @@ app.use("/employee",employeeRouter);
 //connecting to backand and frontend for salary
 const salaryRouter = require("./routes/salary.js");
 app.use("/salary",salaryRouter);
+
+
+
+const customerRouter = require("./routes/customers.js");
+app.use("/customer",customerRouter);
+
+const orderRouter = require("./routes/orders.js");
+app.use("/order", orderRouter);
+
+const deleteRouter = require("./routes/deletedCustomer.js");
+app.use("/dcustomer",deleteRouter);
+
 
 
 app.listen(PORT, () => {
