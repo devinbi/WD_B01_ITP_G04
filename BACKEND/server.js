@@ -14,19 +14,24 @@ app.use(express.json());
 const URL = process.env.MONGODB_URL;
 
 mongoose.connect(URL, {
- 
-    
     useNewUrlParser: true, 
-    useUnifiedTopology: true,
-  
-
-});
-    
+    useUnifiedTopology: true 
+})
 
 const connection = mongoose.connection;
-connection.once("open" , () => {
-    console.log("Mongodb connection success");
-})
+//connect database
+ connection.once("open",() => {
+    console.log("mongodb Connection Sucess !");
+ })
+
+ const garmentRouter = require("./routes/supplier.js");
+ const itemRouter = require("./routes/item.js");
+
+ app.use("/supplier",garmentRouter)
+ app.use("/item",itemRouter)
+
+
+
 const dressmakingRouter= require("./routes/dressmakings.js");
 app.use("/dressmaking", dressmakingRouter);
 

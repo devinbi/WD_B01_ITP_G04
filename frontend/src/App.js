@@ -74,6 +74,14 @@ import Reports from './components/employeeManagement/Report';
 import TopHeader from './components/employeeManagement/topHeader';
 import {BrowserRouter, Route} from "react-router-dom";
 
+// Supplier Management 
+import AddItem from "./components/supplierManagement/AddItem";
+import AllItemDetails from "./components/supplierManagement/AllItemDetails";
+import AddSuplire from "./components/supplierManagement/AddSuplire";
+import AllSplireDetails from "./components/supplierManagement/AllSplireDetails";
+import ReportSM from './components/supplierManagement/Report';
+import UpdateItem from './components/supplierManagement/UpdateItem';
+import UpdateSupplier from './components/supplierManagement/UpdateSupplier';
 
 function App() {
 
@@ -152,6 +160,16 @@ function App() {
             <Route path="/updateO" exact component ={UpdateCustomer}/>
             <Route path="/update" exact component ={UpdateOrder}/>
             <Route path="/Report" exact component ={Report}/>
+
+
+            {/* Supplier Management  */}
+            <Route path="/addItem" exact component={AddItem} />
+            <Route path="/UpdateItem" exact component ={UpdateItem} />
+            <Route path="/viewItem" exact component={AllItemDetails} />
+            <Route path="/addSupplier" exact component={AddSuplire} />
+            <Route path="/UpdateSupplier" exact component ={UpdateSupplier} />
+            <Route path="/viewSupplier" exact component ={AllSplireDetails} />
+            <Route path="/reportSupPlierManage" exact component ={ReportSM} />
         
       </BrowserRouter>
       
