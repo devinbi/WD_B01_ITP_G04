@@ -6,30 +6,32 @@ import AllCustomers from './components/customerManagement/AllCustomers';
 import AllOrders from './components/customerManagement/AllOrders';
 import UpdateCustomer from './components/customerManagement/UpdateCustomer.js';
 import UpdateOrder from './components/customerManagement/UpdateOrder';
-import {BrowserRouter as Router,Route} from "react-router-dom"
-import TopHeader from './components/customerManagement/Topheader';
-import Report from './components/customerManagement/Report';
+
+// import TopHeader from './components/customerManagement/Topheader';
+import Reportcm from './components/customerManagement/Report';
 import DeletedCustomer from './components/customerManagement/deletedCustomer';
 
 import AddDressmaking from './components/equipmentManagement/AddDressmaking';
 import AddTechnical from './components/equipmentManagement/AddTechnical';
 import AddEmaintainance from './components/equipmentManagement/AddEmaintainance';
-import { BrowserRouter as Router, Route} from "react-router-dom";
+
 import AllDressmakings from './components/equipmentManagement/AllDressmakings';
 import AllTechnicals from './components/equipmentManagement/AllTechnicals';
 import AllEmaintainance from './components/equipmentManagement/AllEmaintainance';
 import UpdateDressmaking from './components/equipmentManagement/UpdateDressmaking';
 import UpdateTechnical from './components/equipmentManagement/UpdateTechnical';
 import UpdateEmaintainance from './components/equipmentManagement/UpdateEmaintainance';
-import Report from './components/equipmentManagement/Report';
-import Topheader from './components/equipmentManagement/Topheader';
+
+
+import ReportE from './components/equipmentManagement/Report';
+//import Topheader from './components/equipmentManagement/Topheader';
     
 import Addexpense from './components/financeManagement/Addexpense.js';
 import Addincome from './components/financeManagement/Addincome';
 import Viewexpenses from './components/financeManagement/Viewexpenses';
 import React from 'react';
 
-import TopHeader from './components/Topheader';
+// import TopHeader from './components/Topheader';
 import AddProduct from './components/inventoryManagement/AddProduct';
 import AddRawMaterial from './components/inventoryManagement/AddRawMaterial';
 import AllProductItems from './components/inventoryManagement/AllProductItems';
@@ -38,7 +40,7 @@ import UpdateProductItem from './components/inventoryManagement/UpdateProductIte
 import UpdateRawMaterial from './components/inventoryManagement/UpdateRawMaterial';
 import InventoryReport from './components/inventoryManagement/Report';
 import OutofStock from './components/inventoryManagement/OutofStock';
-import {BrowserRouter as Router,Route} from 'react-router-dom';
+
 
 import AddTransport from './components/transportManagement/AddTransport';
 import AllTransport from './components/transportManagement/AllTransport';
@@ -124,7 +126,7 @@ function App() {
         <Route path="/add" exact component={AddProduct}></Route> 
         <Route path="/adding" exact component={AddRawMaterial}></Route>
         <Route path="/fetch" exact component={AllProductItems}></Route>
-        <Route path="/" exact component={AllRawMaterials}></Route>
+        <Route path="/allR" exact component={AllRawMaterials}></Route>
         <Route path="/update" exact component={UpdateProductItem}></Route>
         <Route path="/update" exact component={UpdateRawMaterial}></Route>
         <Route path="/Sout" exact component={OutofStock}></Route>
@@ -143,7 +145,7 @@ function App() {
             <Route path='/Report' exact component = {Report} />
 
             <Route path="/deleted" exact component = {DeletedCustomer} />
-            <Route path="/" exact component={AllCustomers} />
+            <Route path="/allC" exact component={AllCustomers} />
             <Route path="/view" exact component={AllOrders} />
             <Route path="/add" exact component ={AddCustomer}/>
             <Route path="/addO" exact component ={AddOrders}/>
