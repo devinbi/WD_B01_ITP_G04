@@ -45,7 +45,7 @@ return(
                      </li>
                      <hr></hr>
                      <li class="has-subnav">
-                         <a href="/add">
+                         <a href="/addCus">
                              <i class="fa fa-plus-circle" aria-hidden="true"></i>
                              <span class="nav-text">Add Customer Details </span>
                              <i class="fa fa-angle-right fa-2x"></i>
@@ -53,7 +53,7 @@ return(
                      </li>
                      <hr></hr>
                      <li class="has-subnav">
-                         <a href="/">
+                         <a href="/viewCus">
                              <i class="fa fa-users" aria-hidden="true"></i>
                              <span class="nav-text">View Customer List</span>
                              <i class="fa fa-angle-right fa-2x"></i>
@@ -61,7 +61,7 @@ return(
                      </li>
                      <hr></hr>
                      <li class="has-subnav">
-                         <a href="/addO">
+                         <a href="/addOrder">
                          <i class="fa fa-plus-circle" aria-hidden="true"></i>
                              <span class="nav-text"> Add Order Details</span>
                              <i class="fa fa-angle-right fa-2x"></i>
@@ -69,7 +69,7 @@ return(
                      </li>
                      <hr></hr>
                      <li class="has-subnav">
-                         <a href="/view">
+                         <a href="/viewOrder">
                          <i class="fa fa-cart-flatbed"></i>
                              <span class="nav-text"> View Order Details</span>
                              <i class="fa fa-angle-right fa-2x"></i>
@@ -78,7 +78,7 @@ return(
                      <hr></hr>
                      
                      <li class="has-subnav">
-                         <a href="/Report">
+                         <a href="/ReportOc">
                          <i class="fa fa-download" aria-hidden="true"></i>
                              <span class="nav-text">Order Report</span>
                              <i class="fa fa-angle-right fa-2x"></i>

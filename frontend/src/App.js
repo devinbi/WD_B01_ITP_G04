@@ -152,14 +152,14 @@ function App() {
             <Route path='/UpdateEmaintainance' exact component = {UpdateEmaintainance} />
             <Route path='/Report' exact component = {Report} />
 
-            <Route path="/deleted" exact component = {DeletedCustomer} />
-            <Route path="/allC" exact component={AllCustomers} />
-            <Route path="/view" exact component={AllOrders} />
-            <Route path="/add" exact component ={AddCustomer}/>
-            <Route path="/addO" exact component ={AddOrders}/>
-            <Route path="/updateO" exact component ={UpdateCustomer}/>
-            <Route path="/update" exact component ={UpdateOrder}/>
-            <Route path="/Report" exact component ={Report}/>
+            <Route path="/deletedCus" exact component = {DeletedCustomer} />
+            <Route path="/viewCus" exact component={AllCustomers} />
+            <Route path="/viewOrder" exact component={AllOrders} />
+            <Route path="/addCustomer" exact component ={AddCustomer}/>
+            <Route path="/addOrder" exact component ={AddOrders}/>
+            <Route path="/updateCus" exact component ={UpdateCustomer}/>
+            <Route path="/updateOrder" exact component ={UpdateOrder}/>
+            <Route path="/ReportOc" exact component ={Reportcm}/>
 
 
             {/* Supplier Management  */}
