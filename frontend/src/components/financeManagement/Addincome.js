@@ -4,6 +4,7 @@ import MaterialTable from 'material-table'
 
 
 
+
   export default function AddIncome(){
 
   const [orderid, setOrderid] = useState("");
@@ -66,6 +67,7 @@ import MaterialTable from 'material-table'
       })
    
   }
+  
     return(
 
       <div>
@@ -145,14 +147,16 @@ import MaterialTable from 'material-table'
                             <input type="text" class="form-control" id="orderid"  placeholder="Enter ID "
                             onChange={(e)=>{
                                 setOrderid(e.target.value);
-                            }}/>
+                            }}
+                            required/>
                         
                         </div>
                         <div className="form-group">
                             <label for="ordertype">Order Type:</label>
                             <input type="text" class="form-control" id="ordertype"  placeholder="Enter order type" onChange={(e)=>{
                                 setOrdertype(e.target.value);
-                            }}/>
+                            }}
+                            required/>
                         
                         </div>
 
@@ -160,7 +164,8 @@ import MaterialTable from 'material-table'
                             <label for="numberofunits">Number of units</label>
                             <input type="text" class="form-control" id="numberofunits" placeholder="Enter number of units" onChange={(e)=>{
                                 setNumberofunits(e.target.value);
-                            }}/>
+                            }}
+                            required/>
                         </div>
 
                         <div class="form-group">
@@ -168,7 +173,8 @@ import MaterialTable from 'material-table'
                             <input type="text" class="form-control" id="unitprice" placeholder="Enter unit price"
                             onChange={(e)=>{
                                 setUnitprice(e.target.value);
-                            }}/>
+                            }}
+                            required/>
                         </div>
                         
             

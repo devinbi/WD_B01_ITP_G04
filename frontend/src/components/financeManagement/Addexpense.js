@@ -36,27 +36,27 @@ export  default function Addexpense(){
 
    }, []);
 
-//    //maintenance details
+   //maintenance details
 
-//  const host1 = "http://localhost:8070/Maintenance"
+ const host1 = "http://localhost:8070/Maintenance"
 
-//   const [Maintenances, setMaintenances] = useState([]);
-//   console.log(Maintenances,"");
+  const [Maintenances, setMaintenances] = useState([]);
+  console.log(Maintenances,"");
 
 
-//   useEffect(() => {
+  useEffect(() => {
 
-//       axios.get(host1 + "/")
-//           .then((res) => {
-//               console.log(res.data);
-//             setMaintenances(res.data);
-//               console.log(Maintenances,"");
-//               console.log('mmmm Data has been received');
-//           }).catch((err) => {
-//               alert(err.msg)
-//           })
+      axios.get(host1 + "/")
+          .then((res) => {
+              console.log(res.data);
+            setMaintenances(res.data);
+              console.log(Maintenances,"");
+              console.log('Data has been received');
+          }).catch((err) => {
+              alert(err.msg)
+          })
 
-//   }, []);
+  }, []);
   
 
   
@@ -160,19 +160,22 @@ export  default function Addexpense(){
                     <form onSubmit={sendData}>
                     <div class="form-group">
                             <label for="expenseid">Expense ID :</label>
-                            <input type="text" class="form-control" id="expenseid" pattern="[E][0-9]{4}" placeholder="Enter expense id"
+                            <input type="text" class="form-control" id="expenseid" pattern="[E][0-9]{4}" title = "invalid id pattern" placeholder="Enter expense id"
                             onChange={(e)=>{
                                 setExpenseid(e.target.value);
-                            }}/>
+                            }}
+                            required/>
                         
                         </div>
-
+              
                         <div className="form-group">
                             <label for="description">Description</label>
-                            <input type="text" class="form-control" id="description" placeholder="Enter description" onChange={(e)=>{
+                            <input type="text" class="form-control" id="description" pattern="[A-Z a-z]{0-100}" title="description max length should be 100" placeholder="Enter description" onChange={(e)=>{
                                 setDescription(e.target.value);
-                            }}/>
+                            }}
+                            required/>
                         </div>
+
 
                         <div class="form-group">
                             <label for="expensetype">Expense Type:</label>
@@ -180,7 +183,8 @@ export  default function Addexpense(){
                             onChange={(e)=>{
                                 setExpensetype(e.target.value);
                                 
-                            }}>
+                            }}
+                            required>
                              <option value="supplier">Supplier Cost</option>
                              <option value="maintenance">Maintenance Cost</option>
                              <option value="salary">Salary Cost</option>
@@ -190,15 +194,17 @@ export  default function Addexpense(){
                             <label for="date">Date</label>
                             <input type="date" class="form-control" id="date" onChange={(e)=>{
                                 setDate(e.target.value);
-                            }}/>
+                            }}
+                            required/>
                         </div>
                         
                         <div class="form-group">
                             <label for="totalamount">Total Amount:</label>
-                            <input type="text" class="form-control" id="totalamount" 
+                            <input type="number" class="form-control" id="totalamount" title="enter only numbers" 
                             onChange={(e)=>{
                                 setTotalamount(e.target.value);
-                            }}/>
+                            }}
+                            required/>
                         </div>
             
                     <button type="submit" class="btn btn-info btn-lg" >Submit</button>
@@ -253,16 +259,15 @@ export  default function Addexpense(){
                     title="All maintenance Details "
 
                     columns={[
-                        { title: "Maintenance Id", field: "Maintenance_ID", type: "string" },
+                        
                         { title: "Vehicle Registration No", field: "Vehicle_Registration_No", type: "string" },
-                        { title: "Date", field: "Date", type: "date" },
                         { title: "Description", field: "Description", type: "string" },
                         { title: "maintenance Cost ", field: "maintenance_Cost", type: "string" },
                         
 
                     ]}
                     
-                   // data={Maintenances}
+                    data={Maintenances}
                     options={{
                         sorting: true,
                         search:false,

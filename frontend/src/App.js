@@ -30,6 +30,10 @@ import Addexpense from './components/financeManagement/Addexpense.js';
 import Addincome from './components/financeManagement/Addincome';
 import Viewexpenses from './components/financeManagement/Viewexpenses';
 import React from 'react';
+import Viewincomes from './components/financeManagement/Viewincomes';
+import Updateexpense from './components/financeManagement/Updateexpense.js';
+import Updateincome from './components/financeManagement/Updateincome.js';
+import Report from './components/financeManagement/Report';
 
 // import TopHeader from './components/Topheader';
 import AddProduct from './components/inventoryManagement/AddProduct';
@@ -54,13 +58,6 @@ import EReport from './components/transportManagement/Report';
 import Drivers from './components/transportManagement/Drivers';
 import OrderDes from './components/transportManagement/addTransportByOrder'
 import Dashboard from './components/Dashboard';
-
-import Viewincomes from './components/financeManagement/Viewincomes';
-import Updateexpense from './components/financeManagement/Updateexpense.js';
-import Updateincome from './components/financeManagement/Updateincome.js';
-import Report from './components/financeManagement/Report';
-
-
 
 import AddEmployee from "./components/employeeManagement/AddEmployee";
 import AllEmployee from './components/employeeManagement/AllEmployee';

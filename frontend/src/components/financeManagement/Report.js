@@ -176,14 +176,48 @@ export default  function Report(){
                 
             </div>
 
+            
+            <div>
+            <div className="container">
+                  <title Add expense />
+                    <form>
+                    <div class="form-group">
+                            <label for="expenseid">Total Expenses :</label>
+                            <input type="text" class="form-control" id="Texp" placeholder=" Total Expenses "
+                            />
+                        
+                        </div>
+              
+                        <div className="form-group">
+                            <label for="description">Total Income :</label>
+                            <input type="text" class="form-control" id="Tinc"  placeholder="Total Income" 
+                           />
+                        </div>
+
+                         <div className="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" class="form-control" id="date" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="totalamount">Netprofit:</label>
+                            <input type="number" class="form-control" id="Nprofit" title="enter only numbers" 
+                           />
+                        </div>
+            
+                    <button type="submit" class="btn btn-info btn-lg" >Calculate</button>
+
+                    
+                    </form>
+                </div>
+            </div>
         </div>
         </div>
         </div>
+        
+        
 
     )
 
     
-
-
-
 }
