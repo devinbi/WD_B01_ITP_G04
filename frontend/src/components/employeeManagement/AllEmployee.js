@@ -13,6 +13,8 @@ export default function AllEmployee(props){
 
     const [StateDelete, setStateDelete] = useState(false)
     const [EmployeeDelete, setEmployeeDelete] = useState()
+
+    const [ResignedEmployee, setResigned] = useState()
     
     useEffect(()=>{
         
@@ -29,14 +31,57 @@ export default function AllEmployee(props){
     },[])
 
     function onDelete() {
+
+        
+    const employeeId=ResignedEmployee.employeeId;
+    const name = ResignedEmployee.name;
+    const address =ResignedEmployee.address;
+    const dob = ResignedEmployee.dob;
+    const gender = ResignedEmployee.gender;
+    const email = ResignedEmployee.email;
+    const phone = ResignedEmployee.phone;
+    const nic = ResignedEmployee.nic;
+    const eQuality = ResignedEmployee.eQuality;
+    const wExperence = ResignedEmployee.wExperence;
+    const department = ResignedEmployee.department;
+    const designation = ResignedEmployee.designation;
+    const jDate = ResignedEmployee.jDate;
+
+        let d = new Date();
+        let currentDate = d.getMonth()  + '/' + d.getDate() + '/' +  d.getFullYear();
+        let resignd = currentDate;
+        console.log(resignd);
+        const newResignEmployee = {
+            employeeId,
+            name,
+            address,
+            dob,
+            gender,
+            email,
+            phone,
+            nic,
+            eQuality,
+            wExperence,
+            department,
+            designation,
+            jDate,
+            resignd
+          }
+          
+        axios.post("http://localhost:8060/resigned/add",newResignEmployee).then(()=>{
+            console.log("sucess")
+            }).catch((err)=>{
+                alert(err);
+            })
+   
         axios.delete("http://localhost:8070/employee/delete/"+ EmployeeDelete)
             .then((res) => {
                 console.log(res)
-                alert('Transport detail deleted')
+                alert('Employee detail deleted')
                 window.location.reload(true)//reload page
 
             }).catch(() => {
-                alert('error while deleting Transport Detail')
+                alert('error while deleting Employee Detail')
             })
 
     }
@@ -155,7 +200,8 @@ export default function AllEmployee(props){
                         {
                             icon: () => <button class="btn btn-sm btn-outline-danger">Delete</button>,
                             onClick: (event, rowData) => {
-                                setEmployeeDelete(rowData._id) //setidto delete
+                                setResigned(rowData);
+                                setEmployeeDelete(rowData._id); //setidto delete
                                 setStateDelete(true);   //setstatetrue
                             }
                         },

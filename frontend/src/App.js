@@ -69,6 +69,7 @@ import ViewEmployee from './components/employeeManagement/ViewEmployee';
 import ViewSalary from './components/employeeManagement/ViewSalary';
 import Reports from './components/employeeManagement/Report';
 import TopHeader from './components/employeeManagement/topHeader';
+import Resigned from './components/employeeManagement/Resigned';
 import {BrowserRouter, Route} from "react-router-dom";
 
 // Supplier Management 
@@ -93,7 +94,7 @@ function App() {
     <TopHeader/>
 
 {/*employeemanagment route paths*/}
-
+            <Route path="/resign" exact component={Resigned} />
             <Route path="/report" exact component={Reports} />
             <Route path="/viewS" exact component={ViewSalary} />
             <Route path="/viewE" exact component={ViewEmployee} />

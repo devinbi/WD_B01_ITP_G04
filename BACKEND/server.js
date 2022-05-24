@@ -88,6 +88,9 @@ app.use("/employee",employeeRouter);
 const salaryRouter = require("./routes/salary.js");
 app.use("/salary",salaryRouter);
 
+//connecting to backand and frontend for resigned
+const resignedRouter = require("./routes/resigned.js");
+app.use("/resigned",resignedRouter);
 
 
 const customerRouter = require("./routes/customers.js");
