@@ -121,7 +121,10 @@ export  default function AddEmployee(){
             </div>
             </div>
             
-            <div className="container">
+            <div className="container pt-5">
+      <div className="row justify-content-sm-center pt-5">
+      <div className="col-sm-6 shadow round pb-3">
+      <h1 className="text-center pt-3 text-secondary">Employee Details</h1>
                     <form onSubmit={sendData}>
                     <div class="form-group" >
                             <label for="employeeId">Employee Id :</label>
@@ -161,6 +164,7 @@ export  default function AddEmployee(){
                             <input type="radio"  id="gender" name="Male" value="Male" onChange={(e)=>{
                                 setGender(e.target.value);
                             }}/> Male
+                         
                             <input type="radio"  id="gender" name="Female" value="Female" onChange={(e)=>{
                                 setGender(e.target.value);
                             }}/>Female
@@ -247,10 +251,13 @@ export  default function AddEmployee(){
                         </div>
                        
 
-            
+            <center>
                     <button type="submit" class="btn btn-info btn-lg">ADD</button>
+                    </center>
                     </form>
                     
+                </div>
+                </div>
                 </div>
  
           </div>

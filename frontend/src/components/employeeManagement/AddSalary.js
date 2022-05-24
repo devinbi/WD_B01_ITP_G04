@@ -127,14 +127,17 @@ export default function AddSalary(){
                
                 
                 
-                <div className="container">
+                <div className="container pt-5">
+      <div className="row justify-content-sm-center pt-5">
+      <div className="col-sm-6 shadow round pb-3">
+      <h1 className="text-center pt-3 text-secondary">Employee Salary</h1>
                     <form onSubmit={sendData}>
                     <div class="form-group" >
                             <label for="employeeId">Employee Id :</label>
                             <input type="text" class="form-control" id="employeeId"  placeholder="Enter "
                             onChange={(e)=>{
                                 setId(e.target.value);
-                            }}/>
+                            }} required/>
                         
                         </div>
                         <div className="form-group">
@@ -182,14 +185,16 @@ export default function AddSalary(){
                             }}/>
                         </div> */}
 
-            
+            <center>
                     <button type="submit" class="btn btn-info btn-lg">ADD</button>
+                    </center>
                     </form>
                     
                 </div>
                 </div>
 
-               
+               </div>
+               </div>
 
 
             
