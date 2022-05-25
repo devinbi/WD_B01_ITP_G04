@@ -49,7 +49,7 @@ export default function AllProductItems(props){
 
     useEffect(()=> {
         function getOrders(){
-            axios.get("http://localhost:8070/ViewOrderDetails/").then((res)=>{
+            axios.get("http://localhost:8070/order/view").then((res)=>{
                
                 setOrders(res.data);
         }).catch((err)=> {
@@ -89,7 +89,7 @@ export default function AllProductItems(props){
                             
 
                             <li class="has-subnav">
-                                <a href="/">
+                                <a href="/allR">
                                 <i class="fa fa-cubes fa-2x" aria-hidden="true"></i>
                                     <span class="nav-text">All Raw Materials</span>
                                     <i class="fa fa-angle-right"></i>
@@ -154,10 +154,11 @@ export default function AllProductItems(props){
             </div>
 
             <div>
+                <center>
                 <div class="container">
                     <div class="container-fluid">
                         <MaterialTable  
-                            style={{background:"#E3ECFF"}}
+                            style={{background:"#E3ECFF", width:"85%"}}
                             title="All Product Item Details"
                             columns={[
                                 
@@ -219,16 +220,18 @@ export default function AllProductItems(props){
 
                     </div>
                 </div>
+                </center>
             </div>
 
-            {/* <div>
+            <div>
+                <center>
                 <div class="container">  
                     <div class="container-fluid">
-                        <MaterialTable  style={{background:"#E3ECFF"}}
+                        <MaterialTable  style={{background:"#E3ECFF" , width:"85%"}}
                             title="Ordered Item Details "
                             columns={[
-                                { title: "Item Name", field: "TypeOfOrder", type: "string" },
-                                { title: "Quantity", field: "NoOfUnit", type: "number" },
+                                { title: "Item Name", field: "TypeOfOrder", type: "string", width:"85%" },
+                                { title: "Quantity", field: "NoOfUnit", type: "number" , width:"85%" },
                                 //{ title: "Order Status", field: "OrderStatus", type: "string" },
                                 { title: "Description", field: "OrderDescription", type: "string" },                    
 
@@ -246,7 +249,8 @@ export default function AllProductItems(props){
                         />
                     </div>
                 </div>
-            </div> */}
+                </center>
+            </div> 
 
         </div>
     )

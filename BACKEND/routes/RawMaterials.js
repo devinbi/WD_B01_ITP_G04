@@ -26,7 +26,7 @@ router.route("/adding").post((req,res)=>{
 
 
 //data retrieve 
-router.route("/").get((req,res)=>{
+router.route("/allR").get((req,res)=>{
     RawMaterial.find()
     .then((RawMaterials)=>{
         res.json(RawMaterials)

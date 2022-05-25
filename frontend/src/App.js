@@ -31,6 +31,8 @@ import Addincome from './components/financeManagement/Addincome';
 import Viewexpenses from './components/financeManagement/Viewexpenses';
 import React from 'react';
 
+
+//Inventory Management
 // import TopHeader from './components/Topheader';
 import AddProduct from './components/inventoryManagement/AddProduct';
 import AddRawMaterial from './components/inventoryManagement/AddRawMaterial';
@@ -139,6 +141,8 @@ function App() {
             <Route path= "/viewO" exact component={OrderDes}/>
             <Route path= "/dash" exact component={Dashboard}/>
 
+
+{/*inventory management route paths*/}
         <Route path="/add" exact component={AddProduct}></Route> 
         <Route path="/adding" exact component={AddRawMaterial}></Route>
         <Route path="/fetch" exact component={AllProductItems}></Route>
