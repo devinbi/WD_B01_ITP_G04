@@ -132,22 +132,14 @@ export default function AllMaintenance(){
                         </li>
                     </ul>
 
-                    <ul class="logout">
-                        <li>
-                            <a href="/">
-                                <i class="fa fa-power-off "></i>
-                                <span class="nav-text">Logout</span>
-                                <i class="fa fa-angle-right "></i>
-                            </a>
-                        </li>
-                    </ul>
+                   
                 </nav>
             </div>
             </div>
             
      
             <div className="container">
-            <div class="container-fluid">
+            <div class="container-fluid mt-5">
              <MaterialTable  style={{background:"#E3ECFF"}}
                     title="All Maintenance Details "
 

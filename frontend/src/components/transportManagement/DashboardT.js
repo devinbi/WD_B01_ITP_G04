@@ -138,27 +138,21 @@ export default  function DashboardT(){
                         </li>
                     </ul>
 
-                    <ul class="logout">
-                        <li>
-                            <a href="/">
-                                <i class="fa fa-power-off "></i>
-                                <span class="nav-text">Logout</span>
-                                <i class="fa fa-angle-right "></i>
-                            </a>
-                        </li>
-                    </ul>
+                  
                 </nav>
             </div>
             </div>
             <div>
             <div className="container">
            
-
+            <div class="d-flex justify-content-start mt-5">
             <a href="/vadd" class="btn btn-primary active ml-3 " role="button" aria-pressed="true"> + Add Vehicle Details </a>
-            <a href="/addT" class="btn btn-primary active ml-3 " role="button" aria-pressed="true"> + Add Transport Details </a>
+            <a href="/addT" class="btn btn-primary active ml-4 " role="button" aria-pressed="true"> + Add Transport Details </a>
+            </div>
+
 
             <div className="container-fluid pt-5">
-        <MaterialTable style={{background:"#E3ECFF"}}
+            <MaterialTable style={{background:"#E3ECFF"}}
                     title="  Transport Details "
 
                     columns={[

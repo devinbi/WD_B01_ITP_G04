@@ -32,6 +32,7 @@ export default function Drivers() {
 
     return (
         // <>
+        <div>
             <div class ="component-body">
            {/* navigation bar for transport management */}
         <div class="area">
@@ -126,20 +127,14 @@ export default function Drivers() {
                         </li>
                     </ul>
 
-                    <ul class="logout">
-                        <li>
-                            <a href="/">
-                                <i class="fa fa-power-off "></i>
-                                <span class="nav-text">Logout</span>
-                                <i class="fa fa-angle-right "></i>
-                            </a>
-                        </li>
-                    </ul>
+                  
                 </nav>
             </div>
-           
+            </div>
+  
             {/* driver details tabe  */}
-            <div className="container-fluid mt-3">
+            <div class ="container">
+            <div className="container-fluid mt-5">
                 <MaterialTable  style={{background:"#E3ECFF"}}
                     title=" Driver  Details"
                     
@@ -170,8 +165,9 @@ export default function Drivers() {
             <div className="container-fluid"><a href="/vadd" class="btn-sm btn-primary btn-lg active float-right " role="button" aria-pressed="true"> + Add New Transport Details </a></div>
         
 
-        {/* </> */}
-
+        
+        </div>
+        
         </div>
     )
 

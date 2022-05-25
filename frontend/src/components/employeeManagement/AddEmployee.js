@@ -16,47 +16,6 @@ export default function AddEmployee() {
   const [designation, setDesignation] = useState("");
   const [jDate, setJdate] = useState("");
 
-<<<<<<< HEAD
-
-  
-
-  function sendData(e){
-      e.preventDefault();
-     
-
-      const newEmployee = {
-        employeeId,
-        name,
-        address,
-        dob,
-        gender,
-        email,
-        phone,
-        nic,
-        eQuality,
-        wExperence,
-        department,
-        designation,
-        jDate
-      }
-      
-      console.log(newEmployee)
-        axios.post("http://localhost:8070/employee/add",newEmployee).then(()=>{
-            alert("Success");
-            window.location.reload();
-            }).catch((err)=>{
-                alert(err);
-            })
-        
-        } 
-    
-     
-
-          return(
-          <div>
-           <div class="component-body">
-        
-=======
   function sendData(e) {
     e.preventDefault();
 
@@ -91,7 +50,6 @@ export default function AddEmployee() {
   return (
     <div>
       <div class="component-body">
->>>>>>> a8a1efe6072eb462f88c65f686e11e54adda1fd0
         <div class="area">
           <nav class="main-menu bg-primary">
             <ul>
@@ -251,27 +209,6 @@ export default function AddEmployee() {
                 Female
               </div>
 
-<<<<<<< HEAD
-                        <div class="form-group">
-                            <label for="phone">Phone :</label>
-                            <input type="text" class="form-control"  pattern="[0-9]{10}"
-                            title="Invalid Tel-number"
-                             id="phone" 
-                            onChange={(e)=>{
-                              setPhone(e.target.value);
-                            }}/>
-
-                        </div>
-
-                        <div class="form-group">
-                            <label for="nic">Nic :</label>
-                            <input type="text" class="form-control" id="nic" pattern="[0-9]{9}[V]{1}" 
-                            onChange={(e)=>{
-                              setNic(e.target.value);
-                            }}/>
-                           
-                        </div>
-=======
               <div class="form-group">
                 <label for="email">Email :</label>
                 <input
@@ -297,7 +234,6 @@ export default function AddEmployee() {
                   }}
                 />
               </div>
->>>>>>> a8a1efe6072eb462f88c65f686e11e54adda1fd0
 
               <div class="form-group">
                 <label for="nic">Nic :</label>

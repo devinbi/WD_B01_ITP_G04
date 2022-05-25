@@ -12,7 +12,7 @@ const ContactUsPage = () => {
       <div className="col-sm-25 shadow round pb-3">
          <h1 className="text-center pt-3 text-secondary">Contact Us</h1>
          <h3>Have any Questions...?</h3>
-    <div class="d-flex justify-content-around mt-5">
+    <div class="d-flex justify-content-around">
         
      <Card border="danger" style={{ width: '18rem' }}>
         <Card.Header>Network failuer ?</Card.Header>
