@@ -133,6 +133,9 @@ export default function AddSuplire() {
                             <div className="form">
                                 <label for="name">Supplier Name</label>
                                 <input type="text" className="form-control" id="name" placeholder="Enter Supplier Name"
+                                //Validation Part
+                                    pattern="[A-Z a-z]{0,20}"
+                                    title="Name max length should be 20"
                                 onChange={(e)=>{
 
                                     setName(e.target.value);
@@ -144,6 +147,8 @@ export default function AddSuplire() {
                             <div className="form">
                                 <label for="email">E-mail</label>
                                 <input type="text" className="form-control" id="email" placeholder="Enter E-mail"
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                    title="Email pattern should be abcd@gmail.com"
                                 onChange={(e)=>{
 
                                     setEmail(e.target.value);
@@ -154,7 +159,9 @@ export default function AddSuplire() {
 
                             <div className="form">
                                 <label for="phoneNumber">Phone Number</label>
-                                <input pattern="[0-9]{10}" title="Invalid Tel-number" type="text" className="form-control" id="phoneNumber" placeholder="Enter Phone Number"
+                                <input type="text" className="form-control" id="phoneNumber" placeholder="Enter Phone Number"
+                                    pattern="[0-9]{10}"
+                                    title="Phone Number pattern should be 0779988123"
                                 onChange={(e)=>{
 
                                     setPhonrNumber(e.target.value);
@@ -165,7 +172,9 @@ export default function AddSuplire() {
 
                             <div className="form">
                                 <label for="nic">NIC Number</label>
-                                <input pattern="[0-9]{9}[V]{1}" type="text" className="form-control" id="nic" placeholder="Enter Nic Number"
+                                <input type="text" className="form-control" id="nic" placeholder="Enter Nic Number"
+                                    pattern="[0-9]{9}[V]{1}"
+                                    title="NIC Number pattern should be 111222333V"
                                 onChange={(e)=>{
 
                                     setNic(e.target.value);
@@ -177,8 +186,12 @@ export default function AddSuplire() {
                             <div className="form">
                                 <label for="address">Address</label>
                                 <input type="text" className="form-control" id="address" placeholder="Enter Address"
+                                //Validation Part
+                                    pattern="[A-Z a-z]{0,50}"
+                                    title="Name max length should be 50"
+                                
                                 onChange={(e)=>{
-
+                                   
                                     setAddress(e.target.value);
 
                                 }}/>

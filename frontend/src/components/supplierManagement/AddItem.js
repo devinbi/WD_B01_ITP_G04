@@ -6,25 +6,25 @@ import axios from 'axios';
 
 export default function AddItem() {
 
-    const [name, setName] = useState("");
-    const [quantity, setQuantity] = useState("");
-    const [price, setPrice] = useState("");
-    const [cost, setCost] = useState("");
-    const [adminid, setAdminId] = useState(""); 
+    const [itemName, setName] = useState("");
+    const [itemQuantity, setQuantity] = useState("");
+    const [unitPrice, setPrice] = useState("");
+    const [totalCost, setCost] = useState("");
+    const [adminId, setAdminId] = useState(""); 
 
     function sendData(e){
         e.preventDefault();
         
         const newItem = {
-            name,
-            quantity,
-            price,
-            cost,
-            adminid
+            itemName,
+            itemQuantity,
+            unitPrice,
+            totalCost,
+            adminId
 
         }
         console.log("new objectttt",newItem)
-        console.log("new")
+        
         axios.post("http://localhost:8070/item/add", newItem).then(()=>{
           alert("Success");
           window.location.reload();
@@ -130,7 +130,10 @@ export default function AddItem() {
                         <form onSubmit={sendData}>
                             <div className="form">
                                 <label  for="itemName">Item Name</label>
-                                <input type="text" className="form-control" id="itemName" placeholder="Enter Item Name"
+                                <input required type="text" className="form-control" id="itemName" placeholder="Enter Item Name"
+                                //Validation Part
+                                    pattern="[A-Z a-z]{0,20}"
+                                    title="Name max length should be 20"
                                 onChange={(e)=>{
 
                                     setName(e.target.value);
@@ -142,6 +145,9 @@ export default function AddItem() {
                             <div className="form">
                                 <label for="itemQuantity">Item Quantity</label>
                                 <input required type="text" className="form-control" id="itemQuantity" placeholder="Enter Item Quantity"
+                                // Validation Part
+                                    pattern="[0-9]{3,}"
+                                    title="Item Quantity should be more than 99"
                                 onChange={(e)=>{
 
                                     setQuantity(e.target.value);
@@ -152,7 +158,9 @@ export default function AddItem() {
 
                             <div className="form">
                                 <label for="unitPrice">Unit Price</label>
-                                <input required type="text" className="form-control" id="unitPrice" placeholder="Unit Price"
+                                <input required type="text" className="form-control" id="unitPrice" placeholder="Unit Price" 
+                                //Validation Part
+                                    pattern="[0-9]{1,}.[0-9][0-9]"
                                 onChange={(e)=>{
 
                                     setPrice(e.target.value);
@@ -164,6 +172,8 @@ export default function AddItem() {
                             <div className="form">
                                 <label for="totalCost">Total Cost</label>
                                 <input required type="text" className="form-control" id="totalCost" placeholder="Total Cost"
+                                //Validation Part
+                                    pattern="[0-9]{1,}.[0-9][0-9]"
                                 onChange={(e)=>{
 
                                     setCost(e.target.value);
