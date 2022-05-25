@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import axios from 'axios';
 
 
+
 export default function AddSalary(){
     const [employeeId, setId] = useState("");
     const [labourHr, setLabourHr] = useState("");

@@ -118,54 +118,63 @@ export default function AddCustomer(){
                 onChange={(e)=> {
                   setId(e.target.value);
                 }}
+                required
                 />
               </div>
 
             <div class="form-group">
               <div class="mb-3">
                 <label for="customerName" class="form-label">Customer Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter Customer Name" 
+                <input type="text" class="form-control" id="name" placeholder="Enter Customer Name"
+                pattern="[A-Z a-z]{0,50}"  
                 onChange={(e)=> {
                   setName(e.target.value);
                 }}
-                
+                required
                 />
               </div>
 
               <div class="mb-3">
                 <label for="countactNumber" class="form-label">Contact Number</label>
                 <input type="number" class="form-control" id="contactNumber" placeholder="Enter Customer Contact Number"
-                pattern="[0-9]{10}"
+                  pattern="[0-9]{10}"
                   onChange={(e)=> {
                   setNumber(e.target.value);
                 }}
+                required
                 />
               </div>
 
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="Email" placeholder="Enter Customer Email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                 onChange={(e)=> {
                   setEmail(e.target.value);
                 }}
+                required
                 />
               </div>
 
               <div class="mb-3">
                 <label for="address" class="form-label">Address</label>
                 <input type="text" class="form-control" id="address" placeholder="Enter Customer Address"
+                pattern="[A-Z a-z 0-9]{0,70}"
                 onChange={(e)=> {
                   setAddress(e.target.value);
                 }}
+                required
                 />
               </div>
 
               <div class="mb-3">
                 <label for="country" class="form-label">Country</label>
                 <input type="text" class="form-control" id="country" placeholder="Enter Country"
+                pattern="[A-Z a-z]{0,20}"
                 onChange={(e)=> {
                   setCountry(e.target.value);
                 }}
+                required
                 />
               </div>
 
@@ -176,6 +185,7 @@ export default function AddCustomer(){
                   onChange={(e)=> {
                   setNic(e.target.value);
                 }}
+                required
                 />
               </div>
 

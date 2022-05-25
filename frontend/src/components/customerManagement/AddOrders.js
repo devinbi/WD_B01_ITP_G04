@@ -168,20 +168,21 @@ export default function AddOrders(){
                 <label for="OrderId" class="form-label">Order ID</label>
                 <input type="text" class="form-control" id="OrderId" placeholder="Enter Order ID"
                 pattern="[o]{1}[0-9]{4}"
-                 onChange={(e)=> {
+                onChange={(e)=> {
                   setOrderId(e.target.value);
                 }}
-                
+                required
                 />
               </div>
 
               <div class="mb-3">
                 <label for="typeOfOrder" class="form-label">Type of Order</label>
-                <input type="text" class="form-control" id="TypeOfOrder" placeholder="Enter Order Type" 
+                <input type="text" class="form-control" id="TypeOfOrder" placeholder="Enter Order Type"
+                pattern="[A-Z a-z]{0,30}"  
                 onChange={(e)=> {
                     setType(e.target.value);
                 }}
-                
+                required
                 />
               </div>
 
@@ -191,6 +192,7 @@ export default function AddOrders(){
                 onChange={(e)=> {
                     setPrice(e.target.value);
                 }}
+                required
                 />
               </div>
 
@@ -200,6 +202,7 @@ export default function AddOrders(){
                 onChange={(e)=> {
                     setUnits(e.target.value);
                 }}
+                required
                 />
               </div>
 
@@ -210,7 +213,7 @@ export default function AddOrders(){
                   setStatus(e.target.value);
                 }}
                  >
-                 <option selected>Choose...</option>
+                 <option selected disabled value="">Choose...</option>
                  <option value="active">Active</option>
                  <option value="process">Process</option>
                 </select>
@@ -221,27 +224,31 @@ export default function AddOrders(){
               <div class="mb-3">
                 <label for="OrderDescription" class="form-label">Description of Order</label>
                 <input type="text" class="form-control" id="OrderDescription" placeholder="Enter Order description "
+                pattern="[A-Z a-z 0-9.-]{0,150}"
                 onChange={(e)=> {
                     setDescription(e.target.value);
                 }}
+                required
                 />
               </div>
 
               <div class="mb-3">
                 <label for="DateOfReceipt" class="form-label">Date of Receipt of Order</label>
-                <input type="date" class="form-control" id="DateOfReceipt" placeholder="Enter Date of Receipt of Order"
+                <input type="date" class="form-control" id="DateOfReceipt"
                 onChange={(e)=> {
                     setDateOfReceipt(e.target.value);
                 }}
+                required
                 />
               </div>
 
               <div class="mb-3">
                 <label for="OrderDeliveryDate" class="form-label">Order Delivery Date</label>
-                <input type="date" class="form-control" id="OrderDeliveryDate" placeholder="Enter Order Delivery Date"
+                <input type="date" class="form-control" id="OrderDeliveryDate" 
                 onChange={(e)=> {
                   setOrderDeliveryDate(e.target.value);
                 }}
+                required
                 />
               </div>
 
@@ -251,7 +258,7 @@ export default function AddOrders(){
 
         </div>
 
-                          </div>
+    </div>
                             
 
 
