@@ -59,7 +59,7 @@ export default function Updateincome({ data, cl }){
             }}
               value={orderid}
               disabled
-            />
+           required />
           </div>
 
           <div className="mb-3">
@@ -74,7 +74,7 @@ export default function Updateincome({ data, cl }){
             setOrdertype(e.target.value);
             }}
               value={ordertype}
-            ></input>
+            required></input>
           </div>
 
           
@@ -91,7 +91,7 @@ export default function Updateincome({ data, cl }){
                 setNumberofunits(e.target.value);
             }}
               value={numberofunits}
-            ></input>
+           required></input>
           </div>
           
               <div className="mb-3">
@@ -106,7 +106,7 @@ export default function Updateincome({ data, cl }){
                 setUnitprice(e.target.value);
             }}
               value={unitprice}
-            ></input>
+            required></input>
           </div>
 
           <div className="mb-3">
@@ -121,7 +121,7 @@ export default function Updateincome({ data, cl }){
                 setTotalamount(e.target.value);
             }}
               value={totalamount}
-            ></input>
+            required></input>
           </div>
 
           <button

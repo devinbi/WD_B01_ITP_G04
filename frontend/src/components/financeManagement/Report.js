@@ -15,6 +15,9 @@ export default  function Report(){
     const [expense, setExpense] = useState([]);
     const [income, setIncome] = useState([]);
 
+  
+    const [total, setTotal] = useState("");
+
     useEffect(() => {
 
         axios.get(HOST1 + "/")
@@ -38,6 +41,20 @@ export default  function Report(){
 
     }, []);
 
+    //net profit calculation
+
+    const [expen,setExpen] = useState("");
+    const [inc, setInc] = useState("");
+    function sendData(r){
+    r.preventDefault();
+    console.log(inc);
+    let incc = parseInt(inc);
+    let expens =  parseInt(expen);
+    const tot = (incc - expens) ;
+     setTotal(tot);
+ 
+}
+// side navigation
     return(
        
         <div>
@@ -176,44 +193,56 @@ export default  function Report(){
                 
             </div>
 
-            
-            <div>
+ {/* netprofit calculation form  */}
+
+        <div>
             <div className="container">
-                  <title Add expense />
-                    <form>
-                    <div class="form-group">
-                            <label for="expenseid">Total Expenses :</label>
-                            <input type="text" class="form-control" id="Texp" placeholder=" Total Expenses "
-                            />
-                        
-                        </div>
-              
-                        <div className="form-group">
+               <div className="row justify-content-sm-center pt-5">
+                  <div className="col-sm-6 shadow round pb-3">
+                       <h3 className="text-center pt-3 text-secondary">Net Profit Calculation</h3>
+                           <form  onSubmit={sendData}>
+                    <div className="form-group">
                             <label for="description">Total Income :</label>
                             <input type="text" class="form-control" id="Tinc"  placeholder="Total Income" 
-                           />
+                          onChange={(e)=>{
+                            setInc(e.target.value);
+                        }} required/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="expenseid">Total Expenses :</label>
+                            <input type="text" class="form-control" id="Texp" placeholder=" Total Expenses "
+                            onChange={(e)=>{
+                                setExpen(e.target.value);
+                            }} required/>
+                        
                         </div>
 
                          <div className="form-group">
                             <label for="date">Date</label>
-                            <input type="date" class="form-control" id="date" />
+                            <input type="date" class="form-control" id="date"
+                         required />
                         </div>
                         
-                        <div class="form-group">
-                            <label for="totalamount">Netprofit:</label>
-                            <input type="number" class="form-control" id="Nprofit" title="enter only numbers" 
-                           />
-                        </div>
-            
+                        
+                    <center>
                     <button type="submit" class="btn btn-info btn-lg" >Calculate</button>
+                    </center>
 
                     
                     </form>
+                    <div class="form-group">
+                            <label for="totalamount">Netprofit:</label>
+                            <input type="number" class="form-control" id="Nprofit" 
+                           value={total}/>
+                        </div>
                 </div>
             </div>
         </div>
-        </div>
-        </div>
+     </div>
+</div>
+</div>
+</div>
         
         
 

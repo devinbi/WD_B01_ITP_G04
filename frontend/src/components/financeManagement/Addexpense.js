@@ -156,28 +156,31 @@ export  default function Addexpense(){
        <div>
        
        <div className="container">
-                  <title Add expense />
-                    <form onSubmit={sendData}>
+
+     <div className="row justify-content-sm-center pt-5">
+        <div className="col-sm-6 shadow round pb-3">
+            <h3 className="text-center pt-3 text-secondary">Add Expense Details</h3>
+                <form onSubmit={sendData}>
                     <div class="form-group">
-                            <label for="expenseid">Expense ID :</label>
+                         <label for="expenseid">Expense ID :</label>
                             <input type="text" class="form-control" id="expenseid" pattern="[E][0-9]{4}" title = "invalid id pattern" placeholder="Enter expense id"
-                            onChange={(e)=>{
-                                setExpenseid(e.target.value);
+                             onChange={(e)=>{
+                             setExpenseid(e.target.value);
                             }}
                             required/>
                         
-                        </div>
+                            </div>
               
-                        <div className="form-group">
+                            <div className="form-group">
                             <label for="description">Description</label>
                             <input type="text" class="form-control" id="description" pattern="[A-Z a-z]{0-100}" title="description max length should be 100" placeholder="Enter description" onChange={(e)=>{
                                 setDescription(e.target.value);
                             }}
                             required/>
-                        </div>
+                            </div>
 
 
-                        <div class="form-group">
+                            <div class="form-group">
                             <label for="expensetype">Expense Type:</label>
                             <select name ="expensetype" class="form-control" id="expensetype" 
                             onChange={(e)=>{
@@ -185,42 +188,48 @@ export  default function Addexpense(){
                                 
                             }}
                             required>
+                             <option selected disabled>choose</option>
                              <option value="supplier">Supplier Cost</option>
                              <option value="maintenance">Maintenance Cost</option>
                              <option value="salary">Salary Cost</option>
                             </select>
-                         </div>
-                         <div className="form-group">
+                            </div>
+
+                            <div className="form-group">
                             <label for="date">Date</label>
                             <input type="date" class="form-control" id="date" onChange={(e)=>{
                                 setDate(e.target.value);
                             }}
                             required/>
-                        </div>
+                            </div>
                         
-                        <div class="form-group">
+                            <div class="form-group">
                             <label for="totalamount">Total Amount:</label>
                             <input type="number" class="form-control" id="totalamount" title="enter only numbers" 
                             onChange={(e)=>{
                                 setTotalamount(e.target.value);
                             }}
                             required/>
-                        </div>
-            
-                    <button type="submit" class="btn btn-info btn-lg" >Submit</button>
+
+                            </div>
+                            <center>
+                            <button type="submit" class="btn btn-info btn-lg" >Submit</button>
+                            </center>
 
                     
                     </form>
                 </div>
             </div>
+         </div>
+    </div>
 
 
         {/* view slary table*/}
 
    <div class="container">
-   <div className="container-fluid mt-3">
-   <MaterialTable  style={{background:"#E3ECFF"}}
-       title="All salary details"
+       <div className="container-fluid mt-3">
+           <MaterialTable  style={{background:"#E3ECFF"}}
+               title="All salary details"
        
 
        columns={[
@@ -233,11 +242,11 @@ export  default function Addexpense(){
          
             ]}
 
-       data={Salarys}
-       options={{
+           data={Salarys}
+           options={{
            sorting: true,
            search:false,
-         filtering : true,
+           filtering : true,
            actionsColumnIndex: -1,
            
 
@@ -247,16 +256,13 @@ export  default function Addexpense(){
    />
 
   
-
-</div>
-</div> 
-
-            {/* view maintenance table */}
-
+ {/* view maintenance table */}
+   </div>
+         </div> 
              <div class="container">
-             <div className="container-fluid mt-3">
-             <MaterialTable  style={{background:"#E3ECFF"}}
-                    title="All maintenance Details "
+                <div className="container-fluid mt-3">
+                    <MaterialTable  style={{background:"#E3ECFF"}}
+                         title="All maintenance Details "
 
                     columns={[
                         
@@ -283,7 +289,7 @@ export  default function Addexpense(){
 
 
 
-</div>
+   </div>
 </div>
 
 

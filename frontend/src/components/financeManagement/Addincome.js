@@ -36,6 +36,8 @@ import MaterialTable from 'material-table'
 
   }, []);
 
+  //calculation
+
   let nofunits = parseInt(numberofunits);
   let uprice = parseInt(unitprice);
   let totalamount;
@@ -67,7 +69,7 @@ import MaterialTable from 'material-table'
       })
    
   }
-  
+  //side navigation
     return(
 
       <div>
@@ -140,20 +142,24 @@ import MaterialTable from 'material-table'
           </div>
      <div>
 
-     <div className="container">
+{/* add income form */}
+
+<div className="row justify-content-sm-center pt-5">
+       <div className="col-sm-6 shadow round pb-3">
+            <h3 className="text-center pt-3 text-secondary">Add Income Details</h3>
                     <form onSubmit={sendData}>
-                    <div class="form-group">
+                          <div class="form-group">
                             <label for="orderid">Order ID :</label>
-                            <input type="text" class="form-control" id="orderid"  placeholder="Enter ID "
+                            <input type="text" class="form-control" id="orderid"  placeholder="Enter ID " pattern="[o][0-9]{4}" title = "invalid id pattern"
                             onChange={(e)=>{
                                 setOrderid(e.target.value);
                             }}
                             required/>
                         
-                        </div>
-                        <div className="form-group">
+                             </div>
+                             <div className="form-group">
                             <label for="ordertype">Order Type:</label>
-                            <input type="text" class="form-control" id="ordertype"  placeholder="Enter order type" onChange={(e)=>{
+                            <input type="text" class="form-control" id="ordertype"  placeholder="Enter order type" pattern="[A-Z a-z]{0-50}" title="description max length should be 50" onChange={(e)=>{
                                 setOrdertype(e.target.value);
                             }}
                             required/>
@@ -162,7 +168,7 @@ import MaterialTable from 'material-table'
 
                         <div className="form-group">
                             <label for="numberofunits">Number of units</label>
-                            <input type="text" class="form-control" id="numberofunits" placeholder="Enter number of units" onChange={(e)=>{
+                            <input type="number" class="form-control" id="numberofunits" placeholder="Enter number of units" onChange={(e)=>{
                                 setNumberofunits(e.target.value);
                             }}
                             required/>
@@ -170,26 +176,30 @@ import MaterialTable from 'material-table'
 
                         <div class="form-group">
                             <label for="unitprice">Unit Price :</label>
-                            <input type="text" class="form-control" id="unitprice" placeholder="Enter unit price"
+                            <input type="number" class="form-control" id="unitprice" placeholder="Enter unit price"
                             onChange={(e)=>{
                                 setUnitprice(e.target.value);
                             }}
                             required/>
                         </div>
                         
-            
+                    <center>
                     <button type="submit" class="btn btn-info btn-lg">Submit</button>
+                    </center>
                     </form>
                 </div>
              </div>
+         </div>
+   
          
 
-    {/*order table*/}
+ {/*order table*/}
     
     <div class="container">  
-    <div class="container-fluid mt-3">
-    <MaterialTable  style={{background:"#E3ECFF"}}
-                title="All Order Details "
+            <div class="container-fluid mt-3">
+                  <MaterialTable  style={{background:"#E3ECFF"}}
+                  
+                          title="All Order Details "
                 columns={[
                     { title: "Order ID", field: "OrderId", type: "string" },
                     { title: "Type of Order", field: "TypeOfOrder", type: "string" },
@@ -208,11 +218,11 @@ import MaterialTable from 'material-table'
                     actionsColumnIndex: -1
                     }}
                     
+                    
 
     />
-    </div>
-
-    </div>
+               </div>
+         </div>
     </div>
 
     )

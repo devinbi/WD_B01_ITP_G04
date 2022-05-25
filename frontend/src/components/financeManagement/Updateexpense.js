@@ -60,7 +60,7 @@ export default function Updateexpense({ data, cl }){
             }}
               value={expenseid}
               /*disabled*/
-            />
+           required />
           </div>
 
           <div className="mb-3">
@@ -75,7 +75,7 @@ export default function Updateexpense({ data, cl }){
             setExpensetype(e.target.value);
             }}
               value={expensetype}
-            ></input>
+            required></input>
           </div>
 
           
@@ -92,7 +92,7 @@ export default function Updateexpense({ data, cl }){
                 setDate(e.target.value);
             }}
               value={date}
-            ></input>
+           required ></input>
           </div>
           <label for="expensetype">Expense Type</label>
               <select name="expensetype" id="expensetype"  
@@ -119,7 +119,7 @@ export default function Updateexpense({ data, cl }){
                 setDescription(e.target.value);
             }}
               value={description}
-            ></input>
+            required></input>
           </div>
 
           <button
