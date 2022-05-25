@@ -7,6 +7,7 @@ export default function UpdateDressmaking({ data, cl }){
     const [deviceCode, setdeviceCode] = useState("");
     const [modelNo, setmodelNo] = useState("");
     const [machineName, setmachineName] = useState("");
+    const [employeeId, setId] = useState("");
     const [price, setprice] = useState("");
     const [department, setdepartment] = useState("");
     const [condition, setcondition] = useState("");
@@ -17,6 +18,7 @@ export default function UpdateDressmaking({ data, cl }){
     setdeviceCode(data.deviceCode)
     setmodelNo(data.modelNo)
     setmachineName(data.machineName)
+    setId(data.employeeId)
     setprice(data.price)
     setdepartment(data.department)
     setcondition(data.condition)
@@ -31,6 +33,7 @@ export default function UpdateDressmaking({ data, cl }){
                 deviceCode,
                 modelNo,
                 machineName,
+                employeeId,
                 price,
                 department,
                 condition,
@@ -62,6 +65,8 @@ return (
               type="text"
               className="form-control"
               name="deviceCode"
+              pattern="[T][0-9]{4}"  
+              title="ID must include T and 4 digits"
               onChange={(e)=>{
                 setdeviceCode(e.target.value);
             }}
@@ -78,6 +83,7 @@ return (
               type="text"
               className="form-control"
               name="modelNo"
+              maxlength="5"
               onChange={(e)=>{
             setmodelNo(e.target.value);
             }}
@@ -93,6 +99,9 @@ return (
               type="text"
               className="form-control"
               name="machineName"
+              pattern="[A-Z a-z]{0,15}"
+              title="can't exceed 15 characters"
+         
               onChange={(e)=>{
             setmachineName(e.target.value);
             }}
@@ -101,11 +110,26 @@ return (
           </div>
 
           <div className="mb-3">
+            <label for=" employeeId" className="form-label">
+              Employee Id
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              name="employeeId"
+              onChange={(e)=>{
+            setId(e.target.value);
+            }}
+              value={employeeId}
+            ></input>
+          </div>
+
+          <div className="mb-3">
             <label for="price" className="form-label">
               Price
             </label>
             <input
-              type="text"
+              type="number"
               className="form-control"
               name="price"
               onChange={(e)=>{

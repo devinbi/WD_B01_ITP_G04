@@ -78,6 +78,8 @@ return (
               type="text"
               className="form-control"
               name="machineCode"
+              pattern="[D,T][0-9]{4}" 
+              title="ID must include D/T and 4 digits"
               onChange={(e)=>{
             setmachineCode(e.target.value);
             }}
@@ -142,7 +144,7 @@ return (
               Cost
             </label>
             <input
-              type="text"
+              type="number"
               className="form-control"
               name="cost"
               onChange={(e)=>{
