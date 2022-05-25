@@ -7,8 +7,8 @@ const empSchema = new Schema({
     employeeId:{
         type : String,
         required : true,
-        unique : true,
-        minlength : 3
+        // unique : true,
+        // minlength : 3
 
     },
     name :{

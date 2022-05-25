@@ -61,7 +61,6 @@ import Updateincome from './components/financeManagement/Updateincome.js';
 import Report from './components/financeManagement/Report';
 
 
-
 import AddEmployee from "./components/employeeManagement/AddEmployee";
 import AllEmployee from './components/employeeManagement/AllEmployee';
 import AddSalary from './components/employeeManagement/AddSalary';

@@ -6,7 +6,7 @@ let Salary = require("../models/Salary");
 
 router.route("/add").post(async(req,res)=>{
 
-    const{employeeId,labourHr,otHr,leave,designation,salary} = req.body;
+    const{employeeId,labourHr,otHr,leave,designation,month,salary} = req.body;
 
     const newSalary = await new Salary({
         employeeId,
@@ -14,6 +14,7 @@ router.route("/add").post(async(req,res)=>{
         otHr,
         leave,
         designation,
+        month,
         salary
     })
     newSalary.save().then(()=>{
@@ -42,7 +43,7 @@ router.route("/update/:id").put(async (req,res)=>{
 
     let salaryID = req.params.id;
     
-    const{employeeId,labourHr,otHr,leave,designation,salary} = req.body;
+    const{employeeId,labourHr,otHr,leave,designation,month,salary} = req.body;
 
     //Create object
 
@@ -52,6 +53,7 @@ router.route("/update/:id").put(async (req,res)=>{
         otHr,
         leave,
         designation,
+        month,
         salary
     }
 

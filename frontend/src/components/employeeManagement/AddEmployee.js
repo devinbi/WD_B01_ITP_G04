@@ -35,12 +35,11 @@ export default function AddEmployee() {
       jDate,
     };
 
-    console.log(newEmployee);
     axios
       .post("http://localhost:8070/employee/add", newEmployee)
       .then(() => {
         alert("Success");
-        window.location.reload();
+        window.location.href = "/alle";
       })
       .catch((err) => {
         alert(err);
@@ -136,28 +135,34 @@ export default function AddEmployee() {
               Employee Details
             </h1>
             <form onSubmit={sendData}>
-              <div class="form-group">
+              <div className="form-group">
                 <label for="employeeId">Employee Id :</label>
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="employeeId"
-                  placeholder="Enter "
+                  placeholder="Enter"
+                  pattern="[E]{1}[m]{1}[p]{1}[0-9]{3}"
+                  title="Employee ID should be Empxxx"
                   onChange={(e) => {
                     setId(e.target.value);
                   }}
+                  required
                 />
               </div>
               <div className="form-group">
                 <label for="name">Name :</label>
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="name"
                   placeholder="Enter"
+                  pattern="[A-Z a-z]{5,20}"
+							    title="Name max length should be 20"
                   onChange={(e) => {
                     setName(e.target.value);
                   }}
+                  required
                 />
               </div>
 
@@ -165,11 +170,14 @@ export default function AddEmployee() {
                 <label for="address">Address :</label>
                 <textarea
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="address"
+                  pattern="[A-Z a-z]{5,100}"
+							    title="Address max length should be 100"
                   onChange={(e) => {
                     setAddress(e.target.value);
                   }}
+                  required
                 ></textarea>
               </div>
 
@@ -182,6 +190,7 @@ export default function AddEmployee() {
                   onChange={(e) => {
                     setBdate(e.target.value);
                   }}
+                  required
                 />
               </div>
 
@@ -190,21 +199,23 @@ export default function AddEmployee() {
                 <input
                   type="radio"
                   id="gender"
-                  name="Male"
+                  name="gender"
                   value="Male"
                   onChange={(e) => {
                     setGender(e.target.value);
                   }}
+                  required
                 />{" "}
                 Male
                 <input
                   type="radio"
                   id="gender"
-                  name="Female"
+                  name="gender"
                   value="Female"
                   onChange={(e) => {
                     setGender(e.target.value);
                   }}
+                  required
                 />
                 Female
               </div>
@@ -212,12 +223,16 @@ export default function AddEmployee() {
               <div class="form-group">
                 <label for="email">Email :</label>
                 <input
-                  type="email"
+                  type="text"
                   class="form-control"
                   id="email"
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$"
+                  title="Email should be isura@gmail.com"
                   onChange={(e) => {
                     setEmail(e.target.value);
                   }}
+                  
+                  required
                 />
               </div>
 
@@ -232,6 +247,7 @@ export default function AddEmployee() {
                   onChange={(e) => {
                     setPhone(e.target.value);
                   }}
+                  required
                 />
               </div>
 
@@ -245,6 +261,7 @@ export default function AddEmployee() {
                   onChange={(e) => {
                     setNic(e.target.value);
                   }}
+                  required
                 />
               </div>
 
@@ -257,6 +274,7 @@ export default function AddEmployee() {
                   onChange={(e) => {
                     setEquality(e.target.value);
                   }}
+                  required
                 />
               </div>
 
@@ -269,6 +287,7 @@ export default function AddEmployee() {
                   onChange={(e) => {
                     setWexperence(e.target.value);
                   }}
+                  required
                 />
               </div>
               <div class="form-group">
@@ -282,7 +301,7 @@ export default function AddEmployee() {
                   }}
                 >
                   {" "}
-                  <option>choose</option>
+                  <option selected disabled value="">Choose</option>
                   <option value="Industrial Engineering Department">
                     Industrial Engineering Department{" "}
                   </option>
@@ -309,9 +328,10 @@ export default function AddEmployee() {
                   onChange={(e) => {
                     setDesignation(e.target.value);
                   }}
+                  required
                 >
                   {" "}
-                  <option>choose</option>
+                  <option selected disabled value="">Choose</option>
                   <option value="driver">Driver</option>
                   <option value="Officer">Officer</option>
                   <option value="worker">Worker</option>
@@ -326,6 +346,7 @@ export default function AddEmployee() {
                   onChange={(e) => {
                     setJdate(e.target.value);
                   }}
+                  required
                 />
               </div>
 
