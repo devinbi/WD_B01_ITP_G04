@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from "react";
 import axios from "axios";
 import MaterialTable from 'material-table';
-import { Modal,Form,Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import OrderToTransportModal from "./modal/OrderToTransportModal";
 
 
@@ -12,7 +12,7 @@ const addTransportByOrder = () => {
 
     const [addOToTransport,setaddOToTransport]=useState()
 
-    const [descriptionSet,setdescriptionSet]=useState("")
+    // const [descriptionSet,setdescriptionSet]=useState("")
 
 
     const [ODes, setOdes] = useState([]);
@@ -66,23 +66,25 @@ const addTransportByOrder = () => {
 
 
   return (
-    <div>addTransportByOrder
+    <div>
 
-<div class="component-body">
+   <div class="component-body">
         
-        <div class="area">
+         {/* navigation bar for transport management */}
+         <div class="area">
                 <nav class="main-menu bg-primary">
                     <ul>
                         <li>
-                            <a href="/AllT">
+                            {/* navigation path to Dashboard */}
+                            <a href="/dashT"> 
                                 <i class="fa fa-home "></i>
                                 <span class="nav-text">Dashboard</span>
                                 <i class="fa fa-angle-right "></i>
                             </a>
                         </li>
-                  
                         <hr></hr>
                         <li class="has-subnav">
+                             {/* navigation path to add vehicle page */}
                             <a href="/vadd">
                                 <i class="fa fa-plus-circle"></i>
                                 <span class="nav-text">Add Vehicle</span>
@@ -90,6 +92,7 @@ const addTransportByOrder = () => {
                             </a>
                         </li>
                         <li class="has-subnav">
+                            {/* navigation path to view vehicle page */}
                             <a href="/vview">
                              <i class="fa fa-truck " ></i>
                                 <span class="nav-text">Vehicle List</span>
@@ -99,7 +102,7 @@ const addTransportByOrder = () => {
                         <hr></hr>
                         <li>
                             <a href="/viewO">
-                            
+                            {/* navigation path to add transport by order page */}
                                 <i class="fa fa-truck-arrow-right "></i>
                                 <span class="nav-text">Order Details</span>
                                 <i class="fa fa-angle-right "></i>
@@ -107,14 +110,16 @@ const addTransportByOrder = () => {
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
-                            <a href="/add">
+                            {/* navigation path to add transport page */}
+                            <a href="/Tadd">
                             <i class="fa fa-plus-circle" aria-hidden="true"></i>
                                 <span class="nav-text">Add Transort Detials</span>
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
                         <li class="has-subnav">
-                            <a href="/view">
+                            {/* navigation path to view transport page */}
+                            <a href="/Tview">
                             <i class="fa fa-file-text-o" aria-hidden="true"></i>
                                 <span class="nav-text">Transport Details</span>
                                 <i class="fa fa-angle-right "></i>
@@ -122,6 +127,7 @@ const addTransportByOrder = () => {
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
+                            {/* navigation path to add maintenance page */}
                             <a href="/madd">
                             <i class="fa fa-plus-circle" aria-hidden="true"></i>
 
@@ -130,6 +136,7 @@ const addTransportByOrder = () => {
                             </a>
                         </li>
                         <li class="has-subnav">
+                            {/* navigation path to view maintenance page */}
                             <a href="/mview">
                                 <i class="fa fa-wrench "></i>
                                 <span class="nav-text">View Maintenance</span>
@@ -138,6 +145,7 @@ const addTransportByOrder = () => {
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
+                            {/* navigation path to view Drivers page */}
                             <a href="/viewD">
                                 <i class="fa fa-users" aria-hidden="true"></i>
                                 <span class="nav-text">Driver Details</span>
@@ -146,6 +154,7 @@ const addTransportByOrder = () => {
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
+                            {/* navigation path to Report page */}
                             <a href="/rview">
                             <i class="fa fa-download" aria-hidden="true"></i>
                                 <span class="nav-text">Transport Reports</span>
@@ -154,24 +163,14 @@ const addTransportByOrder = () => {
                         </li>
                     </ul>
 
-                    <ul class="logout">
-                        <li>
-                            <a href="/">
-                                <i class="fa fa-power-off "></i>
-                                <span class="nav-text">Logout</span>
-                                <i class="fa fa-angle-right "></i>
-                            </a>
-                        </li>
-                    </ul>
+                  
                 </nav>
             </div>
             </div>
         
-    <div className="component-body">
-    <div className="container-fluid ">
-    <br/>
-        <br/>
-        <br/>
+    <div className="container">
+    <div className="container-fluid mt-5 ">
+   
                 <MaterialTable  style={{background:"#E3ECFF"}}
                     title=" Order  Details"
                     
@@ -193,10 +192,10 @@ const addTransportByOrder = () => {
 
                     actions={[
                         {
-                            icon: () => <button class="btn btn-sm  btn-outline-success" >ADD to Transport</button>,
+                            icon: () => <button class="btn btn-sm  btn-outline-success" >Add to Transport</button>,
                             onClick: (event, rowData) => {
-                                // setDescriptionDetails(rowData);
-                                setaddOToTransport(rowData); //setTransportDetailswithID
+                              
+                                setaddOToTransport(rowData); //setOrderDetailswithID
                                 setShow(true);
                                  //setStatetrue
                             }
@@ -209,7 +208,7 @@ const addTransportByOrder = () => {
 
                
 
-            </div>
+           
             <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>
@@ -221,7 +220,7 @@ const addTransportByOrder = () => {
       </Modal>
 
             </div>
-   
+   </div>
 
 
     </div>

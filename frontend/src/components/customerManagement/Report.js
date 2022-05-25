@@ -45,70 +45,70 @@ export default  function Report(){
         <div>
         <div class="component-body">
        
-       <div class="area">
-               <nav class="main-menu bg-primary">
-                   <ul>
-                       <li>
-                           <a href="/AllT">
-                               <i class="fa fa-home fa-2x"></i>
-                               <span class="nav-text">Dashboard</span>
-                               <i class="fa fa-angle-right fa-2x"></i>
-                           </a>
-                       </li>
-                       <hr></hr>
-                       <li class="has-subnav">
-                           <a href="/addCus">
-                               <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                               <span class="nav-text">Add Customer Details </span>
-                               <i class="fa fa-angle-right fa-2x"></i>
-                           </a>
-                       </li>
-                       <hr></hr>
-                       <li class="has-subnav">
-                           <a href="/viewCus">
-                               <i class="fa fa-users" aria-hidden="true"></i>
-                               <span class="nav-text">View Customer List</span>
-                               <i class="fa fa-angle-right fa-2x"></i>
-                           </a>
-                       </li>
-                       <hr></hr>
-                       <li class="has-subnav">
-                           <a href="/addOrder">
-                           <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                               <span class="nav-text"> Add Order Details</span>
-                               <i class="fa fa-angle-right fa-2x"></i>
-                           </a>
-                       </li>
-                       <hr></hr>
-                       <li class="has-subnav">
-                           <a href="/viewOrder">
-                           <i class="fa fa-cart-flatbed"></i>
-                               <span class="nav-text"> View Order Details</span>
-                               <i class="fa fa-angle-right fa-2x"></i>
-                           </a>
-                       </li>
-                       <hr></hr>
-                       
-                       <li class="has-subnav">
-                           <a href="/ReportOc">
-                           <i class="fa fa-download" aria-hidden="true"></i>
-                               <span class="nav-text">Order Report</span>
-                               <i class="fa fa-angle-right fa-2x"></i>
-                           </a>
-                       </li>
-                   </ul>
-                   <hr></hr>
-                   <ul class="logout">
-                       <li>
-                           <a href="/">
-                               <i class="fa fa-power-off fa-2x"></i>
-                               <span class="nav-text">Logout</span>
-                               <i class="fa fa-angle-right fa-2x"></i>
-                           </a>
-                       </li>
-                   </ul>
-               </nav>
-           </div>
+        <div class="area">
+                <nav class="main-menu bg-primary">
+                    <ul>
+                        <li>
+                            <a href="/AllT">
+                                <i class="fa fa-home "></i>
+                                <span class="nav-text">Dashboard</span>
+                                <i class="fa fa-angle-right "></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/addCustomer">
+                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                <span class="nav-text">Add Customer Details </span>
+                                <i class="fa fa-angle-right "></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/viewCus">
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                                <span class="nav-text">View Customer List</span>
+                                <i class="fa fa-angle-right "></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/addOrder">
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                <span class="nav-text"> Add Order Details</span>
+                                <i class="fa fa-angle-right "></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/viewOrder">
+                            <i class="fa fa-cart-flatbed"></i>
+                                <span class="nav-text"> View Order Details</span>
+                                <i class="fa fa-angle-right "></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        
+                        <li class="has-subnav">
+                            <a href="/ReportOc">
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                                <span class="nav-text">Order Report</span>
+                                <i class="fa fa-angle-right "></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr></hr>
+                    <ul class="logout">
+                        <li>
+                            <a href="/">
+                                <i class="fa fa-power-off "></i>
+                                <span class="nav-text">Logout</span>
+                                <i class="fa fa-angle-right "></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
            </div>
        
             <div>

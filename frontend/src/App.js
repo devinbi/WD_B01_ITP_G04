@@ -35,6 +35,8 @@ import Updateexpense from './components/financeManagement/Updateexpense.js';
 import Updateincome from './components/financeManagement/Updateincome.js';
 import Report from './components/financeManagement/Report';
 
+
+//Inventory Management
 // import TopHeader from './components/Topheader';
 import AddProduct from './components/inventoryManagement/AddProduct';
 import AddRawMaterial from './components/inventoryManagement/AddRawMaterial';
@@ -46,6 +48,8 @@ import InventoryReport from './components/inventoryManagement/Report';
 import OutofStock from './components/inventoryManagement/OutofStock';
 
 
+
+//transport management
 import AddTransport from './components/transportManagement/AddTransport';
 import AllTransport from './components/transportManagement/AllTransport';
 import AddVehicle from './components/transportManagement/AddVehicle';
@@ -58,6 +62,10 @@ import EReport from './components/transportManagement/Report';
 import Drivers from './components/transportManagement/Drivers';
 import OrderDes from './components/transportManagement/addTransportByOrder'
 import Dashboard from './components/Dashboard';
+import DashboardT from './components/transportManagement/DashboardT';
+import ContactUsPage from './components/ContactUsPage';
+
+
 
 import AddEmployee from "./components/employeeManagement/AddEmployee";
 import AllEmployee from './components/employeeManagement/AllEmployee';
@@ -70,6 +78,7 @@ import ViewSalary from './components/employeeManagement/ViewSalary';
 import Reports from './components/employeeManagement/Report';
 import TopHeader from './components/employeeManagement/topHeader';
 import Resigned from './components/employeeManagement/Resigned';
+import Inform from './components/employeeManagement/inform';
 import {BrowserRouter, Route} from "react-router-dom";
 
 // Supplier Management 
@@ -81,6 +90,9 @@ import ReportSM from './components/supplierManagement/Report';
 import UpdateItem from './components/supplierManagement/UpdateItem';
 import UpdateSupplier from './components/supplierManagement/UpdateSupplier';
 
+// login and home
+import Login from './components/login'
+import Home from './components/home'
 function App() {
 
 
@@ -92,8 +104,11 @@ function App() {
     <BrowserRouter >
         
     <TopHeader/>
-
+{/*FOR HOME AND LOGIN ROUTE PATH*/}
+            <Route path="/" exact component={Login} />
+            <Route path="/Home" exact component={Home} />
 {/*employeemanagment route paths*/}
+            <Route path="/Inform" exact component={Inform} />
             <Route path="/resign" exact component={Resigned} />
             <Route path="/report" exact component={Reports} />
             <Route path="/viewS" exact component={ViewSalary} />
@@ -115,7 +130,7 @@ function App() {
            <Route path= "/updatei" exact component={Updateincome}/>
            <Route path= "/rep" exact component={Report}/>
              
-
+      {/* transport amangement roter path */}
             <Route  path="/Tadd" exact component={AddTransport}/>
             <Route path= "/Tview" exact component={AllTransport}/>
             <Route path= "/vadd" exact component={AddVehicle}/>
@@ -128,7 +143,13 @@ function App() {
             <Route path= "/viewD" exact component={Drivers}/>
             <Route path= "/viewO" exact component={OrderDes}/>
             <Route path= "/dash" exact component={Dashboard}/>
+            <Route path= "/dashT" exact component={DashboardT}/>
+            <Route path= "/con" exact component={ContactUsPage}/>
 
+
+
+
+{/*inventory management route paths*/}
         <Route path="/add" exact component={AddProduct}></Route> 
         <Route path="/adding" exact component={AddRawMaterial}></Route>
         <Route path="/fetch" exact component={AllProductItems}></Route>
@@ -148,8 +169,9 @@ function App() {
             <Route path='/UpdateDressmaking' exact component = {UpdateDressmaking} />
             <Route path='/UpdateTechnical' exact component = {UpdateTechnical} />
             <Route path='/UpdateEmaintainance' exact component = {UpdateEmaintainance} />
-            <Route path='/Report' exact component = {Report} />
+            <Route path='/ReportE' exact component = {ReportE} />
 
+            {/*customermanagment route paths*/}
             <Route path="/deletedCus" exact component = {DeletedCustomer} />
             <Route path="/viewCus" exact component={AllCustomers} />
             <Route path="/viewOrder" exact component={AllOrders} />

@@ -18,7 +18,7 @@ export default function AllRawMaterials(props){
     useEffect(()=>{
         
         
-            axios.get('http://localhost:8070/RawMaterial/')
+            axios.get('http://localhost:8070/RawMaterial/allR')
             .then((res) =>{
                 console.log(res.data);
                 setRawMaterials(res.data);
@@ -71,7 +71,7 @@ export default function AllRawMaterials(props){
                         
 
                             <li class="has-subnav">
-                                <a href="/">
+                                <a href="/allR">
                                 <i class="fa fa-cubes fa-2x" aria-hidden="true"></i>
                                     <span class="nav-text">All Raw Materials</span>
                                     <i class="fa fa-angle-right"></i>
@@ -136,10 +136,11 @@ export default function AllRawMaterials(props){
             </div>
 
         <div>
+        <center>
             <div class="container">
                 <div class="container-fluid">
                     <MaterialTable  
-                        style={{background:"#E3ECFF"}}
+                        style={{background:"#E3ECFF", width:"85%"}}
                         title="All Raw Material Details"
                         columns={[
                                 
@@ -198,6 +199,7 @@ export default function AllRawMaterials(props){
 
                 </div>
             </div>
+        </center>
         </div>
     </div>
     )

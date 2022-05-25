@@ -105,7 +105,7 @@ export default function AllTechnicals(props){
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
-                            <a href="/Report">
+                            <a href="/ReportE">
                             <i class="fa fa-download" aria-hidden="true"></i>
                                 <span class="nav-text">Equipment Maintainance Report</span>
                                 <i class="fa fa-angle-right"></i>
@@ -128,7 +128,7 @@ export default function AllTechnicals(props){
             </div>
             </div>
 
-        <div>
+        <div class="container">
         <div class="container-fluid">
         <MaterialTable  style={{background:"#E3ECFF"}}
                     title="All Technical Devices"
@@ -137,6 +137,7 @@ export default function AllTechnicals(props){
                         { title: "Device Code", field: "deviceCode", type: "string" },
                         { title: "Model No", field: "modelNo", type: "string" },
                         { title: "Machine Name", field: "machineName", type: "string" },
+                        { title: "Employee Id", field: "employeeId", type: "string" },
                         { title: "Price", field: "price", type: "string" },
                         { title: "Department", field: "department", type: "string" },
                         { title: "Condition", field: "condition", type: "string" }

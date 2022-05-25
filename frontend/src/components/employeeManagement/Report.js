@@ -41,7 +41,8 @@ export default  function Report(){
     
 
     return(
-       <div><div class="component-body">
+       <div>
+       <div class="component-body">
         
        <div class="area">
                <nav class="main-menu bg-primary" >
@@ -102,6 +103,14 @@ export default  function Report(){
                        </li>
                        <hr></hr>
                        <li class="has-subnav">
+                            <a href="/resign">
+                            <i class="fa fa-users-slash"></i>
+                                <span class="nav-text">Resigned Employee</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                       <li class="has-subnav">
                            <a href="/Report">
                            <i class="fa fa-download" aria-hidden="true"></i>
                                <span class="nav-text">Reports</span>
@@ -113,8 +122,9 @@ export default  function Report(){
                </nav>
            </div>
            </div>
+        
             <div>
-            <div className="container">
+            <div className="container pt-7">
             <div class="container-fluid">
         <MaterialTable  style={{background:"#E3ECFF"}}
                     title="All Employee Details "
@@ -146,10 +156,8 @@ export default  function Report(){
 
         
         </div>
-                </div>
-
-<div className="container">
-            <div class="container-fluid">
+    
+            <div class="container-fluid pt-7">
         <MaterialTable  style={{background:"#E3ECFF"}}
                     title="All Salary Details "
 

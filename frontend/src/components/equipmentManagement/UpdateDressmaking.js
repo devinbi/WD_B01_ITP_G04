@@ -79,6 +79,8 @@ return (
               type="text"
               className="form-control"
               name="machineName"
+              pattern="[A-Z a-z]{0,15}"
+              title="can't exceed 15 characters"
               onChange={(e)=>{
             setmachineName(e.target.value);
             }}
@@ -108,7 +110,7 @@ return (
               Price
             </label>
             <input
-              type="text"
+              type="number"
               className="form-control"
               name="price"
               onChange={(e)=>{

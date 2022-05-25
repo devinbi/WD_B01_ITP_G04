@@ -65,11 +65,13 @@ return (
               type="text"
               className="form-control"
               name="OrderId"
+              pattern="[o]{1}[0-9]{4}"
               onChange={(e)=>{
                 setOrderId(e.target.value);
             }}
               value={OrderId}
               disabled
+              required
             />
           </div>
 
@@ -81,10 +83,12 @@ return (
               type="text"
               className="form-control"
               name="TypeOfOrder"
+              pattern="[A-Z a-z]{0,30}" 
               onChange={(e)=>{
                 setType(e.target.value);
             }}
               value={TypeOfOrder}
+              required
             ></input>
           </div>
 
@@ -102,6 +106,7 @@ return (
                 setPrice(e.target.value);
             }}
               value={UnitPrice}
+              required
             ></input>
           </div>
          
@@ -117,6 +122,7 @@ return (
                 setUnits(e.target.value);
             }}
               value={NoOfUnit}
+              required
             ></input>
           </div>
 
@@ -126,7 +132,7 @@ return (
                 setStatus(e.target.value);
             }}
              value={OrderStatus}
-        >       <option>Choose...</option>
+        >       <option selected disabled value="">Choose...</option>
                 <option value="active">Active</option>
                 <option value="process">Process</option>
                 
@@ -141,10 +147,12 @@ return (
               type="text"
               className="form-control"
               name="OrderDescription"
+              pattern="[A-Z a-z 0-9.-]{0,150}"
               onChange={(e)=>{
                 setDescription(e.target.value);
             }}
               value={OrderDescription}
+              required
             ></input>
           </div>
  
@@ -161,6 +169,7 @@ return (
                 setDateOfReceipt(e.target.value);
             }}
               value={DateOfReceipt}
+              required
             ></input>
           </div>
 
@@ -176,6 +185,7 @@ return (
                 setOrderDeliveryDate(e.target.value);
             }}
               value={OrderDeliveryDate}
+              required
             ></input>
           </div>
 

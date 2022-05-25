@@ -4,7 +4,7 @@ import MaterialTable from 'material-table';
 
 
 export default function AddOrders(){
-
+//set order details
   const [OrderId, setOrderId] = useState("");
   const [TypeOfOrder, setType] = useState("");
   const [UnitPrice, setPrice] = useState("");
@@ -28,7 +28,7 @@ export default function AddOrders(){
   
   },[])
   
-
+//add  details to the database using axios
   function sendData(e){
     e.preventDefault();
     
@@ -55,7 +55,7 @@ export default function AddOrders(){
   
 
     return(
-
+// view inventory manager's end product details
       <div>
           <div class="container">
                     <div class="container-fluid">
@@ -87,77 +87,79 @@ export default function AddOrders(){
 
                           </div>
                           </div>
-
+{/* side navigation bar */}
       <div class="component-body">
-     
-     <div class="area">
-             <nav class="main-menu bg-primary">
-                 <ul>
-                     <li>
-                         <a href="/AllT">
-                             <i class="fa fa-home fa-2x"></i>
-                             <span class="nav-text">Dashboard</span>
-                             <i class="fa fa-angle-right fa-2x"></i>
-                         </a>
-                     </li>
-                     <hr></hr>
-                     <li class="has-subnav">
-                         <a href="/addCustomer">
-                             <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                             <span class="nav-text">Add Customer Details </span>
-                             <i class="fa fa-angle-right fa-2x"></i>
-                         </a>
-                     </li>
-                     <hr></hr>
-                     <li class="has-subnav">
-                         <a href="/viewCus">
-                             <i class="fa fa-users" aria-hidden="true"></i>
-                             <span class="nav-text">View Customer List</span>
-                             <i class="fa fa-angle-right fa-2x"></i>
-                         </a>
-                     </li>
-                     <hr></hr>
-                     <li class="has-subnav">
-                         <a href="/addOrder">
-                         <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                             <span class="nav-text"> Add Order Details</span>
-                             <i class="fa fa-angle-right fa-2x"></i>
-                         </a>
-                     </li>
-                     <hr></hr>
-                     <li class="has-subnav">
-                         <a href="/viewOrder">
-                         <i class="fa fa-cart-flatbed"></i>
-                             <span class="nav-text"> View Order Details</span>
-                             <i class="fa fa-angle-right fa-2x"></i>
-                         </a>
-                     </li>
-                     <hr></hr>
-                     
-                     <li class="has-subnav">
-                         <a href="/ReportOc">
-                         <i class="fa fa-download" aria-hidden="true"></i>
-                             <span class="nav-text">Order Report</span>
-                             <i class="fa fa-angle-right fa-2x"></i>
-                         </a>
-                     </li>
-                 </ul>
-                 <hr></hr>
-                 <ul class="logout">
-                     <li>
-                         <a href="/">
-                             <i class="fa fa-power-off fa-2x"></i>
-                             <span class="nav-text">Logout</span>
-                             <i class="fa fa-angle-right fa-2x"></i>
-                         </a>
-                     </li>
-                 </ul>
-             </nav>
+      <div class="area">
+                <nav class="main-menu bg-primary">
+                    <ul>
+                        <li>
+                            <a href="/AllT">
+                                <i class="fa fa-home "></i>
+                                <span class="nav-text">Dashboard</span>
+                                <i class="fa fa-angle-right "></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/addCustomer">
+                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                <span class="nav-text">Add Customer Details </span>
+                                <i class="fa fa-angle-right "></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/viewCus">
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                                <span class="nav-text">View Customer List</span>
+                                <i class="fa fa-angle-right "></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/addOrder">
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                <span class="nav-text"> Add Order Details</span>
+                                <i class="fa fa-angle-right "></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
+                            <a href="/viewOrder">
+                            <i class="fa fa-cart-flatbed"></i>
+                                <span class="nav-text"> View Order Details</span>
+                                <i class="fa fa-angle-right "></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        
+                        <li class="has-subnav">
+                            <a href="/ReportOc">
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                                <span class="nav-text">Order Report</span>
+                                <i class="fa fa-angle-right "></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr></hr>
+                    <ul class="logout">
+                        <li>
+                            <a href="/">
+                                <i class="fa fa-power-off "></i>
+                                <span class="nav-text">Logout</span>
+                                <i class="fa fa-angle-right "></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
          </div>
-         </div>
      
-     <div className="container">
-     <center><h3>ADD ORDER DETAILS</h3></center>
+     {/* Add order details to the form */}
+         <div className="container mb-2">
+        <div className="row justify-content-sm-center pt-5">
+      <div className="col-sm-6 shadow round pb-3">
+      <h1 className="text-center pt-3 text-secondary">Order Details</h1>
         <form onSubmit = {sendData}>
 
 
@@ -167,21 +169,24 @@ export default function AddOrders(){
             <div class="mb-3">
                 <label for="OrderId" class="form-label">Order ID</label>
                 <input type="text" class="form-control" id="OrderId" placeholder="Enter Order ID"
+                //validation for Order id
                 pattern="[o]{1}[0-9]{4}"
-                 onChange={(e)=> {
-                  setOrderId(e.target.value);
+                onChange={(e)=> {
+                  setOrderId(e.target.value);// asing values
                 }}
-                
+                required
                 />
               </div>
 
               <div class="mb-3">
                 <label for="typeOfOrder" class="form-label">Type of Order</label>
-                <input type="text" class="form-control" id="TypeOfOrder" placeholder="Enter Order Type" 
+                <input type="text" class="form-control" id="TypeOfOrder" placeholder="Enter Order Type"
+                //validation for Order type
+                pattern="[A-Z a-z]{0,30}"  
                 onChange={(e)=> {
-                    setType(e.target.value);
+                    setType(e.target.value);// asing values
                 }}
-                
+                required
                 />
               </div>
 
@@ -189,8 +194,9 @@ export default function AddOrders(){
                 <label for="unitPrice" class="form-label">Unit Price</label>
                 <input type="number" class="form-control" id="unitPrice" placeholder="Enter Unit Price"
                 onChange={(e)=> {
-                    setPrice(e.target.value);
+                    setPrice(e.target.value);// asing values
                 }}
+                required
                 />
               </div>
 
@@ -198,8 +204,9 @@ export default function AddOrders(){
                 <label for="noOfUnit" class="form-label">Number of Units</label>
                 <input type="number" class="form-control" id="NoOfUnit" placeholder="Enter Number of Units"
                 onChange={(e)=> {
-                    setUnits(e.target.value);
+                    setUnits(e.target.value);// asing values
                 }}
+                required
                 />
               </div>
 
@@ -207,10 +214,11 @@ export default function AddOrders(){
                  <label for="orderStatus" class="form-label">Order Status</label>
                  <select id="orderStatus" class="form-select" placeholder="Enter Order Status"
                  onChange={(e)=> {
-                  setStatus(e.target.value);
+                  setStatus(e.target.value);// asing values
                 }}
                  >
-                 <option selected>Choose...</option>
+                    
+                 <option selected disabled value="">Choose...</option>
                  <option value="active">Active</option>
                  <option value="process">Process</option>
                 </select>
@@ -221,27 +229,32 @@ export default function AddOrders(){
               <div class="mb-3">
                 <label for="OrderDescription" class="form-label">Description of Order</label>
                 <input type="text" class="form-control" id="OrderDescription" placeholder="Enter Order description "
+                //validation for Order description
+                pattern="[A-Z a-z 0-9.-]{0,150}"
                 onChange={(e)=> {
-                    setDescription(e.target.value);
+                    setDescription(e.target.value);// asing values
                 }}
+                required
                 />
               </div>
 
               <div class="mb-3">
                 <label for="DateOfReceipt" class="form-label">Date of Receipt of Order</label>
-                <input type="date" class="form-control" id="DateOfReceipt" placeholder="Enter Date of Receipt of Order"
+                <input type="date" class="form-control" id="DateOfReceipt"
                 onChange={(e)=> {
-                    setDateOfReceipt(e.target.value);
+                    setDateOfReceipt(e.target.value);// asing values
                 }}
+                required
                 />
               </div>
 
               <div class="mb-3">
                 <label for="OrderDeliveryDate" class="form-label">Order Delivery Date</label>
-                <input type="date" class="form-control" id="OrderDeliveryDate" placeholder="Enter Order Delivery Date"
+                <input type="date" class="form-control" id="OrderDeliveryDate" 
                 onChange={(e)=> {
-                  setOrderDeliveryDate(e.target.value);
+                  setOrderDeliveryDate(e.target.value);// asing values
                 }}
+                required
                 />
               </div>
 
@@ -251,8 +264,9 @@ export default function AddOrders(){
 
         </div>
 
-                          </div>
-                            
+    </div>
+    </div>
+    </div>                     
 
 
                 

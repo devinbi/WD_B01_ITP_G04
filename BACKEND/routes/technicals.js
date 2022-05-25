@@ -6,6 +6,7 @@ router.route("/add").post((req,res)=>{
     const deviceCode = req.body.deviceCode;
     const modelNo = req.body.modelNo;
     const machineName = req.body.machineName;
+    const employeeId=req.body.employeeId;
     const price= req.body.price;
     const department= req.body.department;
     const condition = req.body.condition;
@@ -17,6 +18,7 @@ router.route("/add").post((req,res)=>{
         deviceCode,
         modelNo,
         machineName,
+        employeeId,
         price,
         department,
         condition
@@ -48,12 +50,13 @@ router.route("/").get((req,res)=>{
 //update details
 router.route("/update/:id").put(async(req,res)=>{
     let techID =req.params.id;
-    const{DeviceCode,ModelNo,MachineName,price,Department,Condition,ETAID,MaintainanceID}=req.body;
+    const{DeviceCode,ModelNo,MachineName,employeeId,price,Department,Condition,ETAID,MaintainanceID}=req.body;
 
     const updateTechnical ={
         DeviceCode,
         ModelNo,
         MachineName,
+        employeeId,
         price,
         Department,
         Condition

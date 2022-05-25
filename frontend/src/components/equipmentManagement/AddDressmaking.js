@@ -95,7 +95,7 @@ export default function AddDressmaking(){
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
-                            <a href="/Report">
+                            <a href="/ReportE">
                             <i class="fa fa-download" aria-hidden="true"></i>
                                 <span class="nav-text">Equipment Maintainance Report</span>
                                 <i class="fa fa-angle-right"></i>
@@ -117,26 +117,37 @@ export default function AddDressmaking(){
                 </nav>
             </div>
             </div>
-        <div className="container">
-        <center><h3>ADD DRESSMAKING DETAILS</h3></center>
+            <div className="container pt-5">
+      <div className="row justify-content-sm-center pt-5">
+      <div className="col-sm-6 shadow round pb-3">
+      <h1 className="text-center pt-3 text-secondary">Dressmaking Tools Details</h1>
         <form onSubmit={sendData}>
         <div class="form-group">
           <label for="MachineCode">Machine Code</label>
-          <input type="text" class="form-control" id="MachineCode" pattern="[D][0-9]{4}"
+          <input type="text" class="form-control" id="MachineCode" 
+                 pattern="[D][0-9]{4}"
+                 title="ID must include D and 4 digits"
    onChange={(e)=>{
 
            setMachineCode(e.target.value);
 
-          }}/>
+          }}
+          required
+          />
         </div>
 
         <div class="form-group">
           <label for="MachineName">Machine Name</label>
-          <input type="text" class="form-control" id="MachineName"onChange={(e)=>{
+          <input type="text" class="form-control" id="MachineName"
+                 pattern="[A-Z a-z]{0,15}"
+                 title="can't exceed 15 characters"
+          onChange={(e)=>{
              
              setMachineName(e.target.value);
 
-          }}/>
+          }}
+          required
+          />
         </div>
 
         <div class="form-group">
@@ -145,7 +156,9 @@ export default function AddDressmaking(){
 
             setCategory(e.target.value);
 
-          }}>
+          }}
+          required
+          >
             <option value="Choose" selected disabled >Choose...</option>
             <option value="Sewing Tools">Sewing Tools</option>
             <option value="Pressing Tools">Pressing Tools</option>
@@ -156,11 +169,13 @@ export default function AddDressmaking(){
 
         <div class="form-group">
           <label for="Price">Price</label>
-          <input type="text" class="form-control" id="Price" onChange={(e)=>{
+          <input type="number" class="form-control" id="Price" onChange={(e)=>{
 
            setPrice(e.target.value);
 
-          }}/>
+          }} 
+          required
+          />
         </div>
 
         <div class="form-group">
@@ -169,7 +184,9 @@ export default function AddDressmaking(){
 
             setCondition(e.target.value);
 
-          }}>
+          }}
+          required
+          >
             <option value="Choose" selected disabled >Choose...</option>
             <option value="New">New</option>
             <option value="Old">Old</option>
@@ -182,6 +199,8 @@ export default function AddDressmaking(){
         <button type="submit" class="btn btn-primary">Submit</button>
        
       </form>
+      </div>
+      </div>
       </div>
       </div>
     )

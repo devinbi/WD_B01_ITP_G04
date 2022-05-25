@@ -114,7 +114,7 @@ export default  function Report(){
                       </li>
                       <hr></hr>
                       <li class="has-subnav">
-                          <a href="/ReportT">
+                          <a href="/ReportE">
                           <i class="fa fa-download" aria-hidden="true"></i>
                               <span class="nav-text">Equipment Maintainance Report</span>
                               <i class="fa fa-angle-right"></i>
