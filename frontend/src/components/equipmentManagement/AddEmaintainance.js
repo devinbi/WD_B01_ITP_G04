@@ -98,7 +98,7 @@ export default function AddEmaintainance(){
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
-                            <a href="/Report">
+                            <a href="/ReportE">
                             <i class="fa fa-download" aria-hidden="true"></i>
                                 <span class="nav-text">Equipment Maintainance Report</span>
                                 <i class="fa fa-angle-right"></i>
@@ -120,26 +120,38 @@ export default function AddEmaintainance(){
                 </nav>
             </div>
             </div>
-        <div className="container">
-        <center><h3>ADD MAINTAINANCE DETAILS</h3></center>
+        <div className="container pt-5">
+        <div className="row justify-content-sm-center pt-5">
+      <div className="col-sm-6 shadow round pb-3">
+      <h1 className="text-center pt-3 text-secondary">Maintainance Details</h1>
         <form onSubmit={sendData}>
 
         <div class="form-group">
           <label for="MaintainanceID">Maintainance ID</label>
-          <input type="text" class="form-control" id="MaintainanceID" pattern="[M][0-9]{4}" onChange={(e)=>{
+          <input type="text" class="form-control" id="MaintainanceID"
+                  pattern="[M][0-9]{4}" 
+                  title="ID must include M and 4 digits"
+                  onChange={(e)=>{
 
                   setmaintainID(e.target.value);
 
-        }}/>
+        }}
+        required
+        />
         </div>
 
         <div class="form-group">
           <label for="MachineCode">Device/Machine Code</label>
-          <input type="text" class="form-control" id="MachineCode" pattern="[D,T][0-9]{4}" onChange={(e)=>{
+          <input type="text" class="form-control" id="MachineCode" 
+                 pattern="[D,T][0-9]{4}" 
+                 title="ID must include D/T and 4 digits"
+          onChange={(e)=>{
 
              setmachineCode(e.target.value);
 
-        }}/>
+        }}
+        required
+        />
         </div>
 
         <div class="form-group">
@@ -148,7 +160,9 @@ export default function AddEmaintainance(){
 
             setdate(e.target.value);
 
-           }}/>
+           }}
+           required
+           />
         </div>
 
         <div class="form-group">
@@ -157,7 +171,9 @@ export default function AddEmaintainance(){
 
                setcategory(e.target.value);
 
-           }}>
+           }}
+           required
+           >
              <option value="Choose" selected disabled >Choose...</option>
             <option value="Dressmaking Tools">Dressmaking Tools</option>
             <option value="Technical Devices">Technical Devices</option>
@@ -170,7 +186,9 @@ export default function AddEmaintainance(){
 
                   setcondition(e.target.value);
 
-           }}>
+           }}
+           required
+           >
             
             <option value="Choose" selected disabled >Choose...</option>
             <option value="Have to repair">Have to repair</option>
@@ -181,16 +199,20 @@ export default function AddEmaintainance(){
 
         <div class="form-group">
           <label for="Cost">Cost</label>
-          <input type="text" class="form-control" id="Cost" onChange={(e)=>{
+          <input type="number" class="form-control" id="Cost" onChange={(e)=>{
 
             setcost(e.target.value);
 
-           }}/>
+           }}
+           required
+           />
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
        
       </form>
+      </div>
+      </div>
       </div>
       </div>
     )
