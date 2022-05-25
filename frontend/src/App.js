@@ -153,6 +153,7 @@ function App() {
             <Route path='/UpdateEmaintainance' exact component = {UpdateEmaintainance} />
             <Route path='/ReportE' exact component = {ReportE} />
 
+            {/*customermanagment route paths*/}
             <Route path="/deletedCus" exact component = {DeletedCustomer} />
             <Route path="/viewCus" exact component={AllCustomers} />
             <Route path="/viewOrder" exact component={AllOrders} />
