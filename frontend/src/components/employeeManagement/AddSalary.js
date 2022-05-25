@@ -7,6 +7,7 @@ export default function AddSalary() {
   const [otHr, setOtHr] = useState("");
   const [leave, setLeave] = useState("");
   const [designation, setDesignation] = useState("");
+  const [month, setMonth] = useState("");
   const [salary, setSalary] = useState("");
 
   function sendData(e) {
@@ -30,6 +31,7 @@ export default function AddSalary() {
       otHr,
       leave,
       designation,
+      month,
       salary,
     };
 
@@ -37,7 +39,8 @@ export default function AddSalary() {
       .post("http://localhost:8070/salary/add", newSalary)
       .then(() => {
         alert("Success");
-        window.location.reload();
+        window.location.href = "/alls";
+        // window.location.reload();
       })
       .catch((err) => {
         alert(err);
@@ -136,7 +139,9 @@ export default function AddSalary() {
                   type="text"
                   class="form-control"
                   id="employeeId"
-                  placeholder="Enter "
+                  placeholder="Enter"
+                  pattern="[E]{1}[m]{1}[p]{1}[0-9]{3}"
+                  title="Employee ID should be Empxxx"
                   onChange={(e) => {
                     setId(e.target.value);
                   }}
@@ -150,9 +155,12 @@ export default function AddSalary() {
                   class="form-control"
                   id="name"
                   placeholder="Enter"
+                  pattern="[0-9]{1,}"
+                  title="Should Be numbers"
                   onChange={(e) => {
                     setLabourHr(e.target.value);
                   }}
+                  required
                 />
               </div>
 
@@ -162,9 +170,13 @@ export default function AddSalary() {
                   type="text"
                   class="form-control"
                   id="otHr"
+                  placeholder="Enter"
+                  pattern="[0-9]{1,}"
+                  title="Should Be numbers"
                   onChange={(e) => {
                     setOtHr(e.target.value);
                   }}
+                  required
                 />
               </div>
 
@@ -173,10 +185,14 @@ export default function AddSalary() {
                 <input
                   type="text"
                   class="form-control"
+                  placeholder="Enter"
+                  pattern="[0-9]{1,}"
+                  title="Should Be numbers"
                   id="leave"
                   onChange={(e) => {
                     setLeave(e.target.value);
                   }}
+                  required
                 />
               </div>
               <div class="form-group">
@@ -188,21 +204,42 @@ export default function AddSalary() {
                   onChange={(e) => {
                     setDesignation(e.target.value);
                   }}
+                  required
                 >
                   {" "}
-                  <option>Choose</option>
+                  <option selected disabled value="">Choose</option>
                   <option value="driver">Driver</option>
                   <option value="Officer">Officer</option>
                   <option value="worker">Worker</option>
                 </select>
               </div>
-              {/* <div className="form-group">
-                            <label for="salary">OT Hours :</label>
-                            <input type="text" class="form-control" id="salary" onChange={(e)=>{
-                                setSalary(e.target.value);
-                            }}/>
-                        </div> */}
-
+              <div class="form-group">
+                <label for="month">Month :</label>
+                <select
+                  name="month"
+                  id="month"
+                  class="form-control"
+                  onChange={(e) => {
+                    setMonth(e.target.value);
+                  }}
+                  required
+                >
+                  {" "}
+                  <option selected disabled value="">Choose</option>
+                  <option value="January">January</option>
+                  <option value="February">February</option>
+                  <option value="March">March</option>
+                  <option value="April">April</option>
+                  <option value="May">May</option>
+                  <option value="June">June</option>
+                  <option value="July">July</option>
+                  <option value="August">August</option>
+                  <option value="September">September</option>
+                  <option value="October">October</option>
+                  <option value="November">November</option>
+                  <option value="December">December</option>
+                </select>
+              </div>
               <center>
                 <button type="submit" class="btn btn-info btn-lg">
                   ADD

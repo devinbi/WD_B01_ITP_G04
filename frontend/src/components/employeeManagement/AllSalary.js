@@ -128,12 +128,16 @@ export default function AllSalary(props){
             </div>
             </div>
   
-  <br/>
+ 
+  
  
 <div className="container">
-        <div class="container-fluid">
+        <div class="container-fluid mt-5">
+       
+        
+       <a href="adds"> <button type="button" class="btn btn-danger mb-3 px-3 "><i class="fa fa-plus fa-2x" aria-hidden="true"></i></button></a>
         <MaterialTable  style={{background:"#E3ECFF"}}
-                    title="All Employee Details "
+                    title="All Salary Details "
 
                     columns={[
                         { title: "Employee Id", field: "employeeId", type: "string" },
@@ -141,6 +145,7 @@ export default function AllSalary(props){
                         { title: "OT Hours", field: "otHr", type: "string" },
                         { title: "Leaves", field: "leave", type: "date" },
                         { title: "Designation", field: "designation", type: "string" },
+                        { title: "Month", field: "month", type: "string"},
                         { title: "Salary", field: "salary", type: "string" },
                          
                             ]}
@@ -192,6 +197,7 @@ export default function AllSalary(props){
 
        
         </div>
+      
         </div>
         </div>
     )
