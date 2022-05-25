@@ -78,14 +78,14 @@ export default function AllTransport(){
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
-                            <a href="/add">
+                            <a href="/Tadd">
                             <i class="fa fa-plus-circle" aria-hidden="true"></i>
                                 <span class="nav-text">Add Transort Detials</span>
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
                         <li class="has-subnav">
-                            <a href="/view">
+                            <a href="/Tview">
                             <i class="fa fa-file-text-o" aria-hidden="true"></i>
                                 <span class="nav-text">Transport Details</span>
                                 <i class="fa fa-angle-right "></i>
@@ -137,12 +137,10 @@ export default function AllTransport(){
                 </nav>
             </div>
             </div>
-            <div>
-    <div class ="component-body">
-         <div className="container-fluid ">
-             <br></br>
-             <br></br>
-             <br></br>
+        
+        <div class ="container">
+         < div className="container-fluid ">
+           
              <MaterialTable  style={{background:"#E3ECFF"}}
                     title="All Transport Details "
 
@@ -182,7 +180,7 @@ export default function AllTransport(){
                     ]}
                     />
                   
-         </div>
+         
 
 
            {/* update modal */}

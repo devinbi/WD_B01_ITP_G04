@@ -75,14 +75,14 @@ export default function AllMaintenance(){
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
-                            <a href="/add">
+                            <a href="/Tadd">
                             <i class="fa fa-plus-circle" aria-hidden="true"></i>
                                 <span class="nav-text">Add Transort Detials</span>
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
                         <li class="has-subnav">
-                            <a href="/view">
+                            <a href="/Tview">
                             <i class="fa fa-file-text-o" aria-hidden="true"></i>
                                 <span class="nav-text">Transport Details</span>
                                 <i class="fa fa-angle-right "></i>
@@ -134,12 +134,10 @@ export default function AllMaintenance(){
                 </nav>
             </div>
             </div>
-            <div>
-                
-         <div className="component-body">
-             <div className="container-fluid ">
-             <br/>
-             <br/>
+            
+     
+            <div className="container">
+            <div class="container-fluid">
              <MaterialTable  style={{background:"#E3ECFF"}}
                     title="All Maintenance Details "
 
@@ -172,7 +170,7 @@ export default function AllMaintenance(){
                     ]}
 
         />
-         </div>
+        
 
                  {/* delete modal */}
                  <Modal show={StateDelete}>
@@ -185,6 +183,7 @@ export default function AllMaintenance(){
          </div>
          </div>
          </div>
-  );
+        
+  )
 
 }

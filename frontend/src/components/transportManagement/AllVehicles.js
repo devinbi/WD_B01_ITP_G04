@@ -78,14 +78,14 @@ export default function AllVehicles(){
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
-                            <a href="/add">
+                            <a href="/Tadd">
                             <i class="fa fa-plus-circle" aria-hidden="true"></i>
                                 <span class="nav-text">Add Transort Detials</span>
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
                         <li class="has-subnav">
-                            <a href="/view">
+                            <a href="/Tview">
                             <i class="fa fa-file-text-o" aria-hidden="true"></i>
                                 <span class="nav-text">Transport Details</span>
                                 <i class="fa fa-angle-right "></i>
@@ -137,11 +137,9 @@ export default function AllVehicles(){
                 </nav>
             </div>
             </div>
-            <div>
-         <div className="component-body">
+           
+         <div className="container">
              <div className="container-fluid ">
-             <br/>
-             <br/>
              <MaterialTable  style={{background:"#E3ECFF"}}
                     title="All Vehicle Details "
 
@@ -181,7 +179,7 @@ export default function AllVehicles(){
                     ]}
 
         />
-         </div>
+       
         {/* update modal  */}
            <Modal show={StateUpdate} size="lg"
                 aria-labelledby="contained-modal-title-vcenter"

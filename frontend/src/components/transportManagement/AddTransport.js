@@ -115,14 +115,14 @@ export default function AddTransport(){
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
-                            <a href="/add">
+                            <a href="/Tadd">
                             <i class="fa fa-plus-circle" aria-hidden="true"></i>
                                 <span class="nav-text">Add Transort Detials</span>
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
                         <li class="has-subnav">
-                            <a href="/view">
+                            <a href="/Tview">
                             <i class="fa fa-file-text-o" aria-hidden="true"></i>
                                 <span class="nav-text">Transport Details</span>
                                 <i class="fa fa-angle-right "></i>
@@ -177,12 +177,10 @@ export default function AddTransport(){
             <div>
 
             
-
-
-
-
-
-        <div className="container">
+        <div className="container mb-2">
+        <div className="row justify-content-sm-center pt-5">
+      <div className="col-sm-6 shadow round pb-3">
+      <h1 className="text-center pt-3 text-secondary">Transort Details</h1>
             <form onSubmit={sendData }>
                <div class="form-group">
                     <label for="tid">Transport ID :</label>
@@ -234,7 +232,7 @@ export default function AddTransport(){
                     <label for="description">Description :</label>
                     <input type="text" class="form-control" id="description" placeholder="Add a description"
 							pattern="[A-Z a-z0-9]{0,120}"
-							title="Name max length should be 120"
+							title="Description max length should be 120"
                     onChange={(e)=>{
                         setDescription(e.target.value);
                     }}
@@ -257,9 +255,11 @@ export default function AddTransport(){
                
 
                 
-            <button type="submit" class="btn btn-info btn-lg">ADD</button>
+            <button type="submit" class="btn btn-primary">ADD</button>
             </form>
             
+        </div>
+        </div>
         </div>
     </div>
     </div>

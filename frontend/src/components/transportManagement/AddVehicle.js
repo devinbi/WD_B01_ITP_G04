@@ -75,14 +75,14 @@ export default function AddVehicle(){
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
-                            <a href="/add">
+                            <a href="/Tadd">
                             <i class="fa fa-plus-circle" aria-hidden="true"></i>
                                 <span class="nav-text">Add Transort Detials</span>
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
                         <li class="has-subnav">
-                            <a href="/view">
+                            <a href="/Tview">
                             <i class="fa fa-file-text-o" aria-hidden="true"></i>
                                 <span class="nav-text">Transport Details</span>
                                 <i class="fa fa-angle-right "></i>
@@ -133,9 +133,12 @@ export default function AddVehicle(){
                     </ul>
                 </nav>
             </div>
-            </div>
+            
             <div>
-        <div className="container">
+            <div className="container mb-2">
+            <div className="row justify-content-sm-center pt-5">
+            <div className="col-sm-6 shadow round pb-3">
+            <h1 className="text-center pt-3 text-secondary">Vehicle Details</h1>
             <form onSubmit={sendData}>
                <div class="form-group">
                     <label for="vid">Vehicle ID :</label>
@@ -177,7 +180,7 @@ export default function AddVehicle(){
                     }}
                     required
                     >
-                        <option  selected>choose..</option>
+                        <option  selected disabled value="">choose..</option>
                         <option value="Van">Van</option>
                         <option value="Bus">Bus</option>
                         <option value="Lorry">Lorry</option>
@@ -214,6 +217,9 @@ export default function AddVehicle(){
             <button type="submit" class="btn btn-primary">ADD</button>
             </form>
             
+        </div>
+        </div>
+        </div>
         </div>
         </div>
         </div>
