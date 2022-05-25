@@ -132,15 +132,7 @@ export default function AddMaintenance(){
                         </li>
                     </ul>
 
-                    <ul class="logout">
-                        <li>
-                            <a href="/">
-                                <i class="fa fa-power-off "></i>
-                                <span class="nav-text">Logout</span>
-                                <i class="fa fa-angle-right "></i>
-                            </a>
-                        </li>
-                    </ul>
+                   
                 </nav>
             </div>
             </div>

@@ -132,21 +132,13 @@ export default function AddVehicle(){
                         </li>
                     </ul>
 
-                    <ul class="logout">
-                        <li>
-                            <a href="/">
-                                <i class="fa fa-power-off "></i>
-                                <span class="nav-text">Logout</span>
-                                <i class="fa fa-angle-right "></i>
-                            </a>
-                        </li>
-                    </ul>
+                 
                 </nav>
             </div>
             
             <div>
             <div className="container mb-2">
-            <div className="row justify-content-sm-center pt-5">
+            <div className="row justify-content-sm-center pt-4">
             <div className="col-sm-6 shadow round pb-3">
 
                 {/* vehicle details form */}
