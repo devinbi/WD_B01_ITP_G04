@@ -158,9 +158,9 @@ export default function AddItem() {
 
                             <div className="form">
                                 <label for="unitPrice">Unit Price</label>
-                                <input required type="text" className="form-control" id="unitPrice" placeholder="Unit Price" 
+                                <input type="text" className="form-control" id="unitPrice" placeholder="Unit Price" 
                                 //Validation Part
-                                    pattern="[0-9]{1,}.[0-9][0-9]"
+                                    pattern="[0-9]{1,}"
                                 onChange={(e)=>{
 
                                     setPrice(e.target.value);
@@ -173,7 +173,7 @@ export default function AddItem() {
                                 <label for="totalCost">Total Cost</label>
                                 <input required type="text" className="form-control" id="totalCost" placeholder="Total Cost"
                                 //Validation Part
-                                    pattern="[0-9]{1,}.[0-9][0-9]"
+                                    pattern="[0-9]{1,}"
                                 onChange={(e)=>{
 
                                     setCost(e.target.value);
