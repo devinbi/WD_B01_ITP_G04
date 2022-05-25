@@ -17,9 +17,18 @@ export  default function AddEmployee(){
   const [designation, setDesignation] = useState("");
   const [jDate, setJdate] = useState("");
 
+
+
+  const [NICErr, setNICErr] = useState("");
+  
+
   function sendData(e){
       e.preventDefault();
-    
+      const NICValid = NICValidation();
+     
+
+      if(NICValid){
+
       const newEmployee = {
         employeeId,
         name,
@@ -43,9 +52,35 @@ export  default function AddEmployee(){
             }).catch((err)=>{
                 alert(err);
             })
-   
+        }
         } 
-        
+    
+        //validate function
+       const NICValidation = () => {
+
+        const NICErr = {}; //State
+        let NICValid = true; //setting flag
+
+
+        if (nic.trim().length > 12) {
+
+            NICErr.InValidNIC = " Invalid NIC Number"; // error msg
+            // alert("**Invalid NIC Number");
+           
+            NICValid = false;
+        } else if (nic.trim().length < 10) {
+            NICErr.InValidNIC = " Invalid NIC Number"; // error msg
+            // alert("**Invalid NIC Number");
+            NICValid = false;
+        }
+
+
+        setNICErr(NICErr);//update error objects
+        return NICValid;
+
+
+       }
+
           return(
           <div>
            <div class="component-body">
@@ -182,14 +217,19 @@ export  default function AddEmployee(){
                             onChange={(e)=>{
                               setPhone(e.target.value);
                             }}/>
+
                         </div>
 
                         <div class="form-group">
                             <label for="nic">Nic :</label>
-                            <input type="text" class="form-control" id="nic" pattern="[0-9]{9}[V]{1}" 
+                            <input type="text" class="form-control" id="nic" 
                             onChange={(e)=>{
                               setNic(e.target.value);
                             }}/>
+                            {Object.keys(NICErr).map((key) => {
+                             return <div style={{ color: "red" }}>{NICErr[key]}</div>
+                                                    })}
+
                         </div>
 
                         <div class="form-group">

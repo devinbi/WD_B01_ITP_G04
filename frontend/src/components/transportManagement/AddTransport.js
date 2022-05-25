@@ -11,9 +11,17 @@ export default function AddTransport(){
     const [Description,setDescription] = useState("");
     const [Delivery_Status,setStatus] = useState("");
     // console.log("description",description)
+    // const [DateErr, setDateErr] = useState("");
+    
+    
     
     function sendData(e){
         e.preventDefault();
+        // const DateValid = DateValidation();
+        console.log("Date.....",Date);
+
+        // if(DateValid){
+  
         const newTransport ={
             Transport_ID,
             Vehicle_Registration_No,
@@ -25,20 +33,45 @@ export default function AddTransport(){
             console.log("new Transpot",newTransport);
         axios.post("http://localhost:8070/Transport/add",newTransport).then(()=>{
         alert("Transport Added")
-        // setTid("");
-        // setVid("");
-        // setDate("");
-        // setName("");
-        // setDescription("");
-        // setStatus("");
+       
         window.location.reload();
 
     }).catch((err)=>{
         alert(err)
     })
-      
+    // }
     }
+    
+     //validate function
+    //  const DateValidation = () => {
 
+    //     const DateErr = {}; //State
+    //     let DateValid = true; //setting flag
+    //     const dateRegx=/^(0?[1-9]|1[0-2])[\/](0?[1-9]|[12]\d|3[01])[\/](19|20)\d{2}$/
+
+
+    //     if (Date.trim().length > 12) {
+
+    //         DateErr.InvalidDate = " Invalid Date ";
+             // error msg
+            // alert("**Invalid NIC Number");
+           
+        //     DateValid = false;
+        // } else if (Date.trim().length < 10) {
+        //     DateErr.InvalidDate = " Invalid Date "; 
+            // error msg
+            // alert("**Invalid NIC Number");
+        //     DateValid = false;
+        // }
+
+
+        // setNICErr(DateErr);//update error objects
+        // return DateValid;
+
+
+    //    }
+   
+  
 
     
 
@@ -150,7 +183,7 @@ export default function AddTransport(){
 
 
         <div className="container">
-            <form onSubmit={sendData}>
+            <form onSubmit={sendData }>
                <div class="form-group">
                     <label for="tid">Transport ID :</label>
                     <input type="text" class="form-control" id="vid" placeholder="TXXXX"
@@ -176,7 +209,8 @@ export default function AddTransport(){
 
                 <div className="form-group">
                     <label for="date">Date :</label>
-                    <input type="date" class="form-control" id="date" onChange={(e)=>{
+                    <input type="date" class="form-control" id="date" 
+                    onChange={(e)=>{
                         setDate(e.target.value);
                     }}
                     required
@@ -185,17 +219,22 @@ export default function AddTransport(){
 
                  <div class="form-group">
                     <label for="name">Driver Name :</label>
-                    <input type="text" class="form-control" id="name"
+                    <input type="text" class="form-control" id="name"  placeholder="Driver Name"
+							pattern="[A-Z a-z]{0,12}"
+							title="Name max length should be 12"
                     onChange={(e)=>{
                         setName(e.target.value);
                     }}
                     required
                     />
+                     
                 </div>
 
                 <div class="form-group">
                     <label for="description">Description :</label>
-                    <input type="text" class="form-control" id="description" 
+                    <input type="text" class="form-control" id="description" placeholder="Add a description"
+							pattern="[A-Z a-z0-9]{0,120}"
+							title="Name max length should be 120"
                     onChange={(e)=>{
                         setDescription(e.target.value);
                     }}
@@ -204,12 +243,13 @@ export default function AddTransport(){
                 </div>
                 <div class="form-group">
                     <label for="inputState">Status :</label>
-                    <select id="status" class="form-control" onChange={(e)=>{
+                    <select id="status" class="form-control"
+                    required
+                    onChange={(e)=>{
                         setStatus(e.target.value);
                     }}
-                    required
                     >
-                        <option  selected>choose..</option>
+                        <option selected disabled value="" >choose..</option>
                         <option value="pending">Pending</option>
                         <option value="completed">Completed</option>
                     </select>
