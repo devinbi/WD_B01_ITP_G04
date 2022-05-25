@@ -62,11 +62,13 @@ return (
               type="text"
               className="form-control"
               name="CustomerId"
+              pattern="[c]{1}[0-9]{4}"
               onChange={(e)=>{
                 setId(e.target.value);
             }}
               value={CustomerId}
               disabled
+              required
             />
           </div>
 
@@ -78,10 +80,12 @@ return (
               type="text"
               className="form-control"
               name="CustomerName"
+              pattern="[A-Z a-z]{0,50}" 
               onChange={(e)=>{
                 setName(e.target.value);
             }}
               value={CustomerName}
+              required
             ></input>
           </div>
 
@@ -95,10 +99,12 @@ return (
               type="number"
               className="form-control"
               name="ContactNumber"
+              pattern="[0-9]{10}"
               onChange={(e)=>{
                 setNumber(e.target.value);
             }}
               value={ContactNumber}
+              required
             ></input>
           </div>
          
@@ -110,10 +116,12 @@ return (
               type="email"
               className="form-control"
               name="Email"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               onChange={(e)=>{
                 setEmail(e.target.value);
             }}
               value={Email}
+              required
             ></input>
           </div>
 
@@ -125,9 +133,11 @@ return (
               type="text"
               className="form-control"
               name="Address"
+              pattern="[A-Z a-z 0-9]{0,70}"
               onChange={(e)=>{
                 setAddress(e.target.value);
             }}
+              required
               value={Address}
             ></input>
           </div>
@@ -140,10 +150,12 @@ return (
               type="text"
               className="form-control"
               name="Country"
+              pattern="[A-Z a-z]{0,20}"
               onChange={(e)=>{
                 setCountry(e.target.value);
             }}
               value={Country}
+              required
             ></input>
           </div>
  
@@ -156,10 +168,12 @@ return (
               type="text"
               className="form-control"
               name="NIC"
+              pattern="[0-9]{9}[V]{1}"
               onChange={(e)=>{
                 setNic(e.target.value);
             }}
               value={NIC}
+              required
             ></input>
           </div>
 

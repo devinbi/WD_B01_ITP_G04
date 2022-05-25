@@ -31,6 +31,8 @@ import Addincome from './components/financeManagement/Addincome';
 import Viewexpenses from './components/financeManagement/Viewexpenses';
 import React from 'react';
 
+
+//Inventory Management
 // import TopHeader from './components/Topheader';
 import AddProduct from './components/inventoryManagement/AddProduct';
 import AddRawMaterial from './components/inventoryManagement/AddRawMaterial';
@@ -79,6 +81,7 @@ import ViewSalary from './components/employeeManagement/ViewSalary';
 import Reports from './components/employeeManagement/Report';
 import TopHeader from './components/employeeManagement/topHeader';
 import Resigned from './components/employeeManagement/Resigned';
+import Inform from './components/employeeManagement/inform';
 import {BrowserRouter, Route} from "react-router-dom";
 
 // Supplier Management 
@@ -90,7 +93,9 @@ import ReportSM from './components/supplierManagement/Report';
 import UpdateItem from './components/supplierManagement/UpdateItem';
 import UpdateSupplier from './components/supplierManagement/UpdateSupplier';
 
-
+// login and home
+import Login from './components/login'
+import Home from './components/home'
 function App() {
 
 
@@ -102,8 +107,11 @@ function App() {
     <BrowserRouter >
         
     <TopHeader/>
-
+{/*FOR HOME AND LOGIN ROUTE PATH*/}
+            <Route path="/" exact component={Login} />
+            <Route path="/Home" exact component={Home} />
 {/*employeemanagment route paths*/}
+            <Route path="/Inform" exact component={Inform} />
             <Route path="/resign" exact component={Resigned} />
             <Route path="/report" exact component={Reports} />
             <Route path="/viewS" exact component={ViewSalary} />
@@ -143,6 +151,8 @@ function App() {
 
 
 
+
+{/*inventory management route paths*/}
         <Route path="/add" exact component={AddProduct}></Route> 
         <Route path="/adding" exact component={AddRawMaterial}></Route>
         <Route path="/fetch" exact component={AllProductItems}></Route>
@@ -162,8 +172,9 @@ function App() {
             <Route path='/UpdateDressmaking' exact component = {UpdateDressmaking} />
             <Route path='/UpdateTechnical' exact component = {UpdateTechnical} />
             <Route path='/UpdateEmaintainance' exact component = {UpdateEmaintainance} />
-            <Route path='/Report' exact component = {Report} />
+            <Route path='/ReportE' exact component = {ReportE} />
 
+            {/*customermanagment route paths*/}
             <Route path="/deletedCus" exact component = {DeletedCustomer} />
             <Route path="/viewCus" exact component={AllCustomers} />
             <Route path="/viewOrder" exact component={AllOrders} />

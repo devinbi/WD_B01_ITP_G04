@@ -1,5 +1,5 @@
 import React from "react";
-
+// import topheaderimage from './src/componenet/Stitchwave.png'
 function topHeader(props) {
   return (
     <div>
@@ -12,13 +12,14 @@ function topHeader(props) {
             <a class="navbar-brand js-scroll-trigger" href="index.html">
             <img
                 className="ml-3"
-               
-                width="100px"
-                height="70px"
+                src="images/stitch_wave__10_-removebg-preview.png"
+                width="150px"
+                height="120px"
+                border-radius="50%"
               />
-              <span className="text-uppercase font-weight-bold text-light ml-5">
+              {/* <span className="text-uppercase font-weight-bold text-light ml-5 ">
                 stitch wave
-              </span>
+              </span> */}
             </a>
             <button
               class="navbar-toggler"
@@ -34,8 +35,8 @@ function topHeader(props) {
             <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                  <a class="nav-link text-light" href="/adds">
-                    Home <span class="sr-only">(current)</span>
+                  <a class="nav-link text-light text-xl" href="/adds">
+                  <h4>Home</h4>
                   </a>
                 </li>
                 <li class="nav-item">

@@ -92,6 +92,9 @@ app.use("/salary",salaryRouter);
 const resignedRouter = require("./routes/resigned.js");
 app.use("/resigned",resignedRouter);
 
+//connecting to backand and frontend for login
+const loginRouter = require("./routes/login.js");
+app.use("/login",loginRouter);
 
 const customerRouter = require("./routes/customers.js");
 app.use("/customer",customerRouter);

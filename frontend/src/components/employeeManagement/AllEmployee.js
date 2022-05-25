@@ -152,6 +152,14 @@ export default function AllEmployee(props){
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
+                            <a href="/resign">
+                            <i class="fa fa-users-slash"></i>
+                                <span class="nav-text">Resigned Employee</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
                             <a href="/report">
                             <i class="fa fa-download" aria-hidden="true"></i>
                                 <span class="nav-text">Reports</span>
@@ -164,7 +172,7 @@ export default function AllEmployee(props){
             </div>
             </div>
   <br/>
-  <br/>
+ 
        <div className="container">
         <div class="container-fluid">
         <MaterialTable  style={{background:"#E3ECFF"}}
@@ -193,7 +201,7 @@ export default function AllEmployee(props){
                         {
                             icon: () => <button class="btn btn-sm btn-outline-warning">Update</button>,
                             onClick: (event, rowData) => {
-                                setEmployeeUpdate(rowData); //setTransportDetailswithID
+                                setEmployeeUpdate(rowData); //setEmployeeDetailswithID
                                 setStateUpdate(true); //setStatetrue
                             }
                         },

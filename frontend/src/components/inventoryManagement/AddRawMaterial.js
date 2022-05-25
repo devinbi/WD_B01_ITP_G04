@@ -9,6 +9,21 @@ export default function AddRawMaterial(){
     const [ItemName, setItemName] = useState("");
     const [Quantity, setQuantity] = useState("");
     const [ItemType, setItemType] = useState("");
+    const [item, setItem] = useState([]);
+
+    useEffect(()=>{
+        
+        
+        axios.get('http://localhost:8070/item/')
+        .then((res) =>{
+            console.log(res.data);
+            setItem(res.data);
+        }).catch((err)=>{
+            alert(err.msg);
+    
+        })
+    
+    },[])
 
    function sendData(e){
     e.preventDefault();  
@@ -29,24 +44,12 @@ export default function AddRawMaterial(){
     })
 }
 
-const [item, setItem] = useState([]);
 
-useEffect(()=>{
-        
-        
-    axios.get('http://localhost:8070/ViewSuppliedItem/')
-    .then((res) =>{
-        console.log(res.data);
-        setItem(res.data);
-    }).catch((err)=>{
-        alert(err.msg);
 
-    })
 
-},[])
-    return(
+return(
 
-        <div>
+    <div>
         <div class="component-body">
         
         <div class="area">
@@ -73,7 +76,7 @@ useEffect(()=>{
                         
 
                         <li class="has-subnav">
-                            <a href="/">
+                            <a href="/allR">
                             <i class="fa fa-cubes fa-2x" aria-hidden="true"></i>
                                 <span class="nav-text">All Raw Materials</span>
                                 <i class="fa fa-angle-right"></i>
@@ -134,11 +137,15 @@ useEffect(()=>{
                         </li>
                     </ul>
                 </nav>
-            </div>
-            </div>
+        </div>
+        </div>
 
-        <div className='container'>
-            <center><h2>Add Raw-Material Details</h2></center>
+        <div>
+        <div className="container pt-2"> 
+        <div className="row justify-content-sm-center pt-5">
+        <div className="col-sm-6 shadow round pb-3">
+        <h1 className="text-center pt-3 text-secondary">Add Raw-Material Details</h1>
+            
             <form onSubmit={sendData}>
 
             <div className="form-group">
@@ -149,6 +156,7 @@ useEffect(()=>{
                     id="ItemId" 
                     placeholder="RXXXX"
 				    pattern="[R][0-9]{4}" 
+                    title="RXXXX"
                     required
                     onChange={(e)=>{
 
@@ -164,6 +172,7 @@ useEffect(()=>{
                     className="form-control" 
                     id="ItemName" 
                     placeholder="Enter Item Name" 
+                    pattern="[A-Z a-z ()]{0,20}"
                     required
                     onChange={(e)=>{
 
@@ -175,10 +184,12 @@ useEffect(()=>{
             <div className="form-group">
                 <label for="Quantity" className="form-label">Quantity</label>
                 <input 
-                    type="text" 
+                    type="number" 
+                    min={0}
                     className="form-control" 
                     id="Quantity" 
                     placeholder="Enter Number of Items" 
+                    title='Minimum quantity you can enter is 0'
                     required
                     onChange={(e)=>{
 
@@ -208,41 +219,45 @@ useEffect(()=>{
             </div>
         
             <br></br>
+
             <button type="submit" className="btn btn-primary">Add</button>
+            
             </form>
 
-             
-
-    </div>
+        </div>
+        </div>     
+        </div>
 
     <br/><br/>
 
-    {/* <div className="container">
-         <div class="container-fluid">
-            <MaterialTable  
-                style={{background:"#E3ECFF"}}
-                title="Supplied Items Details"
-                columns={[
+    <center>
+        <div className="container">
+            <div class="container-fluid">
+                <MaterialTable  
+                    style={{background:"#E3ECFF", width: "54%" }}
+                    title="Supplied Items Details"
+                    columns={[
+                                            
+                        { title: "Item Name", field: "itemName", type: "string" },
+                        { title: "Quantity", field: "itemQuantity", type: "string" },
+
+                    ]}
+
+                    data={item}
+                    options={{
+
+                        sorting: true,
+                        search:false,
+                        filtering : true,
+                        actionsColumnIndex: -1
                                         
-                    { title: "Item Name", field: "itemName", type: "string" },
-                    { title: "Quantity", field: "itemQuantity", type: "string" },
+                    }}
+                />
 
-                ]}
-
-                data={item}
-                options={{
-
-                    sorting: true,
-                    search:false,
-                    filtering : true,
-                    actionsColumnIndex: -1
-                                    
-                }}
-             />
-
+            </div>
         </div>
-    </div> */}
-
+    </center>
+    </div>
     </div>
     )
 }

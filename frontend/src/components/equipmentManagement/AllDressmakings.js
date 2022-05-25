@@ -105,7 +105,7 @@ export default function AllDressmakings(props){
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
-                            <a href="/Report">
+                            <a href="/ReportE">
                             <i class="fa fa-download" aria-hidden="true"></i>
                                 <span class="nav-text">Equipment Maintainance Report</span>
                                 <i class="fa fa-angle-right"></i>
@@ -127,7 +127,7 @@ export default function AllDressmakings(props){
                 </nav>
             </div>
             </div>
-        <div>
+        <div class="container">
         <div class="container-fluid">
         <MaterialTable  style={{background:"#E3ECFF"}}
                     title="All Dressmaking Tools"
