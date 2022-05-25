@@ -223,11 +223,13 @@ return (
                 setDepartment(e.target.value);
             }}
              value={department}
-        >       <option>Choose</option>
-                <option value="it">It</option>
-                <option value="Production">Production</option>
-                <option value="HR">HR</option>
-                <option value="Account">Account</option>
+        >      
+                <option>choose</option>
+                <option value="Industrial Engineering Department">Industrial Engineering Department </option>
+                <option value="EDP/IT department">EDP / IT department </option>
+                <option value="Accounting Department">Accounting Department</option>
+                <option value="Human Resource and Administration">Human Resource and Administration</option>
+                <option value="Shipping and documentation">Shipping and documentation</option>
 
               </select>
               </div>

@@ -121,8 +121,8 @@ export  default function AddEmployee(){
             </div>
             </div>
             
-            <div className="container pt-5">
-      <div className="row justify-content-sm-center pt-5">
+            <div className="container pt-3">
+      <div className="row justify-content-sm-center pt-3">
       <div className="col-sm-6 shadow round pb-3">
       <h1 className="text-center pt-3 text-secondary">Employee Details</h1>
                     <form onSubmit={sendData}>
@@ -218,11 +218,12 @@ export  default function AddEmployee(){
                         
                                       setDepartment(e.target.value);
                                 }
-                                }>    <option>choose</option>
-                                      <option value="it">It</option>
-                                      <option value="Production">Production</option>
-                                      <option value="HR">HR</option>
-                                      <option value="Account">Account</option>
+                                }>  <option>choose</option>
+                                    <option value="Industrial Engineering Department">Industrial Engineering Department </option>
+                                    <option value="EDP/IT department">EDP / IT department </option>
+                                    <option value="Accounting Department">Accounting Department</option>
+                                    <option value="Human Resource and Administration">Human Resource and Administration</option>
+                                    <option value="Shipping and documentation">Shipping and documentation</option>
               
                             </select>
                            
