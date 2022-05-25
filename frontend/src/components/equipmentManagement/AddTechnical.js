@@ -1,5 +1,6 @@
-import React,{useState} from "react"
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import MaterialTable from 'material-table';
 
 export default function AddTechnical(){
 
@@ -7,9 +8,25 @@ export default function AddTechnical(){
   const [deviceCode, setdeviceCode] = useState("");
   const [modelNo, setmodelNo]= useState("");
   const [machineName, setmachineName] = useState("");
+  const [employeeId, setId] = useState("");
   const [price, setPrice] = useState("");
   const [department, setdepartment] = useState("");
   const [condition, setcondition] = useState("");
+  const [employee, setEmp] = useState([]);
+
+  useEffect(()=>{
+        
+        
+    axios.get('http://localhost:8070/employee/')
+    .then((res) =>{
+        console.log(res.data);
+        setEmp(res.data);
+    }).catch((err)=>{
+        alert(err.msg);
+
+    })
+
+},[])
 
   function sendData(e){
       e.preventDefault();
@@ -19,6 +36,7 @@ export default function AddTechnical(){
         deviceCode,
         modelNo,
         machineName,
+        employeeId,
         price,
         department,
         condition
@@ -32,6 +50,7 @@ export default function AddTechnical(){
      }).catch((err)=>{
        alert(err)
      })
+     
 
   }
 
@@ -98,7 +117,7 @@ export default function AddTechnical(){
                     </li>
                     <hr></hr>
                     <li class="has-subnav">
-                        <a href="/Report">
+                        <a href="/ReportE">
                         <i class="fa fa-download" aria-hidden="true"></i>
                             <span class="nav-text">Equipment Maintainance Report</span>
                             <i class="fa fa-angle-right"></i>
@@ -120,44 +139,106 @@ export default function AddTechnical(){
             </nav>
         </div>
         </div>
+        {/*  */}
 
         <div className="container">
-        <center><h3>ADD TECHNICAL DETAILS</h3></center>
+        <div class="container-fluid">
+        <MaterialTable  style={{background:"#E3ECFF"}}
+                    title="All Employee Details "
+
+                    columns={[
+                        { title: "Employee Id", field: "employeeId", type: "string" },
+                        { title: "Department", field: "department", type: "string" },
+                        { title: "Email", field: "email", type: "string" },
+                        
+
+                    ]}
+
+                    data={employee}
+                    options={{
+                        sorting: true,
+                        search:false,
+                        paging :true,
+                        filtering : true,
+                        actionsColumnIndex: -1
+                    }}
+                   
+              />      
+                   
+
+                   </div>
+        </div>
+        
+
+        {/*  */}
+
+        <div className="container pt-5">
+        <div className="row justify-content-sm-center pt-5">
+      <div className="col-sm-6 shadow round pb-3">
+      <h1 className="text-center pt-3 text-secondary">Technical Device Details</h1>
         <form onSubmit={sendData}>
         <div class="form-group">
           <label for="DeviceCode">Device Code</label>
-          <input type="text" class="form-control" id="DeviceCode" pattern="[T][0-9]{4}"   onChange={(e)=>{
+          <input type="text" class="form-control" id="DeviceCode" 
+                  pattern="[T][0-9]{4}"  
+                  title="ID must include T and 4 digits"
+                  onChange={(e)=>{
 
            setdeviceCode(e.target.value);
 
-       }}/>
+       }}
+       required
+       />
         </div>
 
         <div class="form-group">
           <label for="ModelNo">Model No</label>
-          <input type="text" class="form-control" id="ModelNo"  onChange={(e)=>{
+          <input type="text" class="form-control" id="ModelNo" 
+                 maxlength="5"
+          onChange={(e)=>{
 
            setmodelNo(e.target.value);
 
-       }}/>
+       }}
+       required
+       />
         </div>
 
         <div class="form-group">
           <label for="Device">Device</label>
-          <input type="text" class="form-control" id="Device"  onChange={(e)=>{
+          <input type="text" class="form-control" id="Device" 
+                 pattern="[A-Z a-z]{0,15}"
+                 title="can't exceed 15 characters"
+            
+          onChange={(e)=>{
 
             setmachineName(e.target.value);
 
-        }}/>
+        }}
+        required
+        />
+        </div>
+
+        <div class="form-group" >
+                            <label for="employeeId">Employee Id</label>
+                            <input type="text" class="form-control" id="employeeId" 
+                            onChange={(e)=>{
+                                setId(e.target.value);
+                            }} 
+                            required
+                            />
+
         </div>
 
         <div class="form-group">
           <label for="Price">Price</label>
-          <input type="text" class="form-control" id="Price"  onChange={(e)=>{
+          <input type="number" class="form-control" id="Price"  onChange={(e)=>{
 
            setPrice(e.target.value);
 
-        }}/>
+        }}
+        required
+        />
         </div>
 
         <div class="form-group">
@@ -166,7 +247,9 @@ export default function AddTechnical(){
 
           setdepartment(e.target.value);
 
-          }}>
+          }}
+          required
+          >
            <option value="Choose" selected disabled >Choose...</option>
             <option value="Industrial Engineering Department">Industrial Engineering Department </option>
             <option value="EDP/IT department">EDP / IT department </option>
@@ -183,7 +266,9 @@ export default function AddTechnical(){
 
            setcondition(e.target.value);
 
-          }}>
+          }}
+          required
+          >
             <option value="Choose" selected disabled >Choose...</option>
             <option value="New">New</option>
             <option value="Old">Old</option>
@@ -196,6 +281,8 @@ export default function AddTechnical(){
         <button type="submit" class="btn btn-primary">Submit</button>
        
       </form>
+      </div>
+      </div>
       </div>
       </div>
     )

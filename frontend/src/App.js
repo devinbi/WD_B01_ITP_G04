@@ -73,6 +73,7 @@ import ViewSalary from './components/employeeManagement/ViewSalary';
 import Reports from './components/employeeManagement/Report';
 import TopHeader from './components/employeeManagement/topHeader';
 import Resigned from './components/employeeManagement/Resigned';
+import Inform from './components/employeeManagement/inform';
 import {BrowserRouter, Route} from "react-router-dom";
 
 // Supplier Management 
@@ -102,6 +103,7 @@ function App() {
             <Route path="/" exact component={Login} />
             <Route path="/Home" exact component={Home} />
 {/*employeemanagment route paths*/}
+            <Route path="/Inform" exact component={Inform} />
             <Route path="/resign" exact component={Resigned} />
             <Route path="/report" exact component={Reports} />
             <Route path="/viewS" exact component={ViewSalary} />
@@ -156,8 +158,9 @@ function App() {
             <Route path='/UpdateDressmaking' exact component = {UpdateDressmaking} />
             <Route path='/UpdateTechnical' exact component = {UpdateTechnical} />
             <Route path='/UpdateEmaintainance' exact component = {UpdateEmaintainance} />
-            <Route path='/Report' exact component = {Report} />
+            <Route path='/ReportE' exact component = {ReportE} />
 
+            {/*customermanagment route paths*/}
             <Route path="/deletedCus" exact component = {DeletedCustomer} />
             <Route path="/viewCus" exact component={AllCustomers} />
             <Route path="/viewOrder" exact component={AllOrders} />

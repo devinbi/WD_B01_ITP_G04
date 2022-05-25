@@ -106,6 +106,14 @@ export default function AddSalary() {
               </li>
               <hr></hr>
               <li class="has-subnav">
+                <a href="/resign">
+                  <i class="fa fa-users-slash"></i>
+                  <span class="nav-text">Resigned Employee</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+              </li>
+              <hr></hr>
+              <li class="has-subnav">
                 <a href="/report">
                   <i class="fa fa-download" aria-hidden="true"></i>
                   <span class="nav-text">Reports</span>
