@@ -33,11 +33,13 @@ export default function Drivers() {
     return (
         // <>
             <div class ="component-body">
-           <div class="area">
+           {/* navigation bar for transport management */}
+        <div class="area">
                 <nav class="main-menu bg-primary">
                     <ul>
                         <li>
-                            <a href="/AllT">
+                            {/* navigation path to Dashboard */}
+                            <a href="/dashT"> 
                                 <i class="fa fa-home "></i>
                                 <span class="nav-text">Dashboard</span>
                                 <i class="fa fa-angle-right "></i>
@@ -45,6 +47,7 @@ export default function Drivers() {
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
+                             {/* navigation path to add vehicle page */}
                             <a href="/vadd">
                                 <i class="fa fa-plus-circle"></i>
                                 <span class="nav-text">Add Vehicle</span>
@@ -52,6 +55,7 @@ export default function Drivers() {
                             </a>
                         </li>
                         <li class="has-subnav">
+                            {/* navigation path to view vehicle page */}
                             <a href="/vview">
                              <i class="fa fa-truck " ></i>
                                 <span class="nav-text">Vehicle List</span>
@@ -61,7 +65,7 @@ export default function Drivers() {
                         <hr></hr>
                         <li>
                             <a href="/viewO">
-                            
+                            {/* navigation path to add transport by order page */}
                                 <i class="fa fa-truck-arrow-right "></i>
                                 <span class="nav-text">Order Details</span>
                                 <i class="fa fa-angle-right "></i>
@@ -69,6 +73,7 @@ export default function Drivers() {
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
+                            {/* navigation path to add transport page */}
                             <a href="/Tadd">
                             <i class="fa fa-plus-circle" aria-hidden="true"></i>
                                 <span class="nav-text">Add Transort Detials</span>
@@ -76,6 +81,7 @@ export default function Drivers() {
                             </a>
                         </li>
                         <li class="has-subnav">
+                            {/* navigation path to view transport page */}
                             <a href="/Tview">
                             <i class="fa fa-file-text-o" aria-hidden="true"></i>
                                 <span class="nav-text">Transport Details</span>
@@ -84,6 +90,7 @@ export default function Drivers() {
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
+                            {/* navigation path to add maintenance page */}
                             <a href="/madd">
                             <i class="fa fa-plus-circle" aria-hidden="true"></i>
 
@@ -92,6 +99,7 @@ export default function Drivers() {
                             </a>
                         </li>
                         <li class="has-subnav">
+                            {/* navigation path to view maintenance page */}
                             <a href="/mview">
                                 <i class="fa fa-wrench "></i>
                                 <span class="nav-text">View Maintenance</span>
@@ -100,6 +108,7 @@ export default function Drivers() {
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
+                            {/* navigation path to view Drivers page */}
                             <a href="/viewD">
                                 <i class="fa fa-users" aria-hidden="true"></i>
                                 <span class="nav-text">Driver Details</span>
@@ -108,10 +117,11 @@ export default function Drivers() {
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
+                            {/* navigation path to Report page */}
                             <a href="/rview">
                             <i class="fa fa-download" aria-hidden="true"></i>
                                 <span class="nav-text">Transport Reports</span>
-                                <i class="fa fa-angle-right fa-2x"></i>
+                                <i class="fa fa-angle-right "></i>
                             </a>
                         </li>
                     </ul>
@@ -119,9 +129,9 @@ export default function Drivers() {
                     <ul class="logout">
                         <li>
                             <a href="/">
-                                <i class="fa fa-power-off fa"></i>
+                                <i class="fa fa-power-off "></i>
                                 <span class="nav-text">Logout</span>
-                                <i class="fa fa-angle-right fa"></i>
+                                <i class="fa fa-angle-right "></i>
                             </a>
                         </li>
                     </ul>

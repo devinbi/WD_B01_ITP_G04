@@ -39,7 +39,7 @@ function topHeader(props) {
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-light" href="contact.html">
+                  <a class="nav-link text-light" href="/con">
                     Contact Us
                   </a>
                 </li>

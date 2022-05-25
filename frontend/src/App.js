@@ -42,6 +42,8 @@ import InventoryReport from './components/inventoryManagement/Report';
 import OutofStock from './components/inventoryManagement/OutofStock';
 
 
+
+//transport management
 import AddTransport from './components/transportManagement/AddTransport';
 import AllTransport from './components/transportManagement/AllTransport';
 import AddVehicle from './components/transportManagement/AddVehicle';
@@ -54,6 +56,10 @@ import EReport from './components/transportManagement/Report';
 import Drivers from './components/transportManagement/Drivers';
 import OrderDes from './components/transportManagement/addTransportByOrder'
 import Dashboard from './components/Dashboard';
+import DashboardT from './components/transportManagement/DashboardT';
+import ContactUsPage from './components/ContactUsPage';
+
+
 
 import Viewincomes from './components/financeManagement/Viewincomes';
 import Updateexpense from './components/financeManagement/Updateexpense.js';
@@ -83,6 +89,7 @@ import AllSplireDetails from "./components/supplierManagement/AllSplireDetails";
 import ReportSM from './components/supplierManagement/Report';
 import UpdateItem from './components/supplierManagement/UpdateItem';
 import UpdateSupplier from './components/supplierManagement/UpdateSupplier';
+
 
 function App() {
 
@@ -118,7 +125,7 @@ function App() {
            <Route path= "/updatei" exact component={Updateincome}/>
            <Route path= "/rep" exact component={Report}/>
              
-
+      {/* transport amangement roter path */}
             <Route  path="/Tadd" exact component={AddTransport}/>
             <Route path= "/Tview" exact component={AllTransport}/>
             <Route path= "/vadd" exact component={AddVehicle}/>
@@ -131,6 +138,10 @@ function App() {
             <Route path= "/viewD" exact component={Drivers}/>
             <Route path= "/viewO" exact component={OrderDes}/>
             <Route path= "/dash" exact component={Dashboard}/>
+            <Route path= "/dashT" exact component={DashboardT}/>
+            <Route path= "/con" exact component={ContactUsPage}/>
+
+
 
         <Route path="/add" exact component={AddProduct}></Route> 
         <Route path="/adding" exact component={AddRawMaterial}></Route>

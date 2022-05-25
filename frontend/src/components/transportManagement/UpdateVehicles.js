@@ -69,10 +69,11 @@ export default function UpdateVehicles({ data, cl }) {
               className="form-control"
               name="Vehicle_ID"
               placeholder="Vehicle_ID"
+                
               onChange={(e)=>{
                 setVid(e.target.value);
             }}
-              // onChange={handleChange}
+              
               value={Vehicle_ID}
               disabled
             ></input>
@@ -87,10 +88,13 @@ export default function UpdateVehicles({ data, cl }) {
               className="form-control"
               name="Vehicle_Registration_No"
               placeholder="Registration Number ABC-XXXX"
+               // validation for Vehicle registration no
+							pattern="[A-Z0-9]{2,3}[-][0-9]{4}"
+							title="Vehicle registraion number should be CL-XXXX / CLA-XXXX"
               onChange={(e)=>{
                 setVrid(e.target.value);
             }}
-              // onChange={handleChange}
+             
               value={Vehicle_Registration_No}
               required
             />
@@ -101,6 +105,9 @@ export default function UpdateVehicles({ data, cl }) {
             <label for="Date" className="form-label">
               Date :
             </label>
+            
+
+
             <input
               type="date"
               className="form-control"
