@@ -1,46 +1,52 @@
-import React,{useState} from "react";
-import axios from "axios";
+import React, { useState, useEffect } from "react"
+import axios from 'axios'
+import MaterialTable from 'material-table'
 
 
-export default function AddVehicle(){
-    const [Vehicle_ID,setVid] = useState("");
-    const [Vehicle_Registration_No,setVrid] = useState("");
-    const [Date,setDate] = useState("");
-    const [Vehicle_Type,setType] = useState("");
-    const [Vehicle_Brand,setBrand] = useState("");
-    const [Mileage,setMilage] = useState("");
-    // console.log("description",description)
+
+
+const HOST1 = "http://localhost:8070/Transport"
+const HOST2 = "http://localhost:8070/Vehicle"
+
+
+
+export default  function DashboardT(){
+
+    const [TransportDetails, setTransportDetails] = useState([]);
+    const [Vehicles, setVehicles] = useState([]);
     
-    function sendData(e){
-        e.preventDefault();
-        const newVehicle ={
-            Vehicle_ID,
-            Vehicle_Registration_No,
-            Date,
-            Vehicle_Type,
-            Vehicle_Brand,
-            Mileage
-        }
-            console.log("new Vehicle",newVehicle);
-        axios.post("http://localhost:8070/Vehicle/add",newVehicle).then(()=>{
-        alert("Vehicle Added...!!")
-        
-        window.location.reload();
 
-    }).catch((err)=>{
-        alert(err)
-    })
-      
-    }
+    useEffect(() => {
 
+        axios.get(HOST1 + "/")
+            .then((res) => {
+                setTransportDetails(res.data);
+                console.log('Data has been received');
+            }).catch(() => {
+                alert('Error while fetching data')
+            })
+
+    }, []);
+    useEffect(() => {
+
+        axios.get(HOST2 + "/")
+            .then((res) => {
+                setVehicles(res.data);
+                console.log('Data has been received');
+            }).catch(() => {
+                alert('Error while fetching data')
+            })
+
+    }, []);
     
+  
 
     return(
-        <div>
-             <div class="component-body">
+       <div>
+         <div class="component-body">
         
-       {/* navigation bar for transport management */}
-       <div class="area">
+        {/* navigation bar for transport management */}
+        <div class="area">
                 <nav class="main-menu bg-primary">
                     <ul>
                         <li>
@@ -132,104 +138,91 @@ export default function AddVehicle(){
                         </li>
                     </ul>
 
-                 
+                  
                 </nav>
             </div>
-            
+            </div>
             <div>
-            <div className="container mb-2">
-            <div className="row justify-content-sm-center pt-4">
-            <div className="col-sm-6 shadow round pb-3">
+            <div className="container">
+           
+            <div class="d-flex justify-content-start mt-5">
+            <a href="/vadd" class="btn btn-primary active ml-3 " role="button" aria-pressed="true"> + Add Vehicle Details </a>
+            <a href="/addT" class="btn btn-primary active ml-4 " role="button" aria-pressed="true"> + Add Transport Details </a>
+            </div>
 
-                {/* vehicle details form */}
-            <h1 className="text-center pt-3 text-secondary">Vehicle Details</h1>
-            <form onSubmit={sendData}>
-               <div class="form-group">
-                    <label for="vid">Vehicle ID :</label>
-                    <input type="text" class="form-control" id="vid"  placeholder="VXXXX"
-							pattern="[V][0-9]{4}" //validation for vehicle id
-							title="Vehicle ID should be VXXXX"
-                    onChange={(e)=>{
-                        setVid(e.target.value); //asign values for vehicle id
+
+            <div className="container-fluid pt-5">
+            <MaterialTable style={{background:"#E3ECFF"}}
+                    title="  Transport Details "
+
+                    columns={[
+                        { title: "Transport Id", field: "Transport_ID", type: "string" },
+                        { title: "Vehicle Registration No", field: "Vehicle_Registration_No", type: "string" },
+                        { title: "Date", field: "Date", type: "date" },
+                        { title: " Driver Name", field: "Driver_Name", type: "string" },
+                        { title: "Description", field: "Description", type: "string" },
+                        { title: "Delivery Status", field: "Delivery_Status", type: "string" },
+                    ]}
+
+                    data={TransportDetails}
+                    options={{
+                        sorting: false,
+                        search:false,
+                        actionsColumnIndex: -1,
+                        
+
                     }}
-                    required
+      
+                
                     />
-                   
+                    
+                
                 </div>
-                <div className="form-group">
-                    <label for="vrid">Vehicle Registration No :</label>
-                    <input type="text" class="form-control" id="vrid"  placeholder="CL-XXXX or CLA-XXXX"
-							pattern="[A-Z0-9]{2,3}[-][0-9]{4}" //validation for vehicle registration number
-							title="Vehicle registraion number should be CL-XXXX / CLA-XXXX" 
-                            onChange={(e)=>{
-                        setVrid(e.target.value); //asign values for vehicle registration number
+
+
+           
+                
+            <div className="container-fluid">
+                <MaterialTable style={{background:"#E3ECFF"}}
+                    title=" Vehicles Details "
+
+                    columns={[
+                        { title: "Vehicle Id", field: "Vehicle_ID", type: "string" },
+                        { title: "Vehicle Registration No", field: "Vehicle_Registration_No", type: "string" },
+                        { title: "Date", field: "Date", type: "date" },
+                        { title: " Vehicle Type", field: "Vehicle_Type", type: "string" },
+                        { title: "Vehicle Brand", field: "Vehicle_Brand", type: "string" },
+                        { title: "Mileage", field: "Mileage", type: "string" },
+                    ]}
+
+                    data={Vehicles}
+                    options={{
+                        sorting: false,
+                        search:false,
+                        actionsColumnIndex: -1,
+                      
+
                     }}
-                    required
-                    />
-                   
-                </div>
 
-                <div className="form-group">
-                    <label for="date">Date :</label>
-                    <input type="date" class="form-control" id="date"
-                    onChange={(e)=>{
-                        setDate(e.target.value); // asign values for date
-                    }}
-                    required
-                    />
-                </div>
-
-                <div class="form-group">
-                    <label for="inputState">Vehicle Type :</label>
-                    <select id="type" class="form-control" onChange={(e)=>{
-                        setType(e.target.value); //assign values for vehicle type
-                    }}
-                    required
-                    >
-                        <option  selected disabled value="">choose..</option>
-                        <option value="Van">Van</option>
-                        <option value="Bus">Bus</option>
-                        <option value="Lorry">Lorry</option>
-                    </select>
-                </div>
-
-
-                <div class="form-group">
-                    <label for="brand">Vehicle Brand :</label>
-                    <input type="text" class="form-control" id="brand" 
-                     // validations for vehicle brand
-                     pattern="[A-Z a-z0-9]{0,20}"
-                     title="Vehicle brand max length should be 20" 
-                    onChange={(e)=>{
-                        setBrand(e.target.value); //asign values for vehicle brand
-                    }}
-                    required
-                    />
-                </div>
-
-                <div class="form-group">
-                    <label for="milage">Milage :</label>
-                    <input type="text" class="form-control" id="milage" 
-                    placeholder="Milage should be in KM"
-                     // validations for milage
-                     pattern="[0-9]{1,}"
-                     title="milage Should be number input" 
-                    onChange={(e)=>{
-                        setMilage(e.target.value); //asign values for milage
-                    }}/>
-                </div>
+                    
+                />
 
                 
-            <button type="submit" class="btn btn-primary">ADD</button>
-            </form>
-            
+            </div>
+
+
+
+           
+
+
         </div>
         </div>
         </div>
-        </div>
-        </div>
-        </div>
+
     )
 
-}
+    
 
+
+
+}

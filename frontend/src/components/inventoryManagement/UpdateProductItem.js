@@ -82,6 +82,7 @@ return (
                 type="text"
                 className="form-control"
                 name="ItemName"
+                pattern="[A-Z a-z ()]{0,20}"
                 required
                 onChange={(e)=>{
                 setItemName(e.target.value);
@@ -97,13 +98,16 @@ return (
             </label>
             <input
                 type="number"
+                min={0}
                 className="form-control"
                 name="Quantity"
+                title="Minimum quantity you can enter is 0"
                 required
                 onChange={(e)=>{
                 setQuantity(e.target.value);
             }}
                 value={Quantity}>
+                  
             </input>
           </div>
          
@@ -116,6 +120,7 @@ return (
                 type="text"
                 className="form-control"
                 name="Material"
+                pattern="[A-Z a-z]{0,10}"
                 required
                 onChange={(e)=>{
                 setMaterial(e.target.value);
@@ -132,6 +137,8 @@ return (
                 type="text"
                 className="form-control"
                 name="Colour"
+                pattern="[A-Z a-z]{0,10}"
+                title='enter valid colour name'
                 required
                 onChange={(e)=>{
                 setColour(e.target.value);

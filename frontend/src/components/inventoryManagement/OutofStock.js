@@ -65,7 +65,7 @@ export default function OutofStock(props){
                         
 
                         <li class="has-subnav">
-                            <a href="/">
+                            <a href="/allR">
                             <i class="fa fa-cubes fa-2x" aria-hidden="true"></i>
                                 <span class="nav-text">All Raw Materials</span>
                                 <i class="fa fa-angle-right"></i>

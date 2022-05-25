@@ -15,7 +15,7 @@ export default  function Report(){
 
     useEffect(() => {
 
-        axios.get(HOST1 + "/")
+        axios.get(HOST1 + "/allR")
             .then((res) => {
                 setRawMaterial(res.data);
                 console.log('Data has been received');
@@ -65,7 +65,7 @@ export default  function Report(){
 
 
                             <li class="has-subnav">
-                                <a href="/">
+                                <a href="/allR">
                                 <i class="fa fa-cubes fa-2x" aria-hidden="true"></i>
                                     <span class="nav-text">All Raw Materials</span>
                                     <i class="fa fa-angle-right"></i>
@@ -130,10 +130,11 @@ export default  function Report(){
             </div>
 
             <div>
+                <center>
                 <div className="container">
                     <div className="container-fluid">
                         <MaterialTable 
-                            style={{background:"#E3ECFF"}}
+                            style={{background:"#E3ECFF", width:"85%"}}
                             title="Raw Material Details Report"
 
                             columns={[
@@ -161,7 +162,7 @@ export default  function Report(){
 
                     <div className="container-fluid">
                         <MaterialTable 
-                            style={{background:"#E3ECFF"}}
+                            style={{background:"#E3ECFF", width:"85%"}}
                             title=" Product Item Details Report"
                             columns={[
                                 { title: "Item Id", field: "ItemId", type: "string" },
@@ -186,6 +187,7 @@ export default  function Report(){
                     </div>
 
                 </div>
+                </center>
             </div>
         </div>
 

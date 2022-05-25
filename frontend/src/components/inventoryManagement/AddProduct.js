@@ -61,7 +61,7 @@ export default function AddProduct(){
                         
 
                         <li class="has-subnav">
-                            <a href="/">
+                            <a href="/allR">
                             <i class="fa fa-cubes fa-2x" aria-hidden="true"></i>
                                 <span class="nav-text">All Raw Materials</span>
                                 <i class="fa fa-angle-right"></i>
@@ -127,8 +127,10 @@ export default function AddProduct(){
            
 
         
-        <div className='container'>
-        <center><h2>Add Product Details</h2></center>
+    <div className="container pt-2">
+        <div className="row justify-content-sm-center pt-5">
+        <div className="col-sm-6 shadow round pb-3">
+        <h1 className="text-center pt-3 text-secondary">Add Product Details</h1>
             <form onSubmit={sendData}>
                 
             <div className="form-group">
@@ -139,6 +141,7 @@ export default function AddProduct(){
                         id="ItemId" 
                         placeholder="PXXXX"
                         pattern="[P][0-9]{4}" 
+                        title='PXXXX'
                         required
                         onChange={(e)=>{
 
@@ -155,6 +158,7 @@ export default function AddProduct(){
                         className="form-control" 
                         id="ItemName" 
                         placeholder="Enter Item Name" 
+                        pattern="[A-Z a-z ()]{0,20}"
                         required
                         onChange={(e)=>{
 
@@ -166,10 +170,12 @@ export default function AddProduct(){
                 <div className="form-group">
                     <label for="Quantity" className="form-label">Quantity</label>
                     <input 
-                        type="text" 
+                        type="number" 
+                        min={0}
                         className="form-control" 
                         id="Quantity" 
-                        placeholder="Enter Number of Items" 
+                        placeholder="Enter Number of Items"
+                        title='Minimum quantity you can enter is 0' 
                         required
                         onChange={(e)=>{
 
@@ -185,6 +191,8 @@ export default function AddProduct(){
                         className="form-control" 
                         id="Material" 
                         placeholder="Enter Material" 
+                        pattern="[A-Z a-z]{0,10}"
+                        title='Enter valid material name'
                         required
                         onChange={(e)=>{
 
@@ -200,6 +208,8 @@ export default function AddProduct(){
                         className="form-control" 
                         id="Colour" 
                         placeholder="Enter Colour" 
+                        pattern="[A-Z a-z]{0,10}"
+                        title='enter valid colour name'
                         required
                         onChange={(e)=>{
 
@@ -235,6 +245,8 @@ export default function AddProduct(){
                 <br></br>
                 <button type="submit" className="btn btn-primary">Add</button>
                 </form>
+        </div>
+        </div>
         </div>
         </div>
     )
