@@ -11,7 +11,7 @@ export default function AllEmployee(props){
     useEffect(()=>{
         
         
-            axios.get('http://localhost:8060/resigned/')
+            axios.get('http://localhost:8070/resigned/')
             .then((res) =>{
                 console.log(res.data);
                 setEmp(res.data);
@@ -90,6 +90,14 @@ export default function AllEmployee(props){
                         </li>
                         <hr></hr>
                         <li class="has-subnav">
+                            <a href="/resign">
+                            <i class="fa fa-users-slash"></i>
+                                <span class="nav-text">Resigned Employee</span>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <hr></hr>
+                        <li class="has-subnav">
                             <a href="/report">
                             <i class="fa fa-download" aria-hidden="true"></i>
                                 <span class="nav-text">Reports</span>
@@ -102,9 +110,9 @@ export default function AllEmployee(props){
             </div>
             </div>
   
-  
+  <br/>
 <div className="container">
-        <div class="container-fluid">
+        <div class="container-fluid" >
         <MaterialTable  style={{background:"#E3ECFF"}}
                     title="All Resigned Employee Details "
 
@@ -132,8 +140,9 @@ export default function AllEmployee(props){
                    
 
                    </div>
+                   <div className="container-fluid"><a href="/Inform" class="btn-sm btn-primary btn-lg active float-right " role="button" aria-pressed="true"> Infrom New Resigned </a></div>
         </div>
-        
+       
         </div>
     )
 }

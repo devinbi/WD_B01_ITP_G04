@@ -121,10 +121,12 @@ return (
                 setDesignation(e.target.value);
             }}
              value={designation}
-        >       <option>Choose</option>
-                <option value="driver">Driver</option>
-                <option value="Officer">Officer</option>
-                <option value="worker">Worker</option>
+        >      
+         <option>Choose</option>
+           <option value="driver">Driver</option>
+            <option value="Officer">Officer</option>
+           <option value="worker">Worker</option>
+               
               
               </select>
               </div>

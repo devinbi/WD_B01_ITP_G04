@@ -73,6 +73,7 @@ import ViewSalary from './components/employeeManagement/ViewSalary';
 import Reports from './components/employeeManagement/Report';
 import TopHeader from './components/employeeManagement/topHeader';
 import Resigned from './components/employeeManagement/Resigned';
+import Inform from './components/employeeManagement/inform';
 import {BrowserRouter, Route} from "react-router-dom";
 
 // Supplier Management 
@@ -84,6 +85,9 @@ import ReportSM from './components/supplierManagement/Report';
 import UpdateItem from './components/supplierManagement/UpdateItem';
 import UpdateSupplier from './components/supplierManagement/UpdateSupplier';
 
+// login and home
+import Login from './components/login'
+import Home from './components/home'
 function App() {
 
 
@@ -95,8 +99,11 @@ function App() {
     <BrowserRouter >
         
     <TopHeader/>
-
+{/*FOR HOME AND LOGIN ROUTE PATH*/}
+            <Route path="/" exact component={Login} />
+            <Route path="/Home" exact component={Home} />
 {/*employeemanagment route paths*/}
+            <Route path="/Inform" exact component={Inform} />
             <Route path="/resign" exact component={Resigned} />
             <Route path="/report" exact component={Reports} />
             <Route path="/viewS" exact component={ViewSalary} />
