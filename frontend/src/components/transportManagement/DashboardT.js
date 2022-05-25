@@ -1,49 +1,52 @@
-import React,{useState,useEffect} from "react";
-import axios from "axios";
-import MaterialTable from 'material-table';
-import { Modal } from "react-bootstrap";
-import UpdateTransport from "./UpdateTransport";
+import React, { useState, useEffect } from "react"
+import axios from 'axios'
+import MaterialTable from 'material-table'
 
-const HOST = "http://localhost:8070/Transport"
 
-export default function AllTransport(){
-    const[transportData,setTData]=useState([]);
 
-    const [StateUpdate, setStateUpdate] = useState(false)
-    const [TransportUpdate, setTransportUpdate] = useState()
 
-    const [StateDelete, setStateDelete] = useState(false)
-    const [TransportDelete, setTransportDelete] = useState()
+const HOST1 = "http://localhost:8070/Transport"
+const HOST2 = "http://localhost:8070/Vehicle"
 
-    useEffect(()=>{
-        axios.get("http://localhost:8070/Transport").then((res)=>{
-            console.log(res.data);
-            setTData(res.data);
-        }).catch((err)=>{
-            alert(err.msg);
-        })
-    },[])
 
-     //delete trasport function
-     function onDelete() {
-        axios.delete(HOST + "/delete/" + TransportDelete)
+
+export default  function DashboardT(){
+
+    const [TransportDetails, setTransportDetails] = useState([]);
+    const [Vehicles, setVehicles] = useState([]);
+    
+
+    useEffect(() => {
+
+        axios.get(HOST1 + "/")
             .then((res) => {
-                console.log(res)
-                alert('Transport detail deleted')
-                window.location.reload(true)//reload page
-
+                setTransportDetails(res.data);
+                console.log('Data has been received');
             }).catch(() => {
-                alert('error while deleting Transport Detail')
+                alert('Error while fetching data')
             })
 
-    }
+    }, []);
+    useEffect(() => {
 
-  return(
-    <div>
+        axios.get(HOST2 + "/")
+            .then((res) => {
+                setVehicles(res.data);
+                console.log('Data has been received');
+            }).catch(() => {
+                alert('Error while fetching data')
+            })
+
+    }, []);
+    
+  
+
+    return(
+       <div>
          <div class="component-body">
         
-       {/* navigation bar for transport management */}
-       <div class="area">
+        {/* navigation bar for transport management */}
+        <div class="area">
                 <nav class="main-menu bg-primary">
                     <ul>
                         <li>
@@ -147,12 +150,16 @@ export default function AllTransport(){
                 </nav>
             </div>
             </div>
-        
-        <div class ="container">
-         < div className="container-fluid ">
+            <div>
+            <div className="container">
            
-             <MaterialTable  style={{background:"#E3ECFF"}}
-                    title="All Transport Details "
+
+            <a href="/vadd" class="btn btn-primary active ml-3 " role="button" aria-pressed="true"> + Add Vehicle Details </a>
+            <a href="/addT" class="btn btn-primary active ml-3 " role="button" aria-pressed="true"> + Add Transport Details </a>
+
+            <div className="container-fluid pt-5">
+        <MaterialTable style={{background:"#E3ECFF"}}
+                    title="  Transport Details "
 
                     columns={[
                         { title: "Transport Id", field: "Transport_ID", type: "string" },
@@ -161,63 +168,67 @@ export default function AllTransport(){
                         { title: " Driver Name", field: "Driver_Name", type: "string" },
                         { title: "Description", field: "Description", type: "string" },
                         { title: "Delivery Status", field: "Delivery_Status", type: "string" },
-
                     ]}
 
-                    data={transportData}
+                    data={TransportDetails}
                     options={{
-                        sorting: true,
+                        sorting: false,
                         search:false,
-                        filtering : true,
                         actionsColumnIndex: -1,
-                     
+                        
+
                     }}
-                    actions={[
-                        {
-                            icon: () => <button class="btn btn-sm btn-outline-warning">Update</button>,
-                            onClick: (event, rowData) => {
-                                setTransportUpdate(rowData); //setTransportDetailswithID
-                                setStateUpdate(true); //setStatetrue
-                            }
-                        },
-                        {
-                            icon: () => <button class="btn btn-sm btn-outline-danger">Delete</button>,
-                            onClick: (event, rowData) => {
-                                setTransportDelete(rowData._id) //setidto delete
-                                setStateDelete(true);   //setstatetrue
-                            }
-                        },
-                    ]}
-                    />
-                  
-         
-
-
-           {/* update modal */}
-           <Modal show={StateUpdate} size="lg"
-                aria-labelledby="contained-modal-title-vcenter"
-                centered
->
-                    <Modal.Body>
-                        <UpdateTransport data={TransportUpdate} cl={() => setStateUpdate(false)} />
-                    </Modal.Body>
-                </Modal>
-
-                 {/* delete modal */}
-                 <Modal show={StateDelete}>
-                    <Modal.Body>
-                        <p>You Want to delete this Transpot details ?</p>
-                        <button type="button" class="btn btn-outline-danger mr-3 pl-3" onClick={onDelete}>Delete</button>
-                        <button type="button" class="btn btn-outline-secondary pl-3" onClick={() => setStateDelete(false)}>Cancel</button>
-                    </Modal.Body>
-                </Modal>
+      
                 
+                    />
+                    
+                
+                </div>
+
+
+           
+                
+            <div className="container-fluid">
+                <MaterialTable style={{background:"#E3ECFF"}}
+                    title=" Vehicles Details "
+
+                    columns={[
+                        { title: "Vehicle Id", field: "Vehicle_ID", type: "string" },
+                        { title: "Vehicle Registration No", field: "Vehicle_Registration_No", type: "string" },
+                        { title: "Date", field: "Date", type: "date" },
+                        { title: " Vehicle Type", field: "Vehicle_Type", type: "string" },
+                        { title: "Vehicle Brand", field: "Vehicle_Brand", type: "string" },
+                        { title: "Mileage", field: "Mileage", type: "string" },
+                    ]}
+
+                    data={Vehicles}
+                    options={{
+                        sorting: false,
+                        search:false,
+                        actionsColumnIndex: -1,
+                      
+
+                    }}
+
+                    
+                />
+
+                
+            </div>
 
 
 
-         </div>
-         </div>
-         </div>
-  );
+           
+
+
+        </div>
+        </div>
+        </div>
+
+    )
+
+    
+
+
 
 }

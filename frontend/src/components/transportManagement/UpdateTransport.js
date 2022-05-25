@@ -27,7 +27,7 @@ export default function UpdateTransport({ data, cl }) {
   function sendData(e){
 
 
-    e.preventDefault();
+    e.preventDefault(); //prevent normal behaviour of submit
     const updtTransport ={
         Transport_ID,
         Vehicle_Registration_No,
@@ -69,8 +69,10 @@ export default function UpdateTransport({ data, cl }) {
               className="form-control"
               name="Transport_ID"
               placeholder="Vehicle ID"
+                // validation for Transport Id
+							pattern="[T][0-9]{4}" title="Transport ID should be TXXXX"
               onChange={(e)=>{
-                setTid(e.target.value);
+                setTid(e.target.value); //asign values
             }}
               // onChange={handleChange}
               value={Transport_ID}
@@ -87,8 +89,11 @@ export default function UpdateTransport({ data, cl }) {
               className="form-control"
               name="Vehicle_Registration_No"
               placeholder="Registration Number ABC-XXXX"
+             // validation for Vehicle registration no
+							pattern="[A-Z0-9]{2,3}[-][0-9]{4}"
+							title="Vehicle registraion number should be CL-XXXX / CLA-XXXX"
               onChange={(e)=>{
-                setVid(e.target.value);
+                setVid(e.target.value); //asign values
             }}
               // onChange={handleChange}
               value={Vehicle_Registration_No}
@@ -107,7 +112,7 @@ export default function UpdateTransport({ data, cl }) {
               name="Date"
               placeholder="Date"
               onChange={(e)=>{
-                setDate(e.target.value);
+                setDate(e.target.value); //asign values
             }}
               // onChange={handleChange}
               value={Date}
@@ -123,8 +128,11 @@ export default function UpdateTransport({ data, cl }) {
               className="form-control"
               name="Driver_Name"
               placeholder="Driver Name"
+              // validation for driver name
+							pattern="[A-Z a-z]{0,12}"
+							title="Name max length should be 12"
               onChange={(e)=>{
-                setName(e.target.value);
+                setName(e.target.value); //asign values
             }}
               // onChange={handleChange}
               value={Driver_Name}
@@ -140,8 +148,11 @@ export default function UpdateTransport({ data, cl }) {
               className="form-control"
               name="Description"
               placeholder="Description"
+               // validation for Description
+							pattern="[A-Z a-z0-9]{0,120}"
+							title="Description max length should be 120"
               onChange={(e)=>{
-                setDescription(e.target.value);
+                setDescription(e.target.value); //asign values
             }}
               // onChange={handleChange}
               value={Description}
@@ -154,7 +165,7 @@ export default function UpdateTransport({ data, cl }) {
               <select name="Delivery_Status" id="Delivery_Status" 
               className="form-control" 
               onChange={(e)=>{
-                setStatus(e.target.value);
+                setStatus(e.target.value); //asign values
             }} value={Delivery_Status}
             required
             >
