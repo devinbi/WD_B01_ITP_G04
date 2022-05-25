@@ -1,7 +1,6 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-const Host = "http://localhost:8060/salary";
 export default function UpdateSalary({ data, cl }){
    
     const [employeeId, setId] = useState("");

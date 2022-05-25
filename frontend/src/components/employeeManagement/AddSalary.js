@@ -18,6 +18,17 @@ export default function AddSalary(){
         let lHours = parseInt(labourHr);
         let oHours = parseInt(otHr);
         let leaves = parseInt(leave);
+        let salary;
+        if(designation == "driver")
+        salary = ((120 * lHours) + (100 * oHours) - (750 * leaves));
+        
+        else if(designation == "Officer")
+        salary = ((110 * lHours) + (100 * oHours) - (750 * leaves));
+
+        else if(designation == "worker")
+        salary = ((110 * lHours) + (100 * oHours) - (750 * leaves));
+        else
+        salary = 0;
         
         const newSalary = {
           employeeId,
@@ -116,14 +127,17 @@ export default function AddSalary(){
                
                 
                 
-                <div className="container">
+                <div className="container pt-5">
+      <div className="row justify-content-sm-center pt-5">
+      <div className="col-sm-6 shadow round pb-3">
+      <h1 className="text-center pt-3 text-secondary">Employee Salary</h1>
                     <form onSubmit={sendData}>
                     <div class="form-group" >
                             <label for="employeeId">Employee Id :</label>
                             <input type="text" class="form-control" id="employeeId"  placeholder="Enter "
                             onChange={(e)=>{
                                 setId(e.target.value);
-                            }}/>
+                            }} required/>
                         
                         </div>
                         <div className="form-group">
@@ -164,21 +178,23 @@ export default function AddSalary(){
                             </select>
                            
                         </div>
-                        <div className="form-group">
+                        {/* <div className="form-group">
                             <label for="salary">OT Hours :</label>
                             <input type="text" class="form-control" id="salary" onChange={(e)=>{
                                 setSalary(e.target.value);
                             }}/>
-                        </div>
+                        </div> */}
 
-            
+            <center>
                     <button type="submit" class="btn btn-info btn-lg">ADD</button>
+                    </center>
                     </form>
                     
                 </div>
                 </div>
 
-               
+               </div>
+               </div>
 
 
             
