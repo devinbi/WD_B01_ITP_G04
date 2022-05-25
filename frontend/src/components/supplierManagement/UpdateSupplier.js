@@ -119,7 +119,7 @@ return (
           
           <div className="mb-3">
             <label for="address" className="form-label">
-              Admin ID
+              Address
             </label>
             <input
               type="text"
@@ -133,6 +133,32 @@ return (
           </div>
 
           <div className="mb-3">
+            <label for="adminId"> Admin ID </label>
+            <select 
+              className="form-control"
+              name="Size"
+              id="adminId"
+              required  
+              onChange={(e)=>{
+
+                setAdminId(e.target.value);
+
+              }}
+
+              value={adminId} > 
+
+                <option selected disabled value="">Select Admin</option>
+                <option value="Admin 01">Admin 01</option>
+                <option value="Admin 02">Admin 02</option>
+                <option value="Admin 03">Admin 03</option>
+                
+            </select>
+          </div>
+
+
+
+
+          {/* <div className="mb-3">
             <label for="adminId" className="form-label">
               Admin ID
             </label>
@@ -145,7 +171,7 @@ return (
             }}
               value={adminId}
             ></input>
-          </div>
+          </div> */}
 
           <button
             type="submit"

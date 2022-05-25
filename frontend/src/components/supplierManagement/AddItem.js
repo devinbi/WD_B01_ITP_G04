@@ -96,6 +96,14 @@ export default function AddItem() {
                                         </a>
                                     </li>
                                     <hr></hr>
+                                    <li class="has-subnav">
+                                        <a href="/reportOutOfStock">
+                                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                            <span class="nav-text">Out Of Report Report</span>
+                                            <i class="fa fa-angle-right fa-2x"></i>
+                                        </a>
+                                    </li>
+                                    <hr></hr>
                                     
                                 </ul>
 
@@ -115,8 +123,10 @@ export default function AddItem() {
                 
 
 
-                <div >
-                    <div className="container">
+        <div className="container pt-2">
+            <div className="row justify-content-sm-center pt-5">
+                <div className="col-sm-6 shadow round pb-3">
+                    <h1 className="text-center pt-3 text-secondary">Add Item</h1>
                         <form onSubmit={sendData}>
                             <div className="form">
                                 <label  for="itemName">Item Name</label>
@@ -162,7 +172,32 @@ export default function AddItem() {
 
                             </div><br/>
 
-                            <div className="form">
+                            {/*  */}
+                            <div className="select">
+                                <label for="adminId" className="form-label">Admin ID</label>
+                                    <select 
+                                        
+                                        className="form-select" 
+                                        id="adminId" 
+                                        required
+                                        onChange={(e)=>{
+
+                                            setAdminId(e.target.value);
+
+                                    }}>
+                                        <option selected disabled value="">Select Admin</option>
+                                        <option value="Admin 01">Admin 01</option>
+                                        <option value="Admin 02">Admin 02</option>
+                                        <option value="Admin 03">Admin 03</option>
+
+                                    </select>
+                            </div>
+                            <br/>
+
+                            {/*  */}
+
+
+                            {/* <div className="form">
                                 <label for="adminId">Admin ID</label>
                                 <input required type="text" className="form-control" id="adminId" placeholder="Enter Admin ID"
                                 onChange={(e)=>{
@@ -171,16 +206,15 @@ export default function AddItem() {
 
                                 }}/>
 
-                            </div><br/>
+                            </div><br/> */}
                             
                             
                             <input type="submit" value="confirm"/>
                         </form>
-                    </div>
                 </div>
-
-
+            </div>
         </div>
+    </div>
     )
 
 }

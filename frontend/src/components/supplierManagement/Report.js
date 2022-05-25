@@ -97,6 +97,16 @@ export default  function Report(){
                                         </a>
                                     </li>
                                     <hr></hr>
+                                    <li class="has-subnav">
+                                        <a href="/reportOutOfStock">
+                                        <i class="fa fa-download" aria-hidden="true"></i>
+                                            <span class="nav-text">Out Of Report Report</span>
+                                            <i class="fa fa-angle-right fa-2x"></i>
+                                        </a>
+                                    </li>
+                                    <hr></hr>
+
+
                                     
                                 </ul>
 
@@ -167,14 +177,16 @@ export default  function Report(){
 
                                     data={supplier}
                                     options={{
+                                        selection: true,
                                         sorting: true,
                                         actionsColumnIndex: -1,
                                         exportButton: {
                                             csv: true,
-                                            pdf: true,
+                                            pdf: true
                                          }
             
                                     }}
+                                    
 
                             
                             />

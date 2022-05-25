@@ -99,7 +99,14 @@ export default function AllItemDetails(props){
                                         </a>
                                     </li>
                                     <hr></hr>
-                                    
+                                    <li class="has-subnav">
+                                        <a href="/reportOutOfStock">
+                                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                            <span class="nav-text">Out Of Report Report</span>
+                                            <i class="fa fa-angle-right fa-2x"></i>
+                                        </a>
+                                    </li>
+                                    <hr></hr>                                    
                                 </ul>
 
                                 <ul class="logout">

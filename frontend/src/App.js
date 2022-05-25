@@ -82,6 +82,7 @@ import AllSplireDetails from "./components/supplierManagement/AllSplireDetails";
 import ReportSM from './components/supplierManagement/Report';
 import UpdateItem from './components/supplierManagement/UpdateItem';
 import UpdateSupplier from './components/supplierManagement/UpdateSupplier';
+import OutofStockReport from './components/supplierManagement/OutOfStockReport';
 
 function App() {
 
@@ -170,6 +171,7 @@ function App() {
             <Route path="/UpdateSupplier" exact component ={UpdateSupplier} />
             <Route path="/viewSupplier" exact component ={AllSplireDetails} />
             <Route path="/reportSupPlierManage" exact component ={ReportSM} />
+            <Route path="/reportOutOfStock" exact component ={OutofStockReport} />
         
       </BrowserRouter>
       
