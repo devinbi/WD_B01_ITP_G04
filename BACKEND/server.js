@@ -53,8 +53,8 @@ app.use("/ManufacturedItem",ManufacturedItemRouter);
 // app.use("/ViewSuppliedItem",ViewSuppliedItemRouter);
 
 
-// const ViewOrderDetailsRouter = require("./routes/ViewOrderDetails.js");
-// app.use("/ViewOrderDetails",ViewOrderDetailsRouter);
+const ViewOrderDetailsRouter = require("./routes/ViewOrderDetails.js");
+app.use("/ViewOrderDetails",ViewOrderDetailsRouter);
 
 const transportRouter = require("./routes/Transports.js");
 app.use("/Transport",transportRouter);

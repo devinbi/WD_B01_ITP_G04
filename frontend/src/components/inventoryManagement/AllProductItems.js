@@ -49,8 +49,8 @@ export default function AllProductItems(props){
 
     useEffect(()=> {
         function getOrders(){
-            axios.get("http://localhost:8070/order/view").then((res)=>{
-               
+            axios.get("http://localhost:8070/ViewOrderDetails/").then((res)=>{
+               console.log("success",res)
                 setOrders(res.data);
         }).catch((err)=> {
             alert(err.message);
@@ -90,7 +90,7 @@ export default function AllProductItems(props){
 
                             <li class="has-subnav">
                                 <a href="/allR">
-                                <i class="fa fa-cubes fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-cubes" aria-hidden="true"></i>
                                     <span class="nav-text">All Raw Materials</span>
                                     <i class="fa fa-angle-right"></i>
                                 </a>
@@ -130,7 +130,7 @@ export default function AllProductItems(props){
 
                             <li class="has-subnav">
                                 <a href="/view">
-                                    <i class="fa fa-users" aria-hidden="true"></i>
+                                    <i class="fa fa-download" aria-hidden="true"></i>
                                     <span class="nav-text">Inventory Report</span>
                                     <i class="fa fa-angle-right"></i>
                                 </a>
@@ -154,11 +154,11 @@ export default function AllProductItems(props){
             </div>
 
             <div>
-                <center>
+            
                 <div class="container">
-                    <div class="container-fluid">
+                    <div class="container-fluid mt-5">
                         <MaterialTable  
-                            style={{background:"#E3ECFF", width:"85%"}}
+                            style={{background:"#E3ECFF"}}
                             title="All Product Item Details"
                             columns={[
                                 
@@ -219,21 +219,17 @@ export default function AllProductItems(props){
                         </Modal>
 
                     </div>
-                </div>
-                </center>
-            </div>
+                
 
-            <div>
-                <center>
-                <div class="container">  
-                    <div class="container-fluid">
-                        <MaterialTable  style={{background:"#E3ECFF" , width:"85%"}}
+                    <div class="container-fluid mt-5 mb-5">
+                        <MaterialTable  style={{background:"#E3ECFF"}}
                             title="Ordered Item Details "
                             columns={[
-                                { title: "Item Name", field: "TypeOfOrder", type: "string", width:"85%" },
-                                { title: "Quantity", field: "NoOfUnit", type: "number" , width:"85%" },
-                                //{ title: "Order Status", field: "OrderStatus", type: "string" },
-                                { title: "Description", field: "OrderDescription", type: "string" },                    
+                                { title: "Item Name", field: "TypeOfOrder", type: "string"},
+                                { title: "Quantity", field: "NoOfUnit", type: "number" },
+                                // { title: "Order Status", field: "OrderStatus", type: "string" },
+                                { title: "Description", field: "OrderDescription", type: "string" }, 
+                                { title: "Date", field: "DateOfReceipt", type: "date" }                   
 
                             ]}
                
@@ -241,7 +237,7 @@ export default function AllProductItems(props){
                             options={{
                                 sorting: true,
                                 search:false,
-                                paging :false,
+                                paging :true,
                                 filtering : true,
                                 actionsColumnIndex: -1
                             }}
@@ -249,9 +245,7 @@ export default function AllProductItems(props){
                         />
                     </div>
                 </div>
-                </center>
             </div> 
-
         </div>
     )
 }

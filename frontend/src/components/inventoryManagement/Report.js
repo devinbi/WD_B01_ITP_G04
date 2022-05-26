@@ -66,7 +66,7 @@ export default  function Report(){
 
                             <li class="has-subnav">
                                 <a href="/allR">
-                                <i class="fa fa-cubes fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-cubes" aria-hidden="true"></i>
                                     <span class="nav-text">All Raw Materials</span>
                                     <i class="fa fa-angle-right"></i>
                                 </a>
@@ -134,7 +134,7 @@ export default  function Report(){
                 <div className="container">
                     <div className="container-fluid">
                         <MaterialTable 
-                            style={{background:"#E3ECFF", width:"85%"}}
+                            style={{background:"#E3ECFF"}}
                             title="Raw Material Details Report"
 
                             columns={[
@@ -162,7 +162,7 @@ export default  function Report(){
 
                     <div className="container-fluid">
                         <MaterialTable 
-                            style={{background:"#E3ECFF", width:"85%"}}
+                            style={{background:"#E3ECFF"}}
                             title=" Product Item Details Report"
                             columns={[
                                 { title: "Item Id", field: "ItemId", type: "string" },
