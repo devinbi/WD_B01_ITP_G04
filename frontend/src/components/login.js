@@ -46,7 +46,7 @@ export default function LoginUser() {
           } else if (response.data.login.username == "OD006") {
             // "username" : "OD006",
             // "password" : "ashini"
-            history.push("/DashboardT");
+            history.push("/addCustomer");
           } else if (response.data.login.username == "FM007") {
             // "username" : "FM007",
             // "password" : "devin"
