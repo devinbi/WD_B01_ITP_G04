@@ -79,8 +79,8 @@ return (
               type="text"
               className="form-control"
               name="machineName"
-              pattern="[A-Z a-z]{0,15}"
-              title="can't exceed 15 characters"
+              pattern="[A-Z a-z]{0,25}"
+              title="can't exceed 25 characters"
               onChange={(e)=>{
             setmachineName(e.target.value);
             }}

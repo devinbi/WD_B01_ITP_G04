@@ -139,8 +139,8 @@ export default function AddDressmaking(){
         <div class="form-group">
           <label for="MachineName">Machine Name</label>
           <input type="text" class="form-control" id="MachineName"
-                 pattern="[A-Z a-z]{0,15}"
-                 title="can't exceed 15 characters"
+                 pattern="[A-Z a-z]{0,25}"
+                 title="can't exceed 25 characters"
           onChange={(e)=>{
              
              setMachineName(e.target.value);

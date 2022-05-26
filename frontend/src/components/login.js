@@ -38,7 +38,7 @@ export default function LoginUser() {
           } else if (response.data.login.username == "ET004") {
             // "username" : "ET004",
             // "password" : "thinithi"
-            history.push("/empList");
+            history.push("/addDressmaking");
           } else if (response.data.login.username == "IM005") {
             // "username" : "IM005",
             // "password" : "udana"

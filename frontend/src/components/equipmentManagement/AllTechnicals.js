@@ -129,7 +129,7 @@ export default function AllTechnicals(props){
             </div>
 
         <div class="container">
-        <div class="container-fluid">
+        <div class="container-fluid mt-5 mb-5">
         <MaterialTable  style={{background:"#E3ECFF"}}
                     title="All Technical Devices"
 

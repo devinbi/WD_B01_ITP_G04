@@ -194,7 +194,7 @@ export default function AddTechnical(){
         <div class="form-group">
           <label for="ModelNo">Model No</label>
           <input type="text" class="form-control" id="ModelNo" 
-                 maxlength="5"
+                 maxlength="10"
           onChange={(e)=>{
 
            setmodelNo(e.target.value);
