@@ -83,7 +83,7 @@ return (
               type="text"
               className="form-control"
               name="modelNo"
-              maxlength="5"
+              maxlength="10"
               onChange={(e)=>{
             setmodelNo(e.target.value);
             }}

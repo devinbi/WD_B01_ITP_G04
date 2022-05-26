@@ -52,7 +52,7 @@ export default function UpdateCustomer({ data, cl }){
 
 return (
     <div class="area">
-      <div className="container">
+      <div className="container-fluid">
         <form onSubmit={sendData}>
           <div className="mb-3">
             <label for="CustomerId" className="form-label">

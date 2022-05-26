@@ -219,8 +219,8 @@ export default function AddOrders(){
                  >
                     
                  <option selected disabled value="">Choose...</option>
-                 <option value="active">Active</option>
-                 <option value="process">Process</option>
+                 <option value="Active">Active</option>
+                 <option value="Process">Process</option>
                 </select>
              </div>
 
