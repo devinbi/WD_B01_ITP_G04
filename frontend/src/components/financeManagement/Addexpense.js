@@ -24,7 +24,7 @@ export  default function Addexpense(){
 
 
   useEffect(() => {
-
+//requesting
       axios.get(HOST + "/")
           .then((res) => {
             setSalarys(res.data);
@@ -156,9 +156,9 @@ export  default function Addexpense(){
        <div>
        
        <div className="container">
-
+    
      <div className="row justify-content-sm-center pt-5">
-        <div className="col-sm-6 shadow round pb-3">
+        <div className="col-sm-10 shadow round pb-3">
             <h3 className="text-center pt-3 text-secondary">Add Expense Details</h3>
                 <form onSubmit={sendData}>
                     <div class="form-group">
@@ -188,7 +188,8 @@ export  default function Addexpense(){
                                 
                             }}
                             required>
-                             <option selected disabled>choose</option>
+
+                             <option selected disabled>choose..</option>
                              <option value="supplier">Supplier Cost</option>
                              <option value="maintenance">Maintenance Cost</option>
                              <option value="salary">Salary Cost</option>

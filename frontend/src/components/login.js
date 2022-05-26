@@ -50,7 +50,7 @@ export default function LoginUser() {
           } else if (response.data.login.username == "FM007") {
             // "username" : "FM007",
             // "password" : "devin"
-            history.push("/ViewFinancial");
+            history.push("/rep");
           } else if (response.data.login.username == "SD008") {
             // "username" : "SD008",
             // "password" : "dimuth"

@@ -26,7 +26,7 @@ export default function Viewexpenses(props){
         
     },[])
 
-
+//delete function
     function onDelete() {
         axios.delete( "http://localhost:8070/expense/delete/"+ expenseDelete)
             .then((res) => {
@@ -111,7 +111,7 @@ export default function Viewexpenses(props){
             </div>
             </div>
      
-
+{/* material table to view expense */}
         
         <div class="container">
         <div class="container-fluid">
@@ -143,7 +143,7 @@ export default function Viewexpenses(props){
                         {
                             icon: () => <button class="btn btn-sm btn-outline-warning">Update</button>,
                             onClick: (event, rowData) => {
-                                setExpenseUpdate(rowData); //setTransportDetailswithID
+                                setExpenseUpdate(rowData); 
                                 setStateUpdate(true); //setStatetrue
                             }
                         },

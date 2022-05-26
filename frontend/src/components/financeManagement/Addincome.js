@@ -158,7 +158,7 @@ import MaterialTable from 'material-table'
                         
                              </div>
                              <div className="form-group">
-                            <label for="ordertype">Order Type:</label>
+                            <label for="ordertype">Order Type</label>
                             <input type="text" class="form-control" id="ordertype"  placeholder="Enter order type" pattern="[A-Z a-z]{0-50}" title="description max length should be 50" onChange={(e)=>{
                                 setOrdertype(e.target.value);
                             }}
@@ -175,7 +175,7 @@ import MaterialTable from 'material-table'
                         </div>
 
                         <div class="form-group">
-                            <label for="unitprice">Unit Price :</label>
+                            <label for="unitprice">Unit Price </label>
                             <input type="number" class="form-control" id="unitprice" placeholder="Enter unit price"
                             onChange={(e)=>{
                                 setUnitprice(e.target.value);

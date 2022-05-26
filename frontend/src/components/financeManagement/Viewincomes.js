@@ -144,7 +144,7 @@ export default function Viewincomes(props){
                         {
                             icon: () => <button class="btn btn-sm btn-outline-warning">Update</button>,
                             onClick: (event, rowData) => {
-                                setIncomeupdate(rowData); //setTransportDetailswithID
+                                setIncomeupdate(rowData); 
                                 setStateUpdate(true); //setStatetrue
                             }
                         },

@@ -51,7 +51,7 @@ export default  function Report(){
     let incc = parseInt(inc);
     let expens =  parseInt(expen);
     const tot = (incc - expens) ;
-     setTotal(tot);
+    setTotal(tot);
  
 }
 // side navigation
@@ -197,8 +197,9 @@ export default  function Report(){
 
         <div>
             <div className="container">
-               <div className="row justify-content-sm-center pt-5">
-                  <div className="col-sm-6 shadow round pb-3">
+              
+               <div className="row justify-content-sm-center mb-2">
+                   <div className="col-sm-6 shadow round pb-3">
                        <h3 className="text-center pt-3 text-secondary">Net Profit Calculation</h3>
                            <form  onSubmit={sendData}>
                     <div className="form-group">
@@ -235,14 +236,15 @@ export default  function Report(){
                             <label for="totalamount">Netprofit:</label>
                             <input type="number" class="form-control" id="Nprofit" 
                            value={total}/>
-                        </div>
-                </div>
+                         </div>
+                  </div>
             </div>
         </div>
      </div>
-</div>
-</div>
-</div>
+      </div>
+      </div>
+    </div>
+
         
         
 

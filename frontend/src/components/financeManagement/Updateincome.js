@@ -44,7 +44,7 @@ export default function Updateincome({ data, cl }){
   };
   return (
     <div class="area">
-      <div className="container">
+      <div className="container-fluid">
         <form onSubmit={sendData}>
           <div className="mb-3">
             <label for="orderid" className="form-label">
