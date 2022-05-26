@@ -45,7 +45,7 @@ export default function UpdateRawMaterial({ data, cl }){
 
 return (
     <div class="area">
-      <div className="container">
+      <div className="container-fluid">
         <form onSubmit={sendData}>
 
 

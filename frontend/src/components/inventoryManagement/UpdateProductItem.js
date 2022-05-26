@@ -50,7 +50,7 @@ export default function UpdateProductItem({ data, cl }){
 
 return (
     <div class="area">
-      <div className="container">
+      <div className="container-fluid">
         <form onSubmit={sendData}>
 
 
