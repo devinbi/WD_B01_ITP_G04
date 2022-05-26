@@ -130,7 +130,7 @@ export default function AllEmployee(props){
                     data={employee}
                     options={{
                         sorting: true,
-                        search:false,
+                        search:true,
                         paging :true,
                         filtering : true,
                         actionsColumnIndex: -1

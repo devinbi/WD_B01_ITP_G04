@@ -153,7 +153,7 @@ export default function AllSalary(props){
                     data={salary}
                     options={{
                         sorting: true,
-                        search:false,
+                        search:true,
                         paging :true,
                         filtering : true,
                         actionsColumnIndex: -1

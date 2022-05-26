@@ -13,28 +13,31 @@ export default function Home() {
         <div className="rowsizeing">
         
           <div className="col ">
-          <a href=''> <div className="card card1">
+          <a href='/viewS'> <div className="card card1">
               <h5>Employee Management</h5>
               <p></p>
             </div></a> 
           </div>
           <div className="col">
+          <a href='/viewex'>
             <div className="card card2">
               <h5>Finance Management</h5>
               <p></p>
-            </div>
+            </div></a>
           </div>
           <div className="col">
+          <a href='/viewItem'>
             <div className="card card3">
               <h5>Supplier Management</h5>
               <p></p>
-            </div>
+            </div></a>
           </div>
           <div className="col">
+          <a  href='/Tview'>
             <div className="card card4">
               <h5>Transport Management</h5>
               <p></p>
-            </div>
+            </div></a>
           </div>
         </div>
 
