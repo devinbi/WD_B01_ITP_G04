@@ -55,7 +55,7 @@ export default function UpdateOrder({ data, cl }){
 
 return (
     <div class="area">
-      <div className="container">
+      <div className="container-fluid">
         <form onSubmit={sendData}>
           <div className="mb-3">
             <label for="OrderId" className="form-label">
@@ -133,8 +133,8 @@ return (
             }}
              value={OrderStatus}
         >       <option selected disabled value="">Choose...</option>
-                <option value="active">Active</option>
-                <option value="process">Process</option>
+                <option value="Active">Active</option>
+                <option value="Process">Process</option>
                 
               
               </select>
