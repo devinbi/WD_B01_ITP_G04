@@ -138,7 +138,7 @@ export default  function Report(){
           </div>
             <div>
             <div className="container">
-            <div className="container-fluid">
+            <div className="container-fluid mt-3">
 
         <MaterialTable style={{background:"#E3ECFF"}}
                     title="  Dressmaking Tools Report"
@@ -206,7 +206,7 @@ export default  function Report(){
 
 
 
-            <div className="container-fluid mt-5">
+            <div className="container-fluid mt-3">
                     <MaterialTable style={{background:"#E3ECFF"}}
                         title="Maintenance Details Report"
 

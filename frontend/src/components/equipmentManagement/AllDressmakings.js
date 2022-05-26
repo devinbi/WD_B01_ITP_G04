@@ -128,7 +128,7 @@ export default function AllDressmakings(props){
             </div>
             </div>
         <div class="container">
-        <div class="container-fluid">
+        <div class="container-fluid mt-5">
         <MaterialTable  style={{background:"#E3ECFF"}}
                     title="All Dressmaking Tools"
 
