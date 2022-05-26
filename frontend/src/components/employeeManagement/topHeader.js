@@ -35,7 +35,7 @@ function topHeader(props) {
             <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                  <a class="nav-link text-light text-xl" href="/adds">
+                  <a class="nav-link text-light text-xl" href="/home">
                   <h4>Home</h4>
                   </a>
                 </li>

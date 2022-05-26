@@ -167,6 +167,7 @@ export default  function Report(){
                         { title: "OT Hours", field: "otHr", type: "string" },
                         { title: "Leaves", field: "leave", type: "date" },
                         { title: "Designation", field: "designation", type: "string" },
+                        { title: "Month", field: "month", type: "string"},
                         { title: "Salary", field: "salary", type: "string" },
                          
                             ]}

@@ -109,10 +109,10 @@ export default function AllEmployee(props){
                 </nav>
             </div>
             </div>
-  <br/>
-  
+
 <div className="container">
-        <div class="container-fluid">
+        <div class="container-fluid mt-5">
+        <a href="adde"><button type="button" class="btn btn-danger mb-3 px-3 "><i class="fa fa-plus fa-2x" aria-hidden="true"></i></button></a>
         <MaterialTable  style={{background:"#E3ECFF"}}
                     title="All Employee Details "
 

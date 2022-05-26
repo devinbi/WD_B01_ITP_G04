@@ -4,9 +4,8 @@ const Schema = mongoose.Schema;
 const salSchema = new Schema({
     employeeId:{
         type : String,
-        required : true,
-        unique : true,
-        minlength : 3
+        required : true
+        
 
     },
     labourHr:{
@@ -28,6 +27,10 @@ const salSchema = new Schema({
         type : String,
         required : true
 
+    },
+    month:{
+        type : String,
+        required : true
     },
     salary:{
         type : Number,

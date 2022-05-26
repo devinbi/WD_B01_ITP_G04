@@ -13,10 +13,10 @@ export default function Home() {
         <div className="rowsizeing">
         
           <div className="col ">
-            <div className="card card1">
+          <a href=''> <div className="card card1">
               <h5>Employee Management</h5>
               <p></p>
-            </div>
+            </div></a> 
           </div>
           <div className="col">
             <div className="card card2">
